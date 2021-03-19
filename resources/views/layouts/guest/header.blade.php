@@ -97,8 +97,8 @@
                         <div class="kingster-navigation kingster-item-pdlr clearfix ">
                             <div class="kingster-main-menu" id="kingster-main-menu">
                                 <ul id="menu-main-navigation-1" class="sf-menu">
-                                    <li class="menu-item menu-item-home current-menu-item kingster-normal-menu"><a href="/" class="sf-with-ul-pre">{{ __("pages.home") }}</a></li>
-                                    <li class="menu-item menu-item-home current-menu-item kingster-normal-menu"><a href="{{ route("filiere") }}" class="sf-with-ul-pre">{{ __("pages.filieres") }}</a></li>
+                                    <li class="menu-item menu-item-home {{ (Route::currentRouteName() == "") ? "current-menu-item" : "" }}  kingster-normal-menu"><a href="/" class="sf-with-ul-pre">{{ __("pages.home") }}</a></li>
+                                    <li class="menu-item {{ (Route::currentRouteName() == "filiere") ? "current-menu-item" : "" }} kingster-normal-menu"><a href="{{ route("filiere") }}" class="sf-with-ul-pre">{{ __("pages.filieres") }}</a></li>
                                     <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">{{ __("pages.publications") }}</a>
                                         <ul class="sub-menu">
                                             <li class="menu-item" data-size="60"><a href="{{ route("evenement") }}">{{ __("pages.events") }}</a></li>
@@ -112,8 +112,8 @@
                                             <li class="menu-item" data-size="60"><a href="{{ route("horaire") }}">{{ __("pages.horaire") }}</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item kingster-normal-menu"><a href="{{ route("apropos") }}">{{ __("pages.about") }}</a></li>
-                                    <li class="menu-item kingster-normal-menu"><a href="{{ route("contact") }}">{{ __("pages.contact") }}</a></li>
+                                    <li class="menu-item {{ (Route::currentRouteName() == "apropos") ? "current-menu-item" : "" }} kingster-normal-menu"><a href="{{ route("apropos") }}">{{ __("pages.about") }}</a></li>
+                                    <li class="menu-item {{ (Route::currentRouteName() == "contact") ? "current-menu-item" : "" }} kingster-normal-menu"><a href="{{ route("contact") }}">{{ __("pages.contact") }}</a></li>
                                 </ul>
                                 <div class="kingster-navigation-slide-bar" id="kingster-navigation-slide-bar"></div>
                             </div>
