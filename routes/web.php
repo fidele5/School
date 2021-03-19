@@ -1,0 +1,68 @@
+<?php
+
+use App\Http\Controllers\ActualiteController;
+use App\Http\Controllers\CategorieActualiteController;
+use App\Http\Controllers\CategorieEvenementController;
+use App\Http\Controllers\CategorieRealisationController;
+use App\Http\Controllers\CoursController;
+use App\Http\Controllers\EnseignantController;
+use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\EvenementController;
+use App\Http\Controllers\FilirerController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HoraireController;
+use App\Http\Controllers\ImageRealisationController;
+use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\RealisationController;
+use App\Http\Controllers\SeanceController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+ */
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get("/realisation", [HomeController::class, "realisations"])->name('realisation');
+Route::get("/evenement", [HomeController::class, 'evenements'])->name('evenement');
+Route::get('/actualite', [HomeController::class, 'actualites'])->name("actualite");
+Route::get("/horaire", [HomeController::class, "horaires"])->name('horaire');
+Route::get("/cours", [HomeController::class, "cours"])->name('cours');
+Route::get('/admission', [HomeController::class, 'admission'])->name('admission');
+Route::get('/filiere', [HomeController::class, 'filieres'])->name('filiere');
+Route::get('/apropos', [HomeController::class, 'apropos'])->name('apropos');
+Route::get("/contact", [HomeController::class, 'contact'])->name('contact');
+Route::middleware("auth")->group(function () {
+    Route::prefix("admin")->group(function () {
+        Route::resource("actualites", ActualiteController::class);
+        Route::resource('evenements', EvenementController::class);
+        Route::resource('realisations', RealisationController::class);
+        Route::resource('categorie-actualites', CategorieActualiteController::class);
+        Route::resource('categorie-evenement', CategorieEvenementController::class);
+        Route::resource('categorie-realisation', CategorieRealisationController::class);
+        Route::resource('courses', CoursController::class);
+        Route::resource('enseignants', EnseignantController::class);
+        Route::resource('etudiants', EtudiantController::class);
+        Route::resource('filireres', FilirerController::class);
+        Route::resource('promotions', PromotionController::class);
+        Route::resource('horaires', HoraireController::class);
+        Route::resource('seances', SeanceController::class);
+        Route::resource('publications', PublicationController::class);
+        Route::resource('image-realisation', ImageRealisationController::class);
+    });
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
