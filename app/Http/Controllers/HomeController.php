@@ -66,6 +66,11 @@ class HomeController extends Controller
         # code ...
     }
 
+    public function cours()
+    {
+        # code...
+    }
+
     public function apropos()
     {
         return view("pages.guest.autres.about");

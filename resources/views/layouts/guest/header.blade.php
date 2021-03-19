@@ -45,6 +45,7 @@
                         <div class="kingster-mm-menu-wrap kingster-navigation-font" id="kingster-mobile-menu" data-slide="right">
                             <ul id="menu-main-navigation" class="m-menu">
                                 <li class="menu-item menu-item-home current-menu-item kingster-normal-menu"><a href="/" class="sf-with-ul-pre">{{ __("pages.home") }}</a></li>
+                                <li class="menu-item kingster-normal-menu"><a href="{{ route("filiere") }}">{{ __("pages.filieres") }}</a></li>
                                 <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">{{ __("pages.publications") }}</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item" data-size="60"><a href="{{ route("evenement") }}">{{ __("pages.events") }}</a></li>
@@ -97,6 +98,7 @@
                             <div class="kingster-main-menu" id="kingster-main-menu">
                                 <ul id="menu-main-navigation-1" class="sf-menu">
                                     <li class="menu-item menu-item-home current-menu-item kingster-normal-menu"><a href="/" class="sf-with-ul-pre">{{ __("pages.home") }}</a></li>
+                                    <li class="menu-item menu-item-home current-menu-item kingster-normal-menu"><a href="{{ route("filiere") }}" class="sf-with-ul-pre">{{ __("pages.filieres") }}</a></li>
                                     <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">{{ __("pages.publications") }}</a>
                                         <ul class="sub-menu">
                                             <li class="menu-item" data-size="60"><a href="{{ route("evenement") }}">{{ __("pages.events") }}</a></li>
