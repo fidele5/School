@@ -5,4 +5,4 @@
                     <div class="kingster-page-title-content kingster-item-pdlr">
                         <h1 class="kingster-page-title">{{ Route::currentRouteName() }}</h1></div>
                 </div>
- 
+            </div>

@@ -34,31 +34,31 @@ class HomeController extends Controller
     public function actualites()
     {
         $actualites = Actualite::orderBy('id', 'desc')->paginate(9);
-        return $actualites;
+        return view("pages.guest.actualites.actualites")->with("actualites", $actualites);
     }
 
     public function realisations()
     {
         $realisations = Realisation::orderBy("id", "desc")->paginate(12);
-        return $realisations;
+        return view("pages.guest.realisations.realisations")->with("realisations", $realisations);
     }
 
     public function evenements()
     {
         $evenements = Evenement::paginate(9);
-        return $evenements;
+        return view("pages.guest.evenements.evenements")->with("evenements", $evenements);
     }
 
     public function filieres()
     {
         $filieres = Filiere::all();
-        return $filieres;
+        return view("pages.guest.autres.filiere")->with("filieres", $filieres);
     }
 
     public function horaires()
     {
         $horaire = Horaire::latest()->get();
-        return $horaire;
+        return view("pages.guest.autres.horaire")->with("horaire", $horaire);
     }
 
     public function admission()
@@ -68,11 +68,11 @@ class HomeController extends Controller
 
     public function apropos()
     {
-        # code...
+        return view("pages.guest.autres.about");
     }
 
     public function contact()
     {
-        # code...
+        return view("pages.guest.autres.contact");
     }
 }
