@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Actualite;
+use App\Models\CategorieRealisation;
 use App\Models\Evenement;
 use App\Models\Filiere;
 use App\Models\Horaire;
 use App\Models\Realisation;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -39,8 +39,9 @@ class HomeController extends Controller
 
     public function realisations()
     {
-        $realisations = Realisation::orderBy("id", "desc")->paginate(12);
-        return view("pages.guest.realisations.realisations")->with("realisations", $realisations);
+        $categories = CategorieRealisation::all();
+        $realisations = Realisation::orderBy("id", "desc")->get();
+        return view("pages.guest.realisations.realisations")->with(compact("realisations", "categories"));
     }
 
     public function evenements()
