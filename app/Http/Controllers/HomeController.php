@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Actualite;
+use App\Models\Caroussel;
 use App\Models\CategorieRealisation;
 use App\Models\Evenement;
 use App\Models\Filiere;
@@ -26,9 +27,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function welcome()
     {
-        return view('home');
+        $actualites = Actualite::orderBy("id", "desc")
+                        ->take(3)
+                        ->get();
+        $evenements = Evenement::orderBy("id", "desc")
+                        ->take(3)
+                        ->get();
+        $caroussels = Caroussel::all();
+        return view('welcome')->with(compact("actualites", "evenements", "caroussels"));
+    }
+
+    public function index(){
+        return view("home");
     }
 
     public function actualites()
@@ -70,6 +82,16 @@ class HomeController extends Controller
     public function cours()
     {
         # code...
+    }
+
+    public function calendar(){
+        $evenements = Evenement::all();
+        $events = array();
+        foreach ($evenements as $evenement) {
+            $event = array('title' => $evenement->publication->titre, 'start' => $evenement->debut);
+            array_push($events, $event);
+        }
+        return view("pages.guest.autres.calendar")->with("events", $events);
     }
 
     public function apropos()
