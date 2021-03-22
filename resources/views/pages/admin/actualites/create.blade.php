@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <fieldset class="form-group">
-                                            <label for="basicInputFile"> {{ __("pages.pictures") }} <smal class="text-warning text-lowercase text-right" >  <em>{{ __("pages.required") }} *</em> </smal> </label>
+                                            <label for="basicInputFile"> {{ __("pages.pictures") }} <small class="text-warning text-lowercase text-right" >  <em>{{ __("pages.required") }} *</em> </small> </label>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input champ" name="photos[]" id="inputGroupFile01" multiple>
                                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>

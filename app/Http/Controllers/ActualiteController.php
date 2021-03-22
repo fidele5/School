@@ -14,7 +14,8 @@ class ActualiteController extends Controller
      */
     public function index()
     {
-        //
+        $actualites = Actualite::all();
+        return view('pages.admin.actualites.index')->with("actualites", $actualites);
     }
 
     /**

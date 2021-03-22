@@ -8,7 +8,7 @@
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb p-0 mb-0">
                         <li class="breadcrumb-item ">
-                            <a href="index.html"><i class="bx bx-home-alt"></i></a>
+                            <a href="{{ route('home-admin')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
                         <li class="breadcrumb-item active">
                             {{ __("pages.actualites") }}
@@ -30,9 +30,6 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body card-dashboard">
-                        <a id="addRow" href="{{ route("actualites.create") }}" class="btn btn-primary mb-2 align-items-center">
-                            <i class="bx bx-plus"></i>&nbsp; {{ __("pages.add") }}
-                        </a>
                         <div class="table-responsive">
                             <table class="table zero-configuration">
                                 <thead>
