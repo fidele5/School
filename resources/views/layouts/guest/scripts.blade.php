@@ -1,4 +1,4 @@
-<script type='text/javascript' src='/js/jquery/jquery.js'></script>
+    <script type='text/javascript' src='/js/jquery/jquery.js'></script>
     <script type='text/javascript' src='/js/jquery/jquery-migrate.min.js'></script>
     <script type='text/javascript' src='/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js'></script>
     <script type='text/javascript' src='/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js'></script>
@@ -6,10 +6,11 @@
     <script type="text/javascript" src="/plugins/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
     <script type="text/javascript" src="/plugins/revslider/public/assets/js/extensions/revolution.extension.kenburn.min.js"></script>
     <script type="text/javascript" src="/plugins/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="/plugins/revslider/public/assets/js/extensions/revolution.extension.parallax.min.js"></script>  
-    <script type="text/javascript" src="/plugins/revslider/public/assets/js/extensions/revolution.extension.actions.min.js"></script> 
+    <script type="text/javascript" src="/plugins/revslider/public/assets/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="/plugins/revslider/public/assets/js/extensions/revolution.extension.actions.min.js"></script>
     <script type="text/javascript" src="/plugins/revslider/public/assets/js/extensions/revolution.extension.video.min.js"></script>
-<script type="text/javascript">
+   
+    <script type="text/javascript">
         /*<![CDATA[*/
         function setREVStartSize(e) {
             try {
@@ -278,3 +279,31 @@
             document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
         } /*]]>*/
     </script>
+
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/js/mdb.min.js"></script>
+    <script src="/js/moment.js"></script>
+    <script src="/js/fullcalendar.js"></script>
+
+    @if(Route::currentRouteName() == "calendrier")
+    <script>
+        var d = new Date();
+        console.log("date", d.toDateString());
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay,listWeek'
+            },
+            defaultDate: d.toDateString(),
+            navLinks: true,
+            editable: true,
+            eventLimit: true,
+            events: <?=json_encode($events)?>
+        });
+    </script>
+    @endif

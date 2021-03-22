@@ -15,4 +15,7 @@ return [
     "calendar" => "Calendrier",
     "filieres"=>"Filieres",
     "horaire"=>"Horaires",
+    "view_all_events"=>"Voir touts les evenements",
+    "read_all_news"=>"Lire toutes les actualites",
+    "calendar"=>"Calendrier"
 ];

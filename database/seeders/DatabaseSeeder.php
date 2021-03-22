@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Caroussel;
+use App\Models\Setting;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        if (Setting::count() == 0) {
+            $this->call(SettingSeeder::class);
+        }
+
+        if (Caroussel::count() == 0) {
+            $this->call(CarousselSeeder::class);
+        }
     }
 }
