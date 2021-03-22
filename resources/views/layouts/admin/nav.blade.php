@@ -55,7 +55,7 @@
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                         <div class="user-nav d-sm-flex d-none">
-                            <span class="user-name">{{ Auth::user()->name }}</span>
+                                <span class="user-name">{{(Auth::check())? Auth::user()->name : ''}}</span>
                             <span class="user-status text-muted">Available</span>
                         </div>
                         <span><img class="round" src="/backend/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>

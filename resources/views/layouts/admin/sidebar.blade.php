@@ -45,13 +45,13 @@
                     </a>
                     <ul class="menu-content">
                         <li >
-                            <a href="{{ route("videos.index") }}" >
+                            <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Videos </span>
                             </a>
                         </li>
                         <li >
-                            <a href="{{ route("videos-tube.index") }}" >
+                            <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Youtube</span>
                             </a>
@@ -59,13 +59,13 @@
                     </ul>
                 </li>
                 <li class="nav-item ">
-                    <a href="{{ route("pictures.index") }}" >
+                    <a href="" >
                         <i class="bx bx-image-alt"></i>
                         <span class="menu-title">Photos</span>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href="{{ route("documents.index") }}" >
+                    <a href="" >
                         <i class="bx bx-book"></i>
                         <span class="menu-title">Documents</span>
                     </a>
@@ -83,13 +83,13 @@
                     </a>
                     <ul class="menu-content">
                         <li >
-                            <a href="{{ route("categories-photo.index") }}" >
+                            <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Photos </span>
                             </a>
                         </li>
                         <li >
-                            <a href="{{ route("categories.index") }}" >
+                            <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Actualite</span>
                             </a>
@@ -104,13 +104,13 @@
                     </a>
                     <ul class="menu-content">
                         <li>
-                            <a href="{{ route("confreres.index") }}" >
+                            <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Confreres</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route("users.index") }}" >
+                            <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Visiteurs</span>
                             </a>
@@ -125,19 +125,19 @@
                     </a>
                     <ul class="menu-content">
                         <li >
-                            <a href="{{ route("articles.index") }}" >
+                            <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Articles</span>
                             </a>
                         </li>
                         <li >
-                            <a href="{{ route("actualites.index") }}" >
+                            <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Actualites</span>
                             </a>
                         </li>
                         <li >
-                            <a href="{{ route("commentaires.index") }}" >
+                            <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Commentaires</span>
                             </a>
@@ -147,7 +147,7 @@
 
                 <li class="navigation-header"><span>Pages</span></li>
                     <li class="nav-item ">
-                        <a href="{{ route("communautes.index") }}" >
+                        <a href="" >
                             <i class="bx bx-user"></i>
                             <span class="menu-title">Communautes</span>
                         </a>
@@ -160,19 +160,19 @@
                         </a>
                         <ul class="menu-content">
                             <li >
-                                <a href="{{ route("settings.create") }}" >
+                                <a href="" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">general</span>
                                 </a>
                             </li>
                             <li >
-                                <a href="{{ route("roles.index") }}" >
+                                <a href="" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">roles</span>
                                 </a>
                             </li>
                             <li >
-                                <a href="{{ route("languages.index") }}" >
+                                <a href="" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">language</span>
                                 </a>
