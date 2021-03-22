@@ -83,6 +83,22 @@
                       </div>
                     </div>
 
+                    <div class="form-row">
+                        <div class="form-group">
+                          <label class="d-block">Genre</label>
+                          <div class="custom-control-inline">
+                            <div class="radio mr-1">
+                              <input type="radio" name="genre" id="radio5" value="M" checked/>
+                              <label for="radio5">Homme</label>
+                            </div>
+                            <div class="radio">
+                              <input type="radio" name="genre" id="radio888" value="F" />
+                              <label for="radio888">Femme</label>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
                     <div class="form-group mb-50">
                         <label class="text-bold-600" for="email">Adresse email</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ old('email') }}" placeholder="Email" />
@@ -101,8 +117,8 @@
 
                     <div class="form-group mb-2">
                         <label class="text-bold-600" for="conf-pasword">Confirmer mot de passe</label>
-                        <input type="password" class="form-control @error('conf_password') is-invalid @enderror" name="conf_password" id="conf-password" value="{{ old('conf_password') }}" placeholder="Mot de passe" />
-                        @error('conf_password')
+                        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" id="conf-password" value="{{ old('conf_password') }}" placeholder="Mot de passe" />
+                        @error('password_confirmation')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>

@@ -17,43 +17,28 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="">
             <li class="nav-item ">
-                <a href="index-2.html" >
+                <a href="{{ route('home-admin')}}" >
                     <i class="bx bx-home-alt"></i>
-                    <span class="menu-title">Dashboard</span>
-                    <span class="badge badge-light-danger badge-pill badge-round float-right mr-2">2</span>
+                    <span class="menu-title">Tableau de bord</span>
                 </a>
-                <ul class="menu-content">
-                    <li class=active>
-                        <a href="/" >
-                            <i class="bx bx-right-arrow-alt"></i>
-                            <span class="menu-item">Main</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/" >
-                        <i class="bx bx-right-arrow-alt"></i>
-                        <span class="menu-item">Analytics</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="navigation-header"><span>Medias</span></li>
+            <li class="navigation-header"><span>Personnes</span></li>
                 <li class="nav-item ">
                     <a href="# " >
-                        <i class="bx bx-video"></i>
-                        <span class="menu-title">Videos</span>
+                        <i class="bx bx-right-arrow"></i>
+                        <span class="menu-title">Etudiants</span>
                     </a>
                     <ul class="menu-content">
                         <li >
                             <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Videos </span>
+                                <span class="menu-item">Tous</span>
                             </a>
                         </li>
                         <li >
                             <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Youtube</span>
+                                <span class="menu-item">Nouveau</span>
                             </a>
                         </li>
                     </ul>
@@ -61,58 +46,120 @@
                 <li class="nav-item ">
                     <a href="" >
                         <i class="bx bx-image-alt"></i>
-                        <span class="menu-title">Photos</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a href="" >
-                        <i class="bx bx-book"></i>
-                        <span class="menu-title">Documents</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a href="app-file-manager.html" >
-                        <i class="bx bx-save"></i>
-                        <span class="menu-title">File Manager</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a href="# " >
-                        <i class='bx bx-tag'></i>
-                        <span class="menu-title">Categories</span>
+                        <span class="menu-title">Enseignants</span>
                     </a>
                     <ul class="menu-content">
                         <li >
                             <a href="" >
-                                <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Photos </span>
+                                <i class="bx bx-right-arrow"></i>
+                                <span class="menu-item">Tous</span>
                             </a>
                         </li>
                         <li >
                             <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Actualite</span>
+                                <span class="menu-item">Nouveau</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="navigation-header"><span>Utilisateurs</span></li>
+                <li class="navigation-header"><span>Etudes</span></li>
                 <li class="nav-item ">
                     <a href="# " >
                         <i class="bx bx-repeat"></i>
-                        <span class="menu-title">Comptes</span>
+                        <span class="menu-title">Filières</span>
                     </a>
                     <ul class="menu-content">
                         <li>
                             <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Confreres</span>
+                                <span class="menu-item">Toutes</span>
                             </a>
                         </li>
                         <li>
                             <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Visiteurs</span>
+                                <span class="menu-item">Nouvelle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="# " >
+                        <i class="bx bx-repeat"></i>
+                        <span class="menu-title">Promotions</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Toutes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouvelle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="# " >
+                        <i class="bx bx-repeat"></i>
+                        <span class="menu-title">Horaires</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Tous</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouveu</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="# " >
+                        <i class="bx bx-repeat"></i>
+                        <span class="menu-title">Seances</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Toutes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouvelle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="# " >
+                        <i class="bx bx-repeat"></i>
+                        <span class="menu-title">Cours</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Tous</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouveau</span>
                             </a>
                         </li>
                     </ul>
@@ -121,7 +168,7 @@
                 <li class="nav-item ">
                     <a href="form-inputs.html" >
                         <i class="bx bx-edit"></i>
-                        <span class="menu-item">publier</span>
+                        <span class="menu-item">Actualités</span>
                     </a>
                     <ul class="menu-content">
                         <li >
@@ -136,45 +183,131 @@
                                 <span class="menu-item">Actualites</span>
                             </a>
                         </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="form-inputs.html" >
+                        <i class="bx bx-edit"></i>
+                        <span class="menu-item">Evenements</span>
+                    </a>
+                    <ul class="menu-content">
                         <li >
                             <a href="" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Commentaires</span>
+                                <span class="menu-item">Articles</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Actualites</span>
                             </a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="navigation-header"><span>Pages</span></li>
+                <li class="nav-item ">
+                    <a href="form-inputs.html" >
+                        <i class="bx bx-edit"></i>
+                        <span class="menu-item">Publications</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li >
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Articles</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Actualites</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="form-inputs.html" >
+                        <i class="bx bx-edit"></i>
+                        <span class="menu-item">Réalisations</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li >
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Articles</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Actualites</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="navigation-header"><span>Catégories</span></li>
                     <li class="nav-item ">
                         <a href="" >
                             <i class="bx bx-user"></i>
-                            <span class="menu-title">Communautes</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item ">
-                        <a href="page-account-settings.html" >
-                            <i class="bx bx-wrench"></i>
-                            <span class="menu-title">Account Settings</span>
+                            <span class="menu-title">Actualité</span>
                         </a>
                         <ul class="menu-content">
                             <li >
                                 <a href="" >
                                     <i class="bx bx-right-arrow-alt"></i>
-                                    <span class="menu-item">general</span>
+                                    <span class="menu-item">Toutes</span>
                                 </a>
                             </li>
                             <li >
                                 <a href="" >
                                     <i class="bx bx-right-arrow-alt"></i>
-                                    <span class="menu-item">roles</span>
+                                    <span class="menu-item">Nouvelles</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a href="page-account-settings.html" >
+                            <i class="bx bx-wrench"></i>
+                            <span class="menu-title">Evenement</span>
+                        </a>
+                        <ul class="menu-content">
+                            <li >
+                                <a href="" >
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                    <span class="menu-item">Toutes</span>
                                 </a>
                             </li>
                             <li >
                                 <a href="" >
                                     <i class="bx bx-right-arrow-alt"></i>
-                                    <span class="menu-item">language</span>
+                                    <span class="menu-item">Nouvelles</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a href="page-account-settings.html" >
+                            <i class="bx bx-wrench"></i>
+                            <span class="menu-title">Réalisation</span>
+                        </a>
+                        <ul class="menu-content">
+                            <li >
+                                <a href="" >
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                    <span class="menu-item">Toutes</span>
+                                </a>
+                            </li>
+                            <li >
+                                <a href="" >
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                    <span class="menu-item">Nouvelle</span>
                                 </a>
                             </li>
                         </ul>
