@@ -17,6 +17,7 @@ class CreatePublicationsTable extends Migration
             $table->id();
             $table->string("titre");
             $table->text("texte");
+            $table->string("photo");
             $table->unsignedBigInteger("user_id");
             $table->timestamps();
         });

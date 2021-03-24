@@ -23,21 +23,20 @@
 <!-- // Basic Floating Label Form section start -->
 <section id="floating-label-layouts">
     <div class="row match-height">
-        <div class="col-md-6 col-12">
+        <div class="col-md-8 col-12">
             <div class="card">
                 <div class="card-header text-center">
                     <h4 class="card-title">{{ __('pages.add_actualite') }}</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form" method="POST" action="{{ route("actualites.store") }}">
+                        <form class="form" method="POST" action="{{ route("actualites.store") }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-body">
                                 <div class="row justify-content-center">
                                     <div class="col-12">
                                         <div class="form-label-group">
-                                            <input type="text" id="first-title-floating" class="form-control champ" placeholder="{{ __('pages.title') }}"
-                                                name="titre">
+                                            <input type="text" id="first-title-floating" class="form-control champ" placeholder="{{ __('pages.title') }}" name="titre">
                                             <label for="first-title-floating">{{ __('pages.title') }}</label>
                                         </div>
                                     </div>

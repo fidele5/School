@@ -14,7 +14,8 @@ class CategorieRealisationController extends Controller
      */
     public function index()
     {
-        //
+        $categories = CategorieRealisation::all();
+        return view("pages.admin.categories.realisations.index")->with("categories", $categories);
     }
 
     /**
@@ -24,7 +25,7 @@ class CategorieRealisationController extends Controller
      */
     public function create()
     {
-        //
+        return view("pages.admin.categories.realisations.create");
     }
 
     /**
@@ -35,7 +36,13 @@ class CategorieRealisationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "designation" => "required"
+        ]);
+
+        $categorie = CategorieRealisation::create(["designation"=>$request->designation]);
+
+        return redirect("categorie-reaclisations.index");
     }
 
     /**
@@ -57,7 +64,7 @@ class CategorieRealisationController extends Controller
      */
     public function edit(CategorieRealisation $categorieRealisation)
     {
-        //
+        return view("pages.admin.categories.realisations.edit")->with("categorie", $categorieRealisation);
     }
 
     /**
@@ -69,7 +76,14 @@ class CategorieRealisationController extends Controller
      */
     public function update(Request $request, CategorieRealisation $categorieRealisation)
     {
-        //
+        $request->validate([
+            "designation" => "required"
+        ]);
+
+        $categorieRealisation->designation = $request->designation;
+        $categorie->save();
+
+        return redirect("categorie-realisations.index");
     }
 
     /**
@@ -80,6 +94,7 @@ class CategorieRealisationController extends Controller
      */
     public function destroy(CategorieRealisation $categorieRealisation)
     {
-        //
+        $categorieRealisation->delete();
+        return redirect("categorie-realisations.index");
     }
 }

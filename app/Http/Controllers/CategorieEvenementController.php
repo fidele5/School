@@ -14,7 +14,8 @@ class CategorieEvenementController extends Controller
      */
     public function index()
     {
-        //
+        $categories = CategorieEvenement::all();
+        return view("pages.admin.categories.evenements.index")->with("categories", $categories);
     }
 
     /**
@@ -24,7 +25,7 @@ class CategorieEvenementController extends Controller
      */
     public function create()
     {
-        //
+        return view("pages.admin.categories.evenements.create");
     }
 
     /**
@@ -35,7 +36,11 @@ class CategorieEvenementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'designation' => 'required'
+        ]);
+        $categorie = CategorieEvenement::create(['designation' => $request->designation]);
+        return redircet("categorie-evenements.index");
     }
 
     /**
@@ -57,7 +62,7 @@ class CategorieEvenementController extends Controller
      */
     public function edit(CategorieEvenement $categorieEvenement)
     {
-        //
+        return view("pages.Admin.categories.evenements.edit")->with("categorie", $categorieEvenement);
     }
 
     /**
@@ -69,7 +74,14 @@ class CategorieEvenementController extends Controller
      */
     public function update(Request $request, CategorieEvenement $categorieEvenement)
     {
-        //
+        $request->validate([
+            "designation" => 'required'
+        ]);
+
+        $categorieEvenement->designation = $request->designation;
+        $categorieEvenement->save();
+
+        return redirect("cetagorie-evenements.index");
     }
 
     /**
@@ -80,6 +92,8 @@ class CategorieEvenementController extends Controller
      */
     public function destroy(CategorieEvenement $categorieEvenement)
     {
-        //
+        $categorieEvenement->delete();
+
+        return redirect("categorie-evenements.index");
     }
 }

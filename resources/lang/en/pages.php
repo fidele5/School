@@ -17,5 +17,8 @@ return [
     "horaire"=>"Horaires",
     "view_all_events"=>"Voir touts les evenements",
     "read_all_news"=>"Lire toutes les actualites",
-    "calendar"=>"Calendrier"
+    "calendar"=>"Calendrier",
+    "actualites" => "Actualités",
+    "actualite" => "actualite",
+    "add" => "Nouveau",
 ];

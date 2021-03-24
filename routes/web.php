@@ -50,8 +50,8 @@ Route::middleware("auth")->group(function () {
         Route::resource('evenements', EvenementController::class);
         Route::resource('realisations', RealisationController::class);
         Route::resource('categorie-actualites', CategorieActualiteController::class);
-        Route::resource('categorie-evenement', CategorieEvenementController::class);
-        Route::resource('categorie-realisation', CategorieRealisationController::class);
+        Route::resource('categorie-evenements', CategorieEvenementController::class);
+        Route::resource('categorie-realisations', CategorieRealisationController::class);
         Route::resource('courses', CoursController::class);
         Route::resource('enseignants', EnseignantController::class);
         Route::resource('etudiants', EtudiantController::class);
