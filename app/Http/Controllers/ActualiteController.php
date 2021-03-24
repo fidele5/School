@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Actualite;
 use App\Models\CategorieActualite;
 use App\Models\Publication;

@@ -199,7 +199,7 @@
                             </a>
                         </li>
                         <li >
-                            <a href="b{{ route('evenements.create') }}" >
+                            <a href="{{ route('evenements.create') }}" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Nouveau</span>
                             </a>

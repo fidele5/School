@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategorieEvenement;
 use App\Models\Evenement;
+use App\Models\Publication;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EvenementController extends Controller
 {
@@ -14,7 +17,8 @@ class EvenementController extends Controller
      */
     public function index()
     {
-        //
+        $evenements = Evenement::all();
+        return view("pages.Admin.evenements.index")->with("evenements", $evenements);
     }
 
     /**
@@ -24,7 +28,8 @@ class EvenementController extends Controller
      */
     public function create()
     {
-        //
+        $categories = CategorieEvenement::all();
+        return view("pages.admin.evenements.create")->with("categories", $categories);
     }
 
     /**
@@ -35,7 +40,33 @@ class EvenementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "titre" => "required",
+            "categorie" => "required|integer",
+            "contenu" => "required",
+            "debut" => "required",
+            "fin" => "required"
+        ]);
+
+        $name_photo = time();
+        settype($name_photo, "string");
+        $request->file("photo")->move("uploads", $name_photo);
+
+        $publication = Publication::create([
+            "titre" => $request->titre,
+            "texte" => $request->contenu,
+            "photo" => $name_photo,
+            "user_id" => Auth::user()->id
+        ]);
+
+        $evenement = Evenement::create([
+            "publication_id" => $publication->id,
+            "categorie_evenement_id" => $request->categorie,
+            "debut" => $request->debut,
+            "fin" => $request->fin
+        ]);
+
+        return redirect("evenements.index");
     }
 
     /**
@@ -57,7 +88,7 @@ class EvenementController extends Controller
      */
     public function edit(Evenement $evenement)
     {
-        //
+        return view("pages.admin.evenements.edit")->with("evenement", $evenement);
     }
 
     /**
@@ -69,7 +100,31 @@ class EvenementController extends Controller
      */
     public function update(Request $request, Evenement $evenement)
     {
-        //
+        $request->validate([
+            "titre" => "required",
+            "categorie" => "required|number",
+            "contenu" => "required",
+            "debut" => "required|datetime",
+            "fin" => "required|datetime"
+        ]);
+
+        $name_photo = time();
+        settype($name_photo, "string");
+        $request->file("photo")->move("uploads", $name_photo);
+
+        $publication = Publication::find($evenement->publication_id);
+        $publication->titre = $request->titre;
+        $publication->texte= $request->contenu;
+        $publication->photo = $name_photo;
+        $publication->user_id = Auth::user()->id;
+        $publication->save();
+
+        $evenement->categorie_evenement = $request->categorie;
+        $evenement->debut = $request->debut;
+        $evenement->fin = $request->fin;
+        $evenement->save();
+
+        return redirect("evenements.index");
     }
 
     /**
@@ -80,6 +135,7 @@ class EvenementController extends Controller
      */
     public function destroy(Evenement $evenement)
     {
-        //
+        $evenement->delete();
+        return redirect("evenements.index");
     }
 }
