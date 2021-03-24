@@ -9,8 +9,11 @@
                     <li class="breadcrumb-item ">
                         <a href="{{ route('home-admin')}}"><i class="bx bx-home-alt"></i></a>
                     </li>
+                    <li class="breadcrumb-item ">
+                        <a href="{{ route('categorie-actualites.index')}}">Catégories d'actualités</a>
+                    </li>
                     <li class="breadcrumb-item active">
-                        Catégories d'actualités
+                        Nouveau
                     </li>
                 </ol>
             </div>
@@ -32,16 +35,16 @@
                             <div class="form-body">
                                 <div class="row justify-content-center">
                                     <div class="col-12">
-                                        <div class="designation">
-                                            <label for="first-title-floating">{{ __('pages.designation') }}</label>
-                                            <input type="text" id="first-title-floating" class="form-control champ" placeholder="{{ __('pages.designation') }}" name="designation">
+                                        <div class="form-group">
+                                            <label for="first-title-floating">Designation</label>
+                                            <input type="text" id="first-title-floating" class="form-control champ" placeholder="Designation" name="designation">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mt-10">
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary mr-1 mb-1">{{ __("pages.submit") }}</button>
-                                        <button type="reset" class="btn btn-light-secondary mr-1 mb-1">{{ __("pages.reset") }}</button>
+                                        <button type="submit" class="btn btn-primary mr-1 mb-1">Créer</button>
+                                        <button type="reset" class="btn btn-light-secondary mr-1 mb-1">Annuler</button>
                                     </div>
                                 </div>
                             </div>

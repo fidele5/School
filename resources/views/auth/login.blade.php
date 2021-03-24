@@ -92,7 +92,8 @@ License: You must have a valid license purchased only from themeforest(the above
                     <small>or login with email</small>
                   </div>
                 </div>
-                <form method="POST" action="">
+                <form method="POST" action="{{ url('/login') }}">
+                    @csrf
                   <div class="form-group mb-50">
                     <label class="text-bold-600" for="exampleInputEmail1">Email address</label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email address">
@@ -114,14 +115,14 @@ License: You must have a valid license purchased only from themeforest(the above
                       <a href="auth-forgot-password.html" class="card-link"><small>Forgot Password?</small></a>
                     </div>
                   </div>
-                  <a href="index.html" class="btn btn-primary glow w-100 position-relative">Login
+                  <button type="submit" class="btn btn-primary glow w-100 position-relative">Login
                     <i id="icon-arrow" class="bx bx-right-arrow-alt"></i>
-                  </a>
+                  </button>
                 </form>
                 <hr>
                 <div class="text-center">
                   <small class="mr-25">Don't have an account?</small>
-                  <a href="{{ route("register") }}"><small>Sign up</small></a>
+                  <a href="{{ route('register') }}"><small>Sign up</small></a>
                 </div>
               </div>
             </div>
@@ -168,4 +169,5 @@ License: You must have a valid license purchased only from themeforest(the above
 
   </body>
   <!-- END: Body-->
+  
 </html>

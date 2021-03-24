@@ -257,13 +257,13 @@
                         </a>
                         <ul class="menu-content">
                             <li >
-                                <a href="{{ route('categorie-evenement.index')}}" >
+                                <a href="{{ route('categorie-evenements.index')}}" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">Toutes</span>
                                 </a>
                             </li>
                             <li >
-                                <a href="{{ route('categorie-evenement.create')}}" >
+                                <a href="{{ route('categorie-evenements.create')}}" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">Nouvelles</span>
                                 </a>
@@ -278,13 +278,13 @@
                         </a>
                         <ul class="menu-content">
                             <li >
-                                <a href="{{ route('categorie-realisation.index')}}" >
+                                <a href="{{ route('categorie-realisations.index')}}" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">Toutes</span>
                                 </a>
                             </li>
                             <li >
-                                <a href="{{ route('categorie-realisation.create')}}" >
+                                <a href="{{ route('categorie-realisations.create')}}" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">Nouvelle</span>
                                 </a>

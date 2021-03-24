@@ -3,14 +3,17 @@
 <div class="content-header-left col-12 mb-2 mt-1">
     <div class="row breadcrumbs-top">
         <div class="col-12">
-            <h5 class="content-header-title float-left pr-1 mb-0">{{ __('pages.evenemens') }}</h5>
+            <h5 class="content-header-title float-left pr-1 mb-0">Catégories</h5>
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb p-0 mb-0">
                     <li class="breadcrumb-item ">
                         <a href="{{ route('home-admin')}}"><i class="bx bx-home-alt"></i></a>
                     </li>
+                    <li class="breadcrumb-item ">
+                        <a href="{{ route('categorie-evenements.index')}}">Categories d'événements</a>
+                    </li>
                     <li class="breadcrumb-item active">
-                        Catégories d'evenements
+                        Nouveau
                     </li>
                 </ol>
             </div>
@@ -32,16 +35,16 @@
                             <div class="form-body">
                                 <div class="row justify-content-center">
                                     <div class="col-12">
-                                        <div class="designation">
-                                            <label for="first-title-floating">{{ __('pages.designation') }}</label>
-                                            <input type="text" id="first-title-floating" class="form-control champ" placeholder="{{ __('pages.designation') }}" name="designation">
+                                        <div class="form-group">
+                                            <label for="designation">Designation</label>
+                                            <input type="text" id="designation" class="form-control champ" placeholder="Désignation" name="designation">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mt-10">
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary mr-1 mb-1">{{ __("pages.submit") }}</button>
-                                        <button type="reset" class="btn btn-light-secondary mr-1 mb-1">{{ __("pages.reset") }}</button>
+                                        <button type="submit" class="btn btn-primary mr-1 mb-1">Créer</button>
+                                        <button type="reset" class="btn btn-light-secondary mr-1 mb-1">Annuler</button>
                                     </div>
                                 </div>
                             </div>

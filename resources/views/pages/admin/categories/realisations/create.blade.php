@@ -9,8 +9,11 @@
                     <li class="breadcrumb-item ">
                         <a href="{{ route('home-admin')}}"><i class="bx bx-home-alt"></i></a>
                     </li>
+                    <li class="breadcrumb-item ">
+                        <a href="{{ route('categorie-realisations.index')}}">Catégories de réalisation</a>
+                    </li>
                     <li class="breadcrumb-item active">
-                        Catégories des réalisations
+                        Nouveau
                     </li>
                 </ol>
             </div>
@@ -31,7 +34,7 @@
                             @csrf
                             <div class="form-body">
                                 <div class="row justify-content-center">
-                                    <div class="col-12">
+                                    <div class="col-12 mb-10">
                                         <div class="designation">
                                             <label for="first-title-floating">Désignation</label>
                                             <input type="text" id="first-title-floating" class="form-control champ" placeholder="Désignation" name="designation">

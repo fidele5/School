@@ -7,10 +7,13 @@
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb p-0 mb-0">
                     <li class="breadcrumb-item ">
-                        <a href="{{ route('categporie-realisations.index'}}"><i class="bx bx-home-alt"></i></a>
+                        <a href="{{ route('home-admin')}}"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item ">
+                        <a href="{{ route('categorie-realisations.index')}}">Catégories de réalisation</a>
                     </li>
                     <li class="breadcrumb-item active">
-                        <span>Editer</span>
+                        Editer
                     </li>
                 </ol>
             </div>
@@ -34,11 +37,11 @@
                             <div class="row justify-content-center">
                                 <div class="col-12">
                                     <div class="form-label-group">
-                                        <input type="text" id="first-title-floating" class="form-control champ" placeholder="Désignation" name="designation" value="{{ $categorie->titre }}">
+                                        <input type="text" id="first-title-floating" class="form-control champ" placeholder="Désignation" name="designation" value="{{ $categorie->designation }}">
                                         <label for="first-title-floating">Désignation</label>
                                     </div>
                                 </div>
-                                <div class="col-12 d-flex justify-content-end">
+                                <div class="col-12">
                                     <button type="submit" class="btn btn-primary mr-1 mb-1">Mettre à jour</button>
                                     <button type="reset" class="btn btn-light-secondary mr-1 mb-1">Annuler</button>
                                 </div>

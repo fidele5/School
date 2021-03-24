@@ -3,17 +3,17 @@
 <div class="content-header-left col-12 mb-2 mt-1">
     <div class="row breadcrumbs-top">
         <div class="col-12">
-            <h5 class="content-header-title float-left pr-1 mb-0">{{Catégories }}</h5>
+            <h5 class="content-header-title float-left pr-1 mb-0">Catégories d'evenements</h5>
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb p-0 mb-0">
                     <li class="breadcrumb-item ">
-                        <a href="index.html"><i class="bx bx-home-alt"></i></a>
+                        <a href="{{ route('home-admin')}}"><i class="bx bx-home-alt"></i></a>
                     </li>
                     <li class="breadcrumb-item ">
-                        <a href="#">{{ __("pages.edit") }}</a>
+                        <a href="{{ route('categorie-evenements.index')}}">Catégories d'évenements</a>
                     </li>
                     <li class="breadcrumb-item active">
-                        {{ __("pages.evenements") }}
+                        <span>Editer</span>
                     </li>
                 </ol>
             </div>
@@ -23,28 +23,27 @@
 <!-- // Basic Floating Label Form section start -->
 <section id="floating-label-layouts">
     <div class="row match-height">
-        <div class="col-md-6 col-12">
+        <div class="col-md-9 col-12">
             <div class="card">
-                <div class="card-header text-center">
-                    <h4 class="card-title">{{ __('pages.edit_categorie_evenement') }}</h4>
+                <div class="card-header">
+                    <h4 class="card-title">Editer une catégorie d'évenements</h4>
                 </div>
                 <div class="card-content">
                 <div class="card-body">
-                    <form class="form" method="POST" action="{{ route('categorie-actualites.update', $categorie) }}">
+                    <form class="form" method="POST" action="{{ route('categorie-evenements.update', $categorie) }}">
                         @csrf
                         @method("patch")
                         <div class="form-body">
-                            <div class="row justify-content-center">
+                            <div class="row">
                                 <div class="col-12">
-                                    <div class="form-label-group">
-                                        <input type="text" id="first-title-floating" class="form-control champ" placeholder="{{ __("pages.designation") }}"
-                                            name="designation" value="{{ $categorie->titre }}">
-                                        <label for="first-title-floating">{{ __("pages.designation") }}</label>
+                                    <div class="form-group">
+                                        <label for="designation">Désignation</label>
+                                        <input type="text" id="designation" class="form-control champ" placeholder="Désigfnation" name="designation" value="{{ $categorie->designation }}">
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary mr-1 mb-1">{{ __("pages.submit") }}</button>
-                                    <button type="reset" class="btn btn-light-secondary mr-1 mb-1">{{ __("pages.reset") }}</button>
+                                    <button type="submit" class="btn btn-primary mr-1 mb-1">Mettre à jour</button>
+                                    <button type="reset" class="btn btn-light-secondary mr-1 mb-1">Annuler</button>
                                 </div>
                                 </div>
                             </div>

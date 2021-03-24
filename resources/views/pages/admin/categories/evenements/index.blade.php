@@ -45,10 +45,10 @@
                                             <td>{{ $key + 1 }}</td>
                                             <td class="text-truncate" style="max-width: 250px">{{ $categorie->designation }}</td>
                                             <td>
-                                                <a href="{{ route("categorie-actualites.edit", $categorie) }}">
+                                                <a href="{{ route("categorie-evenements.edit", $categorie) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="{{ route("categorie-actualites.destroy", $categorie) }}">
+                                                <a class="delete" href="{{ route("categorie-evenements.destroy", $categorie) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
