@@ -99,7 +99,7 @@
                                 <div class="gdlr-core-pbf-column gdlr-core-column-15" data-skin="Column White">
                                     <div class="gdlr-core-pbf-column-content-margin gdlr-core-js  slider-link-2" style="padding: 70px 0px 70px 0px;" data-sync-height="column-height" data-sync-height-center>
                                         <div class="gdlr-core-pbf-background-wrap">
-                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(upload/hp2-col-2.jpg) ;background-size: cover ;background-position: center ;" data-parallax-speed="0.1"></div>
+                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(upload/excellence.jpg) ;background-size: cover ;background-position: center ;" data-parallax-speed="0.1"></div>
                                         </div>
                                         <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
                                             <div class="gdlr-core-pbf-element">
@@ -208,59 +208,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="margin: 0px 0px -40px 0px;padding: 70px 0px 0px 0px;">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style="padding-bottom: 0px ;">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-round" style="border-width: 0px;z-index: 999 ;position: relative ;"><img src="upload/about-building-1-800x132.jpg" width="1320" height="218" alt="" /></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="gdlr-core-pbf-wrapper " style="padding: 220px 0px 170px 0px;">
-                        <div class="gdlr-core-pbf-background-wrap">
-                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(upload/hp2-video-bg-1.jpg) ;background-size: cover ;background-position: center ;" data-parallax-speed="0.1"></div>
-                        </div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container-custom" style="max-width: 710px ;">
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style="padding-bottom: 40px ;">
-                                        <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" style="border-width: 0px;">
-                                            <a class="gdlr-core-lightgallery gdlr-core-js " href="https://www.youtube.com/watch?v=C5pKtnmHTxg"><img src="upload/icon-play.png" alt="" width="82" height="82" title="icon-play" /></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
-                                        <div class="gdlr-core-title-item-title-wrap clearfix">
-                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 38px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;color: #ffffff ;">Video Tour in Kingster</h3></div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align" style="padding-bottom: 0px ;">
-                                        <div class="gdlr-core-text-box-item-content" style="font-size: 19px ;font-weight: 500 ;text-transform: none ;color: #ffffff ;">
-                                            <p>Take a tour in Kingster and you will find the best university in the state. The video will take you to every places in this university.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 0px 0px;">
-                        <div class="gdlr-core-pbf-background-wrap">
-                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-size: cover ;background-position: center ;" data-parallax-speed="0.8"></div>
-                        </div>
                         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
                             <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space">
                                 <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
                                     <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="min-height: 575px ;" data-sync-height="height-half">
                                         <div class="gdlr-core-pbf-background-wrap">
-                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(upload/shutterstock_734589535.jpg) ;background-size: cover ;background-position: center ;" data-parallax-speed="0"></div>
+                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(upload/bac.jpg) ;background-size: cover ;background-position: center ;" data-parallax-speed="0"></div>
                                         </div>
                                         <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content"></div>
                                     </div>
