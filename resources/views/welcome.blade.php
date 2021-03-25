@@ -15,7 +15,7 @@
                                                     @foreach ($caroussels as $caroussel)
                                                         @switch($caroussel->id)
                                                             @case(1)
-                                                                <li data-index="rs-5" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="upload/slider-hp2-1-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description=""> <img src="upload/{{ $caroussel->image }}" alt="" title="slider-hp2-1" width="1800" height="958" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                                                                <li data-index="rs-5" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="/upload/slider-hp2-1-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description=""> <img src="/upload/{{ $caroussel->image }}" alt="" title="slider-hp2-1" width="1800" height="958" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                                                                     <div class="tp-caption   tp-resizeme" id="slide-5-layer-1" data-x="48" data-y="center" data-voffset="-96" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 33px; line-height: 33px; font-weight: 300; color: #ffffff; letter-spacing: 0px;font-family:Poppins;">{{ $caroussel->titre }}</div>
                                                                     <div class="tp-caption   tp-resizeme" id="slide-5-layer-2" data-x="45" data-y="center" data-voffset="-17" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; font-size: 88px; line-height: 88px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:Playfair Display;">Kingster</div>
                                                                     <div class="tp-caption   tp-resizeme" id="slide-5-layer-3" data-x="414" data-y="center" data-voffset="-16" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7; white-space: nowrap; font-size: 88px; line-height: 88px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Playfair Display;">University</div>
@@ -78,7 +78,7 @@
                                 <div class="gdlr-core-pbf-column gdlr-core-column-15 gdlr-core-column-first" data-skin="Column White">
                                     <div class="gdlr-core-pbf-column-content-margin gdlr-core-js  slider-link-1" style="padding: 70px 0px 70px 0px;" data-sync-height="column-height" data-sync-height-center>
                                         <div class="gdlr-core-pbf-background-wrap">
-                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(upload/hp2-col-1.jpg) ;background-size: cover ;background-position: center ;" data-parallax-speed="0.1"></div>
+                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(upload/finesse.png) ;background-size: cover ;background-position: center ;" data-parallax-speed="0.1"></div>
                                         </div>
                                         <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
                                             <div class="gdlr-core-pbf-element">
@@ -86,7 +86,7 @@
                                                     <div class="gdlr-core-column-service-media gdlr-core-media-image" style="margin-bottom: 20px;"><img src="upload/hp2-col-1-icon.png" alt="" width="40" height="40" title="hp2-col-1-icon" /></div>
                                                     <div class="gdlr-core-column-service-content-wrapper">
                                                         <div class="gdlr-core-column-service-title-wrap">
-                                                            <h3 class="gdlr-core-column-service-title gdlr-core-skin-title" style="font-size: 19px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;">University Life</h3>
+                                                            <h3 class="gdlr-core-column-service-title gdlr-core-skin-title" style="font-size: 19px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;">Finesse</h3>
                                                             <div class="gdlr-core-column-service-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 17px ;font-weight: 500 ;font-style: normal ;">Overall in here</div>
                                                         </div>
                                                     </div>
@@ -189,14 +189,16 @@
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 15px ;">
                                                     <div class="gdlr-core-text-box-item-content" style="font-size: 23px ;text-transform: none ;color: #d8e3fb ;">
-                                                        <p>We are one of the largest, most diverse universities in the USA with over 90,000 students in USA, and a further 30,000 studying across 180 countries for Kingster University.</p>
+                                                        <p>
+                                                            {{ __("pages.title_card") }}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 15px ;">
                                                     <div class="gdlr-core-text-box-item-content" style="font-size: 19px ;font-weight: 500 ;text-transform: none ;color: #ffffff ;">
-                                                        <p>Kingster University was established by John Smith in 1920 for the public benefit and it is recognized globally. Throughout our great history, Kingster has offered access to a wide range of academic opportunities. As a world leader in higher education, the University has pioneered change in the sector.</p>
+                                                        <p>{{ __("pages.description") }}.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -272,17 +274,28 @@
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 20px ;">
                                                     <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 29px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;color: #ffffff ;">Apply for Admission</h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 19px ;font-weight: 500 ;font-style: normal ;color: #51be78 ;">Fall 2019 applications are now open</span></div>
+                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 29px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;color: #ffffff ;">{{ __("pages.submission_request") }}</h3>
+                                                    </div>
+                                                    <span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 19px ;font-weight: 500 ;font-style: normal ;color: #51be78 ;">
+                                                         {{ __("pages.submission_sub_title") }}
+                                                    </span>
+                                                </div>
                                             </div>
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 20px ;">
                                                     <div class="gdlr-core-text-box-item-content" style="font-size: 18px ;text-transform: none ;color: #ffffff ;">
-                                                        <p>We don’t just give students an education and experiences that set them up for success in a career. We help them succeed in their career—to discover a field they’re passionate about and dare to lead it.</p>
+                                                        <p>
+                                                            {{ __("pages.submission_text") }}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;"><a class="gdlr-core-button  gdlr-core-button-solid gdlr-core-button-no-border" href="#" style="font-size: 15px ;color: #ffffff ;padding: 12px 29px 17px 31px;text-transform: none ;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;"><span class="gdlr-core-content" >Apply Now</span></a></div>
+                                                <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
+                                                    <a class="gdlr-core-button  gdlr-core-button-solid gdlr-core-button-no-border" href="#" style="font-size: 15px ;color: #ffffff ;padding: 12px 29px 17px 31px;text-transform: none ;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;"><span class="gdlr-core-content" >
+                                                        {{ __("pages.apply_now") }}
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -338,7 +351,10 @@
                                                         <div class="gdlr-core-column-service-title-wrap">
                                                             <h3 class="gdlr-core-column-service-title gdlr-core-skin-title" style="font-size: 21px ;font-weight: 700 ;text-transform: none ;">Bachelor’s and Master’s</h3></div>
                                                         <div class="gdlr-core-column-service-content" style="font-size: 16px ;text-transform: none ;">
-                                                            <p>Kingster University was established by John Smith in 1920 for the public benefit and it is recognized.</p> <a class="gdlr-core-column-service-read-more gdlr-core-info-font" href="#" style="font-style: normal ;margin-top: 0px ;">Learn More</a></div>
+                                                            <p>
+                                                                {{ __("pages.description") }}
+                                                            </p>
+                                                            <a class="gdlr-core-column-service-read-more gdlr-core-info-font" href="#" style="font-style: normal ;margin-top: 0px ;">Learn More</a></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -355,7 +371,10 @@
                                                         <div class="gdlr-core-column-service-title-wrap">
                                                             <h3 class="gdlr-core-column-service-title gdlr-core-skin-title" style="font-size: 21px ;font-weight: 700 ;text-transform: none ;">University Life</h3></div>
                                                         <div class="gdlr-core-column-service-content" style="font-size: 16px ;text-transform: none ;">
-                                                            <p>Kingster University was established by John Smith in 1920 for the public benefit and it is recognized.</p> <a class="gdlr-core-column-service-read-more gdlr-core-info-font" href="#" style="font-style: normal ;margin-top: 0px ;">Learn More</a></div>
+                                                            <p>
+                                                                {{ __("pages.description") }}
+                                                            </p>
+                                                            <a class="gdlr-core-column-service-read-more gdlr-core-info-font" href="#" style="font-style: normal ;margin-top: 0px ;">Learn More</a></div>
                                                     </div>
                                                 </div>
                                             </div>
