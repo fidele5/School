@@ -39,6 +39,7 @@
                                         <th>Catégorie</th>
                                         <th>Début</th>
                                         <th>Fin</th>
+                                        <th>Lieu</th>
                                         <th>Photo</th>
                                         <th>Action}</th>
                                     </tr>
@@ -51,6 +52,7 @@
                                             <td>{{ $evenement->categorie_evenement->designation }}</td>
                                             <td>{{ $evenement->date_debut }}</td>
                                             <td>{{ $evenement->date_fin }}</td>
+                                            <td>{{ $evenement->lieu }}</td>
                                             <td>{{ $evenement->photo }}</td>
                                             <td>
                                                 <a href="{{ route("evenements.edit", $evenement) }}">
@@ -70,6 +72,7 @@
                                         <th>Catégorie</th>
                                         <th>Début</th>
                                         <th>Fin</th>
+                                        <th>Lieu</th>
                                         <th>Photo</th>
                                         <th>Action}</th>
                                     </tr>

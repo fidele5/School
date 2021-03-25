@@ -45,7 +45,8 @@ class EvenementController extends Controller
             "categorie" => "required|integer",
             "contenu" => "required",
             "debut" => "required",
-            "fin" => "required"
+            "fin" => "required",
+            "lieu" => "required",
         ]);
 
         $name_photo = time();
@@ -62,8 +63,9 @@ class EvenementController extends Controller
         $evenement = Evenement::create([
             "publication_id" => $publication->id,
             "categorie_evenement_id" => $request->categorie,
-            "debut" => $request->debut,
-            "fin" => $request->fin
+            "date_debut" => $request->debut,
+            "date_fin" => $request->fin,
+            "lieu" => $request->lieu
         ]);
 
         return redirect("evenements.index");
@@ -105,7 +107,8 @@ class EvenementController extends Controller
             "categorie" => "required|number",
             "contenu" => "required",
             "debut" => "required|datetime",
-            "fin" => "required|datetime"
+            "fin" => "required|datetime",
+            "lieu" => "required"
         ]);
 
         $name_photo = time();
@@ -120,8 +123,9 @@ class EvenementController extends Controller
         $publication->save();
 
         $evenement->categorie_evenement = $request->categorie;
-        $evenement->debut = $request->debut;
-        $evenement->fin = $request->fin;
+        $evenement->date_debut = $request->debut;
+        $evenement->date_fin = $request->fin;
+        $evenement->lieu = $request->lieu;
         $evenement->save();
 
         return redirect("evenements.index");

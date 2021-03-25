@@ -37,40 +37,67 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="titre">Titre</label>
-                                            <input type="text" id="titre" class="form-control champ" placeholder="Titre" name="titre">
+                                            <input type="text" id="titre" value="{{ old('titre') }}" class="form-control champ @error('titre') is-invalid @enderror" placeholder="Titre" name="titre">
+                                            @error('titre')
+                                                <small class="text-light-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="categorie">Catégorie</label>
-                                            <select name="categorie" id="categorie" class="custom-select">
+                                            <select name="categorie" id="categorie" class="custom-select @error('categorie') is-invalid @enderror">
                                                 @foreach ($categories as $categorie)
-                                                    <option value="{{ $categorie->id }}">{{ $categorie->designation }}</option>
+                                                    <option value="{{ $categorie->id }}" @if (old('categorie') == $categorie->id)
+                                                        selected
+                                                    @endif>{{ $categorie->designation }}</option>
                                                 @endforeach
                                             </select>
+                                            @error('categorie')
+                                                <small class="text-light-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <fieldset class="form-group mb-10">
                                             <label for="textarea-counter">Contenu</label>
-                                            <textarea data-length=20 class="form-control char-textarea champ" id="textarea-counter" rows="5" name="contenu" placeholder="Contenu"></textarea>
+                                            <textarea data-length=20 class="form-control char-textarea champ @error('contenu') is-invalid @enderror" id="textarea-counter" rows="5" name="contenu" placeholder="Contenu">{{ old('contenu') }}</textarea>
+                                            @error('contenu')
+                                                <small class="text-light-danger">{{ $message }}</small>
+                                            @enderror
                                         </fieldset>
                                         <small class="counter-value float-right"><span class="char-count">0</span> / 20 </small>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
+                                            <label for="lieu">Lieu</label>
+                                            <input type="text" name="lieu" id="lieu" placeholder="Lieu de l'évenement" class="form-control champs @error('lieu') is-invalid @enderror" value="{{ old('lieu') }}" />
+                                            @error('lieu')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
                                             <label for="debut">Début</label>
-                                            <input type="datetime-local" name="debut" id="debut" placeholder="Début de l'évenement" class="form-control champs" />
+                                            <input type="datetime-local" value="{{ old('debut') }}" name="debut" id="debut" placeholder="Début de l'évenement" class="form-control champs @error('debut') is-invalid @enderror" />
+                                            @error('debut')
+                                                <small class="text-light-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="fin">Fin</label>
-                                            <input type="datetime-local" name="fin" id="fin" placeholder="Fin de l'évenement" class="form-control champs" />
+                                            <input type="datetime-local" name="fin" id="fin" value="{{ old('fin')}}" placeholder="Fin de l'évenement" class="form-control champs @error('fin') is-invalid @enderror" />
+                                            @error('fin')
+                                                <small class="text-light-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
 
@@ -79,7 +106,10 @@
                                             <label for="photo"> Photo <small class="text-warning text-lowercase text-right" >  <em>{{ __("pages.required") }} *</em> </small> </label>
                                             <div class="custom-file">
                                                 <label class="custom-file-label" for="photo">Choose file</label>
-                                                <input type="file" class="custom-file-input champ" name="photo" id="photo">
+                                                <input type="file" value="{{ old('photo')}}" class="custom-file-input champ @error('photo') is-invalid @enderror" name="photo" id="photo">
+                                                @error('photo')
+                                                    <small class="text-light-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
                                         </fieldset>
                                     </div>

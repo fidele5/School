@@ -38,40 +38,65 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="titre">Titre</label>
-                                            <input type="text" id="titre" class="form-control champ" placeholder="Titre" name="titre">
+                                            <input type="text" id="titre" value="{{$evenement->publication->titre}}" class="form-control champ @error('titre') is-invalid @enderror" placeholder="Titre" name="titre" >
+                                            @error('titre')
+                                                <small class="text-light-danger">{{ $message }}</small>       
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="categorie">Catégorie</label>
-                                            <select name="categorie" id="categorie" class="custom-select">
+                                            <select name="categorie" id="categorie" class="custom-select @error('categorie') is-invalid @enderror">
                                                 @foreach ($categories as $categorie)
-                                                    <option value="{{ $categorie->id }}">{{ $categorie->designation }}</option>
+                                                    <option value="{{ $categorie->id }}" @if($categorie->id == $evenement->categorie_evenement_id) selected="" @endif>{{ $categorie->designation }}</option>
                                                 @endforeach
                                             </select>
+                                            @error('categorie')
+                                                <small class="text-light-danger">{{ $message }}</small>       
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <fieldset class="form-group mb-10">
                                             <label for="textarea-counter">Contenu</label>
-                                            <textarea data-length=20 class="form-control char-textarea champ" id="textarea-counter" rows="5" name="contenu" placeholder="Contenu"></textarea>
+                                            <textarea data-length=20 class="form-control char-textarea champ" id="textarea-counter" rows="5" name="contenu" placeholder="Contenu">{{ $evenement->publication->contenu }}</textarea>
+                                            @error('contenu')
+                                                <small class="text-light-danger">{{ message }}</small>       
+                                            @enderror
                                         </fieldset>
                                         <small class="counter-value float-right"><span class="char-count">0</span> / 20 </small>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
+                                            <label for="lieu">Lieu</label>
+                                            <input type="text" name="lieu" id="lieu" placeholder="Lieu de l'évenement" class="form-control champs @error('lieu') is-invalid @enderror" value="{{ $evenement->lieu }}" />
+                                            @error('lieu')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
                                             <label for="debut">Début</label>
-                                            <input type="datetime-local" name="debut" id="debut" placeholder="Début de l'évenement" class="form-control champs" />
+                                            <input type="datetime-local" name="debut" value="{{ $evenement->date_debut}}" id="debut" placeholder="Début de l'évenement" class="form-control champs @error('debut') is-invalid @enderror" />
+                                            @error('debut')
+                                                <small class="text-light-danger">{{ $message }}</small>       
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="fin">Fin</label>
-                                            <input type="datetime-local" name="fin" id="fin" placeholder="Fin de l'évenement" class="form-control champs" />
+                                            <input type="datetime-local" value="{{ $evenement->date_fin }}" name="fin" id="fin" placeholder="Fin de l'évenement" class="form-control champs @error('fin') is-invalid @enderror" />
+                                            @error('fin')
+                                                <small class="text-light-danger">{{ $message }}</small>       
+                                            @enderror
                                         </div>
                                     </div>
 
@@ -80,14 +105,17 @@
                                             <label for="photo"> Photo <small class="text-warning text-lowercase text-right" >  <em>{{ __("pages.required") }} *</em> </small> </label>
                                             <div class="custom-file">
                                                 <label class="custom-file-label" for="photo">Choose file</label>
-                                                <input type="file" class="custom-file-input champ" name="photos" id="photo">
+                                                <input type="file" class="custom-file-input champ @error('photo') is-invalid @enderror" name="photos" id="photo">
+                                                @error('photo')
+                                                    <small class="text-light-danger">{{ message }}</small>       
+                                                @enderror
                                             </div>
                                         </fieldset>
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary mr-1 mb-1">{{ __("pages.submit") }}</button>
-                                    <button type="reset" class="btn btn-light-secondary mr-1 mb-1">{{ __("pages.reset") }}</button>
+                                    <button type="submit" class="btn btn-primary mr-1 mb-1">Mettre à jour</button>
+                                    <button type="reset" class="btn btn-light-secondary mr-1 mb-1">Annuler</button>
                                 </div>
                                 </div>
                             </div>
