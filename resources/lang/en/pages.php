@@ -25,5 +25,6 @@ return [
     "submission_sub_title" => "Les candidatures de l'automne 2019 sont maintenant ouvertes",
     "submission_text" => "Nous ne nous contentons pas de donner aux étudiants une éducation et des expériences qui les préparent à réussir dans une carrière. Nous les aidons à réussir leur carrière - à découvrir un domaine qui les passionne et à oser le diriger.",
     "apply_now" => "Appliquer maintenant",
-    "slogan"=>"Avec Marie Auxiliatrice eduquons pour que les jeunes aient la vie et la Vie en abondance",
+    "slogan" => "Avec Marie Auxiliatrice eduquons pour que les jeunes aient la vie et la Vie en abondance",
+    "about_our_university" => "Apropos de nous",
 ];
