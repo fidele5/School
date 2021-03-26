@@ -27,4 +27,12 @@ return [
     "apply_now" => "Appliquer maintenant",
     "slogan" => "Avec Marie Auxiliatrice eduquons pour que les jeunes aient la vie et la Vie en abondance",
     "about_our_university" => "Apropos de nous",
+    "finesse_text"=>"La finesse, la qualité et la précision dans toute réalisation est notre devoir. La finesse se marie avec la beauté et la joie du travail bien fait",
+    "excellence_text"=>"L’excellence que nous envisageons est celle de voir dans les profils de sortie des personnes autonomes, responsables, sures d’elles-mêmes, créatives et qui savent transformer les difficultés en opportunités, capables de travail en équipe, de service et de compassion",
+    "discipline_text"=>"La Discipline dans le travail et le respect réciproque et du règlement intérieur sont des moyens pour favoriser une ambiance riche d’apprentissages qui porte à la joie des résultats obtenus",
+    "spirituality_text"=>"“Avec Marie Auxiliatrice eduquons pour que les jeunes aient la vie et la Vie en abondance ! »",
+    "finesse_title"=>"Finesse",
+    "excellence"=>"Excellence",
+    "discipline"=>"Discipline",
+    "spirituality"=>"Spiritualite",
 ];
