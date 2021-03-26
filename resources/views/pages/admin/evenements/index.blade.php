@@ -4,14 +4,14 @@
     <div class="content-header-left col-12 mb-2 mt-1">
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h5 class="content-header-title float-left pr-1 mb-0">{{ __("pages.actualites") }}</h5>
+                <h5 class="content-header-title float-left pr-1 mb-0">Evenements</h5>
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb p-0 mb-0">
                         <li class="breadcrumb-item ">
                             <a href="{{ route('home-admin')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
                         <li class="breadcrumb-item active">
-                            {{ __("actualites") }}
+                            Evenements
                         </li>
                     </ol>
                 </div>
@@ -26,7 +26,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">{{ __("actualites") }}</h4>
+                    <h4 class="card-title">Evenements</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body card-dashboard">
@@ -34,25 +34,29 @@
                             <table class="table zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>{{ __("pages.title") }}</th>
-                                        <th>{{ __("pages.content") }}</th>
-                                        <th>{{ __("pages.comments") }}</th>
-                                        <th>{{ __("pages.category") }}</th>
-                                        <th>{{ __("pages.actions") }}</th>
+                                        <th>Titre</th>
+                                        <th>Contenu</th>
+                                        <th>Catégorie</th>
+                                        <th>Début</th>
+                                        <th>Fin</th>
+                                        <th>Photo</th>
+                                        <th>Action}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($actualites as $actualite)
+                                    @foreach ($evenements as $evenement)
                                         <tr>
-                                            <td>{{ $actualite->publication->titre }}</td>
-                                            <td class="text-truncate" style="max-width: 250px">{{ $actualite->publication->texte }}</td>
-                                            <td>0</td>
-                                            <td>{{ $actualite->categorie->designation }}</td>
+                                            <td>{{ $evenement->publication->titre }}</td>
+                                            <td class="text-truncate" style="max-width: 250px">{{ $evenement->publication->texte }}</td>
+                                            <td>{{ $evenement->categorie_evenement->designation }}</td>
+                                            <td>{{ $evenement->date_debut }}</td>
+                                            <td>{{ $evenement->date_fin }}</td>
+                                            <td>{{ $evenement->photo }}</td>
                                             <td>
-                                                <a href="{{ route("actualites.edit", $actualite) }}">
+                                                <a href="{{ route("evenements.edit", $evenement) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="{{ route("actualites.destroy", $actualite) }}">
+                                                <a href="{{ route("evenements.destroy", $evenement) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
@@ -61,11 +65,13 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>{{ __("pages.title") }}</th>
-                                        <th>{{ __("pages.content") }}</th>
-                                        <th>{{ __("pages.comments") }}</th>
-                                        <th>{{ __("pages.category") }}</th>
-                                        <th>{{ __("pages.actions") }}</th>
+                                        <th>Titre</th>
+                                        <th>Contenu</th>
+                                        <th>Catégorie</th>
+                                        <th>Début</th>
+                                        <th>Fin</th>
+                                        <th>Photo</th>
+                                        <th>Action}</th>
                                     </tr>
                                 </tfoot>
                             </table>

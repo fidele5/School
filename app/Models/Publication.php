@@ -9,7 +9,7 @@ class Publication extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["titre", "texte", "user_id",];
+    protected $fillable = ["titre", "texte", "user_id", "photo"];
 
     public function actualites()
     {

@@ -50,17 +50,20 @@ Route::middleware("auth")->group(function () {
         Route::resource('evenements', EvenementController::class);
         Route::resource('realisations', RealisationController::class);
         Route::resource('categorie-actualites', CategorieActualiteController::class);
-        Route::resource('categorie-evenement', CategorieEvenementController::class);
-        Route::resource('categorie-realisation', CategorieRealisationController::class);
+        Route::resource('categorie-evenements', CategorieEvenementController::class);
+        Route::resource('categorie-realisations', CategorieRealisationController::class);
         Route::resource('courses', CoursController::class);
         Route::resource('enseignants', EnseignantController::class);
         Route::resource('etudiants', EtudiantController::class);
-        Route::resource('filireres', FilirerController::class);
+        Route::resource('filieres', FilirerController::class);
         Route::resource('promotions', PromotionController::class);
         Route::resource('horaires', HoraireController::class);
         Route::resource('seances', SeanceController::class);
         Route::resource('publications', PublicationController::class);
         Route::resource('image-realisation', ImageRealisationController::class);
+        Route::get('', function() {
+            return view('pages.admin.home');
+        })->name('home-admin');
     });
 });
 

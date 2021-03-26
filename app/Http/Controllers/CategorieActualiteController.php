@@ -14,7 +14,8 @@ class CategorieActualiteController extends Controller
      */
     public function index()
     {
-        //
+        $categories = CategorieActualite::all();
+        return view("pages.admin.categories.actualites.index")->with("categories", $categories);
     }
 
     /**
@@ -24,7 +25,7 @@ class CategorieActualiteController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.categories.actualites.create');
     }
 
     /**
@@ -35,7 +36,12 @@ class CategorieActualiteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+                'designation' => 'required'
+        ]);
+
+        $categorie = CategorieActualite::create(['designation'=>$request->designation]);
+        return redirect('categorie-actualites.index');
     }
 
     /**
@@ -57,7 +63,8 @@ class CategorieActualiteController extends Controller
      */
     public function edit(CategorieActualite $categorieActualite)
     {
-        //
+        echo($categorieActualite->designation);
+        return view("pages.admin.categories.actualites.edit")->with("categorie", $categorieActualite);
     }
 
     /**
@@ -69,7 +76,13 @@ class CategorieActualiteController extends Controller
      */
     public function update(Request $request, CategorieActualite $categorieActualite)
     {
-        //
+        $request->validate([
+            'designation' => 'required'
+        ]);
+
+        $categorieActualite->designation = $request->designation;
+        $categorie->save();
+        return redirect("categorie-actualites.index");
     }
 
     /**
@@ -80,6 +93,7 @@ class CategorieActualiteController extends Controller
      */
     public function destroy(CategorieActualite $categorieActualite)
     {
-        //
+        $categorieActualite->delete();
+        return redirect("categorie-actualites.index");
     }
 }

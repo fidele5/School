@@ -36,7 +36,7 @@ class HomeController extends Controller
             ->take(3)
             ->get();
         $caroussels = Caroussel::all();
-        return view('welcome')->with(compact("actualites", "evenements", "caroussels"));
+        return view('home')->with(compact("actualites", "evenements", "caroussels"));
     }
 
     public function index()

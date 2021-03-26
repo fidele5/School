@@ -7,7 +7,7 @@
                     <div class="brand-logo">
                         <img src="/backend/images/logo/logo.png" class="logo" alt="">
                     </div>
-                    <h2 class="brand-text mb-0">Frest</h2>
+                    <h2 class="brand-text mb-0">ISAM</h2>
                 </a>
             </li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="bx bx-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="bx-disc"></i></a></li>
@@ -17,102 +17,149 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="">
             <li class="nav-item ">
-                <a href="index-2.html" >
+                <a href="{{ route('home-admin')}}" >
                     <i class="bx bx-home-alt"></i>
-                    <span class="menu-title">Dashboard</span>
-                    <span class="badge badge-light-danger badge-pill badge-round float-right mr-2">2</span>
+                    <span class="menu-title">Tableau de bord</span>
                 </a>
-                <ul class="menu-content">
-                    <li class=active>
-                        <a href="/" >
-                            <i class="bx bx-right-arrow-alt"></i>
-                            <span class="menu-item">Main</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/" >
-                        <i class="bx bx-right-arrow-alt"></i>
-                        <span class="menu-item">Analytics</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="navigation-header"><span>Medias</span></li>
-                <li class="nav-item ">
-                    <a href="# " >
-                        <i class="bx bx-video"></i>
-                        <span class="menu-title">Videos</span>
+            <li class="navigation-header"><span>Personnes</span></li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="bx bxs-graduation"></i>
+                        <span class="menu-title">Etudiants</span>
                     </a>
                     <ul class="menu-content">
                         <li >
-                            <a href="{{ route("videos.index") }}" >
+                            <a href="{{ route('etudiants.index')}}" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Videos </span>
+                                <span class="menu-item">Tous</span>
                             </a>
                         </li>
                         <li >
-                            <a href="{{ route("videos-tube.index") }}" >
+                            <a href="{{ route('etudiants.create')}}" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Youtube</span>
+                                <span class="menu-item">Nouveau</span>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item ">
-                    <a href="{{ route("pictures.index") }}" >
-                        <i class="bx bx-image-alt"></i>
-                        <span class="menu-title">Photos</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a href="{{ route("documents.index") }}" >
-                        <i class="bx bx-book"></i>
-                        <span class="menu-title">Documents</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a href="app-file-manager.html" >
-                        <i class="bx bx-save"></i>
-                        <span class="menu-title">File Manager</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a href="# " >
-                        <i class='bx bx-tag'></i>
-                        <span class="menu-title">Categories</span>
+                    <a href="" >
+                        <i class="bx bxs-user"></i>
+                        <span class="menu-title">Enseignants</span>
                     </a>
                     <ul class="menu-content">
                         <li >
-                            <a href="{{ route("categories-photo.index") }}" >
-                                <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Photos </span>
+                            <a href="{{ route('enseignants.index')}}" >
+                                <i class="bx bx-right-arrow"></i>
+                                <span class="menu-item">Tous</span>
                             </a>
                         </li>
                         <li >
-                            <a href="{{ route("categories.index") }}" >
+                            <a href="{{ route('enseignants.create')}}" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Actualite</span>
+                                <span class="menu-item">Nouveau</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="navigation-header"><span>Utilisateurs</span></li>
+                <li class="navigation-header"><span>Etudes</span></li>
                 <li class="nav-item ">
                     <a href="# " >
-                        <i class="bx bx-repeat"></i>
-                        <span class="menu-title">Comptes</span>
+                        <i class="bx bxs-collection"></i>
+                        <span class="menu-title">Filières</span>
                     </a>
                     <ul class="menu-content">
                         <li>
-                            <a href="{{ route("confreres.index") }}" >
+                            <a href="{{ route('filieres.index')}}" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Confreres</span>
+                                <span class="menu-item">Toutes</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route("users.index") }}" >
+                            <a href="{{ route('filieres.create')}}" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Visiteurs</span>
+                                <span class="menu-item">Nouvelle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="# " >
+                        <i class="bx bxs-home"></i>
+                        <span class="menu-title">Promotions</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="{{ route('promotions.index')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Toutes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('promotions.create')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouvelle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="# " >
+                        <i class="bx bxs-calendar"></i>
+                        <span class="menu-title">Horaires</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="{{ route('horaires.index')}}" >
+                                <i class="bx bx-arrow-right-alt"></i>
+                                <span class="menu-item">Tous</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('horaires.create')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouveu</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="# " >
+                        <i class="bx bxs-alarm"></i>
+                        <span class="menu-title">Seances</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="{{ route('seances.index')}}" >
+                                <i class="bx bx-hourglass"></i>
+                                <span class="menu-item">Toutes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('seances.create')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouvelle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="# " >
+                        <i class="bx bxs-book"></i>
+                        <span class="menu-title">Cours</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="{{ route('courses.index')}}">
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Tous</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('courses.create')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouveau</span>
                             </a>
                         </li>
                     </ul>
@@ -120,61 +167,126 @@
                 <li class="navigation-header"><span>Publications</span></li>
                 <li class="nav-item ">
                     <a href="form-inputs.html" >
-                        <i class="bx bx-edit"></i>
-                        <span class="menu-item">publier</span>
+                        <i class="bx bx-list-ul"></i>
+                        <span class="menu-item">Actualités</span>
                     </a>
                     <ul class="menu-content">
                         <li >
-                            <a href="{{ route("articles.index") }}" >
+                            <a href="{{ route('actualites.index')}}" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Articles</span>
+                                <span class="menu-item">Toutes</span>
                             </a>
                         </li>
                         <li >
-                            <a href="{{ route("actualites.index") }}" >
+                            <a href="{{ route('actualites.create')}}" >
                                 <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Actualites</span>
-                            </a>
-                        </li>
-                        <li >
-                            <a href="{{ route("commentaires.index") }}" >
-                                <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Commentaires</span>
+                                <span class="menu-item">Nouvelle</span>
                             </a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="navigation-header"><span>Pages</span></li>
+                <li class="nav-item ">
+                    <a href="form-inputs.html" >
+                        <i class="bx bxs-calendar-event"></i>
+                        <span class="menu-item">Evenements</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li >
+                            <a href="{{ route('evenements.index')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Tous</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="{{ route('evenements.create') }}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouveau</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="form-inputs.html" >
+                        <i class="bx bxs-calendar-check"></i>
+                        <span class="menu-item">Réalisations</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li>
+                            <a href="{{ route('realisations.index')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Toutes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('realisations.create')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouvelle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="navigation-header"><span>Catégories</span></li>
                     <li class="nav-item ">
-                        <a href="{{ route("communautes.index") }}" >
-                            <i class="bx bx-user"></i>
-                            <span class="menu-title">Communautes</span>
+                        <a href="" >
+                            <i class="bx bxs-categories"></i>
+                            <span class="menu-title">Actualité</span>
                         </a>
+                        <ul class="menu-content">
+                            <li >
+                                <a href="{{ route('categorie-actualites.index')}}" >
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                    <span class="menu-item">Toutes</span>
+                                </a>
+                            </li>
+                            <li >
+                                <a href="{{ route('categorie-actualites.create')}}" >
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                    <span class="menu-item">Nouvelles</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="nav-item ">
                         <a href="page-account-settings.html" >
-                            <i class="bx bx-wrench"></i>
-                            <span class="menu-title">Account Settings</span>
+                            <i class="bx bxs-categories"></i>
+                            <span class="menu-title">Evenement</span>
                         </a>
                         <ul class="menu-content">
                             <li >
-                                <a href="{{ route("settings.create") }}" >
+                                <a href="{{ route('categorie-evenements.index')}}" >
                                     <i class="bx bx-right-arrow-alt"></i>
-                                    <span class="menu-item">general</span>
+                                    <span class="menu-item">Toutes</span>
                                 </a>
                             </li>
                             <li >
-                                <a href="{{ route("roles.index") }}" >
+                                <a href="{{ route('categorie-evenements.create')}}" >
                                     <i class="bx bx-right-arrow-alt"></i>
-                                    <span class="menu-item">roles</span>
+                                    <span class="menu-item">Nouvelles</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a href="#" >
+                            <i class="bx bxs-categories"></i>
+                            <span class="menu-title">Réalisation</span>
+                        </a>
+                        <ul class="menu-content">
+                            <li >
+                                <a href="{{ route('categorie-realisations.index')}}" >
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                    <span class="menu-item">Toutes</span>
                                 </a>
                             </li>
                             <li >
-                                <a href="{{ route("languages.index") }}" >
+                                <a href="{{ route('categorie-realisations.create')}}" >
                                     <i class="bx bx-right-arrow-alt"></i>
-                                    <span class="menu-item">language</span>
+                                    <span class="menu-item">Nouvelle</span>
                                 </a>
                             </li>
                         </ul>
