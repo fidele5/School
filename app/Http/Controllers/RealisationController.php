@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategorieRealisation;
+use App\Models\Publication;
 use App\Models\Realisation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RealisationController extends Controller
 {
@@ -14,7 +17,8 @@ class RealisationController extends Controller
      */
     public function index()
     {
-        //
+        $realisations = Realisation::all();
+        return view("pages.admin.realisations.index")->with("realisations", $realisations);
     }
 
     /**
@@ -24,7 +28,8 @@ class RealisationController extends Controller
      */
     public function create()
     {
-        //
+        $categories = CategorieRealisation::all();
+        return view("pages.admin.realisations.create")->with("categories", $categories);
     }
 
     /**
@@ -35,7 +40,30 @@ class RealisationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "titre" => "required",
+            "contenu" => "required",
+            "categorie" => "required|integer",
+            "photo" => "required|image"
+        ]);
+
+        $image_name = time();
+        settype($image_name, "string");
+        $request->file("photo")->move("uploads/realisations", $image_name);
+
+        $publication = Publication::create([
+            "titre" => $request->titre,
+            "texte" => $request->contenu,
+            "photo" => $image_name,
+            "user_id" => Auth::user()->id
+        ]);
+
+        $realisation = Realisation::create([
+            "publication_id" => $publication->id,
+            "categorie_realisation_id" => $request->categorie
+        ]);
+
+        return redirect(route("realisations.index"));
     }
 
     /**
@@ -57,7 +85,11 @@ class RealisationController extends Controller
      */
     public function edit(Realisation $realisation)
     {
-        //
+        $categories = CategorieRealisation::all();
+        return view("pages.admin.realisations.edit")->with([
+            "realisation"=> $realisation,
+            "categories" => $categories
+        ]);
     }
 
     /**
@@ -69,7 +101,27 @@ class RealisationController extends Controller
      */
     public function update(Request $request, Realisation $realisation)
     {
-        //
+        $request->validate([
+            "titre" => "required",
+            "contenu" => "required",
+            "categorie" => "required|integer",
+            "photo" => "required|image"
+        ]);
+
+        $image_name = time();
+        settype($image_name, "string");
+        $request->file("photo")->move("uploads/realisations", $image_name);
+
+        $realisation->publication->texte = $request->contenu;
+        $realisation->publication->titre = $request->titre;
+        $realisation->publication->photo = $image_name;
+        $realisation->publication->save();
+
+        $realisation->categorie_realisation_id = $request->categorie;
+
+        $realisation->save();
+
+        return redirect(route("realisations.index"));
     }
 
     /**
@@ -80,6 +132,8 @@ class RealisationController extends Controller
      */
     public function destroy(Realisation $realisation)
     {
-        //
+        $realisation->delete();
+
+        return redirect(route("realisations.index"));
     }
 }

@@ -17,8 +17,9 @@ class CreateEvenementsTable extends Migration
             $table->id();
             $table->unsignedBigInteger("publication_id");
             $table->unsignedBigInteger("categorie_evenement_id");
-            $table->dateTime("debut");
-            $table->dateTime("fin");
+            $table->dateTime("date_debut");
+            $table->dateTime("date_fin");
+            $table->string("lieu");
             $table->timestamps();
         });
 

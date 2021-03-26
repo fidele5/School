@@ -10,7 +10,7 @@ class Evenement extends Model
     use HasFactory;
 
     protected $fillable = [
-        "publication_id", "categorie_evenement_id", "date_debut", "date_fin",
+        "publication_id", "categorie_evenement_id", "date_debut", "date_fin", "lieu"
     ];
 
     public function publication()

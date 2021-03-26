@@ -14,7 +14,8 @@ class FilirerController extends Controller
      */
     public function index()
     {
-        //
+        $filieres = Filiere::all();
+        return view("pages.admin.filieres.index")->with("filieres", $filieres);
     }
 
     /**
@@ -24,7 +25,7 @@ class FilirerController extends Controller
      */
     public function create()
     {
-        //
+        return view("pages.admin.filieres.create");
     }
 
     /**
@@ -35,7 +36,11 @@ class FilirerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(["nom" => "required"]);
+
+        $filiere = Filiere::create(["nom" => $request->nom]);
+
+        return redirect(route("filieres.index"));
     }
 
     /**
@@ -57,7 +62,7 @@ class FilirerController extends Controller
      */
     public function edit(Filiere $filiere)
     {
-        //
+        return view("pages.admin.filieres.edit")->with("filiere", $filiere);
     }
 
     /**
@@ -69,7 +74,12 @@ class FilirerController extends Controller
      */
     public function update(Request $request, Filiere $filiere)
     {
-        //
+        $request->validate(["nom" => "required"]);
+
+        $filiere->nom = $request->nom;
+        $filiere->save();
+
+        return redirect(route("filieres.index"));
     }
 
     /**
@@ -80,6 +90,7 @@ class FilirerController extends Controller
      */
     public function destroy(Filiere $filiere)
     {
-        //
+        $filiere->delete();
+        return redirect(route("filieres.index"));
     }
 }

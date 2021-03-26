@@ -4,14 +4,14 @@
     <div class="content-header-left col-12 mb-2 mt-1">
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h5 class="content-header-title float-left pr-1 mb-0">Evenements</h5>
+                <h5 class="content-header-title float-left pr-1 mb-0">Réalisations</h5>
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb p-0 mb-0">
                         <li class="breadcrumb-item ">
                             <a href="{{ route('home-admin')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
                         <li class="breadcrumb-item active">
-                            Evenements
+                            Réalisation
                         </li>
                     </ol>
                 </div>
@@ -26,7 +26,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Evenements</h4>
+                    <h4 class="card-title">Toutes les réalisations</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body card-dashboard">
@@ -37,28 +37,22 @@
                                         <th>Titre</th>
                                         <th>Contenu</th>
                                         <th>Catégorie</th>
-                                        <th>Début</th>
-                                        <th>Fin</th>
-                                        <th>Lieu</th>
                                         <th>Photo</th>
-                                        <th>Action}</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($evenements as $evenement)
+                                    @foreach ($realisations as $realisation)
                                         <tr>
-                                            <td>{{ $evenement->publication->titre }}</td>
-                                            <td class="text-truncate" style="max-width: 250px">{{ $evenement->publication->texte }}</td>
-                                            <td>{{ $evenement->categorie_evenement->designation }}</td>
-                                            <td>{{ $evenement->date_debut }}</td>
-                                            <td>{{ $evenement->date_fin }}</td>
-                                            <td>{{ $evenement->lieu }}</td>
-                                            <td>{{ $evenement->photo }}</td>
+                                            <td>{{ $realisation->publication->titre }}</td>
+                                            <td class="text-truncate" style="max-width: 250px">{{ $realisation->publication->texte }}</td>
+                                            <td>{{ $realisation->categorie_realisation->designation }}</td>
+                                            <td>{{ $realisation->publication->photo}}</td>
                                             <td>
-                                                <a href="{{ route("evenements.edit", $evenement) }}">
+                                                <a href="{{ route("realisations.edit", $realisation) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="{{ route("evenements.destroy", $evenement) }}">
+                                                <a href="{{ route("realisations.destroy", $realisation) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
@@ -70,11 +64,8 @@
                                         <th>Titre</th>
                                         <th>Contenu</th>
                                         <th>Catégorie</th>
-                                        <th>Début</th>
-                                        <th>Fin</th>
-                                        <th>Lieu</th>
                                         <th>Photo</th>
-                                        <th>Action}</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </tfoot>
                             </table>
