@@ -14,7 +14,7 @@ class CoursController extends Controller
      */
     public function index()
     {
-        //
+        return view("pages.admin.cours.index");
     }
 
     /**

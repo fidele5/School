@@ -80,9 +80,9 @@ class EnseignantController extends Controller
             "domaine" => $request->domaine
         ]);
 
-        return json_encode([
+        return response()->json([
             "status" => "success",
-            ""
+            "back" => "enseignants"
         ]);
     }
 
@@ -105,7 +105,7 @@ class EnseignantController extends Controller
      */
     public function edit(Enseignant $enseignant)
     {
-        //
+        return view("pages.admin.enseignants.index")->with("enseignant", $enseignant);
     }
 
     /**
@@ -117,7 +117,24 @@ class EnseignantController extends Controller
      */
     public function update(Request $request, Enseignant $enseignant)
     {
-        //
+        $enseignant->user->nom = $request->nom;
+        $enseignant->user->postnom = $request->postnom;
+        $enseignant->user->prenom = $request->prenom;
+        $enseignant->user->genre = $request->genre;
+        $enseignant->user->email = $request->nationalite;
+        $enseignant->user->telephone = $request->telephone;
+        $enseignant->user->nationalite = $request->nationalite;
+        $enseignant->user->adresse = $request->adresse;
+        $enseignant->user->save();
+
+        $enseignant->grade = $request->grade;
+        $enseignant->domaine = $request->domaine;
+        $enseignant->save();
+
+        return response()->json([
+            "status" => "success",
+            "back" => "enseignants"
+        ]);
     }
 
     /**
@@ -128,6 +145,7 @@ class EnseignantController extends Controller
      */
     public function destroy(Enseignant $enseignant)
     {
-        //
+        $enseignant->user->delete();
+        $enseignant->delete();
     }
 }

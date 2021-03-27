@@ -91,8 +91,10 @@ class EtudiantController extends Controller
             "user_id" => $user->id
         ]);
 
-        return redirect(route("etudiants.index"));
-
+        return response()->json([
+            "status" => "success",
+            "back" => "etudiants"
+        ]);
     }
 
     /**
@@ -147,7 +149,10 @@ class EtudiantController extends Controller
         $etudiant->pourcentage = $request->pourcentage;
         $etudiant->save();
 
-        return redirect(route("etudiants.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "etudiants"
+        ]);
     }
 
     /**
@@ -158,7 +163,7 @@ class EtudiantController extends Controller
      */
     public function destroy(Etudiant $etudiant)
     {
+        $etudiant->user->delete();
         $etudiant->delete();
-        return redirect(route("etudiants.index"));
     }
 }

@@ -1,4 +1,4 @@
-/* $(document).ready(function() {
+$(document).ready(function() {
 
     $(".edit").click(function(e) {
 
@@ -332,4 +332,4 @@ $(document).ready(function() {
             });
         }
     });
-}); */
+});
