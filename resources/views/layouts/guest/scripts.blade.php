@@ -279,8 +279,11 @@
             document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
         } /*]]>*/
     </script>
-
-    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    
+    @if(Route::currentRouteName() == "calendrier")
+        <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    @endif
+    
     <script type="text/javascript" src="/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>

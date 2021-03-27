@@ -30,16 +30,17 @@ class HomeController extends Controller
     public function welcome()
     {
         $actualites = Actualite::orderBy("id", "desc")
-                        ->take(3)
-                        ->get();
+            ->take(3)
+            ->get();
         $evenements = Evenement::orderBy("id", "desc")
-                        ->take(3)
-                        ->get();
+            ->take(3)
+            ->get();
         $caroussels = Caroussel::all();
         return view('home')->with(compact("actualites", "evenements", "caroussels"));
     }
 
-    public function index(){
+    public function index()
+    {
         return view("home");
     }
 
@@ -84,7 +85,8 @@ class HomeController extends Controller
         # code...
     }
 
-    public function calendar(){
+    public function calendar()
+    {
         $evenements = Evenement::all();
         $events = array();
         foreach ($evenements as $evenement) {
