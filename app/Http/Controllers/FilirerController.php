@@ -40,7 +40,10 @@ class FilirerController extends Controller
 
         $filiere = Filiere::create(["nom" => $request->nom]);
 
-        return redirect(route("filieres.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "filieres"
+        ]);
     }
 
     /**
@@ -79,7 +82,10 @@ class FilirerController extends Controller
         $filiere->nom = $request->nom;
         $filiere->save();
 
-        return redirect(route("filieres.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "filieres"
+        ]);
     }
 
     /**
@@ -91,6 +97,9 @@ class FilirerController extends Controller
     public function destroy(Filiere $filiere)
     {
         $filiere->delete();
-        return redirect(route("filieres.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "filieres"
+        ]);
     }
 }

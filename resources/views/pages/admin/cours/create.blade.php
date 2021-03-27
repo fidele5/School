@@ -3,14 +3,14 @@
 <div class="content-header-left col-12 mb-2 mt-1">
     <div class="row breadcrumbs-top">
         <div class="col-12">
-            <h5 class="content-header-title float-left pr-1 mb-0">Enseignants</h5>
+            <h5 class="content-header-title float-left pr-1 mb-0">Cours</h5>
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb p-0 mb-0">
                     <li class="breadcrumb-item ">
                         <a href="index.html"><i class="bx bx-home-alt"></i></a>
                     </li>
                     <li class="breadcrumb-item ">
-                        <a href="{{ route('filieres.create')}}">Enseignants</a>
+                        <a href="{{ route('courses.index')}}">Cours</a>
                     </li>
                     <li class="breadcrumb-item active">
                         Nouveau
@@ -26,105 +26,75 @@
         <div class="col-md-8 col-12">
             <div class="card">
                 <div class="card-header text-center">
-                    <h4 class="card-title">Nouvel enseignant</h4>
+                    <h4 class="card-title">Nouveau cours</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form" method="POST" action="{{ route("enseignants.store") }}" enctype="multipart/form-data">
+                        <form class="form row" method="POST" action="{{ route("courses.store") }}">
                             @csrf
-                            <div class="form-row">
-                                <div class="form-group col-md-12 mb-50">
-                                  <label for="inputfirstname4">Nom</label>
-                                  <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" id="inputfirstname4" value="{{ old('nom') }}" placeholder="Nom" />
-                                  @error('nom')
+                            @method("patch")
+                            <div class="col-12">
+                                <div class="form-group mb-10">
+                                  <label for="inputfirstname4">Inititulé</label>
+                                  <input type="text" class="form-control @error('intitule') is-invalid @enderror" name="intitule" id="inputfirstname4" value="{{ old('intitule') }}" placeholder="Intitulé" />
+                                  @error('intitule')
                                       <div class="alert alert-danger">{{ $message }}</div>
                                   @enderror
                                 </div>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group col-md-12 mb-50">
-                                    <label for="inputfirstname4">Postnom</label>
-                                    <input type="text" class="form-control @error('postnom') is-invalid @enderror" name="postnom" id="inputfirstname4" value="{{ old('postnom') }}" placeholder="Post nom" />
-                                    @error('postnom')
+                            <div class="col-12">
+                                <div class="form-group mb-10">
+                                    <label for="inputfirstname4">Pondération</label>
+                                    <input type="text" class="form-control @error('ponderation') is-invalid @enderror" name="ponderation" id="inputfirstname4" value="{{ old('ponderation') }}" placeholder="Pondération du cours" />
+                                    @error('ponderation')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group col-md-12 mb-50">
-                                    <label for="inputfirstname4">Prenom</label>
-                                    <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" id="inputfirstname4" value="{{ old('prenom') }}" placeholder="Prenom" />
-                                    @error('prenom')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
 
-                            <div class="form-row">
+                            <div class="col-12 mb-10">
                                 <div class="form-group">
-                                    <label class="d-block">Genre</label>
-                                    <div class="custom-control-inline">
-                                        <div class="radio mr-1">
-                                            <input type="radio" name="genre" id="radio5" value="M" checked/>
-                                            <label for="radio5">Homme</label>
-                                        </div>
-
-                                        <div class="radio">
-                                            <input type="radio" name="genre" id="radio888" value="F" />
-                                            <label for="radio888">Femme</label>
-                                        </div>
-                                    </div>
+                                    <label for="promotion">Promotion</label>
+                                    <select name="promotion" id="promotion" class="custom-select @error('promotion') is-invalid @enderror">
+                                        @foreach ($promotions as $promotion)
+                                            <option value="{{ $promotion->id }}" @if (old('promotion') == $promotion->id)
+                                                selected
+                                            @endif>{{ $promotion->nom }} {{ $promotion->filiere->nom }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('promotion')
+                                        <small class="text-light-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
-                            <div class="form-group mb-50">
-                                <label class="text-bold-600" for="email">Adresse email</label>
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ old('email') }}" placeholder="Email" />
-                                @error('email')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
+                            <div class="col-12 mb-10">
+                                <div class="form-group">
+                                    <label for="enseignant">Enseignant</label>
+                                    <select name="enseignant" id="enseignant" class="custom-select @error('enseignant') is-invalid @enderror">
+                                        @foreach ($enseignants as $enseignant)
+                                            <option value="{{ $enseignant->id }}" @if (old('enseignant') == $enseignant->id)
+                                                selected
+                                            @endif>{{ $enseignant->user->email }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('email')
+                                        <small class="text-light-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
                             </div>
 
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="nationalite">Nationalité</label>
-                                <input type="text" name="nationalite" class="form-control @error('nationalite') is-invalid @enderror" id="nationalite" placeholder="Nationalité" value="{{ old('nationalite') }}" />
-                                @error('nationalite')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="grade">Grade</label>
-                                <input type="text" name="grade" class="form-control @error('grade') is-invalid @enderror" id="grade" placeholder="Grade" value="{{ old('grade') }}" />
-                                @error('grade')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="domaine">Domaine</label>
-                                <input type="text" name="domaine" class="form-control @error('domainet') is-invalid @enderror" id="domaine" placeholder="Domaine" value="{{ old('domaine') }}" />
-                                @error('domaine')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="telephone">Telephone</label>
-                                <input type="phone" name="telephone" name="telephone" class="form-control @error('telephone') is-invalid @enderror" id="telephone" placeholder="Telephone" value="{{ old('telephone') }}" />
-                                @error('telephone')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="adresse">Adresse physique</label>
-                                <textarea name="adresse" class="form-control @error('adresse') is-invalid @enderror" id="adresse" placeholder="Adresse physique">{{ old('adresse') }}</textarea>
-                                @error('adresse')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
+                            <div class="col-12">
+                                <fieldset class="form-group">
+                                    <label for="textarea-counter">Description</label>
+                                    <textarea data-length=20 class="form-control char-textarea champ @error('description') is-invalid @enderror" id="textarea-counter" rows="5" name="description" placeholder="Description">{{ old('description') }}</textarea>
+                                    @error('description')
+                                        <small class="text-light-danger">{{ $message }}</small>
+                                    @enderror
+                                </fieldset>
+                                <small class="counter-value float-right mb-10"><span class="char-count">0</span> / 20 </small>
                             </div>
 
                             <div class="col-12 d-flex justify-content-end">

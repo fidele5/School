@@ -68,7 +68,10 @@ class EvenementController extends Controller
             "lieu" => $request->lieu
         ]);
 
-        return redirect("evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "evenements"
+        ]);
     }
 
     /**
@@ -128,7 +131,10 @@ class EvenementController extends Controller
         $evenement->lieu = $request->lieu;
         $evenement->save();
 
-        return redirect("evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "evenements"
+        ]);
     }
 
     /**
@@ -140,6 +146,9 @@ class EvenementController extends Controller
     public function destroy(Evenement $evenement)
     {
         $evenement->delete();
-        return redirect("evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "evenements"
+        ]);
     }
 }

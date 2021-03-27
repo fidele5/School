@@ -7,7 +7,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use PHPUnit\Util\Json;
 
 class EnseignantController extends Controller
 {
@@ -147,5 +146,9 @@ class EnseignantController extends Controller
     {
         $enseignant->user->delete();
         $enseignant->delete();
+        return response()->json([
+            "status" => "success",
+            "back" => "enseignants"
+        ]);
     }
 }

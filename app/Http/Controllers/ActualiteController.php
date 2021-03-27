@@ -66,7 +66,10 @@ class ActualiteController extends Controller
             'categorie_actualite_id' => $request->categorie
         ]);
 
-        return redirect('actualites.index');
+        return response()->json([
+            "status" => "success",
+            "back" => "actualites"
+        ]);
     }
 
     /**
@@ -114,7 +117,10 @@ class ActualiteController extends Controller
 
         $publication->save();
 
-        return redirect("actualites.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "actualites"
+        ]);
     }
 
     /**
@@ -126,7 +132,9 @@ class ActualiteController extends Controller
     public function destroy(Actualite $actualite)
     {
         $actualite->delete();
-
-        return redirect("actualites.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "actualites"
+        ]);
     }
 }

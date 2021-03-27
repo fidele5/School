@@ -165,5 +165,9 @@ class EtudiantController extends Controller
     {
         $etudiant->user->delete();
         $etudiant->delete();
+        return response()->json([
+            "status" => "success",
+            "back" => "etudiants"
+        ]);
     }
 }

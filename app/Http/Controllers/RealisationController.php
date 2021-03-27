@@ -63,7 +63,10 @@ class RealisationController extends Controller
             "categorie_realisation_id" => $request->categorie
         ]);
 
-        return redirect(route("realisations.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "realisations"
+        ]);
     }
 
     /**
@@ -121,7 +124,10 @@ class RealisationController extends Controller
 
         $realisation->save();
 
-        return redirect(route("realisations.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "realisations"
+        ]);
     }
 
     /**
@@ -134,6 +140,9 @@ class RealisationController extends Controller
     {
         $realisation->delete();
 
-        return redirect(route("realisations.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "realisations"
+        ]);
     }
 }

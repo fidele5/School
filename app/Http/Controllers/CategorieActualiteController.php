@@ -41,7 +41,10 @@ class CategorieActualiteController extends Controller
         ]);
 
         $categorie = CategorieActualite::create(['designation'=>$request->designation]);
-        return redirect('categorie-actualites.index');
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-actualites"
+        ]);
     }
 
     /**
@@ -81,8 +84,11 @@ class CategorieActualiteController extends Controller
         ]);
 
         $categorieActualite->designation = $request->designation;
-        $categorie->save();
-        return redirect("categorie-actualites.index");
+        $categorieActualite->save();
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-actualites"
+        ]);
     }
 
     /**
@@ -94,6 +100,9 @@ class CategorieActualiteController extends Controller
     public function destroy(CategorieActualite $categorieActualite)
     {
         $categorieActualite->delete();
-        return redirect("categorie-actualites.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-actualites"
+        ]);
     }
 }

@@ -42,7 +42,10 @@ class CategorieRealisationController extends Controller
 
         $categorie = CategorieRealisation::create(["designation"=>$request->designation]);
 
-        return redirect("categorie-reaclisations.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-realisations"
+        ]);
     }
 
     /**
@@ -81,9 +84,12 @@ class CategorieRealisationController extends Controller
         ]);
 
         $categorieRealisation->designation = $request->designation;
-        $categorie->save();
+        $categorieRealisation->save();
 
-        return redirect("categorie-realisations.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-realisations"
+        ]);
     }
 
     /**
@@ -95,6 +101,9 @@ class CategorieRealisationController extends Controller
     public function destroy(CategorieRealisation $categorieRealisation)
     {
         $categorieRealisation->delete();
-        return redirect("categorie-realisations.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-realisations"
+        ]);
     }
 }

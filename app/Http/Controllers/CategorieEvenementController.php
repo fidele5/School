@@ -40,7 +40,10 @@ class CategorieEvenementController extends Controller
             'designation' => 'required'
         ]);
         $categorie = CategorieEvenement::create(['designation' => $request->designation]);
-        return redircet("categorie-evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-evenements"
+        ]);
     }
 
     /**
@@ -81,7 +84,10 @@ class CategorieEvenementController extends Controller
         $categorieEvenement->designation = $request->designation;
         $categorieEvenement->save();
 
-        return redirect("cetagorie-evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-evenements"
+        ]);
     }
 
     /**
@@ -93,7 +99,9 @@ class CategorieEvenementController extends Controller
     public function destroy(CategorieEvenement $categorieEvenement)
     {
         $categorieEvenement->delete();
-
-        return redirect("categorie-evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-evenements"
+        ]);
     }
 }
