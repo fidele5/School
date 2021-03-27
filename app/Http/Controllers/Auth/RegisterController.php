@@ -79,7 +79,9 @@ class RegisterController extends Controller
             'nationalite' => $data['nationalite'],
             'adresse' => $data['adresse'],
             'telephone' => $data['telephone'],
-            'genre' => $data['genre']
+            'genre' => $data['genre'],
+            "is_active" =>true,
+            "is_admin" => true
         ]);
     }
 }

@@ -7,7 +7,6 @@ use App\Models\Promotion;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Hash;
 
 class EtudiantController extends Controller
 {
@@ -33,7 +32,8 @@ class EtudiantController extends Controller
             "ecole_provenance" => "required",
             "pourcentage" => "required|regex:/^[0-9.]+$/",
             "option_laureat" => "required",
-            "annee_laureat" => "required|integer|min:1900|max:20200"
+            "annee_laureat" => "required|integer|min:1900|max:20200",
+            "nationalite" => "required"
         ]);
     }
 
@@ -73,10 +73,10 @@ class EtudiantController extends Controller
             'prenom' => $request->prenom,
             'email' => $request->email,
             "genre" => $request->genre,
-            'password' => Hash::make("isam2021"),
             'nationalite' => $request->nationalite,
             'adresse' => $request->adresse,
-            'telephone' => $request->telephone
+            'telephone' => $request->telephone,
+            "is_active" => true
         ]);
 
         $etudiant = Etudiant::create([

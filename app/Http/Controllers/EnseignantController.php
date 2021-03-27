@@ -3,10 +3,36 @@
 namespace App\Http\Controllers;
 
 use App\Models\Enseignant;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use PHPUnit\Util\Json;
 
 class EnseignantController extends Controller
 {
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'nom' => ['required', 'string', 'max:255'],
+            'postnom' => ['required', 'string', 'max:255'],
+            'prenom' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'telephone' => ['regex:/(^0[0-9]{9})|(\+[0-9]{12})$/', ],
+            "domaine" => "required",
+            "grade" => "required",
+            "nationalite" => "required",
+            "genre" => "required|length:1"
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +40,8 @@ class EnseignantController extends Controller
      */
     public function index()
     {
-        //
+        $enseignants = Enseignant::all();
+        return view("pages.admin.enseignants.index")->with("enseignants", $enseignants);
     }
 
     /**
@@ -24,7 +51,7 @@ class EnseignantController extends Controller
      */
     public function create()
     {
-        //
+        return view("pages.admin.enseignants.create");
     }
 
     /**
@@ -35,7 +62,28 @@ class EnseignantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create([
+            "nom" => $request->nom,
+            "postnom" => $request->postnom,
+            "prenom" => $request->prenom,
+            "genre" => $request->genre,
+            "nationalite" => $request->nationalite,
+            "email" => $request->email,
+            "telephone" => $request->telephone,
+            "password" => Hash::make("isam2021"),
+            "adresse" => $request->adresse
+        ]);
+
+        $enseignant = Enseignant::create([
+            "user_id" => $user->id,
+            "grade" => $request->grade,
+            "domaine" => $request->domaine
+        ]);
+
+        return json_encode([
+            "status" => "success",
+            ""
+        ]);
     }
 
     /**
