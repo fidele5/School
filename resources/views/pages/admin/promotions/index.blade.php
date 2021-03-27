@@ -26,7 +26,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Toutes les promotions</h4>
+                    <h4 class="card-title">Promotions</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body card-dashboard">
@@ -47,12 +47,15 @@
                                             <td>{{ $promotion->nom }}</td>
                                             <td>{{ $promotion->filiere->nom }}</td>
                                             <td>
-                                                <a href="{{ route("promotions.edit", $promotion) }}">
+                                                <form method="POST" action="{{ route("promotions.destroy", $promotion)}}">
+                                                @csrf
+                                                @method("delete")
+                                                <a class="btn btn-primary" href="{{ route("promotions.edit", $promotion) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="{{ route("promotions.destroy", $promotion) }}">
-                                                    <i class="bx bx-trash"></i>
-                                                </a>
+                                                <button class="btn btn-danger" type="submit"><i class="bx bx-trash"></i></button>
+                                                </form>
+                                                
                                             </td>
                                         </tr>
                                     @endforeach

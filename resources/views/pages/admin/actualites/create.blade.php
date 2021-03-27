@@ -46,10 +46,10 @@
                                                 @foreach ($categories as $categorie)
                                                     <option value="{{ $categorie->id }}">{{ $categorie->designation }}</option>
                                                 @endforeach
-
                                             </select>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-12">
                                         <fieldset class="form-label-group mb-0">
                                             <textarea data-length=20 class="form-control char-textarea champ" id="textarea-counter" rows="5" name="contenu" placeholder="{{ __("pages.content") }}"></textarea>
