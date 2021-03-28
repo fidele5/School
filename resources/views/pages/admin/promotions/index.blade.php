@@ -47,15 +47,12 @@
                                             <td>{{ $promotion->nom }}</td>
                                             <td>{{ $promotion->filiere->nom }}</td>
                                             <td>
-                                                <form method="POST" action="{{ route("promotions.destroy", $promotion)}}">
-                                                @csrf
-                                                @method("delete")
                                                 <a class="btn btn-primary" href="{{ route("promotions.edit", $promotion) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <button class="btn btn-danger" type="submit"><i class="bx bx-trash"></i></button>
+                                                <a class="delete" href="{{ route('promotions.destroy', $promotion)}}" class="btn btn-danger" type="submit"><i class="bx bx-trash"></i></a>
                                                 </form>
-                                                
+
                                             </td>
                                         </tr>
                                     @endforeach

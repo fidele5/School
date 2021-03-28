@@ -14,4 +14,8 @@ class Actualite extends Model
     {
         return $this->belongsTo(CategorieActualite::class);
     }
+
+    public function publication() {
+        return $this->belongsTo(Publication::class);
+    }
 }

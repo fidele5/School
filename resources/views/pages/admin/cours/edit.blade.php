@@ -30,7 +30,7 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form row" method="POST" action="{{ route("courses.update", $course) }}">
+                        <form class="form row" method="POST" action="{{ route("courses.update", $course)}}">
                             @csrf
                             @method("patch")
                             <div class="col-12">

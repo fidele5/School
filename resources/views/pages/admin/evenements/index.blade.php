@@ -58,7 +58,7 @@
                                                 <a href="{{ route("evenements.edit", $evenement) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="{{ route("evenements.destroy", $evenement) }}">
+                                                <a class="delete" href="{{ route("evenements.destroy", $evenement) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

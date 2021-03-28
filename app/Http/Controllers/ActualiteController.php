@@ -64,7 +64,7 @@ class ActualiteController extends Controller
 
         $publication = Publication::create(
             [
-                'titre' => $request->title,
+                'titre' => $request->titre,
                 'texte' => $request->contenu,
                 'photo' => $timestamp,
                 'user_id' => Auth::user()->id
@@ -105,7 +105,8 @@ class ActualiteController extends Controller
         $arguments = [
             "categories"=>$categories,
             "selected_item" => "publications_actualites",
-            "selected_sub_item" => "all"
+            "selected_sub_item" => "all",
+            "actualite" => $actualite
         ];
         return view("pages.admin.actualites.edit")->with($arguments);
     }

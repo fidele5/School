@@ -62,7 +62,7 @@ Route::middleware("auth")->group(function () {
         Route::resource('publications', PublicationController::class);
         Route::resource('image-realisation', ImageRealisationController::class);
         Route::get('', function() {
-            return view('pages.admin.home')->with("selected_item", "home");
+            return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
         })->name('home-admin');
     });
 });

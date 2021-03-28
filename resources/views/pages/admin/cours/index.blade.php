@@ -48,7 +48,7 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $course->intitule }}</td>
-                                            <td class="truncate" width="150px">{{ $course->description }}</td>
+                                            <td class="text-truncate" style="max-width: 120px;">{{ $course->description }}</td>
                                             <td>{{ $course->volume_horiare }}</td>
                                             <td>{{ $course->promotion->nom }}</td>
                                             <th>{{ $course->enseignant->user->email }}</th>

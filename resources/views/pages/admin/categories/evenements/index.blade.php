@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>Numéro</th>
                                         <th>Désignation</th>
-                                        <th>{{ __("pages.actions") }}</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -59,7 +59,7 @@
                                     <tr>
                                         <th>Numéro</th>
                                         <th>Désignation</th>
-                                        <th>{{ __("pages.actions") }}</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </tfoot>
                             </table>

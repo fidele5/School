@@ -48,7 +48,7 @@
                                                 <a href="{{ route("filieres.edit", $filiere) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="{{ route("filieres.destroy", $filiere) }}">
+                                                <a class="delete" href="{{ route("filieres.destroy", $filiere) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

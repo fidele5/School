@@ -4,14 +4,14 @@
     <div class="content-header-left col-12 mb-2 mt-1">
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h5 class="content-header-title float-left pr-1 mb-0">Réalisations</h5>
+                <h5 class="content-header-title float-left pr-1 mb-0">Horaires</h5>
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb p-0 mb-0">
                         <li class="breadcrumb-item ">
                             <a href="{{ route('home-admin')}}"><i class="bx bx-home-alt"></i></a>
                         </li>
                         <li class="breadcrumb-item active">
-                            Réalisation
+                            Horaires
                         </li>
                     </ol>
                 </div>
@@ -26,7 +26,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Toutes les réalisations</h4>
+                    <h4 class="card-title">Horaires</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body card-dashboard">
@@ -34,25 +34,23 @@
                             <table class="table zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Titre</th>
-                                        <th>Contenu</th>
-                                        <th>Catégorie</th>
-                                        <th>Photo</th>
+                                        <th>Date de debut</th>
+                                        <th>Date de fin</th>
+                                        <th>Description</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($realisations as $realisation)
+                                    @foreach ($horaires as $horaire)
                                         <tr>
-                                            <td>{{ $realisation->publication->titre }}</td>
-                                            <td class="text-truncate" style="max-width: 250px">{{ $realisation->publication->texte }}</td>
-                                            <td>{{ $realisation->categorie_realisation->designation }}</td>
-                                            <td>{{ $realisation->publication->photo}}</td>
+                                            <td>{{ $horaire->debut }}</td>
+                                            <td>{{ $horaire->fin }}</td>
+                                            <td class="text-truncate" style="max-width: 250px">{{ $horaire->description }}</td>
                                             <td>
-                                                <a href="{{ route("realisations.edit", $realisation) }}">
+                                                <a href="{{ route("horaires.edit", $horaire) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="delete" href="{{ route("realisations.destroy", $realisation) }}">
+                                                <a class="delete" href="{{ route("horaires.destroy", $horaire) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
@@ -63,7 +61,7 @@
                                     <tr>
                                         <th>Titre</th>
                                         <th>Contenu</th>
-                                        <th>Catégorie</th>
+                                        <th>Categorie</th>
                                         <th>Photo</th>
                                         <th>Actions</th>
                                     </tr>

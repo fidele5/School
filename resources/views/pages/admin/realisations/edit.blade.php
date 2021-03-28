@@ -26,7 +26,7 @@
         <div class="col-md-8 col-12">
             <div class="card">
                 <div class="card-header text-center">
-                    <h4 class="card-title">Editer une réalisation</h4>
+                    <h4 class="card-title">Editer actualité</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
@@ -81,7 +81,7 @@
                                         </fieldset>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary mr-1 mb-1">Enregistrer</button>
+                                        <button type="submit" class="btn btn-primary mr-1 mb-1">Mettre à jour</button>
                                         <button type="reset" class="btn btn-light-secondary mr-1 mb-1">Annuler</button>
                                     </div>
                                 </div>

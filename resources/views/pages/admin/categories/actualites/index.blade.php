@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>Numéro</th>
                                         <th>Désignation</th>
-                                        <th>{{ __("pages.actions") }}</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,7 +48,7 @@
                                                 <a href="{{ route("categorie-actualites.edit", $categorie) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="{{ route("categorie-actualites.destroy", $categorie) }}">
+                                                <a class="delete" href="{{ route("categorie-actualites.destroy", $categorie) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
@@ -59,7 +59,7 @@
                                     <tr>
                                         <th>Numéro</th>
                                         <th>Désignation</th>
-                                        <th>{{ __("pages.actions") }}</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </tfoot>
                             </table>

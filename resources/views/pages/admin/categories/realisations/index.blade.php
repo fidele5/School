@@ -48,7 +48,7 @@
                                                 <a href="{{ route('categorie-realisations.edit', $categorie) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="{{ route('categorie-realisations.destroy', $categorie) }}">
+                                                <a class="delete" href="{{ route('categorie-realisations.destroy', $categorie) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
