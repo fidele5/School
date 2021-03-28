@@ -37,7 +37,7 @@
                                         <th>N°</th>
                                         <th>Intitulé</th>
                                         <th>Description</th>
-                                        <th>Pondération</th>
+                                        <th>Volume horaire</th>
                                         <th>Promotion</th>
                                         <th>Enseignant</th>
                                         <th>Actions</th>
@@ -49,7 +49,7 @@
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $course->intitule }}</td>
                                             <td class="truncate" width="150px">{{ $course->description }}</td>
-                                            <td>{{ $course->ponderation }}</td>
+                                            <td>{{ $course->volume_horiare }}</td>
                                             <td>{{ $course->promotion->nom }}</td>
                                             <th>{{ $course->enseignant->user->email }}</th>
                                             <td>
@@ -68,7 +68,7 @@
                                         <th>N°</th>
                                         <th>Intitulé</th>
                                         <th>Description</th>
-                                        <th>Pondération</th>
+                                        <th>Volume horaire</th>
                                         <th>Promotion</th>
                                         <th>Enseignant</th>
                                         <th>Actions</th>

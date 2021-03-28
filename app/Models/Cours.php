@@ -10,7 +10,7 @@ class Cours extends Model
     use HasFactory;
 
     protected $fillable = [
-        "intitule", "volume_horaire", "ponderation", "promotion_id", "enseignant_id",
+        "intitule", "description", "volume_horaire", "promotion_id", "enseignant_id",
     ];
 
     public function promotion()

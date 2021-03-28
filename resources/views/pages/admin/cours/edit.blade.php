@@ -30,13 +30,13 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form row" method="POST" action="{{ route("courses.store") }}">
+                        <form class="form row" method="POST" action="{{ route("courses.update", $course) }}">
                             @csrf
                             @method("patch")
                             <div class="col-12">
                                 <div class="form-group mb-10">
-                                  <label for="inputfirstname4">Inititulé</label>
-                                  <input type="text" class="form-control @error('intitule') is-invalid @enderror" name="intitule" id="inputfirstname4" value="{{ $course->intitule }}" placeholder="Intitulé" />
+                                  <label for="intitule">Inititulé</label>
+                                  <input type="text" class="form-control @error('intitule') is-invalid @enderror" name="intitule" id="intitule" value="{{ $course->intitule }}" placeholder="Intitulé" />
                                   @error('intitule')
                                       <div class="alert alert-danger">{{ $message }}</div>
                                   @enderror
@@ -45,9 +45,9 @@
 
                             <div class="col-12">
                                 <div class="form-group mb-10">
-                                    <label for="inputfirstname4">Pondération</label>
-                                    <input type="text" class="form-control @error('ponderation') is-invalid @enderror" name="ponderation" id="inputfirstname4" value="{{ $course->ponderation }}" placeholder="Pondération du cours" />
-                                    @error('ponderation')
+                                    <label for="volume_horaire">Volume horaire</label>
+                                    <input type="text" class="form-control @error('volume_horaire') is-invalid @enderror" name="volume_horaire" id="volume_horaire" value="{{ $course->volume_horaire }}" placeholder="Volume horaire" />
+                                    @error('volume_horaire')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -61,7 +61,7 @@
                                         @foreach ($promotions as $promotion)
                                             <option value="{{ $promotion->id }}" @if ($course->promotion_id == $promotion->id)
                                                 selected
-                                            @endif>{{ $promotion->nom }}</option>
+                                            @endif>{{ $promotion->nom }} {{ $promotion->filiere->nom }}</option>
                                         @endforeach
                                     </select>
                                     @error('promotion')
@@ -80,7 +80,7 @@
                                             @endif>{{ $enseignant->user->email }}</option>
                                         @endforeach
                                     </select>
-                                    @error('email')
+                                    @error('enseignant')
                                         <small class="text-light-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
@@ -89,7 +89,7 @@
                             <div class="col-12">
                                 <fieldset class="form-group">
                                     <label for="textarea-counter">Description</label>
-                                    <textarea data-length=20 class="form-control char-textarea champ @error('description') is-invalid @enderror" id="textarea-counter" rows="5" name="description" placeholder="Description">{{ $course->description }}</textarea>
+                                    <textarea data-length=20 class="form-control char-textarea champ  @error('description') is-invalid @enderror" id="textarea-counter" rows="5" name="description" placeholder="Description">{{ $course->description }}</textarea>
                                     @error('description')
                                         <small class="text-light-danger">{{ $message }}</small>
                                     @enderror

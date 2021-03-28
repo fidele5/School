@@ -21,7 +21,7 @@ class CoursController extends Controller
     {
         return Validator::make($data, [
             'intitule' => ['required', 'string', 'max:255'],
-            'ponderation' => ['required', 'integer', 'min:1'],
+            'volume_horaire' => ['required', 'integer', 'min:15'],
             'promotion' => "required",
             'enseignant' => "required",
         ]);
@@ -35,7 +35,12 @@ class CoursController extends Controller
     public function index()
     {
         $courses = Cours::all();
-        return view("pages.admin.cours.index")->with("courses", $courses);
+        $arguments = [
+            "courses" => $courses,
+            "selected_item" => "cours",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.cours.index")->with($arguments);
     }
 
     /**
@@ -47,7 +52,12 @@ class CoursController extends Controller
     {
         $enseignants = Enseignant::all();
         $promotions = Promotion::all();
-        $arguments = ["enseignants"=>$enseignants, "promotions"=>$promotions];
+        $arguments = [
+            "enseignants"=>$enseignants,
+            "promotions"=>$promotions,
+            "selected_item" => "cours",
+            "selected_sub_item" => "new"
+        ];
         return view("pages.admin.cours.create")->with($arguments);
     }
 
@@ -61,10 +71,10 @@ class CoursController extends Controller
     {
         $cours = Cours::create([
             "intitule" => $request->intitule,
-            "ponderation" => $request->ponderation,
-            "desciption" => $request->description,
+            "volume_horaire" => $request->volume_horaire,
+            "description" => $request->description,
             "promotion_id" => $request->promotion,
-            "enseignant" => $request->enseignant
+            "enseignant_id" => $request->enseignant,
         ]);
 
         return response()->json([
@@ -94,7 +104,13 @@ class CoursController extends Controller
     {
         $enseignants = Enseignant::all();
         $promotions = Promotion::all();
-        $arguments = ["enseignants"=>$enseignants, "promotions"=>$promotions, "course" => $cours];
+        $arguments =[
+            "enseignants"=>$enseignants,
+            "promotions"=>$promotions,
+            "course" => $cours,
+            "selected_item" => "cours",
+            "selected_sub_item" => "all"
+        ];
         return view("pages.admin.cours.edit")->with($arguments);
     }
 
@@ -109,7 +125,7 @@ class CoursController extends Controller
     {
         $cours->intitule = $request->intitule;
         $cours->description = $request->description;
-        $cours->ponderation = $request->ponderation;
+        $cours->volume_horaire = $request->volume_horaire;
         $cours->promotion_id = $request->promotion;
         $cours->enseignant_id = $request->enseignant;
 

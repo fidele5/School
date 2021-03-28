@@ -32,11 +32,10 @@
                     <div class="card-body">
                         <form class="form row" method="POST" action="{{ route("courses.store") }}">
                             @csrf
-                            @method("patch")
                             <div class="col-12">
                                 <div class="form-group mb-10">
-                                  <label for="inputfirstname4">Inititulé</label>
-                                  <input type="text" class="form-control @error('intitule') is-invalid @enderror" name="intitule" id="inputfirstname4" value="{{ old('intitule') }}" placeholder="Intitulé" />
+                                  <label for="intitule">Inititulé</label>
+                                  <input type="text" class="form-control @error('intitule') is-invalid @enderror" name="intitule" id="intitule" value="{{ old('intitule') }}" placeholder="Intitulé" />
                                   @error('intitule')
                                       <div class="alert alert-danger">{{ $message }}</div>
                                   @enderror
@@ -45,9 +44,9 @@
 
                             <div class="col-12">
                                 <div class="form-group mb-10">
-                                    <label for="inputfirstname4">Pondération</label>
-                                    <input type="text" class="form-control @error('ponderation') is-invalid @enderror" name="ponderation" id="inputfirstname4" value="{{ old('ponderation') }}" placeholder="Pondération du cours" />
-                                    @error('ponderation')
+                                    <label for="volume_horaire">Volume horaire</label>
+                                    <input type="text" class="form-control @error('volume_horaire') is-invalid @enderror" name="volume_horaire" id="volume_horaire" value="{{ old('volume_horaire') }}" placeholder="Volume horaire" />
+                                    @error('volume_horaire')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>

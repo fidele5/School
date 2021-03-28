@@ -18,7 +18,12 @@ class ActualiteController extends Controller
     public function index()
     {
         $actualites = Actualite::all();
-        return view('pages.admin.actualites.index')->with("actualites", $actualites);
+        $arguments = [
+            "actualites" => $actualites,
+            "selected_item" => "publications_actualites",
+            "selected_sub_item" => "all"
+        ];
+        return view('pages.admin.actualites.index')->with($arguments);
     }
 
     /**
@@ -29,7 +34,12 @@ class ActualiteController extends Controller
     public function create()
     {
         $categories = CategorieActualite::all();
-        return view("pages.admin.actualites.create")->with("categories", $categories);
+        $arguments = [
+            "categories"=>$categories,
+            "selected_item" => "publications_actualites",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.actualites.create")->with($arguments);
     }
 
     /**
@@ -91,8 +101,13 @@ class ActualiteController extends Controller
      */
     public function edit(Actualite $actualite)
     {
-        echo($actualite->designation);
-        return view("pages.admin.actualites.edit")->with("actualite", $actualite);
+        $categories = CategorieActualite::all();
+        $arguments = [
+            "categories"=>$categories,
+            "selected_item" => "publications_actualites",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.actualites.edit")->with($arguments);
     }
 
     /**

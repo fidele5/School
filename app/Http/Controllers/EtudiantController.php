@@ -45,7 +45,12 @@ class EtudiantController extends Controller
     public function index()
     {
         $etudiants = Etudiant::all();
-        return view("pages.admin.etudiants.index")->with("etudiants", $etudiants);
+        $arguments = [
+            "etudiants" => $etudiants,
+            "selected_item" => "etudiants",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.etudiants.index")->with($arguments);
     }
 
     /**
@@ -56,7 +61,12 @@ class EtudiantController extends Controller
     public function create()
     {
         $promotions = Promotion::all();
-        return view("pages.admin.etudiants.create")->with("promotions", $promotions);
+        $arguments = [
+            "promotions" => $promotions,
+            "selected_item" => "etudiants",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.etudiants.create")->with($arguments);
     }
 
     /**
@@ -117,8 +127,13 @@ class EtudiantController extends Controller
     public function edit(Etudiant $etudiant)
     {
         $promotions = Promotion::all();
-        $arguments = ["promotions" => $promotions, "etudiant" => $etudiant];
-        return view("pages.admin.etudiants.edit")->with($arguments);
+        $arguments = [
+            "promotions" => $promotions,
+            "etudiant" => $etudiant, "
+            selected_item" => "etudiants",
+            "selected_sub_item" => "all"
+        ];
+                return view("pages.admin.etudiants.edit")->with($arguments);
     }
 
     /**

@@ -14,7 +14,11 @@ class HoraireController extends Controller
      */
     public function index()
     {
-        //
+        $horaires = Horaire::all();
+        $arguments = [
+            "horaires" => $horaires,
+            "selected_item" => "filieres"
+        ];
     }
 
     /**

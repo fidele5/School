@@ -16,7 +16,12 @@ class PromotionController extends Controller
     public function index()
     {
         $promotions = Promotion::all();
-        return view("pages.admin.promotions.index")->with("promotions", $promotions);
+        $arguments = [
+            "promotions" => $promotions,
+            "selected_item" => "promotions",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.promotions.index")->with($arguments);
     }
 
     /**
@@ -27,7 +32,12 @@ class PromotionController extends Controller
     public function create()
     {
         $filieres = Filiere::all();
-        return view("pages.admin.promotions.create")->with("filieres", $filieres);
+        $arguments = [
+            "filieres" => $filieres,
+            "selected_item" => "promotions",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.promotions.create")->with($arguments);
     }
 
     /**
@@ -74,7 +84,13 @@ class PromotionController extends Controller
     public function edit(Promotion $promotion)
     {
         $filieres = Filiere::all();
-        return view("pages.admin.promotions.edit")->with(["filieres"=> $filieres, "promotion" => $promotion]);
+        $arguments = [
+            "filieres" => $filieres,
+            "promotion" => $promotion,
+            "selected_item" => "promotions",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.promotions.edit")->with($arguments);
     }
 
     /**

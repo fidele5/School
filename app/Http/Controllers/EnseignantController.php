@@ -40,7 +40,12 @@ class EnseignantController extends Controller
     public function index()
     {
         $enseignants = Enseignant::all();
-        return view("pages.admin.enseignants.index")->with("enseignants", $enseignants);
+        $arguments = [
+            "enseignants" => $enseignants,
+            "selected_item" => "enseignants",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.enseignants.index")->with($arguments);
     }
 
     /**
@@ -50,7 +55,11 @@ class EnseignantController extends Controller
      */
     public function create()
     {
-        return view("pages.admin.enseignants.create");
+        $arguments = [
+            "selected_item" => "enseignants",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.enseignants.create")->with($arguments);
     }
 
     /**
@@ -104,7 +113,12 @@ class EnseignantController extends Controller
      */
     public function edit(Enseignant $enseignant)
     {
-        return view("pages.admin.enseignants.index")->with("enseignant", $enseignant);
+        $arguments = [
+            "enseignant" => $enseignant,
+            "selected_item" => "enseignants",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.enseignants.index")->with($arguments);
     }
 
     /**
