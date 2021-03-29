@@ -18,7 +18,12 @@ class CreateHorairesTable extends Migration
             $table->string("description");
             $table->date("debut");
             $table->date("fin");
+            $table->unsignedBigInteger("promotion_id");
             $table->timestamps();
+        });
+
+        Schema::table("horaires", function(Blueprint $table){
+            $table->foreign("promotion_id")->references("id")->on("promotions")->cascadeOnDelete();
         });
     }
 

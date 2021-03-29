@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Seance;
+use App\Models\Cours;
+use App\Models\Promotion;
 use Illuminate\Http\Request;
 
 class SeanceController extends Controller
@@ -14,7 +16,13 @@ class SeanceController extends Controller
      */
     public function index()
     {
-        //
+        $arguments = [
+            "seances" => Seance::all(),
+            "selected_item" => "seances",
+            "selected_sub_item" => "all"
+        ];
+
+        return view("pages.admin.seances.index")->with($arguments);
     }
 
     /**
@@ -24,7 +32,14 @@ class SeanceController extends Controller
      */
     public function create()
     {
-        //
+        $arguments = [
+            "courses" => Cours::all(),
+            "promotions" => Promotion::all(),
+            "selected_item" => "seances",
+            "selected_sub_item" => "new"
+        ];
+
+        return view("pages.admin.seances.create")->with($arguments);
     }
 
     /**
