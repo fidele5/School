@@ -36,6 +36,7 @@
                                     <tr>
                                         <th>Date de debut</th>
                                         <th>Date de fin</th>
+                                        <th>Promotion</th>
                                         <th>Description</th>
                                         <th>Actions</th>
                                     </tr>
@@ -45,6 +46,7 @@
                                         <tr>
                                             <td>{{ $horaire->debut }}</td>
                                             <td>{{ $horaire->fin }}</td>
+                                            <td>{{ $horaire->promotion->nom}} {{ $horaire->promotion->filiere->nom}}</td>
                                             <td class="text-truncate" style="max-width: 150px">{{ $horaire->description }}</td>
                                             <td>
                                                 <a href="{{ route("horaires.edit", $horaire) }}">
@@ -61,6 +63,7 @@
                                     <tr>
                                         <th>Date de debut</th>
                                         <th>Date de fin</th>
+                                        <th>Promotion</th>
                                         <th>Description</th>
                                         <th>Actions</th>
                                     </tr>

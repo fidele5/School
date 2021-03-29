@@ -55,6 +55,22 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-12 mb-10">
+                                        <div class="form-group">
+                                            <label for="promotion">Promotion</label>
+                                            <select name="promotion_id" id="promotion" class="custom-select @error('promotion_id') is-invalid @enderror">
+                                                @foreach ($promotions as $promotion)
+                                                    <option value="{{ $promotion->id }}" @if ($course->promotion_id == $promotion->id)
+                                                        selected
+                                                    @endif>{{ $promotion->nom }} {{ $promotion->filiere->nom }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('promotion_id')
+                                                <small class="text-light-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
+
                                     <div class="col-12">
                                         <fieldset class="form-group mb-0">
                                             <label for="textarea-counter">Description</label>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Seance;
 use App\Models\Cours;
-use App\Models\Promotion;
+use App\Models\Horaire;
 use Illuminate\Http\Request;
 
 class SeanceController extends Controller
@@ -34,7 +34,7 @@ class SeanceController extends Controller
     {
         $arguments = [
             "courses" => Cours::all(),
-            "promotions" => Promotion::all(),
+            "horaires" => Horaire::all(),
             "selected_item" => "seances",
             "selected_sub_item" => "new"
         ];
@@ -50,7 +50,12 @@ class SeanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $seance = Seance::create($request->except("_token", "_method"));
+
+        return response()->json([
+            "status" => "success",
+            "back" => "seances"
+        ]);
     }
 
     /**
@@ -72,7 +77,15 @@ class SeanceController extends Controller
      */
     public function edit(Seance $seance)
     {
-        //
+        $arguments = [
+            "courses" => Cours::all(),
+            "horaires" => Horaire::all(),
+            "selected_item" => "seances",
+            "selected_sub_item" => "all",
+            "seance" => $seance
+        ];
+
+        return view("pages.admin.seances.edit")->with($arguments);
     }
 
     /**
@@ -84,7 +97,12 @@ class SeanceController extends Controller
      */
     public function update(Request $request, Seance $seance)
     {
-        //
+        $seance->update($request->except("_token", "_method"));
+
+        return response()->json([[
+            "status" => "success",
+            "back" => "../seances"
+        ]]);
     }
 
     /**
@@ -95,6 +113,11 @@ class SeanceController extends Controller
      */
     public function destroy(Seance $seance)
     {
-        //
+        $deleted = $seance->delete();
+        if($deleted) {
+            return response()->json(["status" => "success"]);
+        } else {
+            return response($status=500);
+        }
     }
 }

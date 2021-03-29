@@ -10,7 +10,7 @@
                         <a href="{{ route('home-admin') }}"><i class="bx bx-home-alt"></i></a>
                     </li>
                     <li class="breadcrumb-item ">
-                        <a href="{{ route('horaires.index') }}">Seances</a>
+                        <a href="{{ route('seances.index') }}">Seances</a>
                     </li>
                     <li class="breadcrumb-item active">
                         Nouvelle
@@ -70,16 +70,27 @@
 
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label>Promotion</label>
-                                            <select name="promotion_id" id="promotion" class="custom-select @error('promotion_id') is-invalid @enderror">
-                                                @foreach ($promotions as $promotion)
-                                                    <option value="{{ $promotion->id }}" @if(old('promotion_id') == $promotion->id) selected="" @endif>{{ $promotion->nom }} {{ $promotion->filiere->nom }}</option>
+                                            <label>Horaire</label>
+                                            <select name="horaire_id" id="horaire" class="custom-select @error('horaire_id') is-invalid @enderror">
+                                                @foreach ($horaires as $horaire)
+                                                    <option value="{{ $horaire->id }}" @if(old('horaire_id') == $horaire->id) selected="" @endif>{{ $horaire->promotion->nom }} {{ $horaire->promotion->filiere->nom }} : Du {{ $horaire->debut }} au {{ $horaire->fin }}</option>
                                                 @endforeach
                                                 @error('promotion_id')
                                                     <small>{{ $message }}</small>
                                                 @enderror
                                             </select>
                                         </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <fieldset class="form-group mb-0">
+                                            <label for="textarea-counter">Description</label>
+                                            <textarea data-length=20 class="form-control char-textarea champ @error('description') is-invalid @enderror" id="textarea-counter" rows="5" name="description" placeholder="Description">{{ old('description')}}</textarea>
+                                            @error('description')
+                                                <small class="text-light-danger">{{ $message }}</small>
+                                            @enderror
+                                        </fieldset>
+                                        <small class="counter-value float-right"><span class="char-count">0</span> / 20 </small>
                                     </div>
 
                                     <div class="col-12 d-flex justify-content-end">

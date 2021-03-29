@@ -9,7 +9,7 @@ class Seance extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["heure_debut", "heure_fin", "cours_id", "horaire_id", ];
+    protected $fillable = ["heure_debut", "heure_fin", "cours_id", "horaire_id", "description"];
 
     public function cours()
     {

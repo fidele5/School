@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Horaire;
+use App\Models\Promotion;
 use Illuminate\Http\Request;
 
 class HoraireController extends Controller
@@ -33,7 +34,8 @@ class HoraireController extends Controller
     {
         $arguments = [
             "selected_item" => "horaires",
-            "selected_sub_item" => "new"
+            "selected_sub_item" => "new",
+            "promotions" => Promotion::all()
         ];
         return view("pages.admin.horaires.create")->with($arguments);
     }
@@ -75,7 +77,8 @@ class HoraireController extends Controller
         $arguments = [
             "selected_item" => "horaires",
             "selected_sub_item" => "new",
-            "horaire" => $horaire
+            "horaire" => $horaire,
+            "promotions" => Promotion::all()
         ];
         return view("pages.admin.horaires.edit")->with($arguments);
     }

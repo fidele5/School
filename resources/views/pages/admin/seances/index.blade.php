@@ -46,7 +46,7 @@
                                         <tr>
                                             <td>{{ $seance->heure_debut }}</td>
                                             <td >{{ $seance->heure_fin }}</td>
-                                            <td>{{ $seance->horaire->nom }} {{$seance->horaire->promotion->filiere->nom}} : Du {{ $seance->horaire->debut}} au {{$seance->horaire->fin}}</td>
+                                            <td>{{ $seance->horaire->promotion->nom }} {{$seance->horaire->promotion->filiere->nom}} : Du {{ $seance->horaire->debut}} au {{$seance->horaire->fin}}</td>
                                             <td >{{ $seance->cours->intitule }}</td>
                                             <td>
                                                 <a href="{{ route("seances.edit", $seance) }}">

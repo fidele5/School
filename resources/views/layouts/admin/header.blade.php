@@ -48,7 +48,7 @@
     <!-- END: Head-->
 
     <!-- BEGIN: Body-->
-    <body class="vertical-layout vertical-menu-modern 2-columns light-layout  navbar-sticky footer-static boxicon-layout no-card-shadow" data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+    <body class="vertical-layout vertical-menu-modern 2-columns light-layout menu-collapsed navbar-sticky footer-static boxicon-layout no-card-shadow" data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
 
     <!-- BEGIN: Header-->
     <div class="header-navbar-shadow"></div>
