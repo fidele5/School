@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Horaire;
 use App\Models\Promotion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class HoraireController extends Controller
 {
+    protected function validator(array $datas) {
+        return Validator::make($datas, [
+            "promotion_id" => "required|integer",
+            "debut" => "required|date",
+            "fin" => "required|date"
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *

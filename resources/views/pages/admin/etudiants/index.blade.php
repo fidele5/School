@@ -24,7 +24,7 @@
 <section id="basic-datatable">
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            < class="card">
                 <div class="card-header">
                     <h4 class="card-title">Etudiants</h4>
                 </div>
@@ -104,6 +104,12 @@
                             </table>
                         </div>
                     </div>
+                </div>
+                <div class="card-footer">
+                    <form action="#" class="dropzone dropzone-area" id="dpz-single-file">
+                        <div class="dz-message">Veuillez selectionner le fichier excel contenant les noms des étudiants</div>
+                        <button class="btn btn-primary" type="submit">Valider</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -23,6 +23,13 @@
     <link rel="stylesheet" type="text/css" href="/backend/vendors/css/pickers/daterange/daterangepicker.css">
     <!-- END: Vendor CSS-->
 
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="/backend/vendors/css/ui/prism.min.css">
+	<link rel="stylesheet" type="text/css" href="/backend/vendors/css/file-uploaders/dropzone.min.css">
+    <link rel="stylesheet" type="text/css" href="/backend/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="/backend/css/plugins/file-uploaders/dropzone.css">
+    <!-- END: Vendor CSS-->
+
     <link rel="stylesheet" type="text/css" href="/backend/vendors/css/extensions/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="/backend/vendors/css/extensions/toastr.css">
     <!-- BEGIN: Theme CSS-->
