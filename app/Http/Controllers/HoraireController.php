@@ -17,8 +17,11 @@ class HoraireController extends Controller
         $horaires = Horaire::all();
         $arguments = [
             "horaires" => $horaires,
-            "selected_item" => "filieres"
+            "selected_item" => "filieres",
+            "selected_sub_item" => "all"
         ];
+
+        return view("pages.admin.horaires.index")->with($arguments);
     }
 
     /**
@@ -28,7 +31,11 @@ class HoraireController extends Controller
      */
     public function create()
     {
-        //
+        $arguments = [
+            "selected_item" => "horaires",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.horaires.create")->with($arguments);
     }
 
     /**
@@ -39,7 +46,11 @@ class HoraireController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $horaire = Horaire::create($request->except("_token", "_method"));
+        return response()->json([
+            "status" => "success",
+            "back" => "horaires"
+        ]);
     }
 
     /**
@@ -61,7 +72,12 @@ class HoraireController extends Controller
      */
     public function edit(Horaire $horaire)
     {
-        //
+        $arguments = [
+            "selected_item" => "horaires",
+            "selected_sub_item" => "new",
+            "horaire" => $horaire
+        ];
+        return view("pages.admin.horaires.edit")->with($arguments);
     }
 
     /**
@@ -73,7 +89,16 @@ class HoraireController extends Controller
      */
     public function update(Request $request, Horaire $horaire)
     {
-        //
+        $horaire->debut = $request->debut;
+        $horaire->fin = $request->fin;
+        $horaire->description = $request->description;
+
+        $horaire->save();
+
+        return response()->json([
+            "status" => "success",
+            "back" => "../horaires"
+        ]);
     }
 
     /**
@@ -84,6 +109,14 @@ class HoraireController extends Controller
      */
     public function destroy(Horaire $horaire)
     {
-        //
+        $deleted = $horaire->delete();
+
+        if($deleted) {
+            return response()->json([
+                "status" => "success"
+            ]);
+        } else {
+            return response($status=500);
+        }
     }
 }

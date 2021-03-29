@@ -45,7 +45,7 @@
                                         <tr>
                                             <td>{{ $horaire->debut }}</td>
                                             <td>{{ $horaire->fin }}</td>
-                                            <td class="text-truncate" style="max-width: 250px">{{ $horaire->description }}</td>
+                                            <td class="text-truncate" style="max-width: 150px">{{ $horaire->description }}</td>
                                             <td>
                                                 <a href="{{ route("horaires.edit", $horaire) }}">
                                                     <i class="bx bx-edit"></i>
@@ -59,10 +59,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Titre</th>
-                                        <th>Contenu</th>
-                                        <th>Categorie</th>
-                                        <th>Photo</th>
+                                        <th>Date de debut</th>
+                                        <th>Date de fin</th>
+                                        <th>Description</th>
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>
