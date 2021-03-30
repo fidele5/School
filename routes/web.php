@@ -64,6 +64,7 @@ Route::middleware("auth", "admin", "active")->group(function () {
         Route::get('', function() {
             return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
         })->name('home-admin');
+        Route::get('etudiants/export', [EtudiantController::class, 'export'])->name('');
     });
 });
 

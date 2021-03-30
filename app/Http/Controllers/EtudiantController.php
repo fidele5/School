@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Excel\Exporter\EtudiantExporter;
 use App\Models\Etudiant;
 use App\Models\Promotion;
 use App\Models\User;
@@ -184,5 +185,15 @@ class EtudiantController extends Controller
             "status" => "success",
             "back" => "etudiants"
         ]);
+    }
+
+    public function upload(Request $request) {
+        $request->validate([
+            "file" => "required|file|mimetypes:document/xlsx"
+        ]);
+    }
+
+    public function export(Request $request) {
+       return (new EtudiantExporter)->download('etudiants.xlsx');
     }
 }
