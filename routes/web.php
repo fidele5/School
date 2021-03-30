@@ -44,7 +44,7 @@ Route::get('/filiere', [HomeController::class, 'filieres'])->name('filiere');
 Route::get('/apropos', [HomeController::class, 'apropos'])->name('apropos');
 Route::get("/contact", [HomeController::class, 'contact'])->name('contact');
 Route::get("/calendrier", [HomeController::class, 'calendar'])->name('calendrier');
-Route::middleware("auth")->group(function () {
+Route::middleware("auth", "admin", "active")->group(function () {
     Route::prefix("admin")->group(function () {
         Route::resource("actualites", ActualiteController::class);
         Route::resource('evenements', EvenementController::class);

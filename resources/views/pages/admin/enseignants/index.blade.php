@@ -32,7 +32,7 @@
                     <div class="card-body card-dashboard">
                         <div class="table-responsive">
                             <table class="table zero-configuration">
-                                <thead>
+                                <thead class="thead-dark">
                                     <tr>
                                         <th>N°</th>
                                         <th>Nom</th>

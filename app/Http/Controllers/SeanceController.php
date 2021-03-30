@@ -19,12 +19,12 @@ class SeanceController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [ 
+        return Validator::make($data, [
             'heure_debut' => ['required', 'datetime'],
             'heure_fin' => ['required', 'datetime'],
             'horaire_id' => ['required', 'integer'],
             'cours_id' => ['required', 'integer'],
-            'description' => ['required',]
+            'description' => ['required', ]
         ]);
     }
 
