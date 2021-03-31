@@ -75,12 +75,32 @@
                     @csrf
                     <div class="form-row">
                       <div class="form-group col-md-12 mb-50">
-                        <label for="inputfirstname4">Noms complets</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="inputfirstname4" value="{{ old('name') }}" placeholder="Noms" />
-                        @error('name')
+                        <label for="inputfirstname4">Nom</label>
+                        <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" id="inputfirstname4" value="{{ old('nom') }}" placeholder="Nom" />
+                        @error('nom')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                       </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12 mb-50">
+                          <label for="inputfirstname4">Postnom</label>
+                          <input type="text" class="form-control @error('postnom') is-invalid @enderror" name="postnom" id="inputfirstname4" value="{{ old('postnom') }}" placeholder="Post nom" />
+                          @error('postnom')
+                              <div class="alert alert-danger">{{ $message }}</div>
+                          @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12 mb-50">
+                          <label for="inputfirstname4">Prenom</label>
+                          <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" id="inputfirstname4" value="{{ old('prenom') }}" placeholder="Nom" />
+                          @error('prenom')
+                              <div class="alert alert-danger">{{ $message }}</div>
+                          @enderror
+                        </div>
                     </div>
 
                     <div class="form-row">

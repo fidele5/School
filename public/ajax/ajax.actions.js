@@ -335,8 +335,5 @@ $(document).ready(function() {
 
         }
 
-
-
     });
-
 });

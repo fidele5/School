@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Horaire;
+use App\Models\Promotion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class HoraireController extends Controller
 {
+    protected function validator(array $datas) {
+        return Validator::make($datas, [
+            "promotion_id" => "required|integer",
+            "debut" => "required|date",
+            "fin" => "required|date"
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,14 @@ class HoraireController extends Controller
      */
     public function index()
     {
-        //
+        $horaires = Horaire::all();
+        $arguments = [
+            "horaires" => $horaires,
+            "selected_item" => "filieres",
+            "selected_sub_item" => "all"
+        ];
+
+        return view("pages.admin.horaires.index")->with($arguments);
     }
 
     /**
@@ -24,7 +40,12 @@ class HoraireController extends Controller
      */
     public function create()
     {
-        //
+        $arguments = [
+            "selected_item" => "horaires",
+            "selected_sub_item" => "new",
+            "promotions" => Promotion::all()
+        ];
+        return view("pages.admin.horaires.create")->with($arguments);
     }
 
     /**
@@ -35,7 +56,11 @@ class HoraireController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $horaire = Horaire::create($request->except("_token", "_method"));
+        return response()->json([
+            "status" => "success",
+            "back" => "horaires"
+        ]);
     }
 
     /**
@@ -57,7 +82,13 @@ class HoraireController extends Controller
      */
     public function edit(Horaire $horaire)
     {
-        //
+        $arguments = [
+            "selected_item" => "horaires",
+            "selected_sub_item" => "new",
+            "horaire" => $horaire,
+            "promotions" => Promotion::all()
+        ];
+        return view("pages.admin.horaires.edit")->with($arguments);
     }
 
     /**
@@ -69,7 +100,16 @@ class HoraireController extends Controller
      */
     public function update(Request $request, Horaire $horaire)
     {
-        //
+        $horaire->debut = $request->debut;
+        $horaire->fin = $request->fin;
+        $horaire->description = $request->description;
+
+        $horaire->save();
+
+        return response()->json([
+            "status" => "success",
+            "back" => "../horaires"
+        ]);
     }
 
     /**
@@ -80,6 +120,14 @@ class HoraireController extends Controller
      */
     public function destroy(Horaire $horaire)
     {
-        //
+        $deleted = $horaire->delete();
+
+        if($deleted) {
+            return response()->json([
+                "status" => "success"
+            ]);
+        } else {
+            return response($status=500);
+        }
     }
 }

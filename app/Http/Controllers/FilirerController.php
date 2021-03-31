@@ -15,7 +15,12 @@ class FilirerController extends Controller
     public function index()
     {
         $filieres = Filiere::all();
-        return view("pages.admin.filieres.index")->with("filieres", $filieres);
+        $arguments = [
+            "filieres" => $filieres,
+            "selected_item" => "filieres",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.filieres.index")->with($arguments);
     }
 
     /**
@@ -25,7 +30,11 @@ class FilirerController extends Controller
      */
     public function create()
     {
-        return view("pages.admin.filieres.create");
+        $arguments = [
+            "selected_item" => "filieres",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.filieres.create")->with($arguments);
     }
 
     /**
@@ -40,7 +49,10 @@ class FilirerController extends Controller
 
         $filiere = Filiere::create(["nom" => $request->nom]);
 
-        return redirect(route("filieres.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "filieres"
+        ]);
     }
 
     /**
@@ -62,7 +74,12 @@ class FilirerController extends Controller
      */
     public function edit(Filiere $filiere)
     {
-        return view("pages.admin.filieres.edit")->with("filiere", $filiere);
+        $arguments = [
+            "filiere" => $filiere,
+            "selected_item" => "filieres",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.filieres.edit")->with($arguments);
     }
 
     /**
@@ -79,7 +96,10 @@ class FilirerController extends Controller
         $filiere->nom = $request->nom;
         $filiere->save();
 
-        return redirect(route("filieres.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "filieres"
+        ]);
     }
 
     /**
@@ -91,6 +111,9 @@ class FilirerController extends Controller
     public function destroy(Filiere $filiere)
     {
         $filiere->delete();
-        return redirect(route("filieres.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "filieres"
+        ]);
     }
 }

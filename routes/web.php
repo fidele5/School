@@ -44,8 +44,7 @@ Route::get('/filiere', [HomeController::class, 'filieres'])->name('filiere');
 Route::get('/apropos', [HomeController::class, 'apropos'])->name('apropos');
 Route::get("/contact", [HomeController::class, 'contact'])->name('contact');
 Route::get("/calendrier", [HomeController::class, 'calendar'])->name('calendrier');
-Route::post("/saveStudent", [HomeController::class, 'saveStudent'])->name('saveStudent');
-Route::middleware("auth")->group(function () {
+Route::middleware("auth", "admin", "active")->group(function () {
     Route::prefix("admin")->group(function () {
         Route::resource("actualites", ActualiteController::class);
         Route::resource('evenements', EvenementController::class);
@@ -63,8 +62,9 @@ Route::middleware("auth")->group(function () {
         Route::resource('publications', PublicationController::class);
         Route::resource('image-realisation', ImageRealisationController::class);
         Route::get('', function() {
-            return view('pages.admin.home');
+            return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
         })->name('home-admin');
+        Route::get('etudiants/export', [EtudiantController::class, 'export'])->name('');
     });
 });
 

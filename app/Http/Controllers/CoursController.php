@@ -3,10 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cours;
+use App\Models\Enseignant;
+use App\Models\Promotion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CoursController extends Controller
 {
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'intitule' => ['required', 'string', 'max:255'],
+            'volume_horaire' => ['required', 'integer', 'min:15'],
+            'promotion' => "required",
+            'enseignant' => "required",
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +34,13 @@ class CoursController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Cours::all();
+        $arguments = [
+            "courses" => $courses,
+            "selected_item" => "cours",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.cours.index")->with($arguments);
     }
 
     /**
@@ -24,7 +50,15 @@ class CoursController extends Controller
      */
     public function create()
     {
-        //
+        $enseignants = Enseignant::all();
+        $promotions = Promotion::all();
+        $arguments = [
+            "enseignants"=>$enseignants,
+            "promotions"=>$promotions,
+            "selected_item" => "cours",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.cours.create")->with($arguments);
     }
 
     /**
@@ -35,7 +69,18 @@ class CoursController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cours = Cours::create([
+            "intitule" => $request->intitule,
+            "volume_horaire" => $request->volume_horaire,
+            "description" => $request->description,
+            "promotion_id" => $request->promotion,
+            "enseignant_id" => $request->enseignant,
+        ]);
+
+        return response()->json([
+            "status" => "success",
+            "back" => "courses"
+        ]);
     }
 
     /**
@@ -57,7 +102,16 @@ class CoursController extends Controller
      */
     public function edit(Cours $cours)
     {
-        //
+        $enseignants = Enseignant::all();
+        $promotions = Promotion::all();
+        $arguments =[
+            "enseignants"=>$enseignants,
+            "promotions"=>$promotions,
+            "course" => $cours,
+            "selected_item" => "cours",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.cours.edit")->with($arguments);
     }
 
     /**
@@ -69,7 +123,16 @@ class CoursController extends Controller
      */
     public function update(Request $request, Cours $cours)
     {
-        //
+        $cours->intitule = $request->intitule;
+        $cours->description = $request->description;
+        $cours->volume_horaire = $request->volume_horaire;
+        $cours->promotion_id = $request->promotion;
+        $cours->enseignant_id = $request->enseignant;
+
+        return response()->json([
+            "status" => "success",
+            "back" => "courses"
+        ]);
     }
 
     /**
@@ -80,6 +143,10 @@ class CoursController extends Controller
      */
     public function destroy(Cours $cours)
     {
-        //
+        $cours->delete();
+        return response()->json([
+            "status" => "success",
+            "back" => "courses"
+        ]);
     }
 }

@@ -18,7 +18,12 @@ class EvenementController extends Controller
     public function index()
     {
         $evenements = Evenement::all();
-        return view("pages.Admin.evenements.index")->with("evenements", $evenements);
+        $arguments = [
+            "evenements" => $evenements,
+            "selected_item" => "publications_evenements",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.Admin.evenements.index")->with($arguments);
     }
 
     /**
@@ -29,7 +34,12 @@ class EvenementController extends Controller
     public function create()
     {
         $categories = CategorieEvenement::all();
-        return view("pages.admin.evenements.create")->with("categories", $categories);
+        $arguments = [
+            "categories" => $categories,
+            "selected_item" => "publications_evenements",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.evenements.create")->with($arguments);
     }
 
     /**
@@ -68,7 +78,10 @@ class EvenementController extends Controller
             "lieu" => $request->lieu
         ]);
 
-        return redirect("evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "evenements"
+        ]);
     }
 
     /**
@@ -90,7 +103,12 @@ class EvenementController extends Controller
      */
     public function edit(Evenement $evenement)
     {
-        return view("pages.admin.evenements.edit")->with("evenement", $evenement);
+        $arguments = [
+            "evenement" => $evenement,
+            "selected_item" => "publications_evenements",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.evenements.edit")->with($arguments);
     }
 
     /**
@@ -128,7 +146,10 @@ class EvenementController extends Controller
         $evenement->lieu = $request->lieu;
         $evenement->save();
 
-        return redirect("evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "evenements"
+        ]);
     }
 
     /**
@@ -140,6 +161,9 @@ class EvenementController extends Controller
     public function destroy(Evenement $evenement)
     {
         $evenement->delete();
-        return redirect("evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "evenements"
+        ]);
     }
 }

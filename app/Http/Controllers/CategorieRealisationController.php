@@ -15,7 +15,13 @@ class CategorieRealisationController extends Controller
     public function index()
     {
         $categories = CategorieRealisation::all();
-        return view("pages.admin.categories.realisations.index")->with("categories", $categories);
+        $arguments = [
+            "categories" => $categories,
+            "selected_item" => "categories_realisations",
+            "selected_sub_item" => "all",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.categories.realisations.index")->with($arguments);
     }
 
     /**
@@ -25,7 +31,10 @@ class CategorieRealisationController extends Controller
      */
     public function create()
     {
-        return view("pages.admin.categories.realisations.create");
+        $arguments = [
+            "selected_item" => "categories_realisations"
+        ];
+        return view("pages.admin.categories.realisations.create")->with($arguments);
     }
 
     /**
@@ -42,7 +51,10 @@ class CategorieRealisationController extends Controller
 
         $categorie = CategorieRealisation::create(["designation"=>$request->designation]);
 
-        return redirect("categorie-reaclisations.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-realisations"
+        ]);
     }
 
     /**
@@ -64,7 +76,12 @@ class CategorieRealisationController extends Controller
      */
     public function edit(CategorieRealisation $categorieRealisation)
     {
-        return view("pages.admin.categories.realisations.edit")->with("categorie", $categorieRealisation);
+        $arguments = [
+            "categorie" => $categorieRealisation,
+            "selected_item" => "categories_realisations",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.categories.realisations.edit")->with($arguments);
     }
 
     /**
@@ -81,9 +98,12 @@ class CategorieRealisationController extends Controller
         ]);
 
         $categorieRealisation->designation = $request->designation;
-        $categorie->save();
+        $categorieRealisation->save();
 
-        return redirect("categorie-realisations.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-realisations"
+        ]);
     }
 
     /**
@@ -95,6 +115,9 @@ class CategorieRealisationController extends Controller
     public function destroy(CategorieRealisation $categorieRealisation)
     {
         $categorieRealisation->delete();
-        return redirect("categorie-realisations.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-realisations"
+        ]);
     }
 }

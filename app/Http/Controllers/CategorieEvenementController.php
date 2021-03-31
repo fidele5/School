@@ -15,7 +15,12 @@ class CategorieEvenementController extends Controller
     public function index()
     {
         $categories = CategorieEvenement::all();
-        return view("pages.admin.categories.evenements.index")->with("categories", $categories);
+        $arguments = [
+            "categories" => $categories,
+            "selected_item" => "categories_evenements",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.categories.evenements.index")->with($arguments);
     }
 
     /**
@@ -25,7 +30,11 @@ class CategorieEvenementController extends Controller
      */
     public function create()
     {
-        return view("pages.admin.categories.evenements.create");
+        $arguments = [
+            "selected_item" => "categories_evenements",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.categories.evenements.create")->with($arguments);
     }
 
     /**
@@ -40,7 +49,10 @@ class CategorieEvenementController extends Controller
             'designation' => 'required'
         ]);
         $categorie = CategorieEvenement::create(['designation' => $request->designation]);
-        return redircet("categorie-evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-evenements"
+        ]);
     }
 
     /**
@@ -62,7 +74,12 @@ class CategorieEvenementController extends Controller
      */
     public function edit(CategorieEvenement $categorieEvenement)
     {
-        return view("pages.Admin.categories.evenements.edit")->with("categorie", $categorieEvenement);
+        $arguments = [
+            "categorie" => $categorieEvenement,
+            "selected_item" => "categories_actualites",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.Admin.categories.evenements.edit")->with($arguments);
     }
 
     /**
@@ -81,7 +98,10 @@ class CategorieEvenementController extends Controller
         $categorieEvenement->designation = $request->designation;
         $categorieEvenement->save();
 
-        return redirect("cetagorie-evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-evenements"
+        ]);
     }
 
     /**
@@ -93,7 +113,9 @@ class CategorieEvenementController extends Controller
     public function destroy(CategorieEvenement $categorieEvenement)
     {
         $categorieEvenement->delete();
-
-        return redirect("categorie-evenements.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-evenements"
+        ]);
     }
 }

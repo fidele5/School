@@ -18,7 +18,12 @@ class ActualiteController extends Controller
     public function index()
     {
         $actualites = Actualite::all();
-        return view('pages.admin.actualites.index')->with("actualites", $actualites);
+        $arguments = [
+            "actualites" => $actualites,
+            "selected_item" => "publications_actualites",
+            "selected_sub_item" => "all"
+        ];
+        return view('pages.admin.actualites.index')->with($arguments);
     }
 
     /**
@@ -29,7 +34,12 @@ class ActualiteController extends Controller
     public function create()
     {
         $categories = CategorieActualite::all();
-        return view("pages.admin.actualites.create")->with("categories", $categories);
+        $arguments = [
+            "categories"=>$categories,
+            "selected_item" => "publications_actualites",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.actualites.create")->with($arguments);
     }
 
     /**
@@ -54,7 +64,7 @@ class ActualiteController extends Controller
 
         $publication = Publication::create(
             [
-                'titre' => $request->title,
+                'titre' => $request->titre,
                 'texte' => $request->contenu,
                 'photo' => $timestamp,
                 'user_id' => Auth::user()->id
@@ -66,7 +76,10 @@ class ActualiteController extends Controller
             'categorie_actualite_id' => $request->categorie
         ]);
 
-        return redirect('actualites.index');
+        return response()->json([
+            "status" => "success",
+            "back" => "actualites"
+        ]);
     }
 
     /**
@@ -88,8 +101,14 @@ class ActualiteController extends Controller
      */
     public function edit(Actualite $actualite)
     {
-        echo($actualite->designation);
-        return view("pages.admin.actualites.edit")->with("actualite", $actualite);
+        $categories = CategorieActualite::all();
+        $arguments = [
+            "categories"=>$categories,
+            "selected_item" => "publications_actualites",
+            "selected_sub_item" => "all",
+            "actualite" => $actualite
+        ];
+        return view("pages.admin.actualites.edit")->with($arguments);
     }
 
     /**
@@ -114,7 +133,10 @@ class ActualiteController extends Controller
 
         $publication->save();
 
-        return redirect("actualites.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "actualites"
+        ]);
     }
 
     /**
@@ -126,7 +148,9 @@ class ActualiteController extends Controller
     public function destroy(Actualite $actualite)
     {
         $actualite->delete();
-
-        return redirect("actualites.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "actualites"
+        ]);
     }
 }

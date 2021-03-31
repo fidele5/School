@@ -18,7 +18,12 @@ class RealisationController extends Controller
     public function index()
     {
         $realisations = Realisation::all();
-        return view("pages.admin.realisations.index")->with("realisations", $realisations);
+        $arguments = [
+            "realisations" => $realisations,
+            "selected_item" => "publications_realisations",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.realisations.index")->with($arguments);
     }
 
     /**
@@ -29,7 +34,12 @@ class RealisationController extends Controller
     public function create()
     {
         $categories = CategorieRealisation::all();
-        return view("pages.admin.realisations.create")->with("categories", $categories);
+        $arguments = [
+            "categories" => $categories,
+            "selected_item" => "publications_realisations",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.realisations.create")->with($arguments);
     }
 
     /**
@@ -63,7 +73,10 @@ class RealisationController extends Controller
             "categorie_realisation_id" => $request->categorie
         ]);
 
-        return redirect(route("realisations.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "realisations"
+        ]);
     }
 
     /**
@@ -86,10 +99,13 @@ class RealisationController extends Controller
     public function edit(Realisation $realisation)
     {
         $categories = CategorieRealisation::all();
-        return view("pages.admin.realisations.edit")->with([
-            "realisation"=> $realisation,
-            "categories" => $categories
-        ]);
+        $arguments = [
+            "categories" => $categories,
+            "realisation" => $realisation,
+            "selected_item" => "publications_realisations",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.realisations.edit")->with($arguments);
     }
 
     /**
@@ -121,7 +137,10 @@ class RealisationController extends Controller
 
         $realisation->save();
 
-        return redirect(route("realisations.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "realisations"
+        ]);
     }
 
     /**
@@ -134,6 +153,9 @@ class RealisationController extends Controller
     {
         $realisation->delete();
 
-        return redirect(route("realisations.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "realisations"
+        ]);
     }
 }

@@ -16,7 +16,12 @@ class PromotionController extends Controller
     public function index()
     {
         $promotions = Promotion::all();
-        return view("pages.admin.promotions.index")->with("promotions", $promotions);
+        $arguments = [
+            "promotions" => $promotions,
+            "selected_item" => "promotions",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.promotions.index")->with($arguments);
     }
 
     /**
@@ -27,7 +32,12 @@ class PromotionController extends Controller
     public function create()
     {
         $filieres = Filiere::all();
-        return view("pages.admin.promotions.create")->with("filieres", $filieres);
+        $arguments = [
+            "filieres" => $filieres,
+            "selected_item" => "promotions",
+            "selected_sub_item" => "new"
+        ];
+        return view("pages.admin.promotions.create")->with($arguments);
     }
 
     /**
@@ -48,7 +58,10 @@ class PromotionController extends Controller
             "filiere_id" => $request->filiere
         ]);
 
-        return redirect(route("promotions.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "promotions"
+        ]);
     }
 
     /**
@@ -71,7 +84,13 @@ class PromotionController extends Controller
     public function edit(Promotion $promotion)
     {
         $filieres = Filiere::all();
-        return view("pages.admin.promotions.edit")->with(["filieres"=> $filieres, "promotion" => $promotion]);
+        $arguments = [
+            "filieres" => $filieres,
+            "promotion" => $promotion,
+            "selected_item" => "promotions",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.promotions.edit")->with($arguments);
     }
 
     /**
@@ -92,7 +111,10 @@ class PromotionController extends Controller
         $promotion->filiere_id = $request->filiere;
         $promotion->save();
 
-        return redirect(route("promotions.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "promotions"
+        ]);
     }
 
     /**
@@ -105,6 +127,9 @@ class PromotionController extends Controller
     {
         $promotion->delete();
 
-        return redirect(route("promotions.index"));
+        return response()->json([
+            "status" => "success",
+            "back" => "promotions"
+        ]);
     }
 }

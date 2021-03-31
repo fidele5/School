@@ -4,7 +4,7 @@
     <div class="content-header-left col-12 mb-2 mt-1">
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h5 class="content-header-title float-left pr-1 mb-0">{{ __("pages.actualites") }}</h5>
+                <h5 class="content-header-title float-left pr-1 mb-0">Catégorie</h5>
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb p-0 mb-0">
                         <li class="breadcrumb-item ">
@@ -26,7 +26,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">categories d'actualités</h4>
+                    <h4 class="card-title">Categories d'actualités</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body card-dashboard">
@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>Numéro</th>
                                         <th>Désignation</th>
-                                        <th>{{ __("pages.actions") }}</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,7 +48,7 @@
                                                 <a href="{{ route("categorie-actualites.edit", $categorie) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="{{ route("categorie-actualites.destroy", $categorie) }}">
+                                                <a class="delete" href="{{ route("categorie-actualites.destroy", $categorie) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
@@ -59,7 +59,7 @@
                                     <tr>
                                         <th>Numéro</th>
                                         <th>Désignation</th>
-                                        <th>{{ __("pages.actions") }}</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </tfoot>
                             </table>

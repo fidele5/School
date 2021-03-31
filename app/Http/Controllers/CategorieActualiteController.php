@@ -15,7 +15,12 @@ class CategorieActualiteController extends Controller
     public function index()
     {
         $categories = CategorieActualite::all();
-        return view("pages.admin.categories.actualites.index")->with("categories", $categories);
+        $arguments = [
+            "categories" => $categories,
+            "selected_item" => "categories_actualites",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.categories.actualites.index")->with($arguments);
     }
 
     /**
@@ -25,7 +30,11 @@ class CategorieActualiteController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.categories.actualites.create');
+        $arguments = [
+            "selected_item" => "categories_actualites",
+            "selected_sub_item" => "new"
+        ];
+        return view('pages.admin.categories.actualites.create')->with($arguments);
     }
 
     /**
@@ -41,7 +50,10 @@ class CategorieActualiteController extends Controller
         ]);
 
         $categorie = CategorieActualite::create(['designation'=>$request->designation]);
-        return redirect('categorie-actualites.index');
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-actualites"
+        ]);
     }
 
     /**
@@ -63,7 +75,12 @@ class CategorieActualiteController extends Controller
      */
     public function edit(CategorieActualite $categorieActualite)
     {
-        return view("pages.admin.categories.actualites.edit")->with("categorie", $categorieActualite);
+        $arguments = [
+            "categorie" => $categorieActualite,
+            "selected_item" => "categories_actualites",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.admin.categories.actualites.edit")->with($arguments);
     }
 
     /**
@@ -81,7 +98,10 @@ class CategorieActualiteController extends Controller
 
         $categorieActualite->designation = $request->designation;
         $categorieActualite->save();
-        return redirect("categorie-actualites.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-actualites"
+        ]);
     }
 
     /**
@@ -93,6 +113,9 @@ class CategorieActualiteController extends Controller
     public function destroy(CategorieActualite $categorieActualite)
     {
         $categorieActualite->delete();
-        return redirect("categorie-actualites.index");
+        return response()->json([
+            "status" => "success",
+            "back" => "categorie-actualites"
+        ]);
     }
 }

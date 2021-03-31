@@ -60,6 +60,9 @@
     <script src="/backend/js/scripts/customizer.js"></script>
     <!-- END: Theme JS-->
 
+    <script src="/backend/vendors/js/extensions/dropzone.min.js"></script>
+    <script src="/backend/vendors/js/ui/prism.min.js"></script>
+
     <!-- BEGIN: Page JS-->
     <script src="/backend/js/scripts/datatables/datatable.js"></script>
     <script src="/backend/js/scripts/pages/page-users.js"></script>
