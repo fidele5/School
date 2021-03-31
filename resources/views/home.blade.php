@@ -208,18 +208,18 @@
                         <div class="col">
                             <div class="owl-carousel owl-theme dots-style-3 nav-color-dark" data-plugin-options="{'dots': true, 'nav': false, 'margin': 20, 'responsive': {'0': {'items': 1}, '575': {'items': 1}, '767': {'items': 2}, '991': {'items': 3}, '1199': {'items': 3}}}">
                                 @if (count($actualites) > 0)
-                                    @foreach ($actualite as $actualite)
+                                    @foreach ($actualites as $actualite)
                                         <div>
                                             <div class="card card-style-1 bg-light mb-0">
                                                 <div class="card-body p-4">
                                                     <article class="blog-post">
                                                         <header class="mb-2">
                                                             <div class="image-frame hover-effect-2">
-                                                                <a href="{{ route("actualite.show", $actualite) }}" class="d-block">
-                                                                    <img src="/photos/{{ $actualite->publication->photos[0]->titre }}" class="img-fluid mb-3" alt="" />
+                                                                <a href="{{-- route("actualite.show",$actualite) --}}" class="d-block">
+                                                                    <img src="/uploads/{{ $actualite->publication->photo }}.jpg" class="img-fluid mb-3" alt="" />
                                                                 </a>
                                                             </div>
-                                                            <h3 class="font-weight-bold text-4 mb-1"><a href="{{ route("actualite.show", $actualite) }}" class="link-color-dark">{{ $actualite->publication->titre }}</a></h3>
+                                                            <h3 class="font-weight-bold text-4 mb-1"><a href="" class="link-color-dark">{{ $actualite->publication->titre }}</a></h3>
                                                             <i class="far fa-clock mt-1 text-color-primary"></i>
                                                             <time class="font-tertiary text-1" datetime="2020-01-17">{{ $actualite->created_at }}</time>
                                                         </header>
@@ -344,7 +344,7 @@
                         <div class="col">
                             <div class="owl-carousel dots-style-3" data-plugin-carousel data-plugin-options="{'autoplay': false, 'dots': true, 'nav': false, 'loop': true, 'margin': 30, 'stagePadding': 15, 'responsive': { '0': {'items': 1}, '576': {'items': 1}, '768': {'items': 2}, '992': {'items': 2}, '1200': {'items': 2}}}">
                                 @if (count($evenements) > 0)
-                                    @foreach ($collection as $item)
+                                    @foreach ($evenements as $item)
                                         <div class="py-4">
                                             <article class="card card-style-1 bg-light rounded border-0">
                                                 <div class="card-body p-5">
