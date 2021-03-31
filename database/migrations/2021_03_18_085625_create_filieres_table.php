@@ -23,7 +23,7 @@ class CreateFilieresTable extends Migration
         });
 
         Schema::table("filieres", function (Blueprint $table) {
-            $table->foreign("cycle_id")->references("id")->on("cycle")->cascadeOnDelete();
+            $table->foreign("cycle_id")->references("id")->on("cycles")->cascadeOnDelete();
         });
     }
 

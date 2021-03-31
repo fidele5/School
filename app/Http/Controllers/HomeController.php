@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Actualite;
 use App\Models\Caroussel;
 use App\Models\CategorieRealisation;
+use App\Models\Cycle;
 use App\Models\Etudiant;
 use App\Models\Evenement;
 use App\Models\Filiere;
@@ -73,8 +74,8 @@ class HomeController extends Controller
 
     public function filieres()
     {
-        $filieres = Filiere::all();
-        return view("pages.guest.autres.filiere")->with("filieres", $filieres);
+        $cycles = Cycle::all();
+        return view("pages.guest.autres.filiere")->with("cycles", $cycles);
     }
 
     public function horaires()
