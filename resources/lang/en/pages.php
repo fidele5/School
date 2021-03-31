@@ -78,5 +78,10 @@ return [
     "students"=>"Etudiants",
     "existance"=>"Années d'existance",
     "graduation"=>"Gradués",
-    "licence"=>"Licenciés"
+    "licence"=>"Licenciés",
+    "horaire_courses"=>"Horaire des cours",
+    "cours_description"=>"Description",
+    "ponderation"=>"Ponderation",
+    "intitule"=>"Intitulé",
+    "all_courses"=>"Tous les cours",
 ];

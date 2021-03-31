@@ -80,8 +80,9 @@ class HomeController extends Controller
 
     public function horaires()
     {
+        $cycles = Cycle::all();
         $horaire = Horaire::latest()->get();
-        return view("pages.guest.autres.horaire")->with("horaire", $horaire);
+        return view("pages.guest.autres.horaire")->with(compact("horaire","cycles"));
     }
 
     public function admission()
@@ -121,7 +122,8 @@ class HomeController extends Controller
 
     public function cours()
     {
-        # code...
+        $cycles = Cycle::all();
+        return view("pages.guest.autres.cours")->with('cycles', $cycles);
     }
 
     public function calendar()

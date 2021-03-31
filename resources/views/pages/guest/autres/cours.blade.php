@@ -6,14 +6,14 @@
                         <div class="col-md-12">
                             <ul class="breadcrumb">
                                 <li><a href="index.html">{{ __("pages.home") }}</a></li>
-                                <li class="active">{{ __("pages.horaire") }}</li>
+                                <li class="active">{{ __("pages.courses") }}</li>
                             </ul>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>{{ __("pages.horaire") }}</h1>
-                            <p class="lead">{{ __("pages.horaire_courses") }}</p>
+                            <h1>{{ __("pages.courses") }}</h1>
+                            <p class="lead">{{ __("pages.all_courses") }}</p>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,6 @@
             <div class="container mb-5 pb-3">
                 <div class="row">
                     <div class="col-md-12 mb-5 mb-md-0">
-                        @if (count($cycles) > 0)
                         <ul class="nav nav-tabs nav-tabs-default" id="tabDefault" role="tablist">
                             @foreach ($cycles as $cycle)
                             <li class="nav-item">
@@ -47,18 +46,21 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th>#</th>
-                                                                        <th>First Name</th>
-                                                                        <th>Last Name</th>
-                                                                        <th>Username</th>
+                                                                        <th>{{ __("pages.intitule") }}</th>
+                                                                        <th>{{ __("pages.description") }}</th>
+                                                                        <th>{{ __("pages.ponderation") }}</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>Mark</td>
-                                                                        <td>Otto</td>
-                                                                        <td>@mdo</td>
-                                                                    </tr>
+                                                                    @foreach ($promotion->cours as $cour)
+                                                                        <tr>
+                                                                            <th scope="row">{{ $cour->id }}</th>
+                                                                            <td>{{ $cour->intitule }}</td>
+                                                                            <td>{{ $cour->description }}</td>
+                                                                            <td>{{ $cour->ponderation }}</td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                    
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -70,11 +72,6 @@
                                 </div>
                             @endforeach
                         </div>
-                        @else
-                        <div class="alert alert-primary" role="alert">
-                            Aucun contenu trouvé
-                        </div>
-                        @endif
                     </div>
                 </div>
             </div>
