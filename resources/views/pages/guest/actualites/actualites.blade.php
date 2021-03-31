@@ -1,42 +1,78 @@
 @extends("layouts.guest.app")
 @section("content")
-@include("layouts.guest.breadcumb")
-
-            <div class="kingster-page-wrapper" id="kingster-page-wrapper">
-                <div class="gdlr-core-page-builder-body">
-                    <div class="gdlr-core-pbf-section">
-                        <div class="gdlr-core-pbf-section-container gdlr-core-container clearfix">
-                            <div class="gdlr-core-pbf-element">
-                                <div class="gdlr-core-blog-item gdlr-core-item-pdb clearfix  gdlr-core-style-blog-image" style="padding-bottom: 40px ;">
-                                    <div class="gdlr-core-blog-item-holder gdlr-core-js-2 clearfix" data-layout="fitrows">
-                                        @if (count($actualites) > 0)
-                                            @foreach ($actualites as $actualite)
-                                                <div class="gdlr-core-item-list  gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-column-20">
-                                                    <div class="gdlr-core-blog-modern  gdlr-core-with-image gdlr-core-hover-overlay-content gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <div class="gdlr-core-blog-modern-inner">
-                                                            <div class="gdlr-core-blog-thumbnail gdlr-core-media-image"><img src="upload/shutterstock_135948689-400x377.jpg" width="700" height="660"  alt="" /></div>
-                                                            <div class="gdlr-core-blog-modern-content  gdlr-core-center-align">
-                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px ;font-weight: 700 ;letter-spacing: 0px ;"><a href="#" >Professor Albert joint research on mobile money in Tanzania</a></h3>
-                                                                <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider"><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href="#">June 6, 2016</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><span class="gdlr-core-head" >By</span><a href="#" title="Posts by John Smith" rel="author">John Smith</a></span>
-                                                                </div>
+    <section class="page-header mb-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8 text-left">
+                    <h1 class="font-weight-bold">{{ __("pages.news") }}</h1>
+                    <p class="lead">{{ __("pages.ic_news") }}</p>
+                </div>
+                <div class="col-md-4">
+                    <ul class="breadcrumb justify-content-start justify-content-md-end">
+                        <li><a href="/">{{ __("pages.home") }}</a></li>
+                        <li class="active">{{ __("pages.news") }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="row masonry-loader masonry-loader-showing portfolio-list portfolio-list-style-2" data-plugin-masonry data-plugin-options="{'itemSelector': '.isotope-item'}">
+                    @if(count($actualites) > 0)
+                        @foreach ($actualites as $actualite)
+                            <div class="col-sm-6 col-md-4 isotope-item mb-5 p-0">
+                                <div class="portfolio-item">
+                                    <article class="blog-post">
+                                        <span class="top-sub-title text-color-primary">{{ date('d-m-Y', strtotime($actualite->created_at)) }}</span>
+                                            <h2 class="font-weight-bold text-4 mb-3">
+                                            <a href="{{ route("article.show", $actualite) }}" class="link-color-dark">{{ $actualite->publication->titre }}</a>
+                                        </h2>
+                                        <div class="owl-carousel owl-theme dots-style-2 nav-style-2" data-plugin-options="{'items': 1, 'dots': true, 'nav': false, 'animateIn': 'animate__fadeIn', 'animateOut': 'animate__fadeOut'}">
+                                            @foreach ($actualite->publication->photos as $photo)
+                                                <div>
+                                                    <a href="{{ route("actualite.show", $actualite) }}">
+                                                        <div class="image-frame hover-effect-2">
+                                                            <div class="image-frame-wrapper">
+                                                                <img src="photos/{{ $photo->titre }}" class="img-fluid" alt="" />
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </a>
                                                 </div>
                                             @endforeach
-                                            <div class="gdlr-core-load-more-wrap gdlr-core-js gdlr-core-center-align gdlr-core-item-pdlr" data-ajax="gdlr_core_post_ajax" data-target="gdlr-core-blog-item-holder" data-target-action="append"><a href="#" class="gdlr-core-load-more gdlr-core-button-color" data-ajax-name="paged" data-ajax-value="2">Load More</a></div>
-                                        @else
-                                            <div class="alert alert-primary text-center" role="alert">
-                                                Aucune nouvelle Dommage!
-                                            </div>
-                                        @endif
-
-                                    </div>
+                                        </div>
+                                        <div class="d-flex opacity-6 my-2">
+                                            <a href="{{ route("actualite.show", $actualite) }}#comments">
+                                                <span class="post-comments d-flex align-items-center px-3"><i class="lnr lnr-bubble text-3 mr-1" aria-label="{{ count($actualite->publication->commentaires) }} users comment this post"></i> {{ count($actualite->publication->commentaires) }}</span>
+                                            </a>
+                                            <span class="post-comments d-flex align-items-center px-3"><i class="lnr lnr-camera-video text-3 mr-1" aria-label="{{ count($actualite->videos) }} documents pour cet actualite"></i> {{ count($actualite->videos) }}</span>
+                                            <span class="post-comments d-flex align-items-center px-3"><i class="lnr lnr-book text-3 mr-1" aria-label="{{ count($actualite->videos) }} videos pour cet actualite"></i> {{ count($actualite->videos) }}</span>
+                                        </div>
+                                        <hr class="mt-0 mb-3">
+                                        <p class="text-color-light-3 text-truncate" style="max-width: 250px">{{ $actualite->publication->texte }}.</p>
+                                        <a href="{{ route("actualite.show", $actualite) }}" class="text-color-primary font-weight-bold learn-more">{{ __("pages.read_more") }} <i class="fas fa-angle-right text-3" aria-label="Read more"></i></a>
+                                    </article>
                                 </div>
                             </div>
+                        @endforeach
+                    @else
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          <strong>Helas!</strong> aucune nouvellle
                         </div>
+                        <script>
+                          $(".alert").alert();
+                        </script>
+                    @endif
+                </div>
+                <hr class="mt-5 mb-4">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto">
+                        
                     </div>
                 </div>
             </div>
-
+        </section>
 @endsection

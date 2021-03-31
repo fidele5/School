@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', [HomeController::class, "welcome"]);
+Route::get('/', [HomeController::class, "welcome"])->name("home");
 
 Auth::routes();
 
@@ -44,6 +44,7 @@ Route::get('/filiere', [HomeController::class, 'filieres'])->name('filiere');
 Route::get('/apropos', [HomeController::class, 'apropos'])->name('apropos');
 Route::get("/contact", [HomeController::class, 'contact'])->name('contact');
 Route::get("/calendrier", [HomeController::class, 'calendar'])->name('calendrier');
+Route::post("/saveStudent", [HomeController::class, 'saveStudent'])->name('saveStudent');
 Route::middleware("auth")->group(function () {
     Route::prefix("admin")->group(function () {
         Route::resource("actualites", ActualiteController::class);
@@ -67,4 +68,3 @@ Route::middleware("auth")->group(function () {
     });
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

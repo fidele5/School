@@ -63,7 +63,6 @@ class CategorieActualiteController extends Controller
      */
     public function edit(CategorieActualite $categorieActualite)
     {
-        echo($categorieActualite->designation);
         return view("pages.admin.categories.actualites.edit")->with("categorie", $categorieActualite);
     }
 
@@ -81,7 +80,7 @@ class CategorieActualiteController extends Controller
         ]);
 
         $categorieActualite->designation = $request->designation;
-        $categorie->save();
+        $categorieActualite->save();
         return redirect("categorie-actualites.index");
     }
 

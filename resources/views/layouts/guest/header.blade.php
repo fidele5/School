@@ -1,142 +1,142 @@
 <!DOCTYPE html>
-<html lang="en-US" class="no-js">
+<html lang="zxx">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Isamm</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AFC</title>
+    <meta name="keywords" content="AFC Don bonsco" />
+    <meta name="description" content="AFC Don bosco">
+    <meta name="author" content="fideleplk@gmail.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <link rel="apple-touch-icon" href="images/ico/apple-icon-120.html">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,900%7COpen+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/vendor/animate/animate.min.css">
+    <link rel="stylesheet" href="/vendor/linear-icons/css/linear-icons.min.css">
+    <link rel="stylesheet" href="/vendor/owl.carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/vendor/owl.carousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/vendor/magnific-popup/magnific-popup.min.css">
 
-    <link rel='stylesheet' href='/plugins/goodlayers-core/plugins/combine/style.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='/plugins/goodlayers-core/include/css/page-builder.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='/plugins/revslider/public/assets/css/settings.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='/css/style-core.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='/css/kingster-style-custom.css' type='text/css' media='all' />
-    <link href="/css/fontawesome-all.css" rel="stylesheet">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/mdb.min.css" rel="stylesheet">
-     <link href="/css/calendar.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700%2C400" rel="stylesheet" property="stylesheet" type="text/css" media="all">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CABeeZee%3Aregular%2Citalic&amp;subset=latin%2Clatin-ext%2Cdevanagari&amp;ver=5.0.3' type='text/css' media='all' />
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/theme-elements.css">
 
+    <link href="/css/calendar.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/vendor/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="/vendor/rs-plugin/css/layers.css">
+    <link rel="stylesheet" href="/vendor/rs-plugin/css/navigation.css">
+
+    <link rel="stylesheet" href="/css/skins/default.css">
+    <script src="/master/style-switcher/style.switcher.localstorage.js"></script>
+
+    <link rel="stylesheet" href="/css/custom.css">
+
+    <script src="/vendor/modernizr/modernizr.min.js"></script>
 </head>
+<body>
+    <div class="body">
+        @if (Route::currentRouteName() == "home")
+            <header id="header" class="header-transparent header-transparent-sticky-deactive header-container-bottom-border" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 30}">
+        @else
+            <header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 30}">
+        @endif
+            <div class="header-body">
+                <div class="header-container p-0">
+                    <div class="header-row">
+                        <div class="header-column justify-content-start">
+                            <div class="header-logo border-left-0 px-4 d-lg-none">
+                                <a href="#">
+                                    <img src="img/logo-small.png" width="75" height="50" alt="" />
+                                </a>
+                            </div>
+                            <ul class="header-social-icons social-icons social-icons-transparent d-none d-lg-flex px-2 px-xl-4">
+                                <li class="social-icons-facebook"><a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="social-icons-twitter"><a href="https://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li class="social-icons-instagram"><a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="header-column justify-content-center">
+                            <div class="header-nav justify-content-lg-center">
+                                <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1">
+                                    <nav class="collapse">
+                                        <ul class="nav flex-column flex-lg-row align-items-center" id="mainNav">
+                                            <li class="dropdown dropdown-mega order-1">
+                                                <a class="dropdown-item dropdown-toggle {{ (Route::currentRouteName() == "home")?'active':'' }}" href="{{ route("home") }}">{{ __("pages.home") }}</a>
 
-<body class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full  kingster-with-sticky-navigation  kingster-blockquote-style-1 gdlr-core-link-to-lightbox">
-    <div class="kingster-mobile-header-wrap">
-        <div class="kingster-mobile-header kingster-header-background kingster-style-slide kingster-sticky-mobile-navigation " id="kingster-mobile-header">
-            <div class="kingster-mobile-header-container kingster-container clearfix">
-                <div class="kingster-logo  kingster-item-pdlr">
-                    <div class="kingster-logo-inner">
-                        <a class="" href="index.html"><img src="/images/logo.png" alt="" /></a>
-                    </div>
-                </div>
-                <div class="kingster-mobile-menu-right">
-                    <div class="kingster-main-menu-search" id="kingster-mobile-top-search"><i class="fa fa-search"></i></div>
-                    <div class="kingster-top-search-wrap">
-                        <div class="kingster-top-search-close"></div>
-                        <div class="kingster-top-search-row">
-                            <div class="kingster-top-search-cell">
-                                <form role="search" method="get" class="search-form" action="#">
-                                    <input type="text" class="search-field kingster-title-font" placeholder="Search..." value="" name="s">
-                                    <div class="kingster-top-search-submit"><i class="fa fa-search"></i></div>
-                                    <input type="submit" class="search-submit" value="Search">
-                                    <div class="kingster-top-search-close"><i class="icon_close"></i></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="kingster-mobile-menu"><a class="kingster-mm-menu-button kingster-mobile-menu-button kingster-mobile-button-hamburger" href="#kingster-mobile-menu"><span></span></a>
-                        <div class="kingster-mm-menu-wrap kingster-navigation-font" id="kingster-mobile-menu" data-slide="right">
-                            <ul id="menu-main-navigation" class="m-menu">
-                                <li class="menu-item menu-item-home current-menu-item kingster-normal-menu"><a href="/" class="sf-with-ul-pre">{{ __("pages.home") }}</a></li>
-                                <li class="menu-item kingster-normal-menu"><a href="{{ route("filiere") }}">{{ __("pages.filieres") }}</a></li>
-                                <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">{{ __("pages.publications") }}</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item" data-size="60"><a href="{{ route("evenement") }}">{{ __("pages.events") }}</a></li>
-                                        <li class="menu-item" data-size="60"><a href="{{ route("actualite") }}">{{ __("pages.news") }}</a></li>
-                                        <li class="menu-item" data-size="60"><a href="{{ route("realisation") }}">{{ __("pages.realization") }}</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">Courses</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item" data-size="60"><a href="{{ route("cours") }}">{{ __("pages.courses") }}</a></li>
-                                        <li class="menu-item" data-size="60"><a href="{{ route("horaire") }}">{{ __("pages.horaire") }}</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item kingster-normal-menu"><a href="{{ route("apropos") }}">{{ __("pages.about") }}</a></li>
-                                <li class="menu-item kingster-normal-menu"><a href="{{ route("contact") }}">{{ __("pages.contact") }}</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="kingster-body-outer-wrapper ">
-        <div class="kingster-body-wrapper clearfix  kingster-with-frame">
-            <div class="kingster-top-bar">
-                <div class="kingster-top-bar-background"></div>
-                <div class="kingster-top-bar-container kingster-container ">
-                    <div class="kingster-top-bar-container-inner clearfix">
-                        <div class="kingster-top-bar-left kingster-item-pdlr"><i class="fa fa-envelope-open-o" style="font-size: 15px ;color: #96a2b8 ;margin-right: 8px ;"></i> contact@KUTheme.edu <i class="fa fa-phone" style="font-size: 15px ;color: #96a2b8 ;margin-left: 18px ;margin-right: 6px ;"></i> +1-3435-2356-222</div>
-                        <div class="kingster-top-bar-right kingster-item-pdlr">
-                            <ul id="kingster-top-bar-menu" class="sf-menu kingster-top-bar-menu kingster-top-bar-right-menu">
-                                <li class="menu-item kingster-normal-menu"><a href="#">Alumni</a></li>
-                                <li class="menu-item kingster-normal-menu"><a href="{{ route("calendrier") }}">{{ __("pages.calendar") }}</a></li>
-                                <li class="menu-item kingster-normal-menu"><a href="#">Portal</a></li>
-                            </ul>
-                            <div class="kingster-top-bar-right-social"></div><a class="kingster-top-bar-right-button" href="#" target="_blank">Support KU</a></div>
-                    </div>
-                </div>
-            </div>
-            <header class="kingster-header-wrap kingster-header-style-plain  kingster-style-menu-right kingster-sticky-navigation kingster-style-fixed" data-navigation-offset="75px">
-                <div class="kingster-header-background"></div>
-                <div class="kingster-header-container  kingster-container">
-                    <div class="kingster-header-container-inner clearfix">
-                        <div class="kingster-logo  kingster-item-pdlr">
-                            <div class="kingster-logo-inner">
-                                <a class="" href="index.html"><img src="/images/logo.png" alt="" /></a>
-                            </div>
-                        </div>
-                        <div class="kingster-navigation kingster-item-pdlr clearfix ">
-                            <div class="kingster-main-menu" id="kingster-main-menu">
-                                <ul id="menu-main-navigation-1" class="sf-menu">
-                                    <li class="menu-item menu-item-home {{ (Route::currentRouteName() == "") ? "current-menu-item" : "" }}  kingster-normal-menu"><a href="/" class="sf-with-ul-pre">{{ __("pages.home") }}</a></li>
-                                    <li class="menu-item {{ (Route::currentRouteName() == "filiere") ? "current-menu-item" : "" }} kingster-normal-menu"><a href="{{ route("filiere") }}" class="sf-with-ul-pre">{{ __("pages.filieres") }}</a></li>
-                                    <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">{{ __("pages.publications") }}</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="{{ route("evenement") }}">{{ __("pages.events") }}</a></li>
-                                            <li class="menu-item" data-size="60"><a href="{{ route("actualite") }}">{{ __("pages.news") }}</a></li>
-                                            <li class="menu-item" data-size="60"><a href="{{ route("realisation") }}">{{ __("pages.realization") }}</a></li>
+                                            </li>
+                                            <li class="dropdown dropdown-mega dropdown-mega-style-2 order-2">
+                                                <a class="dropdown-item dropdown-toggle {{ (Route::currentRouteName() == "apropos")?'active':'' }}" href="{{ route("apropos") }}">
+                                                    {{ __("pages.about") }}
+                                                </a>
+                                            </li>
+                                            <li class="dropdown order-3">
+                                                <a class="dropdown-item dropdown-toggle {{ (Route::currentRouteName() == "filiere")?'active':'' }}" href="{{ route("filiere") }}">
+                                                    {{ __("pages.filieres") }}
+                                                </a>
+                                            </li>
+                                            <li class="dropdown order-4">
+                                                <a class="dropdown-item dropdown-toggle" >{{ __("pages.courses") }}</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="{{ route("horaire") }}">{{ __("pages.horaire") }}</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route("cours") }}">{{ __("pages.courses") }}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown dropdown-mega dropdown-mega-style-2 order-5">
+                                                <a class="dropdown-item dropdown-toggle {{ (Route::currentRouteName() == "calendrier")?'active':'' }}" href="{{ route("calendrier") }}">
+                                                    {{ __("pages.calendar") }}
+                                                </a>
+                                            </li>
+                                            <li class="dropdown dropdown-mega dropdown-mega-style-2 order-6">
+                                                <a class="dropdown-item dropdown-toggle {{ (Route::currentRouteName() == "admission")?'active':'' }}" href="{{ route("admission") }}">
+                                                    {{ __("pages.register") }}
+                                                </a>
+                                            </li>
+                                            <li class="dropdown order-7">
+                                                <a class="dropdown-item dropdown-toggle" href="#">{{ __("pages.publications") }}</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="{{ route("actualite") }}">{{ __("pages.news") }}</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route("evenement") }}">{{ __("pages.events") }}</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route("realisation") }}">{{ __("pages.realization") }}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="d-none d-lg-flex order-4 px-4">
+                                                <span class="header-logo border-0">
+                                                <a href="index.html">
+                                                <img src="img/logo-small.png" width="75" height="50" alt="" />
+                                                </a>
+                                                </span>
+                                            </li>
+                                            <li class="order-9"><a class="dropdown-item {{ (Route::currentRouteName() == "contact")?'active':'' }}" href="{{ route('contact') }}">{{ __("pages.contact") }}</a></li>
                                         </ul>
-                                    </li>
-                                    <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">Courses</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="{{ route("cours") }}">{{ __("pages.courses") }}</a></li>
-                                            <li class="menu-item" data-size="60"><a href="{{ route("horaire") }}">{{ __("pages.horaire") }}</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item {{ (Route::currentRouteName() == "apropos") ? "current-menu-item" : "" }} kingster-normal-menu"><a href="{{ route("apropos") }}">{{ __("pages.about") }}</a></li>
-                                    <li class="menu-item {{ (Route::currentRouteName() == "contact") ? "current-menu-item" : "" }} kingster-normal-menu"><a href="{{ route("contact") }}">{{ __("pages.contact") }}</a></li>
-                                </ul>
-                                <div class="kingster-navigation-slide-bar" id="kingster-navigation-slide-bar"></div>
-                            </div>
-                            <div class="kingster-main-menu-right-wrap clearfix ">
-                                <div class="kingster-main-menu-search" id="kingster-top-search"><i class="icon_search"></i></div>
-                                <div class="kingster-top-search-wrap">
-                                    <div class="kingster-top-search-close"></div>
-                                    <div class="kingster-top-search-row">
-                                        <div class="kingster-top-search-cell">
-                                            <form role="search" method="get" class="search-form" action="#">
-                                                <input type="text" class="search-field kingster-title-font" placeholder="Search..." value="" name="s">
-                                                <div class="kingster-top-search-submit"><i class="fa fa-search"></i></div>
-                                                <input type="submit" class="search-submit" value="Search">
-                                                <div class="kingster-top-search-close"><i class="icon_close"></i></div>
-                                            </form>
-                                        </div>
-                                    </div>
+                                    </nav>
                                 </div>
                             </div>
                         </div>
+                        <div class="header-column justify-content-end">
+                            <div class="header-button d-none d-sm-flex px-2 px-xl-4">
+                                <a href="{{ route("login") }}" class="btn btn-outline btn-rounded btn-primary btn-4 btn-icon-effect-1">
+                                    <span class="wrap">
+                                    <span>{{ __("login") }}</span>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <button class="header-btn-collapse-nav mx-3" data-toggle="collapse" data-target=".header-nav-main nav">
+                                <span class="hamburguer">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                                <span class="close">
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </header>
+            </div>
+        </header>
