@@ -2,7 +2,7 @@
 
 namespace App\Excel\Importer;
 
-use \App\Models\Etudiant;
+use App\Models\Enseignant;
 use App\Models\Filiere;
 use App\Models\Promotion;
 use App\Models\User;
@@ -30,19 +30,15 @@ class EtudiantImporter implements ToCollection {
                 "prenom" => $row[3],
                 "genre" => $row[4],
                 "nationalite" => $row[5],
-                "email" => $row[13],
-                "telephone" => $row[14],
-                "adresse" => $row[15]
+                "email" => $row[8],
+                "telephone" => $row[9],
+                "adresse" => $row[10]
             ]);
 
-            $etudiant = Etudiant::create([
+            $enseignant = Enseignant::create([
                 "user_id" => $user->id,
-                "lieu_naissance" => $row[6],
-                "date_naissance" => $row[7],
-                "ecole_provenance" => $row[8],
-                "option_laureat" => $row[9],
-                "annee_laureat" => $row[10],
-                "promotion_id" => $promotion->id
+                "grade" => $row[6],
+                "domaine" => $row[7],
             ]);
         }
     }

@@ -200,16 +200,14 @@ class EtudiantController extends Controller
     }
 
     public function import(Request $request) {
-        
+
         $request->validate([
             "file" => ["required", "file", "mimetypes:document/xlsx"]
         ]);
 
-        $file_name = $request->file("file");
+        $file = $request->file("file");
 
-        print(gettype($file_name));
-
-        $imported = (new EtudiantImporter)->import($file_name);
+        $imported = (new EtudiantImporter)->import($file);
 
         return response()->json([
             "status" => "success",

@@ -7,6 +7,7 @@ use App\Models\Evenement;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class EvenementController extends Controller
 {
@@ -59,14 +60,15 @@ class EvenementController extends Controller
             "lieu" => "required",
         ]);
 
-        $name_photo = time();
-        settype($name_photo, "string");
-        $request->file("photo")->move("uploads", $name_photo);
+        $image = Image::make($request->file('photo'));
+        $image->resize(800, 533);
+        $image_name = time().'.'.$image->extension();
+        $image->store("uploads/evenements/", $image_name);
 
         $publication = Publication::create([
             "titre" => $request->titre,
             "texte" => $request->contenu,
-            "photo" => $name_photo,
+            "photo" => $image_name,
             "user_id" => Auth::user()->id
         ]);
 
@@ -129,14 +131,16 @@ class EvenementController extends Controller
             "lieu" => "required"
         ]);
 
-        $name_photo = time();
-        settype($name_photo, "string");
-        $request->file("photo")->move("uploads", $name_photo);
+       unlink("uploads/evenements/".$evenement->publication->photo);
+
+       $image = Image::make($request->file('photo'));
+       $image_name = time().'.'.$image->extension();
+       $image->store("uploads/evenements/", $image_name);
 
         $publication = Publication::find($evenement->publication_id);
         $publication->titre = $request->titre;
         $publication->texte= $request->contenu;
-        $publication->photo = $name_photo;
+        $publication->photo = $image_name;
         $publication->user_id = Auth::user()->id;
         $publication->save();
 
