@@ -31,7 +31,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', [HomeController::class, "welcome"]);
+Route::get('/', [HomeController::class, "welcome"])->name("home");
 
 Auth::routes();
 
@@ -70,4 +70,3 @@ Route::middleware("auth", "admin", "active")->group(function () {
     });
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,283 +1,125 @@
 @extends("layouts.guest.app")
 @section("content")
-@include("layouts.guest.breadcumb")
-
-<div class="kingster-page-wrapper" id="kingster-page-wrapper">
-                <div class="gdlr-core-page-builder-body">
-                    <div class="gdlr-core-pbf-wrapper " id="div_983a_3">
-                        <div class="gdlr-core-pbf-background-wrap"></div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" id="div_983a_4">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_983a_0">Kingster’s History</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-left-align">
-                                                    <div class="gdlr-core-divider-container" id="div_983a_5">
-                                                        <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_983a_6"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" id="div_983a_7">
-                                                        <p>If you would like to study in the university in the heart of the city that focus on chaning the world for better to morrow, you’re choosin the right place. We do not use special formulas to select students. We look at every single applicant&#8217;s application, academic and personal, to select students who suit to our community with a full range of backgrounds. If you would like to study</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" id="div_983a_8">
-                                                        <p>If you would like to study in the university in the heart of the city that focus on chaning the world for better to morrow, you’re choosin the right place. We do not use special formulas to select students. We look at every single applicantt&#8217;s application, academic and personal, to select students who suit to our community.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <section class="page-header mb-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="breadcrumb">
+                                <li><a href="index.html">{{ __("pages.home") }}</a></li>
+                                <li class="active">{{ __("pages.about") }}</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="gdlr-core-pbf-wrapper " id="div_983a_9">
-                        <div class="gdlr-core-pbf-background-wrap" id="div_983a_10">
-                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" id="div_983a_11" data-parallax-speed="0.1"></div>
-                        </div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-left-align">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" id="div_983a_12"><img src="upload/col-icon-3.png" alt="" width="40" height="43" title="col-icon-3" /></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" id="div_983a_13">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_983a_1">Our Philosophy</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" id="div_983a_14">
-                                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-left-align">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" id="div_983a_15"><img src="upload/col-icon-4.png" alt="" width="47" height="47" title="col-icon-4" /></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" id="div_983a_16">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_983a_2">Kingster's Principle</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" id="div_983a_17">
-                                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-left-align">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" id="div_983a_18"><img src="upload/col-icon-2.png" alt="" width="43" height="45" title="col-icon-2" /></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" id="div_983a_19">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_983a_3">Key Of Success</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" id="div_983a_20">
-                                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="font-weight-bold">{{ __("pages.about_our_university") }}</h1>
                         </div>
                     </div>
-                    <div class="gdlr-core-pbf-wrapper " id="div_983a_21">
-                        <div class="gdlr-core-pbf-background-wrap" id="div_983a_22"></div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " id="div_983a_23" data-sync-height="height-1" data-sync-height-center>
-                                        <div class="gdlr-core-pbf-background-wrap" id="div_983a_24"></div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-left-align">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" id="div_983a_25"><img src="upload/about-icon-1.png" alt="" width="65" height="65" title="about-icon-1" /></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" id="div_983a_26">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_983a_4">Special Campus Tour</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" id="div_983a_27">
-                                                        <p>Campus on a tour designed for prospective graduate and professional students. You will see how our university like, facilities, studenst and life in this university. Meet our graduate admissions representative to learn more about our graduate programs and decide what it the best for you.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-30">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js  gdlr-core-column-extend-right" data-sync-height="height-1">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" id="div_983a_28" data-parallax-speed="0.2"></div>
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content"></div>
-                                    </div>
-                                </div>
+                </div>
+            </section>
+            <section class="section section-height-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="100">
+                                <h2 class="font-weight-bold text-6 mb-3">{{ __("pages.who_are_we") }}</h2>
                             </div>
+                            <p class="lead mb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">
+                                {{ __("pages.description") }}
+                            </p>
+                            <p class="lead mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
+                                {{ __("pages.description_p2") }}
+                            </p>
+                            <a href="{{ route("contact") }}" class="btn btn-outline btn-rounded btn-primary btn-v-3 btn-h-4 font-weight-bold text-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">{{ __("pages.contact") }}</a>
                         </div>
-                    </div>
-                    <div class="gdlr-core-pbf-wrapper " id="div_983a_29">
-                        <div class="gdlr-core-pbf-background-wrap" id="div_983a_30"></div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js  gdlr-core-column-extend-left" data-sync-height="height-2">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" id="div_983a_31" data-parallax-speed="0.2"></div>
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content"></div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-30">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " id="div_983a_32" data-sync-height="height-2" data-sync-height-center>
-                                        <div class="gdlr-core-pbf-background-wrap" id="div_983a_33"></div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-left-align">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" id="div_983a_34"><img src="upload/about-icon-2.png" alt="" width="67" height="58" title="about-icon-2" /></div>
+                        <div class="col-10 col-md-6 col-lg-5 mx-auto ml-md-auto appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                            <div class="particles d-flex align-items-center pr-0 pr-lg-3 pr-xl-5">
+                                <svg class="svg-particles d-none d-sm-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 493.72 405.79">
+                                    <g class="g-particles g-particles-group-1 appear-animation" data-appear-animation="expandParticles" data-appear-animation-delay="500">
+                                        <line class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" x1="150.28" y1="108.35" x2="159.03" y2="102.1" />
+                                        <line class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" x1="325.51" y1="118.98" x2="334.26" y2="112.73" />
+                                        <line class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" x1="483.33" y1="94.52" x2="492.08" y2="88.27" />
+                                        <line class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" x1="321.14" y1="279.22" x2="329.89" y2="272.97" />
+                                        <line class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" x1="148.47" y1="279.22" x2="157.22" y2="272.97" />
+                                        <line class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" x1="11.14" y1="305.17" x2="19.89" y2="298.92" />
+                                    </g>
+                                    <g class="g-particles g-particles-group-2 appear-animation" data-appear-animation="expandParticles" data-appear-animation-delay="800">
+                                        <path class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" d="M51.78,105.64s-.37-12.75,5.25-3.5.38,7.13,0,7.13" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" d="M229.34,103.24s-.37-12.75,5.25-3.5.38,7.12,0,7.12" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" d="M401,103.24s-.37-12.75,5.25-3.5.38,7.12,0,7.12" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" d="M401,274.1s-.37-12.75,5.25-3.5.38,7.13,0,7.13" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" d="M227.33,276.14s-.37-12.75,5.25-3.5.38,7.13,0,7.13" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" d="M55.49,276.14s-.37-12.75,5.25-3.5.38,7.13,0,7.13" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" d="M97.76,41.59s-2.5,4.83,2.83,2.33.67,2.67.67,2.67" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" d="M448.14,22.85s-2.5,4.83,2.83,2.33.67,2.67.67,2.67" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-1" fill="none" stroke="#969da0" stroke-miterlimit="10" d="M246,44.18s.1,5.85,4.41-.28,2.26,1.66,2.26,1.66" transform="translate(-3.14 -1.85)" />
+                                    </g>
+                                    <g class="g-particles g-particles-group-3 appear-animation" data-appear-animation="expandParticles" data-appear-animation-delay="1100">
+                                        <circle class="cls-2" fill="#969da0" stroke="#969da0" cx="4.77" cy="151" r="1.14" transform="translate(-108.51 45.76) rotate(-45)" />
+                                        <circle class="cls-2" fill="#969da0" stroke="#969da0" cx="149.72" cy="30.16" r="1.14" transform="translate(19.39 112.85) rotate(-45)" />
+                                        <circle class="cls-2" fill="#969da0" stroke="#969da0" cx="304.7" cy="3.48" r="1.14" transform="translate(83.64 214.63) rotate(-45)" />
+                                        <circle class="cls-2" fill="#969da0" stroke="#969da0" cx="495.22" cy="155.04" r="1.14" transform="translate(32.28 393.74) rotate(-45)" />
+                                        <circle class="cls-2" fill="#969da0" stroke="#969da0" cx="315.2" cy="163.8" r="1.14" transform="translate(-26.64 269.01) rotate(-45)" />
+                                        <circle class="cls-2" fill="#969da0" stroke="#969da0" cx="153.42" cy="344.7" r="1.14" transform="translate(-201.94 207.59) rotate(-45)" />
+                                        <circle class="cls-2" fill="#969da0" stroke="#969da0" cx="249.61" cy="406" r="1.14" transform="translate(-217.11 293.57) rotate(-45)" />
+                                        <circle class="cls-2" fill="#969da0" stroke="#969da0" cx="313.32" cy="336.94" r="1.14" transform="translate(-149.62 318.39) rotate(-45)" />
+                                        <circle class="cls-2" fill="#969da0" stroke="#969da0" cx="148.58" cy="172.2" r="1.14" transform="translate(-81.38 153.65) rotate(-45)" />
+                                    </g>
+                                    <g class="g-particles g-particles-group-4 appear-animation" data-appear-animation="expandParticles" data-appear-animation-delay="1400">
+                                        <polyline class="cls-3" fill="none" stroke="#969da0" points="200.87 18.34 197.2 18.34 199.03 21" />
+                                        <polyline class="cls-3" fill="none" stroke="#969da0" points="179.66 368.64 180.47 364.7 176.12 365.86" />
+                                        <polyline class="cls-3" fill="none" stroke="#969da0" points="369.87 368.64 370.67 364.7 366.31 365.86" />
+                                        <polyline class="cls-3" fill="none" stroke="#969da0" points="369.31 5.73 371.83 1.9 367.27 1.65" />
+                                        <polyline class="cls-3" fill="none" stroke="#969da0" points="217.7 153.19 210.32 153.19 214.01 158.56" />
+                                        <polyline class="cls-3" fill="none" stroke="#969da0" points="385.03 153.19 377.66 153.19 381.34 158.56" />
+                                        <polyline class="cls-3" fill="none" stroke="#969da0" points="385.03 324.15 377.66 324.15 381.34 329.52" />
+                                        <polyline class="cls-3" fill="none" stroke="#969da0" points="213.01 324.15 205.64 324.15 209.32 329.52" />
+                                        <polyline class="cls-3" fill="none" stroke="#969da0" points="52.35 324.15 44.98 324.15 48.66 329.52" />
+                                    </g>
+                                    <g class="g-particles g-particles-group-5 appear-animation" data-appear-animation="expandParticles" data-appear-animation-delay="1700">
+                                        <path class="cls-4" fill="none" stroke="#969da0" d="M264.48,188.12s-4,8.83,3.33,6.17,5.67-.5,5.67-.5-1.33,3.67-2.17,3.5" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-4" fill="none" stroke="#969da0" d="M444.52,179.07s-4,8.83,3.33,6.17,5.67-.5,5.67-.5-1.33,3.67-2.17,3.5" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-4" fill="none" stroke="#969da0" d="M94.23,196.91s-4,8.83,3.33,6.17,5.67-.5,5.67-.5-1.33,3.67-2.17,3.5" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-4" fill="none" stroke="#969da0" d="M92.81,369.86s-2.63,6.55,2.19,4.57,3.73-.37,3.73-.37-.88,2.72-1.43,2.6" transform="translate(-3.14 -1.85)" />
+                                        <path class="cls-4" fill="none" stroke="#969da0" d="M269.94,368.71c.06-.09,3.2,5.44,4.68,2,2-4.8,2.54-2.76,2.54-2.76s1.15,2.61.66,2.89" transform="translate(-3.14 -1.85)" />
+                                    </g>
+                                    <g class="g-particles g-particles-group-6 appear-animation" data-appear-animation="expandParticles" data-appear-animation-delay="2000">
+                                        <polyline class="cls-5" fill="#969da0" stroke="#969da0" points="8.58 76.55 13.71 78.42 12.58 72.8" />
+                                        <polyline class="cls-5" fill="#969da0" stroke="#969da0" points="8.58 228.65 13.71 230.53 12.58 224.9" />
+                                        <polyline class="cls-5" fill="#969da0" stroke="#969da0" points="178.55 238.99 183.68 240.86 182.55 235.24" />
+                                        <polyline class="cls-5" fill="#969da0" stroke="#969da0" points="349.47 240.53 354.59 242.4 353.47 236.78" />
+                                        <polyline class="cls-5" fill="#969da0" stroke="#969da0" points="338.72 402.28 343.84 404.15 342.72 398.53" />
+                                        <polyline class="cls-5" fill="#969da0" stroke="#969da0" points="147.72 399.46 152.84 401.34 151.72 395.71" />
+                                        <polyline class="cls-5" fill="#969da0" stroke="#969da0" points="482.39 209.27 485.95 213.4 487.71 207.94" />
+                                        <polyline class="cls-5" fill="#969da0" stroke="#969da0" points="349.58 66.58 354.83 68.06 353.29 62.54" />
+                                    </g>
+                                </svg>
+                                <div class="particles-counter bg-light" data-plugin-float-element data-plugin-options="{'startPos': 'top', 'speed': 7, 'horizontal': true, 'transition': true}">
+                                    <div class="counters counters-sm">
+                                        <div class="row m-0">
+                                            <div class="col-sm-6">
+                                                <div class="counter text-dark my-4 pb-1">
+                                                    <strong data-to="2500" data-append="+">2500+</strong>
+                                                    <label class="font-weight-light">{{ __("pages.students") }}</label>
                                                 </div>
                                             </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" id="div_983a_35">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_983a_5">Graduation</h3></div>
+                                            <div class="col-sm-6">
+                                                <div class="counter text-dark my-4 pb-1">
+                                                    <strong data-to="15">15</strong>
+                                                    <label class="font-weight-light">{{ __("pages.existance") }}</label>
                                                 </div>
                                             </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" id="div_983a_36">
-                                                        <p>Campus on a tour designed for prospective graduate and professional students. You will see how our university like, facilities, studenst and life in this university. Meet our graduate admissions representative to learn more about our graduate programs and decide what it the best for you.</p>
-                                                    </div>
+                                            <div class="col-sm-6">
+                                                <div class="counter text-dark my-4 pt-1">
+                                                    <strong data-to="352">352</strong>
+                                                    <label class="font-weight-light">{{ __("pages.graduation") }}</label>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gdlr-core-pbf-wrapper " id="div_983a_37">
-                        <div class="gdlr-core-pbf-background-wrap" id="div_983a_38"></div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " id="div_983a_39" data-sync-height="height-3" data-sync-height-center>
-                                        <div class="gdlr-core-pbf-background-wrap" id="div_983a_40"></div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-left-align">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" id="div_983a_41"><img src="upload/about-icon-3.png" alt="" width="63" height="62" title="about-icon-3" /></div>
+                                            <div class="col-sm-6">
+                                                <div class="counter text-dark my-4 pt-1">
+                                                    <strong data-to="178">178</strong>
+                                                    <label class="font-weight-light">{{ __("pages.licence") }}</label>
                                                 </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" id="div_983a_42">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_983a_6">Powerful Alumni</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" id="div_983a_43">
-                                                        <p>Campus on a tour designed for prospective graduate and professional students. You will see how our university like, facilities, studenst and life in this university. Meet our graduate admissions representative to learn more about our graduate programs and decide what it the best for you.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-30">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js  gdlr-core-column-extend-right" data-sync-height="height-3">
-                                        <div class="gdlr-core-pbf-background-wrap">
-                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" id="div_983a_44" data-parallax-speed="0.2"></div>
-                                        </div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gdlr-core-pbf-wrapper " id="div_983a_45">
-                        <div class="gdlr-core-pbf-background-wrap" id="div_983a_46"></div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container-custom" id="div_983a_47">
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-gallery-item gdlr-core-item-pdb clearfix  gdlr-core-gallery-item-style-grid" id="div_983a_48">
-                                        <div class="gdlr-core-gallery-item-holder gdlr-core-js-2 clearfix" data-layout="fitrows">
-                                            <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-12 gdlr-core-column-first gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-1.png" alt="" width="248" height="120" title="banner-1" /></div>
-                                            </div>
-                                            <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-12 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-2.png" alt="" width="248" height="120" title="banner-2" /></div>
-                                            </div>
-                                            <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-12 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-3.png" alt="" width="248" height="120" title="banner-3" /></div>
-                                            </div>
-                                            <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-12 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-4-1.png" alt="" width="248" height="120" title="banner-4" /></div>
-                                            </div>
-                                            <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-12 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-5.png" alt="" width="248" height="120" title="banner-5" /></div>
                                             </div>
                                         </div>
                                     </div>
@@ -286,7 +128,184 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-
+            </section>
+            <section class="section bg-primary py-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 p-0 appear-animation" data-appear-animation="fadeInLeftShorter">
+                            <div class="card bg-primary border-0 h-100 py-5">
+                                <div class="card-body p-5">
+                                    <p class="text-color-light opacity-7 mb-2">
+                                        {{ __("pages.description_p3") }}
+                                    </p>
+                                    <p class="text-color-light opacity-7">
+                                        {{ __("pages.description_p4") }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-0 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+                            <div class="image-frame min-height-300 h-100" data-plugin-image-background data-plugin-options="{'imageUrl': 'img/generic/generic-1.jpg'}"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section bg-primary-2 py-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 order-2 order-md-1 p-0 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="600">
+                            <div class="image-frame min-height-300 h-100" data-plugin-image-background data-plugin-options="{'imageUrl': 'img/generic/generic-3.jpg'}"></div>
+                        </div>
+                        <div class="col-md-6 order-1 order-md-2 p-0">
+                            <div class="card bg-primary-2 border-0 h-100 py-5">
+                                <div class="card-body p-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400">
+                                    <p class="text-color-light opacity-7 mb-4">
+                                        {{ __("pages.description_p5") }}
+                                    </p>
+                                    <p class="text-color-light opacity-7 mb-4">
+                                        {{ __("pages.description_p6") }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="row text-center pb-2 mb-4">
+                        <div class="col">
+                            <div class="overflow-hidden">
+                                <h2 class="font-weight-bold appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">{{ __("pages.administration") }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                        <div class="col">
+                            <div class="owl-carousel owl-theme dots-style-1 nav-style-3" data-plugin-options="{'responsive': {'0': {'items': 1}, '576': {'items': 1}, '768': {'items': 3}, '979': {'items': 4}, '1199': {'items': 4}}, 'dots': true, 'nav': false, 'loop': false, 'navtext': [], 'margin': 30}">
+                                <div>
+                                    <div class="text-center mb-2">
+                                        <div class="image-frame image-frame-style-1 image-frame-effect-1 mb-4">
+                                            <span class="image-frame-wrapper">
+                                            <img src="img/authors/author-1.jpg" class="img-fluid" alt="">
+                                            <span class="image-frame-inner-border"></span>
+                                            <span class="image-frame-action image-frame-action-effect-1 image-frame-action-sm">
+                                            <a href="ajax/team-member-detail.html" class="simple-ajax-popup">
+                                            <span class="image-frame-action-icon">
+                                            <i class="lnr lnr-magnifier text-color-light"></i>
+                                            </span>
+                                            </a>
+                                            <a href="about-me.html">
+                                                <span class="image-frame-action-icon">
+                                                <i class="lnr lnr-link text-color-light"></i>
+                                                </span>
+                                            </a>
+                                            </span>
+                                            </span>
+                                        </div>
+                                        <h3 class="font-weight-bold text-4 mb-0">John Doe</h3>
+                                        <span class="text-1">CEO AND FOUNDER</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-center mb-2">
+                                        <div class="image-frame image-frame-style-1 image-frame-effect-1 mb-4">
+                                            <span class="image-frame-wrapper">
+                                            <img src="img/authors/author-2.jpg" class="img-fluid" alt="">
+                                            <span class="image-frame-inner-border"></span>
+                                            <span class="image-frame-action image-frame-action-effect-1 image-frame-action-sm">
+                                            <a href="ajax/team-member-detail.html" class="simple-ajax-popup">
+                                            <span class="image-frame-action-icon">
+                                            <i class="lnr lnr-magnifier text-color-light"></i>
+                                            </span>
+                                            </a>
+                                            <a href="about-me.html">
+                                                <span class="image-frame-action-icon">
+                                                <i class="lnr lnr-link text-color-light"></i>
+                                                </span>
+                                            </a>
+                                            </span>
+                                            </span>
+                                        </div>
+                                        <h3 class="font-weight-bold text-4 mb-0">Bob Doe</h3>
+                                        <span class="text-1">CO-FOUNDER</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-center mb-2">
+                                        <div class="image-frame image-frame-style-1 image-frame-effect-1 mb-4">
+                                            <span class="image-frame-wrapper">
+                                            <img src="img/authors/author-3.jpg" class="img-fluid" alt="">
+                                            <span class="image-frame-inner-border"></span>
+                                            <span class="image-frame-action image-frame-action-effect-1 image-frame-action-sm">
+                                            <a href="ajax/team-member-detail.html" class="simple-ajax-popup">
+                                            <span class="image-frame-action-icon">
+                                            <i class="lnr lnr-magnifier text-color-light"></i>
+                                            </span>
+                                            </a>
+                                            <a href="about-me.html">
+                                                <span class="image-frame-action-icon">
+                                                <i class="lnr lnr-link text-color-light"></i>
+                                                </span>
+                                            </a>
+                                            </span>
+                                            </span>
+                                        </div>
+                                        <h3 class="font-weight-bold text-4 mb-0">Jessica Doe</h3>
+                                        <span class="text-1">SALES</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-center mb-2">
+                                        <div class="image-frame image-frame-style-1 image-frame-effect-1 mb-4">
+                                            <span class="image-frame-wrapper">
+                                            <img src="img/authors/author-4.jpg" class="img-fluid" alt="">
+                                            <span class="image-frame-inner-border"></span>
+                                            <span class="image-frame-action image-frame-action-effect-1 image-frame-action-sm">
+                                            <a href="ajax/team-member-detail.html" class="simple-ajax-popup">
+                                            <span class="image-frame-action-icon">
+                                            <i class="lnr lnr-magnifier text-color-light"></i>
+                                            </span>
+                                            </a>
+                                            <a href="about-me.html">
+                                                <span class="image-frame-action-icon">
+                                                    <i class="lnr lnr-link text-color-light"></i>
+                                                </span>
+                                            </a>
+                                            </span>
+                                            </span>
+                                        </div>
+                                        <h3 class="font-weight-bold text-4 mb-0">Alice Doe</h3>
+                                        <span class="text-1">MARKETING</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-center mb-2">
+                                        <div class="image-frame image-frame-style-1 image-frame-effect-1 mb-4">
+                                            <span class="image-frame-wrapper">
+                                                <img src="img/authors/author-5.jpg" class="img-fluid" alt="">
+                                                <span class="image-frame-inner-border"></span>
+                                            <span class="image-frame-action image-frame-action-effect-1 image-frame-action-sm">
+                                            <a href="ajax/team-member-detail.html" class="simple-ajax-popup">
+                                            <span class="image-frame-action-icon">
+                                            <i class="lnr lnr-magnifier text-color-light"></i>
+                                            </span>
+                                            </a>
+                                            <a href="about-me.html">
+                                                <span class="image-frame-action-icon">
+                                                    <i class="lnr lnr-link text-color-light"></i>
+                                                </span>
+                                            </a>
+                                            </span>
+                                            </span>
+                                        </div>
+                                        <h3 class="font-weight-bold text-4 mb-0">WILL DOE</h3>
+                                        <span class="text-1">MARKETING</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 @endsection

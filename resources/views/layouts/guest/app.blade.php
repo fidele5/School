@@ -1,3 +1,5 @@
 @include("layouts.guest.header")
-@yield('content')
+<div role="main" class="main">
+    @yield('content')
+</div>
 @include('layouts.guest.footer')

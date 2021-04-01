@@ -9,10 +9,15 @@ class Filiere extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["nom"];
+    protected $fillable = ["nom", "description", "image"];
 
     public function promotions()
     {
         return $this->hasMany(Promotion::class);
+    }
+
+    public function cycle()
+    {
+        return $this->belongsTo(Cycle::class);
     }
 }

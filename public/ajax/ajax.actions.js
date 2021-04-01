@@ -328,8 +328,12 @@ $(document).ready(function() {
                         $('div.carde').unblock();
 
                     });
+
                 }
+
             });
+
         }
+
     });
 });

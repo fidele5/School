@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Actualite;
 use App\Models\Caroussel;
 use App\Models\CategorieRealisation;
+use App\Models\Cycle;
+use App\Models\Etudiant;
 use App\Models\Evenement;
 use App\Models\Filiere;
 use App\Models\Horaire;
 use App\Models\Realisation;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -36,7 +41,11 @@ class HomeController extends Controller
             ->take(3)
             ->get();
         $caroussels = Caroussel::all();
-        return view('home')->with(compact("actualites", "evenements", "caroussels"));
+        $categories = CategorieRealisation::all();
+        $realisations = Realisation::orderBy("id", "desc")
+            ->take(6)
+            ->get();
+        return view('home')->with(compact("actualites", "evenements", "caroussels", "categories", "realisations"));
     }
 
     public function index()
@@ -65,24 +74,56 @@ class HomeController extends Controller
 
     public function filieres()
     {
-        $filieres = Filiere::all();
-        return view("pages.guest.autres.filiere")->with("filieres", $filieres);
+        $cycles = Cycle::all();
+        return view("pages.guest.autres.filiere")->with("cycles", $cycles);
     }
 
     public function horaires()
     {
+        $cycles = Cycle::all();
         $horaire = Horaire::latest()->get();
-        return view("pages.guest.autres.horaire")->with("horaire", $horaire);
+        return view("pages.guest.autres.horaire")->with(compact("horaire","cycles"));
     }
 
     public function admission()
     {
-        # code ...
+        $filieres = Filiere::all();
+        return view("pages.guest.autres.admission")->with('filieres', $filieres);
+    }
+
+    public function saveStudent(Request $request)
+    {
+        $matricule = strtolower(date('y').$request->nom[0].$request->postnom[0].mt_rand(0,100));
+        $password = Hash::make($request->nom."@".date('Y'));
+        $user = User::create([
+            "nom"=>$request->nom,
+            "postnom"=>$request->postnom,
+            "prenom"=>$request->prenom,
+            "adresse"=>$request->adresse,
+            "genre"=>$request->genre,
+            "telephone"=>$request->telephone,
+            "email"=>$request->email,
+            "password"=>$password,
+        ]);
+
+        Etudiant::create([
+            "promotion_id"=>$request->promotion_id,
+            "user_id"=>$user->id,
+            "matricule"=>$matricule,
+            "lieu_naissance"=>$request->lieu_naissance,
+            "date_naissance"=>$request->date_naissance,
+            "ecole_provenance"=>$request->ecole_provenance,
+            "pourcentage"=>$request->pourcentage,
+            "option_laureat"=>$request->option_laureat,
+            "annee_laureat"=>$request->annee_laureat,
+        ]);
+
     }
 
     public function cours()
     {
-        # code...
+        $cycles = Cycle::all();
+        return view("pages.guest.autres.cours")->with('cycles', $cycles);
     }
 
     public function calendar()

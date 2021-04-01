@@ -16,7 +16,14 @@ class CreateFilieresTable extends Migration
         Schema::create('filieres', function (Blueprint $table) {
             $table->id();
             $table->string("nom");
+            $table->text("description");
+            $table->string("image");
+            $table->unsignedBigInteger("cycle_id");
             $table->timestamps();
+        });
+
+        Schema::table("filieres", function (Blueprint $table) {
+            $table->foreign("cycle_id")->references("id")->on("cycles")->cascadeOnDelete();
         });
     }
 

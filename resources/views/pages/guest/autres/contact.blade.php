@@ -1,226 +1,109 @@
 @extends("layouts.guest.app")
 @section("content")
-            <div class="kingster-page-wrapper" id="kingster-page-wrapper">
-                <div class="gdlr-core-page-builder-body">
-                    <div class="gdlr-core-pbf-wrapper " style="padding: 250px 0px 160px 0px;">
-                        <div class="gdlr-core-pbf-background-wrap">
-                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(upload/image-bg-1.jpg) ;background-size: cover ;background-position: center ;" data-parallax-speed="0.3"></div>
+        <section class="page-header mb-0">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-left">
+                            <h1 class="font-weight-bold">{{ __("pages.contact") }}</h1>
                         </div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js " data-gdlr-animation="fadeInUp" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
-                                        <div class="gdlr-core-title-item-title-wrap clearfix">
-                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 75px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;color: #ffffff ;">Contact Us</h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 25px ;font-style: normal ;color: #f2f2f2 ;margin-top: 25px ;">Get Intouch</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gdlr-core-pbf-wrapper " style="padding: 50px 0px 40px 0px;" data-skin="White Text">
-                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #161616 ;"></div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 50px 20px 0px 20px;">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " data-gdlr-animation="fadeInUp" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-icon-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 35px ;"><i class=" gdlr-core-icon-item-icon fa fa-phone" style="color: #ffffff ;font-size: 40px ;min-width: 40px ;min-height: 40px ;"></i></div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 25px ;">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 26px ;letter-spacing: 0px ;text-transform: none ;">Phone</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;">
-                                                        <p>A wonderful serenity has taken possession of my entire soul, like these.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;color: #3db166 ;">
-                                                        <p><a href="#">+1-2345-2345</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 50px 20px 0px 20px;">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " data-gdlr-animation="fadeInDown" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-icon-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 35px ;"><i class=" gdlr-core-icon-item-icon fa fa-envelope-o" style="color: #ffffff ;font-size: 40px ;min-width: 40px ;min-height: 40px ;"></i></div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 25px ;">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 26px ;letter-spacing: 0px ;text-transform: none ;">Email</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;">
-                                                        <p>A wonderful serenity has taken possession of my entire soul, like these.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;">
-                                                        <p><a href="#">Contact@goodlayers.com</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 50px 20px 0px 20px;">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " data-gdlr-animation="fadeInUp" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-icon-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 35px ;"><i class=" gdlr-core-icon-item-icon fa fa-location-arrow" style="color: #ffffff ;font-size: 40px ;min-width: 40px ;min-height: 40px ;"></i></div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 25px ;">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 26px ;letter-spacing: 0px ;text-transform: none ;">Location</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;">
-                                                        <p>4 apt. Flawing Street. The Grand Avenue.
-                                                            <br />Liverpool, UK 33342</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;">
-                                                        <p><a href="#">View On Google Map</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gdlr-core-pbf-wrapper " style="padding: 115px 0px 40px 0px;">
-                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #f3f3f3 ;"></div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js " style="max-width: 760px ;">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 60px ;">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 39px ;">Leave us your info</h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 19px ;font-style: normal ;text-transform: uppercase ;">and we will get back to you.</span></div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-contact-form-7-item gdlr-core-item-pdlr gdlr-core-item-pdb ">
-                                                    <div role="form" class="wpcf7" id="wpcf7-f1979-p1964-o1" lang="en-US" dir="ltr">
-                                                        <div class="screen-reader-response"></div>
-                                                        <form class="quform" action="http://max-themes.net/demos/kingster/kingster/plugins/quform/process.php" method="post" enctype="multipart/form-data" onclick="">
-
-                                                            <div class="quform-elements">
-                                                                <div class="quform-element">
-                                                                    <p>Your Name (required)
-                                                                        <br>
-                                                                        <span class="wpcf7-form-control-wrap your-name">
-                                                                            <input id="name" type="text" name="name" size="40" class="input1" aria-required="true" aria-invalid="false">
-                                                                        </span>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="quform-element">
-                                                                    <p>Your Email (required)
-                                                                        <br>
-                                                                        <span class="wpcf7-form-control-wrap your-email">
-                                                                            <input id="email" type="text" name="email" size="40" class="input1" aria-required="true" aria-invalid="false">
-                                                                        </span>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="quform-element">
-                                                                    <p>Your Message
-                                                                        <br>
-                                                                        <span class="wpcf7-form-control-wrap your-message">
-                                                                            <textarea  id="message" name="message" cols="40" rows="10" class="input1" aria-invalid="false"></textarea>
-                                                                        </span>
-                                                                    </p>
-                                                                </div>
-                                                                <p>
-                                                                    <!-- Begin Submit button -->
-                                                                    <div class="quform-submit">
-                                                                        <div class="quform-submit-inner">
-                                                                            <button type="submit" class="submit-button"><span>Send</span></button>
-                                                                        </div>
-                                                                        <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
-                                                                    </div>
-                                                                </p>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 0px 0px;">
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space">
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-wp-google-map-plugin-item gdlr-core-item-pdlr gdlr-core-item-pdb " style="padding-bottom: 0px ;">
-
-                                        <div style="overflow:hidden;width: 100%;position: relative;">
-
-                                            <iframe style="width:100%; height:480px; " src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d19905.696399556287!2d-0.3007084089960577!3d51.417531259591925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s2334+Peterson+Street+Kingston+UK+London+H14D!5e0!3m2!1sen!2s!4v1546697086219" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                            <div style="position: absolute;width: 80%;bottom: 20px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;">
-
-                                            </div>
-                                            <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gdlr-core-pbf-wrapper " style="padding: 80px 0px 50px 0px;">
-                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #ffffff ;"></div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-center-align gdlr-core-item-pdlr">
-                                        <a href="mailto:#" target="_blank" class="gdlr-core-social-network-icon" title="email" style="font-size: 20px ;color: #1e1e1e ;">
-                                            <i class="fa fa-envelope" ></i>
-                                        </a>
-                                        <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 20px ;color: #1e1e1e ;margin-left: 40px ;">
-                                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="google-plus" style="font-size: 20px ;color: #1e1e1e ;margin-left: 40px ;">
-                                            <i class="fa fa-google-plus" ></i>
-                                        </a>
-                                        <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="skype" style="font-size: 20px ;color: #1e1e1e ;margin-left: 40px ;">
-                                            <i class="fa fa-skype" ></i>
-                                        </a>
-                                        <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 20px ;color: #1e1e1e ;margin-left: 40px ;">
-                                            <i class="fa fa-twitter" ></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-md-6">
+                            <ul class="breadcrumb justify-content-start justify-content-md-end mb-0">
+                                <li><a href="#">{{ __("pages.home") }}</a></li>
+                                <li class="active">{{ __("pages.contact") }}</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
+            <div id="googlemaps" class="google-map"></div>
+            <section class="section">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col">
+                            <h2 class="font-weight-bold appear-animation" data-appear-animation="fadeInUpShorter">{{ __("pages.get_in_touch") }}</h2>
+                            <p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">{{ __("pages.more_infos") }}</p>
+                        </div>
+                    </div>
+                    <div class="row pt-5">
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-12 col-md-4 col-lg-12 mb-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter">
+                                    <div class="icon-box icon-box-style-1">
+                                        <div class="icon-box-icon">
+                                            <i class="lnr lnr-apartment text-color-primary"></i>
+                                        </div>
+                                        <div class="icon-box-info mt-1">
+                                            <div class="icon-box-info-title">
+                                                <h3 class="font-weight-bold text-4 mb-0">{{ __("pages.address") }}</h3>
+                                            </div>
+                                            <p>1234 Street Name, City Name, USA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-12 mb-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+                                    <div class="icon-box icon-box-style-1">
+                                        <div class="icon-box-icon icon-box-icon-no-top">
+                                            <i class="lnr lnr-envelope text-color-primary"></i>
+                                        </div>
+                                        <div class="icon-box-info mt-1">
+                                            <div class="icon-box-info-title">
+                                                <h3 class="font-weight-bold text-4 mb-0">{{ __("pages.email") }}</h3>
+                                            </div>
+                                            <p><a href="https://www.okler.net/cdn-cgi/l/email-protection#621b0d1722060d0f030b0c4c010d0f"><span class="__cf_email__" data-cfemail="a7dec8d2e7c3c8cac6cec989c4c8ca">[email&#160;protected]</span></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-12 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="400">
+                                    <div class="icon-box icon-box-style-1">
+                                        <div class="icon-box-icon">
+                                            <i class="lnr lnr-phone-handset text-color-primary"></i>
+                                        </div>
+                                        <div class="icon-box-info mt-1">
+                                            <div class="icon-box-info-title">
+                                                <h3 class="font-weight-bold text-4 mb-0">{{ __("pages.phone_number") }}</h3>
+                                            </div>
+                                            <p><a href="tel:+1234567890">(123) 456-7890</a> - <a href="tel:+1234567890">(123) 456-7890</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 appear-animation" data-appear-animation="fadeInRightShorter">
+                            <form class="contact-form form-style-2" action="https://www.okler.net/previews/ezy/2.1.0/php/contact-form.php" method="POST">
+                                <div class="contact-form-success alert alert-success d-none">
+                                    <strong>Success!</strong> Your message has been sent to us.
+                                </div>
+                                <div class="contact-form-error alert alert-danger d-none">
+                                    <strong>Error!</strong> There was an error sending your message.
+                                    <span class="mail-error-message d-block"></span>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" placeholder="{{ __("pages.name") }}" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" placeholder="{{ __("pages.email") }}" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject" placeholder="{{ __("pages.subject") }}" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <textarea maxlength="5000" data-msg-required="Please enter your message." rows="5" class="form-control" name="message" id="message" placeholder="{{ __("pages.message") }}" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row mt-2">
+                                    <div class="col">
+                                        <input type="submit" value="{{ __("pages.send_messsage") }}" class="btn btn-primary btn-rounded btn-4 font-weight-semibold text-0" data-loading-text="Loading...">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
 @endsection
