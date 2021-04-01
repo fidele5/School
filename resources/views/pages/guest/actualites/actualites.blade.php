@@ -26,31 +26,27 @@
                                     <article class="blog-post">
                                         <span class="top-sub-title text-color-primary">{{ date('d-m-Y', strtotime($actualite->created_at)) }}</span>
                                             <h2 class="font-weight-bold text-4 mb-3">
-                                            <a href="{{ route("article.show", $actualite) }}" class="link-color-dark">{{ $actualite->publication->titre }}</a>
+                                            <a href="{{-- route("article.show",$actualite) --}}" class="link-color-dark">{{ $actualite->publication->titre }}</a>
                                         </h2>
                                         <div class="owl-carousel owl-theme dots-style-2 nav-style-2" data-plugin-options="{'items': 1, 'dots': true, 'nav': false, 'animateIn': 'animate__fadeIn', 'animateOut': 'animate__fadeOut'}">
-                                            @foreach ($actualite->publication->photos as $photo)
-                                                <div>
-                                                    <a href="{{ route("actualite.show", $actualite) }}">
-                                                        <div class="image-frame hover-effect-2">
-                                                            <div class="image-frame-wrapper">
-                                                                <img src="photos/{{ $photo->titre }}" class="img-fluid" alt="" />
-                                                            </div>
+
+                                            <div>
+                                                <a href="{{-- route("actualite.show",$actualite) --}}">
+                                                    <div class="image-frame hover-effect-2">
+                                                        <div class="image-frame-wrapper">
+                                                            <img src="/uploads/{{ $actualite->publication->photo }}.jpg" class="img-fluid" alt="" />
                                                         </div>
-                                                    </a>
-                                                </div>
-                                            @endforeach
+                                                    </div>
+                                                </a>
+                                            </div>
+
                                         </div>
                                         <div class="d-flex opacity-6 my-2">
-                                            <a href="{{ route("actualite.show", $actualite) }}#comments">
-                                                <span class="post-comments d-flex align-items-center px-3"><i class="lnr lnr-bubble text-3 mr-1" aria-label="{{ count($actualite->publication->commentaires) }} users comment this post"></i> {{ count($actualite->publication->commentaires) }}</span>
-                                            </a>
-                                            <span class="post-comments d-flex align-items-center px-3"><i class="lnr lnr-camera-video text-3 mr-1" aria-label="{{ count($actualite->videos) }} documents pour cet actualite"></i> {{ count($actualite->videos) }}</span>
-                                            <span class="post-comments d-flex align-items-center px-3"><i class="lnr lnr-book text-3 mr-1" aria-label="{{ count($actualite->videos) }} videos pour cet actualite"></i> {{ count($actualite->videos) }}</span>
+
                                         </div>
                                         <hr class="mt-0 mb-3">
                                         <p class="text-color-light-3 text-truncate" style="max-width: 250px">{{ $actualite->publication->texte }}.</p>
-                                        <a href="{{ route("actualite.show", $actualite) }}" class="text-color-primary font-weight-bold learn-more">{{ __("pages.read_more") }} <i class="fas fa-angle-right text-3" aria-label="Read more"></i></a>
+                                        <a href="{{-- route("actualite.show",$actualite) --}}" class="text-color-primary font-weight-bold learn-more">{{ __("pages.read_more") }} <i class="fas fa-angle-right text-3" aria-label="Read more"></i></a>
                                     </article>
                                 </div>
                             </div>
@@ -70,7 +66,7 @@
                 <hr class="mt-5 mb-4">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
-                        
+
                     </div>
                 </div>
             </div>

@@ -344,16 +344,28 @@
                         <div class="col">
                             <div class="owl-carousel dots-style-3" data-plugin-carousel data-plugin-options="{'autoplay': false, 'dots': true, 'nav': false, 'loop': true, 'margin': 30, 'stagePadding': 15, 'responsive': { '0': {'items': 1}, '576': {'items': 1}, '768': {'items': 2}, '992': {'items': 2}, '1200': {'items': 2}}}">
                                 @if (count($evenements) > 0)
-                                    @foreach ($evenements as $item)
+                                    @foreach ($evenements as $evenement)
                                         <div class="py-4">
                                             <article class="card card-style-1 bg-light rounded border-0">
                                                 <div class="card-body p-5">
-                                                    <h3 class="font-weight-bold text-4 mb-1"><a href="blog-single-post.html" class="link-color-dark">Bob Besser Talk Day</a></h3>
+                                                    <h3 class="font-weight-bold text-4 mb-1"><a href="blog-single-post.html" class="link-color-dark">{{ $evenement->publication->titre }}</a></h3>
                                                     <p>
                                                         <i class="far fa-clock mt-1 text-color-primary"></i>
-                                                        <time class="font-tertiary text-1" datetime="2020-01-17">Jan 17, 2020</time>
+                                                        <time class="font-tertiary text-1" datetime="2020-01-17">{{$evenement->date_debut}}</time> -
+                                                        <i class="far fa-clock mt-1 text-color-default"></i>
+                                                        <time class="font-tertiary text-1" datetime="2020-01-17">{{$evenement->date_fin}}</time>
                                                     </p>
-                                                    <p><a href="blog-single-post.html" class="text-color-light-3">Phasellus blandit massa enim. Nullam id varius nunc. Lorem ipsum dolor sit amet, consectetur adipiscing...</a></p>
+                                                    <p>
+                                                        <a href="blog-single-post.html" class="text-color-light-3 text-truncate" style="max-width: 150px">
+                                                            {{ $evenement->publication->texte }}
+                                                        </a>
+                                                    </p>
+                                                    <p>
+                                                        <i class="fa fa-map-marker mt-1 text-color-primary" aria-hidden="true"></i>
+                                                        <city>
+                                                            {{ $evenement->lieu }}
+                                                        </city>
+                                                    </p>
                                                 </div>
                                             </article>
                                         </div>

@@ -1,5 +1,5 @@
 @extends("layouts.guest.app")
-@section("content")       
+@section("content")
         <section class="page-header mb-0">
                 <div class="container">
                     <div class="row">
@@ -46,6 +46,12 @@
                                             <div class="form-group col">
                                                 <label class="text-color-dark font-weight-semibold" for="billing_address">{{ __("pages.address") }}:</label>
                                                 <input type="text" value="" class="form-control line-height-1 bg-light-5" name="adresse" id="billing_address" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col">
+                                                <label class="text-color-dark font-weight-semibold" for="billing_country">{{ __("pages.nationality") }}:</label>
+                                                <input type="text" value="" class="form-control line-height-1 bg-light-5" name="nationalite" id="billing_country" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -105,7 +111,7 @@
                                                 <input type="number" value="" class="form-control line-height-1 bg-light-5" name="pourcentage" id="shipping_address" required>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="form-row">
                                             <div class="form-group col">
                                                 <label class="text-color-dark font-weight-semibold" for="shipping_city">{{ __("pages.option_laureat") }}:</label>

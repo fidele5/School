@@ -100,6 +100,7 @@ class HomeController extends Controller
             "postnom"=>$request->postnom,
             "prenom"=>$request->prenom,
             "adresse"=>$request->adresse,
+            "nationalite"=>$request->nationalite,
             "genre"=>$request->genre,
             "telephone"=>$request->telephone,
             "email"=>$request->email,

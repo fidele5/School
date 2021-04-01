@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', [HomeController::class, "welcome"])->name("home");
+Route::get('/home', [HomeController::class, "welcome"]);
 
 Auth::routes();
 
@@ -43,6 +44,8 @@ Route::get('/admission', [HomeController::class, 'admission'])->name('admission'
 Route::get('/filiere', [HomeController::class, 'filieres'])->name('filiere');
 Route::get('/apropos', [HomeController::class, 'apropos'])->name('apropos');
 Route::get("/contact", [HomeController::class, 'contact'])->name('contact');
+Route::get("/profile", [HomeController::class, 'contact'])->name('profile');
+Route::post("/saveStudent", [HomeController::class, 'saveStudent'])->name('saveStudent');
 Route::get("/calendrier", [HomeController::class, 'calendar'])->name('calendrier');
 Route::middleware("auth", "admin", "active")->group(function () {
     Route::prefix("admin")->group(function () {
@@ -61,10 +64,9 @@ Route::middleware("auth", "admin", "active")->group(function () {
         Route::resource('seances', SeanceController::class);
         Route::resource('publications', PublicationController::class);
         Route::resource('image-realisation', ImageRealisationController::class);
-        Route::get('', function() {
+        Route::get('', function () {
             return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
         })->name('home-admin');
         Route::get('etudiants/export', [EtudiantController::class, 'export'])->name('');
     });
 });
-

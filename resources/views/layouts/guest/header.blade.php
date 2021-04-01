@@ -110,20 +110,62 @@
                                                 </span>
                                             </li>
                                             <li class="order-9"><a class="dropdown-item {{ (Route::currentRouteName() == "contact")?'active':'' }}" href="{{ route('contact') }}">{{ __("pages.contact") }}</a></li>
+                                            @if (Auth::check())
+                                                <li class="dropdown dropdown-mega dropdown-mega-signin signin logged ml-lg-3 order-9" id="headerAccount">
+                                                    <a class="dropdown-item pl-lg-4" href="page-login.html">{{ __("pages.my_account") }}</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <div class="dropdown-mega-content">
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="row align-items-center mb-4">
+                                                                            <div class="col">
+                                                                                <span class="top-sub-title text-color-light-3">{{ __("pages.signed_in_as") }}</span>
+                                                                                <h2 class="font-weight-bold text-4 mb-0">{{ Auth::user()->nom }}</h2>
+                                                                            </div>
+                                                                            <div class="col text-right">
+                                                                                <img src="/profiles/ico.png" class="img-fluid rounded-circle" alt="" width="48" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <ul class="nav flex-column">
+                                                                            <li class="nav-item">
+                                                                                <a href="{{ route("profile") }}" class="nav-link border border-left-0 border-top-0 border-right-0">{{ __("pages.profile") }}</a>
+                                                                            </li>
+                                                                            @if (Auth::user()->is_admin)
+                                                                                <li class="nav-item">
+                                                                                    <a href="/admin/" class="nav-link">{{ __("pages.admin") }}</a>
+                                                                                </li>
+                                                                            @endif
+                                                                            <li class="nav-item">
+                                                                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">{{ __("pages.logout") }}</a>
+                                                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                                    @csrf
+                                                                                </form>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            @endif
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
                         </div>
                         <div class="header-column justify-content-end">
-                            <div class="header-button d-none d-sm-flex px-2 px-xl-4">
-                                <a href="{{ route("login") }}" class="btn btn-outline btn-rounded btn-primary btn-4 btn-icon-effect-1">
-                                    <span class="wrap">
-                                    <span>{{ __("login") }}</span>
-                                    <i class="fas fa-shopping-cart"></i>
-                                    </span>
-                                </a>
-                            </div>
+                            @if (!Auth::check())
+                                <div class="header-button d-none d-sm-flex ml-3">
+                                    <a href="{{ route("login") }}" class="btn btn-outline btn-rounded btn-primary btn-4 btn-icon-effect-1">
+                                        <span class="wrap">
+                                            <span>Login</span>
+                                            <i class="fas fa-sign"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            @endif
                             <button class="header-btn-collapse-nav mx-3" data-toggle="collapse" data-target=".header-nav-main nav">
                                 <span class="hamburguer">
                                     <span></span>

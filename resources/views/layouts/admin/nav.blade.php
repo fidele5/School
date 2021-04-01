@@ -34,7 +34,7 @@
                                 <span class="user-name">{{ Auth::user()->email}}</span>
                             <span class="user-status text-muted">Available</span>
                         </div>
-                        <span><img class="round" src="/backend/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
+                        <span><img class="round" src="/profiles/ico.png" alt="avatar" height="40" width="40"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right pb-0">
                         <a class="dropdown-item" href="page-user-profile.html">
