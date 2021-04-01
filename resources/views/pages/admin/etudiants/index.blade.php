@@ -24,14 +24,14 @@
 <section id="basic-datatable">
     <div class="row">
         <div class="col-12">
-            < class="card">
+            <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Etudiants</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body card-dashboard">
                         <div class="table-responsive">
-                            <table class="table zero-configuration table-dark">
+                            <table class="table zero-configuration">
                                 <thead>
                                     <tr>
                                         <th>Matricule</th>
@@ -105,11 +105,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="clearfix"></div>
                 <div class="card-footer">
-                    <form action="#" class="dropzone dropzone-area" id="dpz-single-file">
-                        <div class="dz-message">Veuillez selectionner le fichier excel contenant les noms des étudiants</div>
-                        <button class="btn btn-primary" type="submit">Valider</button>
-                    </form>
+                    <div class="row">
+                         <div class="col-6">
+                            <a href="{{ route('etudiants.export')}}" class="btn btn-secondary"><i class="fa fa-arrow-down"></i> Télécharger le modèle</a>
+                        </div>
+                        <form class="form col-6" method="POST" action="{{ route('etudiants.import')}}">
+                            @csrf
+                            <div class="row">
+                                <div class="form-group col-8">
+                                    <input type="file" value="Fichier excel à uploader" id="file" name="file" accept="document/xlsx" class="form-control form-control-file @error('file') is-invalid @enderror" />
+                                </div>
+
+                                <div class="col-4">
+                                    <button class="btn btn-primary mt-10" type="submit">Valider</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Excel\Exporter\EtudiantExporter;
+use App\Excel\Importer\EtudiantImporter;
 use App\Models\Etudiant;
 use App\Models\Promotion;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class EtudiantController extends Controller
 {
@@ -193,7 +195,25 @@ class EtudiantController extends Controller
         ]);
     }
 
-    public function export(Request $request) {
-       return (new EtudiantExporter)->download('etudiants.xlsx');
+    public function export() {
+        return (new EtudiantExporter)->download("etudiants.xlsx");
+    }
+
+    public function import(Request $request) {
+        
+        $request->validate([
+            "file" => ["required", "file", "mimetypes:document/xlsx"]
+        ]);
+
+        $file_name = $request->file("file");
+
+        print(gettype($file_name));
+
+        $imported = (new EtudiantImporter)->import($file_name);
+
+        return response()->json([
+            "status" => "success",
+            "back" => "etudiants"
+        ]);
     }
 }
