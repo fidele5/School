@@ -90,4 +90,5 @@ return [
     "profile"=>"Profil",
     "logout"=>"Deconnexion",
     "admin"=>"Administration",
+    "submit"=>"Valider",
 ];

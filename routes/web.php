@@ -65,12 +65,12 @@ Route::middleware("auth", "admin", "active")->group(function () {
         Route::resource('seances', SeanceController::class);
         Route::resource('publications', PublicationController::class);
         Route::resource('image-realisation', ImageRealisationController::class);
-        Route::get('', function () {
-            Route::get('etudiants/export', [EtudiantController::class, 'export'])->name('etudiants.export');
-            Route::post('etudiants/import', [EtudiantController::class, 'import'])->name('etudiants.import');
+        Route::get('export', [EtudiantController::class, 'export'])->name('export');
+        Route::post('import', [EtudiantController::class, 'import'])->name('import');
+
             Route::get('', function () {
                 return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
             })->name('home-admin');
-        });
+
     });
 });

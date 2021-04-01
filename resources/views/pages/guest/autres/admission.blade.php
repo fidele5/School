@@ -29,35 +29,35 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label class="text-color-dark font-weight-semibold" for="billing_name">{{ __("pages.name") }}:</label>
-                                                <input type="text" value="" class="form-control line-height-1 bg-light-5" name="nom" id="billing_name" required>
+                                                <input type="text" value="" data-msg-required="Entrer votre nom" maxlength="100" minlength="4"  class="form-control champ line-height-1 bg-light-5" name="nom" id="billing_name" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label class="text-color-dark font-weight-semibold" for="billing_last_name">{{ __("pages.post_name") }}:</label>
-                                                <input type="text" value="" class="form-control line-height-1 bg-light-5" name="postnom" id="billing_last_name" required>
+                                                <input type="text" value="" data-msg-required="Entrer votre postnom" maxlength="100" minlength="4" class="form-control champ line-height-1 bg-light-5" name="postnom" id="billing_last_name" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col">
                                                 <label class="text-color-dark font-weight-semibold" for="billing_company">{{ __("pages.nick_name") }}:</label>
-                                                <input type="text" value="" class="form-control line-height-1 bg-light-5" name="prenom" id="billing_company" required>
+                                                <input type="text" value="" data-msg-required="Entrer votre prenom" maxlength="100" minlength="4" class="form-control champ line-height-1 bg-light-5" name="prenom" id="billing_company" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col">
                                                 <label class="text-color-dark font-weight-semibold" for="billing_address">{{ __("pages.address") }}:</label>
-                                                <input type="text" value="" class="form-control line-height-1 bg-light-5" name="adresse" id="billing_address" required>
+                                                <input type="text" value="" data-msg-required="Entrer votre adresse" maxlength="100" minlength="4" class="form-control champ line-height-1 bg-light-5" name="adresse" id="billing_address" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col">
                                                 <label class="text-color-dark font-weight-semibold" for="billing_country">{{ __("pages.nationality") }}:</label>
-                                                <input type="text" value="" class="form-control line-height-1 bg-light-5" name="nationalite" id="billing_country" required>
+                                                <input type="text" value="" data-msg-required="Entrer votre nationalite" maxlength="100" minlength="4" class="form-control champ line-height-1 bg-light-5" name="nationalite" id="billing_country" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col">
                                                 <label class="text-color-dark font-weight-semibold" for="billing_city">{{ __("pages.gender") }}:</label>
-                                                <select class="form-control line-height-1 bg-light-5" name="genre" id="billing_city" required>
+                                                <select class="form-control champ line-height-1 bg-light-5" name="genre" id="billing_city">
                                                     <option value="homme">{{ __("pages.man") }}</option>
                                                     <option value="femme">{{ __("pages.woman") }}</option>
                                                 </select>
@@ -66,11 +66,11 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label class="text-color-dark font-weight-semibold" for="billing_email">{{ __("pages.email") }}:</label>
-                                                <input type="email" value="" class="form-control line-height-1 bg-light-5" name="email" id="billing_email" required>
+                                                <input type="email" value="" data-msg-required="Entrer votre email" maxlength="100" minlength="4" class="form-control champ line-height-1 bg-light-5" name="email" id="billing_email" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label class="text-color-dark font-weight-semibold" for="billing_phone">{{ __("pages.phone_number") }}:</label>
-                                                <input type="tel" value="" class="form-control line-height-1 bg-light-5" name="telephone" id="billing_phone" required>
+                                                <input type="tel" value="" data-msg-required="Entrer votre numero de telephone" maxlength="12" minlength="10" class="form-control champ line-height-1 bg-light-5" name="telephone" id="billing_phone" required>
                                             </div>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                                         <div class="form-row">
                                             <div class="form-group col">
                                                 <label class="text-color-dark font-weight-semibold" for="billing_city">{{ __("pages.promotions") }}:</label>
-                                                <select class="form-control line-height-1 bg-light-5" name="promotion_id" id="billing_city" required>
+                                                <select class="form-control champ line-height-1 bg-light-5" name="promotion_id" id="billing_city">
                                                     @foreach($filieres as $filiere)
                                                        <optgroup label="{{ $filiere->nom }}">
                                                         @foreach($filiere->promotions as $promotion)
@@ -92,43 +92,43 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label class="text-color-dark font-weight-semibold" for="shipping_city">{{ __("pages.birth_place") }}:</label>
-                                                <input type="text" value="" class="form-control line-height-1 bg-light-5" name="lieu_naissance" id="shipping_city" required>
+                                                <input type="text" value="" data-msg-required="Entrer votre lieu de naissance" maxlength="100" minlength="4" class="form-control champ line-height-1 bg-light-5" name="lieu_naissance" id="shipping_city" required>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="text-color-dark font-weight-semibold" for="shipping_last_name">{{ __("pages.birth_date") }}:</label>
-                                                <input type="date" value="" class="form-control line-height-1 bg-light-5" name="date_naissance" id="shipping_last_name" required>
+                                                <label class="text-color-dark font-weight-semibold" for="shipping_birth_date">{{ __("pages.birth_date") }}:</label>
+                                                <input type="date" value="" data-msg-required="Entrer votre date de naissance" maxlength="15" minlength="12" class="form-control champ line-height-1 bg-light-5" name="date_naissance" id="shipping_birth_date" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col">
                                                 <label class="text-color-dark font-weight-semibold" for="shipping_company">{{ __("pages.comming_school") }}:</label>
-                                                <input type="text" value="" class="form-control line-height-1 bg-light-5" name="ecole_provenance" id="shipping_company" required>
+                                                <input type="text" value="" data-msg-required="Entrer votre école de provenance" maxlength="100" minlength="4" class="form-control champ line-height-1 bg-light-5" name="ecole_provenance" id="shipping_company" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col">
                                                 <label class="text-color-dark font-weight-semibold" for="shipping_address">{{ __("pages.percentage") }}:</label>
-                                                <input type="number" value="" class="form-control line-height-1 bg-light-5" name="pourcentage" id="shipping_address" required>
+                                                <input type="number" value="" data-msg-required="Entrer votre pourcentage" min="50" max="99" maxlength="2" minlength="2" class="form-control champ line-height-1 bg-light-5" name="pourcentage" id="shipping_address" required>
                                             </div>
                                         </div>
 
                                         <div class="form-row">
                                             <div class="form-group col">
-                                                <label class="text-color-dark font-weight-semibold" for="shipping_city">{{ __("pages.option_laureat") }}:</label>
-                                                <input type="text" value="" class="form-control line-height-1 bg-light-5" name="option_laureat" id="shipping_city" required>
+                                                <label class="text-color-dark font-weight-semibold" for="shipping_option">{{ __("pages.option_laureat") }}:</label>
+                                                <input type="text" value="" data-msg-required="Entrer votre option lauréat" maxlength="100" minlength="4" class="form-control champ line-height-1 bg-light-5" name="option_laureat" id="shipping_option" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col">
                                                 <label class="text-color-dark font-weight-semibold" for="shipping_year">{{ __("pages.year_laureat") }}:</label>
-                                                <input type="text" value="" class="form-control line-height-1 bg-light-5" name="annee_laureat" id="shipping_year" placeholder="ex : 2019-2020" required>
+                                                <input type="text" value="" data-msg-required="Entrer votre année laureat" maxlength="4" minlength="4" class="form-control champ line-height-1 bg-light-5" name="annee_laureat" id="shipping_year" placeholder="ex : 2019-2020" required>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col text-right">
-                                        <button class="btn btn-primary btn-rounded font-weight-bold btn-h-2 btn-v-3" type="submit">PLACE ORDER</button>
+                                        <button class="btn btn-primary btn-rounded font-weight-bold btn-h-2 btn-v-3" type="submit">{{ __("pages.submit") }}</button>
                                     </div>
                                 </div>
                             </form>
