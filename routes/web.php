@@ -16,6 +16,7 @@ use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\RealisationController;
 use App\Http\Controllers\SeanceController;
+use App\Models\Etudiant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -65,8 +66,11 @@ Route::middleware("auth", "admin", "active")->group(function () {
         Route::resource('publications', PublicationController::class);
         Route::resource('image-realisation', ImageRealisationController::class);
         Route::get('', function () {
-            return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
-        })->name('home-admin');
-        Route::get('etudiants/export', [EtudiantController::class, 'export'])->name('');
+            Route::get('etudiants/export', [EtudiantController::class, 'export'])->name('etudiants.export');
+            Route::post('etudiants/import', [EtudiantController::class, 'import'])->name('etudiants.import');
+            Route::get('', function () {
+                return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
+            })->name('home-admin');
+        });
     });
 });
