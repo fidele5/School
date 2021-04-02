@@ -1,4 +1,4 @@
-        <footer id="footer" class="footer-hover-links-light mt-0" data-plugin-image-background data-plugin-options="{'imageUrl': 'img/footer/background-1.png', 'bgPosition': 'center 100%'}">
+        <footer id="footer" class="footer-hover-links-light mt-0" data-plugin-image-background data-plugin-options="{'imageUrl': '/img/footer/background-1.png', 'bgPosition': 'center 100%'}">
             <div class="container">
                 <div class="footer-top-featured-boxes featured-boxes">
                     <div class="row">
@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-lg-2 align-self-center text-center mb-5 mb-lg-0">
                         <a href="index.html" class="logo">
-                            <img src="img/logo-simple-light.png" class="img-fluid mb-lg-5" width="92" height="35" alt="EZY Website Template">
+                            <img src="/uploads/marie.png" class="img-fluid mb-lg-5" alt="EZY Website Template">
                         </a>
                     </div>
                     <div class="col-lg-3 text-center text-lg-left mb-5 mb-lg-0">

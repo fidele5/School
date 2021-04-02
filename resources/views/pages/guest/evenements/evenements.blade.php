@@ -28,55 +28,41 @@
                                             <div class="timeline-box-arrow"></div>
                                                 <header class="blog-post-header mb-4">
                                                     <div class="owl-carousel owl-theme dots-style-2 nav-style-2" data-plugin-options="{'items': 1, 'dots': true, 'nav': false, 'animateIn': 'animate__fadeIn', 'animateOut': 'animate__fadeOut'}">
-                                                        @foreach ($evenement->publication->photos as $photo)
+
                                                         <div>
-                                                            <a href="{{ route("evenement.show", $evenement) }}">
-                                                                <img src="/photos/{{ $photo->titre }}" class="img-fluid" alt="" />
+                                                            <a href="{{-- route("evenement.show",$evenement) --}}">
+                                                                <img src="/uploads/{{ $evenement->publication->photo }}" class="img-fluid" alt="" />
                                                             </a>
                                                         </div>
-                                                        @endforeach
+
                                                     </div>
                                                     <i class="post-format-icon lnr lnr-picture bg-primary text-color-light text-7 p-3"></i>
                                                 </header>
                                                 <h2 class="font-weight-semibold text-5">
-                                                    <a href="{{ route("evenement.show", $evenement) }}" class="link-color-dark">
+                                                    <a href="{{-- route("evenement.show",$evenement) --}}" class="link-color-dark">
                                                         {{ $evenement->publication->titre }}
                                                     </a>
                                                 </h2>
                                                 <div class="d-flex mb-3">
-                                                    <span class="post-date text-color-primary pr-3">{{ date("d, m Y", strtotime($evenement->created_at)) }}</span>
-                                                    <a href="{{ route("evenements.show", $evenement) }}#comments">
-                                                        <span class="post-comments d-flex align-items-center px-3"><i class="lnr lnr-bubble mr-1" aria-label="5 users comment this post"></i> {{ count($evenement->publication->commentaires) }}</span>
-                                                    </a>
+                                                    <i class="fas fa-calendar mt-1 mr-2" aria-hidden="true"></i> <span class="post-date text-color-primary">{{ $evenement->date_debut }}</span> |
+                                                    <i class="fas fa-calendar-check text-color-primary mt-1 mr-2"></i><span class="post-date text-color-primary pr-3">{{ $evenement->date_fin }}</span>
+                                                    <i class="fas fa-map-marker text-color-primary mt-1 mr-2"></i><span class="post-date text-color-primary pr-3">{{ $evenement->lieu }}</span>
                                                 </div>
                                                 <p class="text-truncate" style="max-width: 250px">{{ $evenement->publication->texte }}</p>
-                                                <a href="{{ route("evenements.show", $evenement) }}" class="text-color-primary font-weight-bold learn-more">{{ __("pages.read_more") }} <i class="fas fa-angle-right" aria-label="Read more"></i></a>
+                                                <a href="{{-- route("evenements.show",$evenement) --}}" class="text-color-primary font-weight-bold learn-more">{{ __("pages.read_more") }} <i class="fas fa-angle-right" aria-label="Read more"></i></a>
                                             </article>
                                         @else
                                         <article class="timeline-box blog-post left appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
                                             <div class="timeline-box-arrow"></div>
                                             <header class="blog-post-header mb-4">
-                                                <div class="lightbox" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}, 'mainClass': 'mfp-with-zoom', 'zoom': {'enabled': true, 'duration': 300}}">
-                                                    <div class="row mx-0">
-                                                        @foreach ($evenement->publication->photos as $photo)
-                                                            <div class="col-6 col-md-4 p-0">
-                                                                <a href="/photos/{{ $photo->titre }}">
-                                                                    <span class="image-frame image-frame-style-1 image-frame-effect-1">
-                                                                        <span class="image-frame-wrapper">
-                                                                            <img src="/photos/{{ $photo->titre }}" class="img-fluid" alt="">
-                                                                            <span class="image-frame-inner-border"></span>
-                                                                            <span class="image-frame-action">
-                                                                                <span class="image-frame-action-icon">
-                                                                                    <i class="lnr lnr-magnifier text-color-light"></i>
-                                                                                </span>
-                                                                            </span>
-                                                                        </span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                        @endforeach
+                                                <div class="owl-carousel owl-theme dots-style-2 nav-style-2" data-plugin-options="{'items': 1, 'dots': true, 'nav': false, 'animateIn': 'animate__fadeIn', 'animateOut': 'animate__fadeOut'}">
+                                                    <div>
+                                                        <a href="{{-- route("evenement.show",$evenement) --}}">
+                                                            <img src="/uploads/{{ $evenement->publication->photo }}" class="img-fluid" alt="" />
+                                                        </a>
                                                     </div>
                                                 </div>
+                                                <i class="post-format-icon lnr lnr-picture bg-primary text-color-light text-7 p-3"></i>
                                             </header>
                                             <h2 class="font-weight-semibold text-5">
                                                 <a href="blog-single-post.html" class="link-color-dark">
@@ -84,13 +70,12 @@
                                                 </a>
                                             </h2>
                                             <div class="d-flex mb-3">
-                                                <span class="post-date text-color-primary pr-3">{{ date("d, m Y", strtotime($evenement->created_at)) }}</span>
-                                                <a href="{{ route("evenement.show", $evenement) }}#comments">
-                                                <span class="post-comments d-flex align-items-center px-3"><i class="lnr lnr-bubble mr-1" aria-label="2 users comment this post"></i> {{ count($evenement->publication->commentaires) }}</span>
-                                                </a>
+                                                <i class="fas fa-calendar mt-1 mr-2" aria-hidden="true"></i> <span class="post-date text-color-primary">{{ $evenement->date_debut }}</span> |
+                                                <i class="fas fa-calendar-check text-color-primary mt-1 mr-2"></i><span class="post-date text-color-primary pr-3">{{ $evenement->date_fin }}</span>
+                                                <i class="fas fa-map-marker text-color-primary mt-1 mr-2"></i><span class="post-date text-color-primary pr-3">{{ $evenement->lieu }}</span>
                                             </div>
                                             <p class="text-truncate" style="max-width: 250px">{{ $evenement->publication->texte }}</p>
-                                            <a href="{{ route("evenement.show", $evenement) }}" class="text-color-primary font-weight-bold learn-more">{{ __("pages.read_more") }} <i class="fas fa-angle-right" aria-label="Read more"></i></a>
+                                            <a href="{{-- route("evenement.show",$evenement) --}}" class="text-color-primary font-weight-bold learn-more">{{ __("pages.read_more") }} <i class="fas fa-angle-right" aria-label="Read more"></i></a>
                                         </article>
                                     @endif
                                 @endforeach
