@@ -179,11 +179,13 @@ class EnseignantController extends Controller
 
         $importer = (new EnseignantImporter)->import($request->file("file"));
 
-        return response()->json(
-            [
+        if($importer) {
+            return response()->json([
                 "status" => "success",
                 "back" => "enseignants"
-            ]
-        );
+            ]);
+        } else {
+            return response("C'est pas beau du tout");
+        }
     }
 }

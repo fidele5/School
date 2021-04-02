@@ -30,7 +30,7 @@
                 </div>
                 <div class="card-content">
                 <div class="card-body">
-                    <form class="form" method="POST" action="{{ route("cycles.update", $categorie) }}">
+                    <form class="form" method="POST" action="{{ route("cycles.update", $cycle) }}">
                         @csrf
                         @method("patch")
                         <div class="form-body">
@@ -38,7 +38,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="designation">Designation</label>
-                                        <input type="text" id="designation" class="form-control champ" placeholder="Désignation" name="designation" value="{{ $categorie->designation }}">
+                                        <input type="text" id="designation" class="form-control champ" placeholder="Désignation" name="designation" value="{{ $cycle->designation }}">
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex justify-content-end">

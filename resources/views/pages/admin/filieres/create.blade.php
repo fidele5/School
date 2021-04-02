@@ -52,6 +52,20 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label for="categorie">Cycle</label>
+                                            <select name="cycle_id" id="cycle" class="custom-select @error('cycle') is-invalid @enderror">
+                                                @foreach ($cycles as $cycle)
+                                                    <option value="{{ $cycle->id }}" @if (old('cycle_id') == $cycle->id)
+                                                        selected
+                                                    @endif>{{ $cycle->designation }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('cycle_id')
+                                                <small class="text-light-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="image">Image</label>
                                             <input type="file" id="image" class="form-control champ @error('image') is-invalid @enderror" placeholder="Image de la filière" name="image" value="{{ old('image')}}" />
                                             @error('image')

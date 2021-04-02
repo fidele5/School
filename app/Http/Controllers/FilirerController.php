@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cycle;
 use App\Models\Filiere;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -19,7 +20,7 @@ class FilirerController extends Controller
         $arguments = [
             "filieres" => $filieres,
             "selected_item" => "filieres",
-            "selected_sub_item" => "all"
+            "selected_sub_item" => "all",
         ];
         return view("pages.admin.filieres.index")->with($arguments);
     }
@@ -33,7 +34,8 @@ class FilirerController extends Controller
     {
         $arguments = [
             "selected_item" => "filieres",
-            "selected_sub_item" => "new"
+            "selected_sub_item" => "new",
+            "cycles" => Cycle::all()
         ];
         return view("pages.admin.filieres.create")->with($arguments);
     }
@@ -82,7 +84,8 @@ class FilirerController extends Controller
         $arguments = [
             "filiere" => $filiere,
             "selected_item" => "filieres",
-            "selected_sub_item" => "all"
+            "selected_sub_item" => "all",
+            "cycles" => Cycle::all()
         ];
         return view("pages.admin.filieres.edit")->with($arguments);
     }

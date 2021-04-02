@@ -82,7 +82,8 @@ class CycleController extends Controller
     {
         $arguments = [
             "selected_item" => "cycles",
-            "selected_sub_item" => "all"
+            "selected_sub_item" => "all",
+            "cycle" => $cycle
         ];
 
         return view("pages.admin.cycles.edit")->with($arguments);
@@ -98,8 +99,9 @@ class CycleController extends Controller
     public function update(Request $request, Cycle $cycle)
     {
         $cycle->designation = $request->designation;
+        $cycle->save();
 
-        return response()->josn([
+        return response()->json([
             "status" => "success",
             "back" => "cycles"
         ]);

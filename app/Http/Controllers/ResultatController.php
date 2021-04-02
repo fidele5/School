@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cours;
+use App\Models\Etudiant;
 use App\Models\Resultat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ResultatController extends Controller
 {
+    protected function validator(array $datas) {
+        return Validator::make($datas, [
+            "etudiant_id" => "required|integer",
+            "cours_id" => "required|integer",
+            "moyenne" => "required|numeric",
+            "examen" => "required|numeric"
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +25,13 @@ class ResultatController extends Controller
      */
     public function index()
     {
-        //
+        $arguments = [
+            "resultats" => Resultat::all(),
+            "selected_item" => "resultats",
+            "selected_sub_item" => "all"
+        ];
+
+        return view("pages.admin.resultats.index")->with($arguments);
     }
 
     /**
@@ -24,7 +41,14 @@ class ResultatController extends Controller
      */
     public function create()
     {
-        //
+        $arguments = [
+            "courses" => Cours::all(),
+            "etudiants" => Etudiant::all(),
+            "selected_item" => "resultats",
+            "selected_sub_item" => "new"
+        ];
+
+        return view("pages.admin.resultats.create")->with($arguments);
     }
 
     /**
@@ -35,7 +59,12 @@ class ResultatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $resultat = Resultat::create($request->except("_token", "_method"));
+
+        return response()->json([
+            "status" => "success",
+            "back" => "resultats"
+        ]);
     }
 
     /**
@@ -57,7 +86,15 @@ class ResultatController extends Controller
      */
     public function edit(Resultat $resultat)
     {
-        //
+        $arguments = [
+            "courses" => Cours::all(),
+            "etudiants" => Etudiant::all(),
+            "resultat" => $resultat,
+            "selected_item" => "resultats",
+            "selected_sub_item" => "new"
+        ];
+
+        return view("pages.admin.resultats.create")->with($arguments);
     }
 
     /**
@@ -69,7 +106,12 @@ class ResultatController extends Controller
      */
     public function update(Request $request, Resultat $resultat)
     {
-        //
+        $resultat->update($resultat->except("_token", "_method"));
+
+        return response()->json([
+            "status" => "success",
+            "back" => "resultats"
+        ]);
     }
 
     /**
@@ -80,11 +122,15 @@ class ResultatController extends Controller
      */
     public function destroy(Resultat $resultat)
     {
-        //
+        $resultat->delete();
+
+        return response()->json([
+            "status" => "success"
+        ]);
     }
 
     public function export() {
-        
+
     }
 
     public function import(Request $request) {

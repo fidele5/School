@@ -6,6 +6,7 @@ use \App\Models\Etudiant;
 use App\Models\Filiere;
 use App\Models\Promotion;
 use App\Models\User;
+use Exception;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToCollection;
@@ -17,11 +18,16 @@ class EtudiantImporter implements ToCollection {
     public function collection(Collection $collection)
     {
         foreach($collection as $key => $row) {
-
             if($key == 0) continue;
 
-            $filiere = Filiere::where("nom", $row[11])->first();
-            $promotion = Promotion::where(["nom" => $row[12], "filiere_id" => $filiere->id])->first();
+            try {
+                $filiere = Filiere::where("nom", $row[11])->first();
+                $promotion = Promotion::where(["nom" => $row[12], "filiere_id" => $filiere->id])->first();
+            } catch(Exception $exception) {
+                continue;
+            }
+
+            print("$filiere, $promotion");
 
             if(!($filiere AND $promotion)) continue;
             $user = User::create([
