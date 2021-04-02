@@ -133,7 +133,6 @@ class HomeController extends Controller
         $pdf = PDF::loadView('pages.guest.autres.fiche', compact('etudiant'))->setPaper('a4');
         $pdf->save(public_path('uploads/fiches/') . $etudiant->matricule . '.pdf');
         return $pdf->download('fiche.pdf');
-        return view("pages.guest.autres.fiche")->with("etudiant", $etudiant);
     }
 
     public function cours()
