@@ -128,6 +128,7 @@ class FilirerController extends Controller
      */
     public function destroy(Filiere $filiere)
     {
+        print("suppression d'une filière innocente");
         $filiere->delete();
         return response()->json([
             "status" => "success",

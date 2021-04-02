@@ -49,10 +49,10 @@
                                             <td>{{ $horaire->promotion->nom}} {{ $horaire->promotion->filiere->nom}}</td>
                                             <td class="text-truncate" style="max-width: 150px">{{ $horaire->description }}</td>
                                             <td>
-                                                <a href="{{ route("horaires.edit", $horaire) }}">
+                                                <a class="btn btn-primary" href="{{ route("horaires.edit", $horaire) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="delete" href="{{ route("horaires.destroy", $horaire) }}">
+                                                <a class="btn btn-danger delete" href="{{ route("horaires.destroy", $horaire) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

@@ -43,28 +43,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($etudiants as $etudiant)
+                                    @foreach ($resultats as $resultat)
                                         <tr>
-                                            <td>{{ $etudiant->matricule }}</td>
-                                            <td>{{ $etudiant->user->nom }}</td>
-                                            <td>{{ $etudiant->user->postnom }}</td>
-                                            <td>{{ $etudiant->user->prenom }}</td>
-                                            <td>{{ $etudiant->user->genre }}</td>
-                                            <th>{{ $etudiant->promotion->nom }}</th>
-                                            <th>{{ $etudiant->user->nationalite }}</th>
-                                            <td>{{ $etudiant->lieu_naissance }}</td>
-                                            <td>{{ $etudiant->date_naissance }}</td>
-                                            <td>{{ $etudiant->ecole_provenance }}</td>
-                                            <td>{{ $etudiant->pourcentage }}</td>
-                                            <td>{{ $etudiant->option_laureat }}</td>
-                                            <td>{{ $etudiant->annee_laureat }}</td>
-                                            <td>{{ $etudiant->user->email}}</td>
-                                            <td>{{ $etudiant->user->telephone }}</td>
+                                            <td>{{ $resultat->etudiant->matricule }}</td>
+                                            <td>{{ $resultat->cours->intitule }}</td>
+                                            <td>{{ $resultat->moyenne }}</td>
+                                            <td>{{ $resultat->examen }}</td>
+                                            <td>{{ $resultat->moyenne + $resultat->examen }}</td>
                                             <td>
-                                                <a href="{{ route("resultats.edit", $resultat) }}">
+                                                <a class="btn btn-primary" href="{{ route("resultats.edit", $resultat) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="delete" href="{{ route("resultats.destroy", $resultat) }}">
+                                                <a class="btn btn-danger delete" href="{{ route("resultats.destroy", $resultat) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

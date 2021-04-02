@@ -50,7 +50,7 @@
                                                 <a class="btn btn-primary" href="{{ route("promotions.edit", $promotion) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="delete" href="{{ route('promotions.destroy', $promotion)}}" class="btn btn-danger" type="submit"><i class="bx bx-trash"></i></a>
+                                                <a class="btn btn-danger delete" href="{{ route('promotions.destroy', $promotion)}}" class="btn btn-danger" type="submit"><i class="bx bx-trash"></i></a>
                                                 </form>
 
                                             </td>

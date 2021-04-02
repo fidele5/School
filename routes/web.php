@@ -67,6 +67,7 @@ Route::middleware("auth", "admin", "active")->group(function () {
         Route::resource('seances', SeanceController::class);
         Route::resource('publications', PublicationController::class);
         Route::resource('image-realisation', ImageRealisationController::class);
+        Route::resource('resultats', ResultatController::class);
         Route::get('etudiants-export', [EtudiantController::class, 'export'])->name('etudiants.export');
         Route::post('etudiants-import', [EtudiantController::class, 'import'])->name('etudiants.import');
         Route::get('enseignants-export', [EnseignantController::class, 'export'])->name('enseignants.export');

@@ -1,5 +1,5 @@
 <!-- BEGIN: Main Menu-->
-<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+<div class="main-menu menu-fixed menu-dark menu-accordion menu-collapsed-open menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto">
@@ -186,6 +186,28 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="nav-item @if($selected_item == "resultats") active @endif">
+                    <a href="# " >
+                        <i class="bx bxs-book"></i>
+                        <span class="menu-title">Résultats</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li @if($selected_sub_item == "all" AND $selected_item == "resultats")class="active" @endif>
+                            <a href="{{ route('resultats.index')}}">
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Tous</span>
+                            </a>
+                        </li>
+                        <li @if($selected_sub_item == "new" AND $selected_item == "resultats")class="active" @endif>
+                            <a href="{{ route('resultats.create')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouveau</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="navigation-header"><span>Publications</span></li>
                 <li class="nav-item @if($selected_item == "publications_actualites") active @endif">
                     <a href="form-inputs.html" >
