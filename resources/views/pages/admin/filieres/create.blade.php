@@ -52,8 +52,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="categorie">Cycle</label>
-                                            <select name="cycle_id" id="cycle" class="custom-select @error('cycle') is-invalid @enderror">
+                                            <label for="cycle_id">Cycle</label>
+                                            <select name="cycle_id" id="cycle_id" class="custom-select @error('cycle_id') is-invalid @enderror">
                                                 @foreach ($cycles as $cycle)
                                                     <option value="{{ $cycle->id }}" @if (old('cycle_id') == $cycle->id)
                                                         selected

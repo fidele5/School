@@ -9,7 +9,7 @@ class Filiere extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["nom", "description", "image"];
+    protected $fillable = ["nom", "description", "image", "cycle_id"];
 
     public function promotions()
     {
