@@ -20,3 +20,20 @@ function get_weekly_horaire($id){
                     ->whereBetween('seances.heure_debut', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
                     ->get();
 }
+
+function get_option($option_key)
+{
+    if (\App\Models\Setting::where('option_key', $option_key)->count() > 0) {
+        $option = \App\Models\Setting::where('option_key', $option_key)->first();
+        return $option->option_value;
+    } else {
+        return '';
+    }
+
+}
+
+function languages()
+{
+    return \App\Models\Language::where('status', 1)->get();
+}
+

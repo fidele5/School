@@ -105,11 +105,4 @@ return [
     "actions"=>"Actions",
     "country"=>"Pays",
     "languages"=>"Langues",
-    "translate"=>"Traduire",
-    "all_language"=>"Toutes les langues",
-    "translate_your_language"=>"Traduire dans votre langue",
-    "title"=>"Titre",
-    "translate"=>"Traduire",
-    "useful_links"=>"Liens Importants",
-    "all_right_reserved"=>"Tous les droits reservés",
 ];

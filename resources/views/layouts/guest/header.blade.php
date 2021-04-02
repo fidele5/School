@@ -84,7 +84,7 @@
                                                     <li><a class="dropdown-item" href="{{ route("cours") }}">{{ __("pages.courses") }}</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="dropdown dropdown-mega dropdown-mega-style-2 order-5">
+                                            <li class="dropdown dropdown-mega dropdown-mega-style-2 order-4">
                                                 <a class="dropdown-item dropdown-toggle {{ (Route::currentRouteName() == "calendrier")?'active':'' }}" href="{{ route("calendrier") }}">
                                                     {{ __("pages.calendar") }}
                                                 </a>
@@ -104,8 +104,8 @@
                                             </li>
                                             <li class="d-none d-lg-flex order-4 px-4">
                                                 <span class="header-logo border-0">
-                                                <a href="index.html">
-                                                <img src="img/logo-small.png" width="75" height="50" alt="" />
+                                                <a href="/">
+                                                <img src="/{{ get_option("app_logo") }}" width="75" height="75" alt="" />
                                                 </a>
                                                 </span>
                                             </li>

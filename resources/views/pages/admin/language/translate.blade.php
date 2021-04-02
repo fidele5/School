@@ -22,9 +22,15 @@
                                     <div class="col-md-6">
                                         <div class="form-group row justify-content-center">
                                             <label class="col-sm-5 col-form-label text-right">{{ucwords(str_replace("_", " ", $key))}}  => </label>
+                                            @if(strlen($value) <= 50)
                                             <div class="col-sm-7">
                                                 <input type="text" name="{{$key}}" value="{{$value}}" placeholder="{{__('pages.title')}}" class="form-control" aria-describedby="emailHelp" required>
                                             </div>
+                                            @else
+                                            <div class="col-sm-7">
+                                                <textarea type="text" name="{{$key}}" placeholder="{{__('pages.title')}}" class="form-control" rows="4" aria-describedby="emailHelp" required>{{$value}}</textarea>
+                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 @endforeach

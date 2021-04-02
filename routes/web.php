@@ -5,6 +5,7 @@ use App\Http\Controllers\CategorieActualiteController;
 use App\Http\Controllers\CategorieEvenementController;
 use App\Http\Controllers\CategorieRealisationController;
 use App\Http\Controllers\CoursController;
+use App\Http\Controllers\CycleController;
 use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\EvenementController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\RealisationController;
+use App\Http\Controllers\ResultatController;
 use App\Http\Controllers\SeanceController;
 use App\Http\Controllers\SettingController;
 use App\Models\Etudiant;
@@ -70,9 +72,15 @@ Route::middleware("auth", "admin", "active")->group(function () {
         Route::resource('image-realisation', ImageRealisationController::class);
         Route::resource('settings', SettingController::class);
         Route::resource('languages', LanguageController::class);
-        Route::get('export', [EtudiantController::class, 'export'])->name('export');
-        Route::post('import', [EtudiantController::class, 'import'])->name('import');
-
+        Route::get('etudiants-export', [EtudiantController::class, 'export'])->name('etudiants.export');
+        Route::post('etudiants-import', [EtudiantController::class, 'import'])->name('etudiants.import');
+        Route::get('enseignants-export', [EnseignantController::class, 'export'])->name('enseignants.export');
+        Route::post('enseignants.import', [EnseignantController::class, 'import'])->name('enseignants.import');
+        Route::get('resultats-export', [ResultatController::class, 'export'])->name('resultats.export');
+        Route::post('resultats-import', [ResultatController::class, 'import'])->name('resultats.import');
+        Route::resource('cycles', CycleController::class);
+        Route::get('translate/{id}', [\App\Http\Controllers\LanguageController::class, 'editContent'])->name('translate');
+        Route::post('update-translate', [\App\Http\Controllers\LanguageController::class, 'updateContent'])->name('update-translate');
             Route::get('', function () {
                 return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
             })->name('home-admin');

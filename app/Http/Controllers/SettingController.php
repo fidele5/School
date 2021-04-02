@@ -29,7 +29,14 @@ class SettingController extends Controller
     {
         $languages = Language::all();
         $settings = Setting::all();
-        return view("pages.admin.settings.general")->with(compact("languages", "settings"));
+        $arguments = [
+            "selected_item" => "cycles",
+            "selected_sub_item" => "all",
+            "languages" => $languages,
+            "settings"=>$settings,
+        ];
+
+        return view("pages.admin.settings.general")->with($arguments);
     }
 
     /**

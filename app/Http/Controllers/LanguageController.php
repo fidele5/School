@@ -17,7 +17,13 @@ class LanguageController extends Controller
     public function index()
     {
         $languages = Language::all();
-        return view("pages.admin.language.index")->with("languages", $languages);
+        $arguments = [
+            "selected_item" => "cycles",
+            "selected_sub_item" => "all",
+            "languages" => $languages,
+        ];
+
+        return view("pages.admin.language.index")->with( $arguments);
     }
 
     /**
@@ -27,7 +33,12 @@ class LanguageController extends Controller
      */
     public function create()
     {
-        return view("pages.admin.language.create");
+        $arguments = [
+            "selected_item" => "cycles",
+            "selected_sub_item" => "all",
+        ];
+
+        return view("pages.admin.language.create")->with($arguments);
     }
 
     /**
@@ -76,7 +87,8 @@ class LanguageController extends Controller
         return view('pages.admin.language.translate',[
             'language' => Language::findOrFail($id),
             'language_array' => $language_array['pages'],
-
+            "selected_item" => "cycles",
+            "selected_sub_item" => "all",
         ]);
     }
 
@@ -88,7 +100,7 @@ class LanguageController extends Controller
 
         $elements = '';
         foreach ($inputs as $key => $value) {
-            $elements .= "'".$key."' => '".$value."',\n";
+            $elements .= '"'.$key.'" => "'.$value.'",'."\n";
         }
 
         /** ====== set lan ===== */
