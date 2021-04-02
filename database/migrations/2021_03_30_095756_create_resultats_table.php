@@ -15,6 +15,10 @@ class CreateResultatsTable extends Migration
     {
         Schema::create('resultats', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('etudiant_id')->foreignKey('etudiant_id')->references('id')->on('etudiants');
+            $table->unsignedBigInteger('cours_id')->foreignKey('cours_id')->references('id')->on('cours');
+            $table->float('moyenne')->default(0);
+            $table->float('examen')->default(0);
             $table->timestamps();
         });
     }

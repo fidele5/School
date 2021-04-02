@@ -7,6 +7,7 @@ use App\Models\Actualite;
 use App\Models\CategorieActualite;
 use App\Models\Publication;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ActualiteController extends Controller
 {
@@ -37,7 +38,7 @@ class ActualiteController extends Controller
         $arguments = [
             "categories"=>$categories,
             "selected_item" => "publications_actualites",
-            "selected_sub_item" => "all"
+            "selected_sub_item" => "new"
         ];
         return view("pages.admin.actualites.create")->with($arguments);
     }
@@ -57,16 +58,20 @@ class ActualiteController extends Controller
         ]);
 
         //enregistrement du fichier
+        $photo = $request->file('photo');
         $timestamp = time();
         settype($timestamp, 'string');
-        $image = $request->file('photo');
-        $image->move('uploads', $timestamp.'.'.$image->extension());
+        $image = Image::make($photo);
+        $image->resize(800, 533);
+        $image_name = $timestamp.'.'.$photo->extension();
+        $image->save("/uploads/actualites/$image_name");
+        $name_file = $timestamp.'.'.$photo->extension();
 
         $publication = Publication::create(
             [
                 'titre' => $request->titre,
                 'texte' => $request->contenu,
-                'photo' => $timestamp,
+                'photo' => $name_file,
                 'user_id' => Auth::user()->id
             ]
         );
@@ -126,10 +131,16 @@ class ActualiteController extends Controller
             'contenu' => 'required'
         ]);
 
+        unlink("uploads/actualites/".$actualite->publication->photo);
+
         $publication = Publication::find($actualite->publication_id);
         $publication->titre = $request->titre;
         $publication->contenu = $request->contenu;
-        $publication->photo = $request->photo;
+        $image = Image::make($request->file('photo'));
+        $image->resize(800, 533);
+        $image_name = time().'.'.$image->extension();
+        $image->save("uploads/actualites/$image_name");
+        $publication->photo = $image_name;
 
         $publication->save();
 
