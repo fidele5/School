@@ -21,9 +21,11 @@ class EtudiantImporter implements ToCollection {
             if($key == 0) continue;
 
             try {
+                print($row[11]);
                 $filiere = Filiere::where("nom", $row[11])->first();
                 $promotion = Promotion::where(["nom" => $row[12], "filiere_id" => $filiere->id])->first();
             } catch(Exception $exception) {
+                print($exception->getMessage().'\n');
                 continue;
             }
 

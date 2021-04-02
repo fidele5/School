@@ -48,14 +48,24 @@ class FilirerController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(["nom" => "required", "image"=> "required|image"]);
+        $request->validate([
+            "nom" => "required",
+            "image" => "required|image",
+            "cycle_id" => "required|integer",
+            "image" => "required|image"
+        ]);
 
         $path = time().".".$request->file('image')->extension();
         $image = Image::make($request->file("image"));
         $image->resize(800, 800);
-        $image->move_uploaded_file("$path", "/uploaded/cycles/");
+        $image->save(public_path("uploads/filieres/$path"));
 
-        $filiere = Filiere::create(["nom" => $request->nom, "description" => $request->description, "image" => $path]);
+        $filiere = Filiere::create([
+            "nom" => $request->nom,
+            "description" => $request->description,
+            "cycle_id" => $request->cycle_id,
+            "image" => $path
+        ]);
         return response()->json([
             "status" => "success",
             "back" => "filieres"
