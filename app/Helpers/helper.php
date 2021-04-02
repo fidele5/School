@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Actualite;
 use App\Models\Horaire;
 use App\Models\Promotion;
 use Carbon\Carbon;
@@ -35,5 +36,12 @@ function get_option($option_key)
 function languages()
 {
     return \App\Models\Language::where('status', 1)->get();
+}
+
+function get_lastest_news()
+{
+    return Actualite::orderBy("id", "desc")
+    ->take(3)
+    ->get();
 }
 

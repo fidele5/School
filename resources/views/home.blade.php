@@ -109,9 +109,9 @@
                     <div class="row">
                         <div class="col-md-6 mb-4 mb-md-0">
                             <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="100">
-                                <span class="top-sub-title">THE RIGHT CHOICE</span>
+                                <span class="top-sub-title">{{ __("pages.the_best_choice") }}</span>
                                 <h2 class="word-rotator letters type font-weight-extra-bold text-6 mb-3">
-                                    <span>ISAMM. Education avec </span>
+                                    <span>{{ get_option("app_name") }}. {{ __("pages.education_with") }} </span>
                                     <span class="word-rotator-words waiting">
                                         <b class="is-visible text-success">{{ __("pages.finesse_title") }}.</b>
                                         <b class="text-warning">{{ __("pages.excellence") }}.</b>

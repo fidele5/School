@@ -33,7 +33,7 @@
                         <h4 class="font-weight-bold text-4-5 pb-1 mb-3">{{ __("pages.news") }}</h4>
                         <div class="recent-posts">
                             <ul class="list list-unstyled d-flex flex-column align-items-center align-items-lg-start">
-                                @foreach ($actualites as $actualite)
+                                @foreach (get_lastest_news() as $actualite)
                                 <li>
                                     <a href="#">{{ $actualite->publication->titre }}</a>
                                     <span>{{ $actualite->created_at }}</span>
