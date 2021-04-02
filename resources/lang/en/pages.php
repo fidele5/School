@@ -91,4 +91,7 @@ return [
     "logout"=>"Deconnexion",
     "admin"=>"Administration",
     "submit"=>"Valider",
+    "site_settings"=>"Parametres du site",
+    "general"=>"Général",
+    "language"=>"Langue",
 ];

@@ -291,6 +291,27 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item ">
+                        <a href="page-account-settings.html" >
+                            <i class="bx bx-wrench"></i>
+                            <span class="menu-title">{{ __("pages.site_settings") }}</span>
+                        </a>
+                        <ul class="menu-content">
+                            <li >
+                                <a href="{{ route("settings.create") }}" >
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                    <span class="menu-item">{{ __("pages.general") }}</span>
+                                </a>
+                            </li>
+
+                            <li >
+                                <a href="{{ route("languages.index") }}" >
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                    <span class="menu-item">{{ __("pages.language") }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

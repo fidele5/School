@@ -12,10 +12,12 @@ use App\Http\Controllers\FilirerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HoraireController;
 use App\Http\Controllers\ImageRealisationController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\RealisationController;
 use App\Http\Controllers\SeanceController;
+use App\Http\Controllers\SettingController;
 use App\Models\Etudiant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -66,6 +68,8 @@ Route::middleware("auth", "admin", "active")->group(function () {
         Route::resource('seances', SeanceController::class);
         Route::resource('publications', PublicationController::class);
         Route::resource('image-realisation', ImageRealisationController::class);
+        Route::resource('settings', SettingController::class);
+        Route::resource('languages', LanguageController::class);
         Route::get('export', [EtudiantController::class, 'export'])->name('export');
         Route::post('import', [EtudiantController::class, 'import'])->name('import');
 
