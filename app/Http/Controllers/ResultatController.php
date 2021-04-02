@@ -82,4 +82,12 @@ class ResultatController extends Controller
     {
         //
     }
+
+    public function export() {
+        
+    }
+
+    public function import(Request $request) {
+
+    }
 }

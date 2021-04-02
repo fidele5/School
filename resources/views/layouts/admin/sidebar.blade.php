@@ -65,6 +65,28 @@
                 </li>
                 <li class="navigation-header"><span>Etudes</span></li>
                 <li class="nav-item @if($selected_item == "filieres") active @endif">
+                    <li class="nav-item @if($selected_item == "cycles") active @endif">
+                    <a href="#" >
+                        <i class="bx bxs-collection"></i>
+                        <span class="menu-title">Cycles</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li @if($selected_sub_item == "all" AND $selected_item == "cycles")class="active" @endif>
+                            <a href="{{ route('cycles.index')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Toutes</span>
+                            </a>
+                        </li>
+                        <li @if($selected_sub_item == "new" AND $selected_item == "cycles")class="active" @endif>
+                            <a href="{{ route('cycles.create')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouvelle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item @if($selected_item == "filieres") active @endif">
                     <a href="# " >
                         <i class="bx bxs-collection"></i>
                         <span class="menu-title">Filières</span>

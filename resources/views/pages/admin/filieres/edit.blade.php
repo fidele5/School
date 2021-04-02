@@ -44,6 +44,23 @@
                                             @enderror
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <textarea id="description" class="form-control champ @error('description') is-invalid @enderror" placeholder="Description de la filière" name="description">value="{{ $filiere->description}}"</textarea>
+                                        @error('description')
+                                            <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="image">Image</label>
+                                        <textarea id="image" class="form-control champ @error('image') is-invalid @enderror" placeholder="Image de la filière" name="image">value="{{ $filiere->image }}"</textarea>
+                                        @error('image')
+                                            <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                </div>
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary mr-1 mb-1">Mettre à jour</button>
                                         <button type="reset" class="btn btn-light-secondary mr-1 mb-1">Annuler</button>

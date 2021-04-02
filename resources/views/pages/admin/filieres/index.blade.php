@@ -36,6 +36,9 @@
                                     <tr>
                                         <th>N°</th>
                                         <th>Nom</th>
+                                        <th>Cycle</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -44,6 +47,9 @@
                                         <tr>
                                             <td>{{ $key + 1}}</td>
                                             <td>{{ $filiere->nom }}</td>
+                                            <td>{{ $filiere->cycle->designation }}</td>
+                                            <td>{{ $filiere->cycle->designation }}</td>
+                                            <td><img height="100px" height="100px" src="/uploads/filieres/{{ $filiere->image }}" /></td>
                                             <td>
                                                 <a href="{{ route("filieres.edit", $filiere) }}">
                                                     <i class="bx bx-edit"></i>
@@ -59,6 +65,9 @@
                                     <tr>
                                         <th>N°</th>
                                         <th>Nom</th>
+                                        <th>Cycle</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>

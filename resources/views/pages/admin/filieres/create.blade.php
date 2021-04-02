@@ -42,6 +42,22 @@
                                                 <small class="text-danger">{{$message}}</small>
                                             @enderror
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="description">Description</label>
+                                            <textarea id="description" class="form-control champ @error('description') is-invalid @enderror" placeholder="Description de la filière" name="description">{{ old('description')}}</textarea>
+                                            @error('description')
+                                                <small class="text-danger">{{$message}}</small>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="image">Image</label>
+                                            <input type="file" id="image" class="form-control champ @error('image') is-invalid @enderror" placeholder="Image de la filière" name="image" value="{{ old('image')}}" />
+                                            @error('image')
+                                                <small class="text-danger">{{$message}}</small>
+                                            @enderror
+                                        </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary mr-1 mb-1">Enregistrer</button>

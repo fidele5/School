@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToCollection;
 
-class EtudiantImporter implements ToCollection {
+class EnseignantImporter implements ToCollection {
 
     use Importable;
 
@@ -20,10 +20,6 @@ class EtudiantImporter implements ToCollection {
 
             if($key == 0) continue;
 
-            $filiere = Filiere::where("nom", $row[11])->first();
-            $promotion = Promotion::where(["nom" => $row[12], "filiere_id" => $filiere->id])->first();
-
-            if(!($filiere AND $promotion)) continue;
             $user = User::create([
                 "nom" => $row[1],
                 "postnom" => $row[2],

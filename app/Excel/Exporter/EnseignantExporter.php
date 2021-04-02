@@ -6,13 +6,13 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\Exportable;
 
-class EtudiantExporter implements FromCollection {
+class EnseignantExporter implements FromCollection {
 
     use Exportable;
 
     public function collection()
     {
-        return DB::table('users')->join('enseignants', 'users.id', "=", 'etudiants.user_id')
+        return DB::table('users')->join('enseignants', 'users.id', "=", 'enseignants.user_id')
                                 ->select([
                                     "users.nom AS Nom",
                                     "users.postnom AS Postnom",

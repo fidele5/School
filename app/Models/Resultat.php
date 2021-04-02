@@ -9,5 +9,13 @@ class Resultat extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["cours_id", "etudiant_id", "moyenne", "examen", ];
+    protected $fillable = ["cours_id", "etudiant_id", "moyenne", "examen"];
+
+    public function cours() {
+        return $this->belongsTo(Cours::class);
+    }
+
+    public function etudiant() {
+        return $this->belongsTo(Etudiant::class);
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Filiere;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class FilirerController extends Controller
 {
@@ -45,10 +46,14 @@ class FilirerController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(["nom" => "required"]);
+        $request->validate(["nom" => "required", "image"=> "required|image"]);
 
-        $filiere = Filiere::create(["nom" => $request->nom]);
+        $path = time().".".$request->file('image')->extension();
+        $image = Image::make($request->file("image"));
+        $image->resize(800, 800);
+        $image->move_uploaded_file("$path", "/uploaded/cycles/");
 
+        $filiere = Filiere::create(["nom" => $request->nom, "description" => $request->description, "image" => $path]);
         return response()->json([
             "status" => "success",
             "back" => "filieres"

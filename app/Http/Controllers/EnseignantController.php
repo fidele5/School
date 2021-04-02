@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Excel\Exporter\EnseignantExporter;
+use App\Excel\Importer\EnseignantImporter;
 use App\Models\Enseignant;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -164,5 +166,24 @@ class EnseignantController extends Controller
             "status" => "success",
             "back" => "enseignants"
         ]);
+    }
+
+    public function export() {
+        return (new EnseignantExporter)->download("enseignants.xlsx");
+    }
+
+    public function import(Request $request) {
+        $request->validate([
+            "file" => "required|file|mimes:xls,xlsx,xlsm"
+        ]);
+
+        $importer = (new EnseignantImporter)->import($request->file("file"));
+
+        return response()->json(
+            [
+                "status" => "success",
+                "back" => "enseignants"
+            ]
+        );
     }
 }

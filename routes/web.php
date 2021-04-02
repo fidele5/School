@@ -5,6 +5,7 @@ use App\Http\Controllers\CategorieActualiteController;
 use App\Http\Controllers\CategorieEvenementController;
 use App\Http\Controllers\CategorieRealisationController;
 use App\Http\Controllers\CoursController;
+use App\Http\Controllers\CycleController;
 use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\EvenementController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\ImageRealisationController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\RealisationController;
+use App\Http\Controllers\ResultatController;
 use App\Http\Controllers\SeanceController;
 use App\Models\Etudiant;
 use Illuminate\Support\Facades\Auth;
@@ -54,6 +56,7 @@ Route::middleware("auth", "admin", "active")->group(function () {
         Route::resource('categorie-evenements', CategorieEvenementController::class);
         Route::resource('categorie-realisations', CategorieRealisationController::class);
         Route::resource('courses', CoursController::class);
+        Route::resource('cycles', CycleController::class);
         Route::resource('enseignants', EnseignantController::class);
         Route::resource('etudiants', EtudiantController::class);
         Route::resource('filieres', FilirerController::class);
@@ -64,6 +67,10 @@ Route::middleware("auth", "admin", "active")->group(function () {
         Route::resource('image-realisation', ImageRealisationController::class);
         Route::get('etudiants-export', [EtudiantController::class, 'export'])->name('etudiants.export');
         Route::post('etudiants-import', [EtudiantController::class, 'import'])->name('etudiants.import');
+        Route::get('enseignants-export', [EnseignantController::class, 'export'])->name('enseignants.export');
+        Route::post('enseignants.import', [EnseignantController::class, 'import'])->name('enseignants.import');
+        Route::get('resultats-export', [ResultatController::class, 'export'])->name('resultats.export');
+        Route::post('resultats-import', [ResultatController::class, 'import'])->name('resultats.import');
         Route::get('', function() {
             return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
         })->name('home-admin');

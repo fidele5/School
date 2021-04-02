@@ -40,15 +40,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($cycles as $key=>$cycle)
+                                    @foreach ($categories as $key=>$categorie)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td class="text-truncate" style="max-width: 250px">{{ $cycle->designation }}</td>
+                                            <td class="text-truncate" style="max-width: 250px">{{ $categorie->designation }}</td>
                                             <td>
-                                                <a href="{{ route("categorie-actualites.edit", $cycle) }}">
+                                                <a href="{{ route("categorie-actualites.edit", $categorie) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="delete" href="{{ route("categorie-actualites.destroy", $cycle) }}">
+                                                <a class="delete" href="{{ route("categorie-actualites.destroy", $categorie) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
