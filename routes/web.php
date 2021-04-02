@@ -17,6 +17,7 @@ use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\RealisationController;
 use App\Http\Controllers\SeanceController;
+use App\Http\Controllers\SettingController;
 use App\Models\Etudiant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
