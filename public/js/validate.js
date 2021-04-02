@@ -64,9 +64,11 @@ $(document).ready(function() {
                 success: function(response) {
 
                     if (response.status === "success") {
-
-
-                        location.href = "../" + response.back;
+                        $(".alert-link").attr("href", "/download/" + response.id);
+                        $(".msg").show();
+                        $(this).get(0).reset();
+                        $(this).resetFrom();
+                        $('button[type=submit]').removeAttr('disabled').html("Envoyer");
                     }
 
                 },

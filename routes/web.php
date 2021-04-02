@@ -48,6 +48,7 @@ Route::get("/contact", [HomeController::class, 'contact'])->name('contact');
 Route::get("/profile", [HomeController::class, 'contact'])->name('profile');
 Route::post("/saveStudent", [HomeController::class, 'saveStudent'])->name('saveStudent');
 Route::get("/calendrier", [HomeController::class, 'calendar'])->name('calendrier');
+Route::get("/download/{id}", [HomeController::class, 'downloadPdf'])->name('download');
 Route::middleware("auth", "admin", "active")->group(function () {
     Route::prefix("admin")->group(function () {
         Route::resource("actualites", ActualiteController::class);
