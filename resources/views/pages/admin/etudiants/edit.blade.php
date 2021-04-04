@@ -38,7 +38,7 @@
                                   <label for="inputfirstname4">Nom</label>
                                   <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" id="inputfirstname4" value="{{ $etudiant->user->nom }}" placeholder="Nom" />
                                   @error('nom')
-                                      <div class="alert alert-danger">{{ $message }}</div>
+                                      <small class="text-danger">{{ $message }}</small>
                                   @enderror
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                                     <label for="inputfirstname4">Postnom</label>
                                     <input type="text" class="form-control @error('postnom') is-invalid @enderror" name="postnom" id="inputfirstname4" value="{{ $etudiant->user->postnom }}" placeholder="Post nom" />
                                     @error('postnom')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                     <label for="inputfirstname4">Prenom</label>
                                     <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" id="inputfirstname4" value="{{ $etudiant->user->prenom }}" placeholder="Nom" />
                                     @error('prenom')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                 <label class="text-bold-600" for="email">Adresse email</label>
                                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ $etudiant->user->email  }}" placeholder="Email" />
                                 @error('email')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -92,7 +92,7 @@
                                 <label class="text-bold-600" for="nationalite">Nationalité</label>
                                 <input type="text" name="nationalite" class="form-control @error('nationalite') is-invalid @enderror" id="nationalite" placeholder="Nationalité" value="{{ $etudiant->user->nationalite }}" />
                                 @error('nationalite')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -100,7 +100,7 @@
                                 <label class="text-bold-600" for="lieu_naissance">Lieu de naissance</label>
                                 <input type="text" name="lieu_naissance" class="form-control @error('lieu_naissance') is-invalid @enderror" id="lieu_naissance" placeholder="Lieu de naissance" value="{{ $etudiant->lieu_naissance }}" />
                                 @error('lieu_naissance')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -108,7 +108,7 @@
                                 <label class="text-bold-600" for="date_naissance">Date de naissance</label>
                                 <input type="date" name="date_naissance" class="form-control @error('date_naissance') is-invalid @enderror" id="date_naissance" placeholder="Date de naissance" value="{{ $etudiant->date_naissance }}" />
                                 @error('date_naissance')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -116,7 +116,7 @@
                                 <label class="text-bold-600" for="lieu_naissance">Pourcentage</label>
                                 <input type="number" name="pourcentage" min="50" max="100" class="form-control @error('pourcentage') is-invalid @enderror" id="pourcentage" placeholder="Pourcentage" value="{{ $etudiant->pourcentage }}" />
                                 @error('pourcentage')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -124,7 +124,7 @@
                                 <label class="text-bold-600" for="lieu_naissance">Matricule</label>
                                 <input type="text" name="matricule" class="form-control @error('matricule') is-invalid @enderror" id="matricule" placeholder="Matricule" value="{{ $etudiant->matricule }}" />
                                 @error('matricule')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -132,7 +132,7 @@
                                 <label class="text-bold-600" for="ecole_provenance">Ecole de provenance</label>
                                 <input type="text" name="ecole_provenance" class="form-control @error('ecole_provenance') is-invalid @enderror" id="ecole_provenance" placeholder="Ecole de provenance" value="{{ $etudiant->ecole_provenance }}" />
                                 @error('ecole_provenance')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -140,7 +140,7 @@
                                 <label class="text-bold-600" for="lieu_naissance">Option lauréat</label>
                                 <input type="text" name="option_laureat" class="form-control @error('option_laureat') is-invalid @enderror" id="option_laureat" placeholder="Option lauréat" value="{{ $etudiant->option_laureat }}" />
                                 @error('option_laureat')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -148,7 +148,7 @@
                                 <label class="text-bold-600" for="lieu_naissance">Année lauréat</label>
                                 <input type="text" name="annee_laureat" class="form-control @error('annee_laureat') is-invalid @enderror" id="annee_laureat" placeholder="Année lauréat" value="{{ $etudiant->annee_laureat }}" />
                                 @error('annee_laureat')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -170,7 +170,7 @@
                                 <label class="text-bold-600" for="telephone">Telephone</label>
                                 <input type="phone" name="telephone" name="telephone" class="form-control @error('telephone') is-invalid @enderror" id="telephone" placeholder="Telephone" value="{{ $etudiant->user->telephone }}" />
                                 @error('telephone')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -178,7 +178,7 @@
                                 <label class="text-bold-600" for="adresse">Adresse physique</label>
                                 <textarea name="adresse" class="form-control @error('adresse') is-invalid @enderror" id="adresse" placeholder="Adresse physique">{{ $etudiant->user->adresse }}</textarea>
                                 @error('adresse')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 

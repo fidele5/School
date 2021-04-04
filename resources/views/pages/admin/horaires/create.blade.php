@@ -39,7 +39,7 @@
                                             <label for="first-title-floating">Date de debut</label>
                                             <input type="date" value="{{ old('debut')}}" id="first-title-floating" class="form-control champ @error('debut') is-invalid @enderror" placeholder="Date de debut" name="debut">
                                             @error('debut')
-                                                <small>{{$message}}</small>
+                                                <small class="text-danger">{{$message}}</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -49,7 +49,7 @@
                                             <label for="first-title-floating">Date de fin</label>
                                             <input type="date" value="{{ old('fin')}}" id="first-title-floating" class="form-control champ @error('fin') is-invalid @enderror" placeholder="Date de fin" name="fin">
                                             @error('fin')
-                                                <small>{{$message}}</small>
+                                                <small class="text-danger">{{$message}}</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -65,7 +65,7 @@
                                                 @endforeach
                                             </select>
                                             @error('promotion_id')
-                                                <small class="text-light-danger">{{ $message }}</small>
+                                                <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -75,7 +75,7 @@
                                             <label for="textarea-counter">Description</label>
                                             <textarea data-length=20 class="form-control char-textarea champ @error('description') is-invalid @enderror" id="textarea-counter" rows="5" name="description" placeholder="Description">{{ old('description')}}</textarea>
                                             @error('descriptionu')
-                                                <small class="text-light-danger">{{ $message }}</small>
+                                                <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </fieldset>
                                         <small class="counter-value float-right"><span class="char-count">0</span> / 20 </small>

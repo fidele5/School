@@ -32,6 +32,7 @@
                     <div class="card-body">
                         <form class="form" method="POST" action="{{ route("resultats.update", $resultat) }}" enctype="multipart/form-data">
                             @csrf
+                            @method("patch")
                             <div class="form-group">
                                 <label for="etudiant">Etudiant</label>
                                 <select name="etudiant_id" id="etudiant" class="custom-select @error('etudiant_id') is-invalid @enderror">
@@ -64,7 +65,7 @@
                                 <label class="text-bold-600" for="moyenne">Moyenne</label>
                                 <input type="number" class="form-control @error('moyenne') is-invalid @enderror" name="moyenne" id="moyenne" value="{{ $resultat->moyenne }}" placeholder="Email" />
                                 @error('moyenne')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -72,7 +73,7 @@
                                 <label class="text-bold-600" for="nationalite">Examen</label>
                                 <input type="number" name="examen" class="form-control @error('examen') is-invalid @enderror" id="examen" placeholder="Examen" value="{{ $resultat->examen }}" />
                                 @error('examen')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 

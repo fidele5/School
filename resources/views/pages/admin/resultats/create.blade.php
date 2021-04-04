@@ -64,7 +64,7 @@
                                 <label class="text-bold-600" for="moyenne">Moyenne</label>
                                 <input type="number" class="form-control @error('moyenne') is-invalid @enderror" name="moyenne" id="moyenne" value="{{ old('moyenne') }}" placeholder="Moyenne" />
                                 @error('moyenne')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -72,7 +72,7 @@
                                 <label class="text-bold-600" for="nationalite">Examen</label>
                                 <input type="number" name="examen" class="form-control @error('examen') is-invalid @enderror" id="examen" placeholder="Examen" value="{{ old('examen') }}" />
                                 @error('examen')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 

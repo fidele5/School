@@ -40,7 +40,7 @@
                                             <label for="first-title-floating">Titre</label>
                                             <input type="text" value="{{ $realisation->publication->titre}}" id="first-title-floating" class="form-control champ @error('titre') is-invalid @enderror" placeholder="Titre" name="titre">
                                             @error('titre')
-                                                <small>{{$message}}</small>
+                                                <small class="text-danger">{{$message}}</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -52,7 +52,7 @@
                                                     <option value="{{ $categorie->id }}" @if($realisation->categorie_realisation_id == $categorie->id) selected="" @endif>{{ $categorie->designation }}</option>
                                                 @endforeach
                                                 @error('categorie')
-                                                    <small>{{ $message }}</small>
+                                                    <small class="text-danger">{{ $message }}</small>
                                                 @enderror
                                             </select>
                                         </div>
@@ -62,7 +62,7 @@
                                             <label for="textarea-counter">Contenu</label>
                                             <textarea data-length=20 class="form-control char-textarea champ @error('contenu') is-invalid @enderror" id="textarea-counter" rows="5" name="contenu" placeholder="Contenu de la réalisation">{{ $realisation->publication->texte}}</textarea>
                                             @error('contenu')
-                                                <small class="text-light-danger">{{ $message }}</small>
+                                                <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </fieldset>
                                         <small class="counter-value float-right"><span class="char-count">0</span> / 20 </small>
@@ -75,7 +75,7 @@
                                                 <input type="file" value="{{ $realisation->publication->photo }}" class="custom-file-input champ @error('photo') is-invalid @enderror" name="photo" id="inputGroupFile01">
                                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                                 @error('photo')
-                                                    <small class="text-light-danger">{{ $message }}</small>
+                                                    <small class="text--danger">{{ $message }}</small>
                                                 @enderror
                                             </div>
                                         </fieldset>

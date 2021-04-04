@@ -21,20 +21,20 @@ class EnseignantImporter implements ToCollection {
             if($key == 0) continue;
 
             $user = User::create([
-                "nom" => $row[1],
-                "postnom" => $row[2],
-                "prenom" => $row[3],
-                "genre" => $row[4],
-                "nationalite" => $row[5],
-                "email" => $row[8],
-                "telephone" => $row[9],
-                "adresse" => $row[10]
+                "nom" => $row[0],
+                "postnom" => $row[1],
+                "prenom" => $row[2],
+                "genre" => $row[3],
+                "nationalite" => $row[4],
+                "email" => $row[7],
+                "telephone" => $row[8],
+                "adresse" => $row[9]
             ]);
 
             $enseignant = Enseignant::create([
                 "user_id" => $user->id,
-                "grade" => $row[6],
-                "domaine" => $row[7],
+                "grade" => $row[5],
+                "domaine" => $row[6],
             ]);
         }
     }

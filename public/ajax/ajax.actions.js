@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/* $(document).ready(function() {
 
     $(".edit").click(function(e) {
 
@@ -304,13 +304,13 @@ $(document).ready(function() {
 
                     if (response.status === "success") {
                         swal.fire({
-                            title: 'Good job!',
-                            text: "You clicked the!",
+                            title: 'Information',
+                            text: "Enregistrement réussi!",
                             type: 'success',
                             padding: '2em'
                         });
 
-                        location.href = "../" + response.back;
+                        location.href = "/admin/" + response.back;
                     }
 
                 },
@@ -336,4 +336,4 @@ $(document).ready(function() {
         }
 
     });
-});
+}); */

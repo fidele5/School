@@ -27,6 +27,7 @@ class EtudiantExporter implements FromCollection {
                                     "etudiants.ecole_provenance AS 'Ecole de provenance",
                                     "etudiants.option_laureat AS 'Option Lauréat'",
                                     "etudiants.annee_laureat AS 'Année Lauréat",
+                                    "etudiants.pourcentage AS 'Pourcentage",
                                     "filieres.nom as Filiere",
                                     "promotions.nom as Promotion",
                                     "users.email as Email",

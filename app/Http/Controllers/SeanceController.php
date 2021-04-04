@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Seance;
 use App\Models\Cours;
 use App\Models\Horaire;
+use App\Models\Promotion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -21,7 +22,7 @@ class SeanceController extends Controller
     {
         return Validator::make($data, [
             'heure_debut' => ['required', 'datetime'],
-            'heure_fin' => ['required', 'datetime'],
+            'heure_fin' => ['required', 'datetime', 'after:heure_debut'],
             'horaire_id' => ['required', 'integer'],
             'cours_id' => ['required', 'integer'],
             'description' => ['required', ]
@@ -69,6 +70,23 @@ class SeanceController extends Controller
      */
     public function store(Request $request)
     {
+        $horaire = Horaire::find($request->horaire_id);
+        $cours_promotion = $horaire->promotion->cours;
+        $cours = Cours::find($request->cours_id);
+
+        $date_debut = $horaire->debut;
+        $date_fin = $horaire->fin;
+
+        $heure_debut = $request->heure_debut;
+        if($heure_debut >= $date_debut AND $heure_debut <= $date_fin)
+            return back()->with("heure_debut", "L'heure de début n'est pas dans le delai de l'horaire");
+
+        $heure_fin = $request->heure_fin;
+        if($heure_fin >= $date_debut AND $heure_fin <= $date_fin)
+            return back()->with("heure_fin", "L'heure de fin n'est pas dans le delai de l'horaire");
+
+        if(!(in_array($cours, $cours_promotion)))
+            return back()->with("cours", "Le cours selectionné n'est pas inscrit dans la promotion");
         $seance = Seance::create($request->except("_token", "_method"));
 
         return response()->json([
