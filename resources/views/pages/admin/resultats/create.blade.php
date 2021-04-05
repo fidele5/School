@@ -35,7 +35,7 @@
                             <div class="form-group">
                                 <label for="etudiant">Etudiant</label>
                                 <select name="etudiant_id" id="etudiant" class="custom-select @error('etudiant_id') is-invalid @enderror">
-                                    @foreach ($etduants as $etudiant)
+                                    @foreach ($etudiants as $etudiant)
                                         <option value="{{ $etudiant->id }}" @if (old('etudiant_id') == $etudiant->id)
                                             selected=""
                                         @endif>{{ $etudiant->matricule }} - {{$etudiant->user->nom}} {{$etudiant->user->postnom}} {{$etudiant->user->prenom}}</option>
@@ -62,9 +62,9 @@
 
                             <div class="form-group mb-50">
                                 <label class="text-bold-600" for="moyenne">Moyenne</label>
-                                <input type="number" class="form-control @error('moyenne') is-invalid @enderror" name="moyenne" id="moyenne" value="{{ old('moyenne') }}" placeholder="Email" />
+                                <input type="number" class="form-control @error('moyenne') is-invalid @enderror" name="moyenne" id="moyenne" value="{{ old('moyenne') }}" placeholder="Moyenne" />
                                 @error('moyenne')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -72,7 +72,7 @@
                                 <label class="text-bold-600" for="nationalite">Examen</label>
                                 <input type="number" name="examen" class="form-control @error('examen') is-invalid @enderror" id="examen" placeholder="Examen" value="{{ old('examen') }}" />
                                 @error('examen')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 

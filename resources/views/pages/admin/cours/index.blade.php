@@ -53,10 +53,10 @@
                                             <td>{{ $course->promotion->nom }}</td>
                                             <th>{{ $course->enseignant->user->email }}</th>
                                             <td>
-                                                <a href="{{ route("courses.edit", $course) }}">
+                                                <a class="btn btn-primary" href="{{ route("courses.edit", $course) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="delete" href="{{ route("courses.destroy", $course) }}">
+                                                <a class="btn btn-danger delete" href="{{ route("courses.destroy", $course) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

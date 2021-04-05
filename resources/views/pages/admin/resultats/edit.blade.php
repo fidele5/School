@@ -26,164 +26,59 @@
         <div class="col-md-8 col-12">
             <div class="card">
                 <div class="card-header text-center">
-                    <h4 class="card-title">Editer étudiant</h4>
+                    <h4 class="card-title">Editer un résultat</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form" method="POST" action="{{ route("etudiants.update", $etudiant) }}">
+                        <form class="form" method="POST" action="{{ route("resultats.update", $resultat) }}" enctype="multipart/form-data">
                             @csrf
                             @method("patch")
-                            <div class="form-row">
-                                <div class="form-group col-md-12 mb-50">
-                                  <label for="inputfirstname4">Nom</label>
-                                  <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" id="inputfirstname4" value="{{ $etudiant->user->nom }}" placeholder="Nom" />
-                                  @error('nom')
-                                      <div class="alert alert-danger">{{ $message }}</div>
-                                  @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group col-md-12 mb-50">
-                                    <label for="inputfirstname4">Postnom</label>
-                                    <input type="text" class="form-control @error('postnom') is-invalid @enderror" name="postnom" id="inputfirstname4" value="{{ $etudiant->user->postnom }}" placeholder="Post nom" />
-                                    @error('postnom')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group col-md-12 mb-50">
-                                    <label for="inputfirstname4">Prenom</label>
-                                    <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" id="inputfirstname4" value="{{ $etudiant->user->prenom }}" placeholder="Nom" />
-                                    @error('prenom')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="d-block">Genre</label>
-                                    <div class="custom-control-inline">
-                                        <div class="radio mr-1">
-                                            <input type="radio" name="genre" id="radio5" value="M" @if($etudiant->user->genre == 'M') checked="" @endif />
-                                            <label for="radio5">Homme</label>
-                                        </div>
-
-                                        <div class="radio">
-                                            <input type="radio" name="genre" id="radio888" value="F" @if($etudiant->user->genre == 'F' ) checked="" @endif />
-                                            <label for="radio888">Femme</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group mb-50">
-                                <label class="text-bold-600" for="email">Adresse email</label>
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ $etudiant->user->email  }}" placeholder="Email" />
-                                @error('email')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="nationalite">Nationalité</label>
-                                <input type="text" name="nationalite" class="form-control @error('nationalite') is-invalid @enderror" id="nationalite" placeholder="Nationalité" value="{{ $etudiant->user->nationalite }}" />
-                                @error('nationalite')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="lieu_naissance">Lieu de naissance</label>
-                                <input type="text" name="lieu_naissance" class="form-control @error('lieu_naissance') is-invalid @enderror" id="lieu_naissance" placeholder="Lieu de naissance" value="{{ $etudiant->lieu_naissance }}" />
-                                @error('lieu_naissance')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="date_naissance">Date de naissance</label>
-                                <input type="date" name="date_naissance" class="form-control @error('date_naissance') is-invalid @enderror" id="date_naissance" placeholder="Date de naissance" value="{{ $etudiant->date_naissance }}" />
-                                @error('date_naissance')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="lieu_naissance">Pourcentage</label>
-                                <input type="number" name="pourcentage" min="50" max="100" class="form-control @error('pourcentage') is-invalid @enderror" id="pourcentage" placeholder="Pourcentage" value="{{ $etudiant->pourcentage }}" />
-                                @error('pourcentage')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="lieu_naissance">Matricule</label>
-                                <input type="text" name="matricule" class="form-control @error('matricule') is-invalid @enderror" id="matricule" placeholder="Matricule" value="{{ $etudiant->matricule }}" />
-                                @error('matricule')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="ecole_provenance">Ecole de provenance</label>
-                                <input type="text" name="ecole_provenance" class="form-control @error('ecole_provenance') is-invalid @enderror" id="ecole_provenance" placeholder="Ecole de provenance" value="{{ $etudiant->ecole_provenance }}" />
-                                @error('ecole_provenance')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="lieu_naissance">Option lauréat</label>
-                                <input type="text" name="option_laureat" class="form-control @error('option_laureat') is-invalid @enderror" id="option_laureat" placeholder="Option lauréat" value="{{ $etudiant->option_laureat }}" />
-                                @error('option_laureat')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="lieu_naissance">Année lauréat</label>
-                                <input type="text" name="annee_laureat" class="form-control @error('annee_laureat') is-invalid @enderror" id="annee_laureat" placeholder="Année lauréat" value="{{ $etudiant->annee_laureat }}" />
-                                @error('annee_laureat')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
                             <div class="form-group">
-                                <label for="promotion">Promotion</label>
-                                <select name="promotion" id="promotion" class="custom-select @error('promotion') is-invalid @enderror">
-                                    @foreach ($promotions as $promotion)
-                                        <option value="{{ $promotion->id }}" @if ($etudiant->promotion->id == $promotion->id)
+                                <label for="etudiant">Etudiant</label>
+                                <select name="etudiant_id" id="etudiant" class="custom-select @error('etudiant_id') is-invalid @enderror">
+                                    @foreach ($etudiants as $etudiant)
+                                        <option value="{{ $etudiant->id }}" @if ($resultat->etudiant_id == $etudiant->id)
                                             selected=""
-                                        @endif>{{ $promotion->nom }}</option>
+                                        @endif>{{ $etudiant->matricule }} - {{$etudiant->user->nom}} {{$etudiant->user->postnom}} {{$etudiant->user->prenom}}</option>
                                     @endforeach
                                 </select>
-                                @error('promotion')
+                                @error('etudiant_id')
                                     <small class="text-danger">{{$message}}</small>
                                 @enderror
                             </div>
 
-                            <div class="form-group mb-2">
-                                <label class="text-bold-600" for="telephone">Telephone</label>
-                                <input type="phone" name="telephone" name="telephone" class="form-control @error('telephone') is-invalid @enderror" id="telephone" placeholder="Telephone" value="{{ $etudiant->user->telephone }}" />
-                                @error('telephone')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                            <div class="form-group">
+                                <label for="cours">Cours</label>
+                                <select name="cours_id" id="cours" class="custom-select @error('cours_id') is-invalid @enderror">
+                                    @foreach ($courses as $course)
+                                        <option value="{{ $course->id }}" @if ($resultat->cours_id == $course->id)
+                                            selected=""
+                                        @endif>{{ $course->intitule }}</option>
+                                    @endforeach
+                                </select>
+                                @error('cours_id')
+                                    <small class="text-danger">{{$message}}</small>
+                                @enderror
+                            </div>
+
+                            <div class="form-group mb-50">
+                                <label class="text-bold-600" for="moyenne">Moyenne</label>
+                                <input type="number" class="form-control @error('moyenne') is-invalid @enderror" name="moyenne" id="moyenne" value="{{ $resultat->moyenne }}" placeholder="Email" />
+                                @error('moyenne')
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
                             <div class="form-group mb-2">
-                                <label class="text-bold-600" for="adresse">Adresse physique</label>
-                                <textarea name="adresse" class="form-control @error('adresse') is-invalid @enderror" id="adresse" placeholder="Adresse physique">{{ $etudiant->user->adresse }}</textarea>
-                                @error('adresse')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                <label class="text-bold-600" for="nationalite">Examen</label>
+                                <input type="number" name="examen" class="form-control @error('examen') is-invalid @enderror" id="examen" placeholder="Examen" value="{{ $resultat->examen }}" />
+                                @error('examen')
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
                             <div class="col-12 d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary mr-1 mb-1">Enregistrer</button>
+                                <button type="submit" class="btn btn-primary mr-1 mb-1">Mettre à jour</button>
                                 <button type="reset" class="btn btn-light-secondary mr-1 mb-1">Annuler</button>
                             </div>
                         </div>

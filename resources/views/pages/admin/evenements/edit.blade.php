@@ -40,7 +40,7 @@
                                             <label for="titre">Titre</label>
                                             <input type="text" id="titre" value="{{$evenement->publication->titre}}" class="form-control champ @error('titre') is-invalid @enderror" placeholder="Titre" name="titre" >
                                             @error('titre')
-                                                <small class="text-light-danger">{{ $message }}</small>       
+                                                <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                                 @endforeach
                                             </select>
                                             @error('categorie')
-                                                <small class="text-light-danger">{{ $message }}</small>       
+                                                <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -64,7 +64,7 @@
                                             <label for="textarea-counter">Contenu</label>
                                             <textarea data-length=20 class="form-control char-textarea champ" id="textarea-counter" rows="5" name="contenu" placeholder="Contenu">{{ $evenement->publication->contenu }}</textarea>
                                             @error('contenu')
-                                                <small class="text-light-danger">{{ message }}</small>       
+                                                <small class="text-danger">{{ message }}</small>
                                             @enderror
                                         </fieldset>
                                         <small class="counter-value float-right"><span class="char-count">0</span> / 20 </small>
@@ -85,7 +85,7 @@
                                             <label for="debut">Début</label>
                                             <input type="datetime-local" name="debut" value="{{ $evenement->date_debut}}" id="debut" placeholder="Début de l'évenement" class="form-control champs @error('debut') is-invalid @enderror" />
                                             @error('debut')
-                                                <small class="text-light-danger">{{ $message }}</small>       
+                                                <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -95,7 +95,7 @@
                                             <label for="fin">Fin</label>
                                             <input type="datetime-local" value="{{ $evenement->date_fin }}" name="fin" id="fin" placeholder="Fin de l'évenement" class="form-control champs @error('fin') is-invalid @enderror" />
                                             @error('fin')
-                                                <small class="text-light-danger">{{ $message }}</small>       
+                                                <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -107,7 +107,7 @@
                                                 <label class="custom-file-label" for="photo">Choose file</label>
                                                 <input type="file" class="custom-file-input champ @error('photo') is-invalid @enderror" name="photos" id="photo">
                                                 @error('photo')
-                                                    <small class="text-light-danger">{{ message }}</small>       
+                                                    <small class="text-danger">{{ message }}</small>
                                                 @enderror
                                             </div>
                                         </fieldset>

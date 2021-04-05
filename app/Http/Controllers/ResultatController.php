@@ -94,7 +94,7 @@ class ResultatController extends Controller
             "selected_sub_item" => "new"
         ];
 
-        return view("pages.admin.resultats.create")->with($arguments);
+        return view("pages.admin.resultats.edit")->with($arguments);
     }
 
     /**
@@ -106,7 +106,7 @@ class ResultatController extends Controller
      */
     public function update(Request $request, Resultat $resultat)
     {
-        $resultat->update($resultat->except("_token", "_method"));
+        $resultat->update($request->except("_token", "_method"));
 
         return response()->json([
             "status" => "success",

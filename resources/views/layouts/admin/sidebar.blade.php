@@ -1,5 +1,5 @@
 <!-- BEGIN: Main Menu-->
-<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+<div class="main-menu menu-fixed menu-dark menu-accordion menu-collapsed-open menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto">
@@ -22,7 +22,33 @@
                     <span class="menu-title">Tableau de bord</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('home')}}" >
+                    <i class="bx bx-left-arrow-circle"></i>
+                    <span class="menu-title">Accueil client</span>
+                </a>
+            </li>
             <li class="navigation-header"><span>Personnes</span></li>
+            <li class="nav-item @if($selected_item == "enseignants") active @endif">
+                <a href="" >
+                    <i class="bx bxs-user"></i>
+                    <span class="menu-title">Enseignants</span>
+                </a>
+                <ul class="menu-content">
+                    <li @if($selected_sub_item == "all" AND $selected_item == "enseignants")class="active" @endif>
+                        <a href="{{ route('enseignants.index')}}" >
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item">Tous</span>
+                        </a>
+                    </li>
+                    <li @if($selected_sub_item == "new" AND $selected_item == "enseignants")class="active" @endif>
+                        <a href="{{ route('enseignants.create')}}" >
+                            <i class="bx bx-right-arrow-alt"></i>
+                            <span class="menu-item">Nouveau</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
                 <li class="nav-item @if($selected_item == "etudiants") active @endif">
                     <a href="#">
                         <i class="bx bxs-graduation"></i>
@@ -43,29 +69,31 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @if($selected_item == "enseignants") active @endif">
-                    <a href="" >
-                        <i class="bx bxs-user"></i>
-                        <span class="menu-title">Enseignants</span>
+
+
+                <li class="navigation-header"><span>Etudes</span></li>
+                <li class="nav-item @if($selected_item == "cours") active @endif">
+                    <a href="# " >
+                        <i class="bx bxs-book"></i>
+                        <span class="menu-title">Cours</span>
                     </a>
                     <ul class="menu-content">
-                        <li @if($selected_sub_item == "all" AND $selected_item == "enseignants")class="active" @endif>
-                            <a href="{{ route('enseignants.index')}}" >
+                        <li @if($selected_sub_item == "all" AND $selected_item == "cours")class="active" @endif>
+                            <a href="{{ route('courses.index')}}">
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Tous</span>
                             </a>
                         </li>
-                        <li @if($selected_sub_item == "new" AND $selected_item == "enseignants")class="active" @endif>
-                            <a href="{{ route('enseignants.create')}}" >
+                        <li @if($selected_sub_item == "new" AND $selected_item == "cours")class="active" @endif>
+                            <a href="{{ route('courses.create')}}" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Nouveau</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="navigation-header"><span>Etudes</span></li>
-                <li class="nav-item @if($selected_item == "filieres") active @endif">
-                    <li class="nav-item @if($selected_item == "cycles") active @endif">
+
+                <li class="nav-item @if($selected_item == "cycles") active @endif">
                     <a href="#" >
                         <i class="bx bxs-collection"></i>
                         <span class="menu-title">Cycles</span>
@@ -85,7 +113,7 @@
                         </li>
                     </ul>
                 </li>
-
+                
                 <li class="nav-item @if($selected_item == "filieres") active @endif">
                     <a href="# " >
                         <i class="bx bxs-collection"></i>
@@ -100,26 +128,6 @@
                         </li>
                         <li @if($selected_sub_item == "new" AND $selected_item == "filieres")class="active" @endif>
                             <a href="{{ route('filieres.create')}}" >
-                                <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Nouvelle</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item @if($selected_item == "promotions") active @endif">
-                    <a href="# " >
-                        <i class="bx bxs-home"></i>
-                        <span class="menu-title">Promotions</span>
-                    </a>
-                    <ul class="menu-content">
-                        <li @if($selected_sub_item == "all" AND $selected_item == "promotions")class="active" @endif>
-                            <a href="{{ route('promotions.index')}}" >
-                                <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Toutes</span>
-                            </a>
-                        </li>
-                        <li @if($selected_sub_item == "new" AND $selected_item == "promotions")class="active" @endif>
-                            <a href="{{ route('promotions.create')}}" >
                                 <i class="bx bx-right-arrow-alt"></i>
                                 <span class="menu-item">Nouvelle</span>
                             </a>
@@ -146,6 +154,46 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item @if($selected_item == "promotions") active @endif">
+                    <a href="# " >
+                        <i class="bx bxs-home"></i>
+                        <span class="menu-title">Promotions</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li @if($selected_sub_item == "all" AND $selected_item == "promotions")class="active" @endif>
+                            <a href="{{ route('promotions.index')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Toutes</span>
+                            </a>
+                        </li>
+                        <li @if($selected_sub_item == "new" AND $selected_item == "promotions")class="active" @endif>
+                            <a href="{{ route('promotions.create')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouvelle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item @if($selected_item == "resultats") active @endif">
+                    <a href="# " >
+                        <i class="bx bx-award"></i>
+                        <span class="menu-title">Résultats</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li @if($selected_sub_item == "all" AND $selected_item == "resultats")class="active" @endif>
+                            <a href="{{ route('resultats.index')}}">
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Tous</span>
+                            </a>
+                        </li>
+                        <li @if($selected_sub_item == "new" AND $selected_item == "resultats")class="active" @endif>
+                            <a href="{{ route('resultats.create')}}" >
+                                <i class="bx bx-right-arrow-alt"></i>
+                                <span class="menu-item">Nouveau</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item @if($selected_item == "seances") active @endif">
                     <a href="# " >
                         <i class="bx bxs-alarm"></i>
@@ -166,26 +214,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item @if($selected_item == "cours") active @endif">
-                    <a href="# " >
-                        <i class="bx bxs-book"></i>
-                        <span class="menu-title">Cours</span>
-                    </a>
-                    <ul class="menu-content">
-                        <li @if($selected_sub_item == "all" AND $selected_item == "cours")class="active" @endif>
-                            <a href="{{ route('courses.index')}}">
-                                <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Tous</span>
-                            </a>
-                        </li>
-                        <li @if($selected_sub_item == "new" AND $selected_item == "cours")class="active" @endif>
-                            <a href="{{ route('courses.create')}}" >
-                                <i class="bx bx-right-arrow-alt"></i>
-                                <span class="menu-item">Nouveau</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="navigation-header"><span>Publications</span></li>
                 <li class="nav-item @if($selected_item == "publications_actualites") active @endif">
                     <a href="form-inputs.html" >

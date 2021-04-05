@@ -61,7 +61,7 @@
                                                 @endforeach
                                             </select>
                                             @error('cycle_id')
-                                                <small class="text-light-danger">{{ $message }}</small>
+                                                <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
 

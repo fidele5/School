@@ -37,7 +37,7 @@
                                   <label for="inputfirstname4">Nom</label>
                                   <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" id="inputfirstname4" value="{{ old('nom') }}" placeholder="Nom" />
                                   @error('nom')
-                                      <div class="alert alert-danger">{{ $message }}</div>
+                                      <small class="text-danger">{{ $message }}</small>
                                   @enderror
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                     <label for="inputfirstname4">Postnom</label>
                                     <input type="text" class="form-control @error('postnom') is-invalid @enderror" name="postnom" id="inputfirstname4" value="{{ old('postnom') }}" placeholder="Post nom" />
                                     @error('postnom')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                                     <label for="inputfirstname4">Prenom</label>
                                     <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" id="inputfirstname4" value="{{ old('prenom') }}" placeholder="Prenom" />
                                     @error('prenom')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                                 <label class="text-bold-600" for="email">Adresse email</label>
                                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ old('email') }}" placeholder="Email" />
                                 @error('email')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -91,7 +91,7 @@
                                 <label class="text-bold-600" for="nationalite">Nationalité</label>
                                 <input type="text" name="nationalite" class="form-control @error('nationalite') is-invalid @enderror" id="nationalite" placeholder="Nationalité" value="{{ old('nationalite') }}" />
                                 @error('nationalite')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -99,7 +99,7 @@
                                 <label class="text-bold-600" for="grade">Grade</label>
                                 <input type="text" name="grade" class="form-control @error('grade') is-invalid @enderror" id="grade" placeholder="Grade" value="{{ old('grade') }}" />
                                 @error('grade')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -107,7 +107,7 @@
                                 <label class="text-bold-600" for="domaine">Domaine</label>
                                 <input type="text" name="domaine" class="form-control @error('domainet') is-invalid @enderror" id="domaine" placeholder="Domaine" value="{{ old('domaine') }}" />
                                 @error('domaine')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -115,7 +115,7 @@
                                 <label class="text-bold-600" for="telephone">Telephone</label>
                                 <input type="phone" name="telephone" name="telephone" class="form-control @error('telephone') is-invalid @enderror" id="telephone" placeholder="Telephone" value="{{ old('telephone') }}" />
                                 @error('telephone')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
@@ -123,7 +123,7 @@
                                 <label class="text-bold-600" for="adresse">Adresse physique</label>
                                 <textarea name="adresse" class="form-control @error('adresse') is-invalid @enderror" id="adresse" placeholder="Adresse physique">{{ old('adresse') }}</textarea>
                                 @error('adresse')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 

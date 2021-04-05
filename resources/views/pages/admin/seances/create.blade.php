@@ -30,6 +30,14 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
+                        @if (isset($heure_debut))
+                        <p>{{ $heure_debut }}</p>
+                        @elseif (isset($heure_fin))
+                        <p>{{ $heure_fin}}</p>
+                        @elseif (isset($cours))
+                        <p>{{ $cours }}</p>
+                        @endif
+                        
                         <form class="form" method="POST" action="{{ route("seances.store") }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-body">
@@ -39,8 +47,11 @@
                                             <label for="first-title-floating">Heure de début</label>
                                             <input type="datetime-local" value="{{ old('heure_debut')}}" id="first-title-floating" class="form-control champ @error('heure_debut') is-invalid @enderror" placeholder="Heure de debut" name="heure_debut">
                                             @error('heure_debut')
-                                                <small>{{$message}}</small>
+                                                <small class="text-danger">{{$message}}</small>
                                             @enderror
+                                            @if (isset($heure_debut))}
+                                                <small class="text-danger">{{ $heure_debut }}</small>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -49,8 +60,11 @@
                                             <label for="first-title-floating">Heure de fin</label>
                                             <input type="datetime-local" value="{{ old('heure_fin')}}" id="first-title-floating" class="form-control champ @error('heure_fin') is-invalid @enderror" placeholder="Heure de fin" name="heure_fin">
                                             @error('heure_fin')
-                                                <small>{{$message}}</small>
+                                                <small class="text-danger">{{$message}}</small>
                                             @enderror
+                                            @if (isset($heure_fin))
+                                                <small class="text-danger">{{ $heure_fin }}</small>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -62,8 +76,11 @@
                                                     <option value="{{ $course->id }}" @if(old('cours_id') == $course->id) selected="" @endif>{{ $course->intitule }}</option>
                                                 @endforeach
                                                 @error('cours_id')
-                                                    <small>{{ $message }}</small>
+                                                    <small class="text-danger">{{ $message }}</small>
                                                 @enderror
+                                                @if (isset($cours))
+                                                    <small class="text-danger">{{ $cours }}</small>
+                                                @endif
                                             </select>
                                         </div>
                                     </div>
@@ -76,7 +93,7 @@
                                                     <option value="{{ $horaire->id }}" @if(old('horaire_id') == $horaire->id) selected="" @endif>{{ $horaire->promotion->nom }} {{ $horaire->promotion->filiere->nom }} : Du {{ $horaire->debut }} au {{ $horaire->fin }}</option>
                                                 @endforeach
                                                 @error('promotion_id')
-                                                    <small>{{ $message }}</small>
+                                                    <small class="text-danger">{{ $message }}</small>
                                                 @enderror
                                             </select>
                                         </div>
@@ -87,7 +104,7 @@
                                             <label for="textarea-counter">Description</label>
                                             <textarea data-length=20 class="form-control char-textarea champ @error('description') is-invalid @enderror" id="textarea-counter" rows="5" name="description" placeholder="Description">{{ old('description')}}</textarea>
                                             @error('description')
-                                                <small class="text-light-danger">{{ $message }}</small>
+                                                <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </fieldset>
                                         <small class="counter-value float-right"><span class="char-count">0</span> / 20 </small>

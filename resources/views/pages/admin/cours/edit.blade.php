@@ -38,7 +38,7 @@
                                   <label for="intitule">Inititulé</label>
                                   <input type="text" class="form-control @error('intitule') is-invalid @enderror" name="intitule" id="intitule" value="{{ $course->intitule }}" placeholder="Intitulé" />
                                   @error('intitule')
-                                      <div class="alert alert-danger">{{ $message }}</div>
+                                      <small class="text-danger">{{ $message }}</small>
                                   @enderror
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                                     <label for="volume_horaire">Volume horaire</label>
                                     <input type="text" class="form-control @error('volume_horaire') is-invalid @enderror" name="volume_horaire" id="volume_horaire" value="{{ $course->volume_horaire }}" placeholder="Volume horaire" />
                                     @error('volume_horaire')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                         @endforeach
                                     </select>
                                     @error('promotion')
-                                        <small class="text-light-danger">{{ $message }}</small>
+                                        <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                         @endforeach
                                     </select>
                                     @error('enseignant')
-                                        <small class="text-light-danger">{{ $message }}</small>
+                                        <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                     <label for="textarea-counter">Description</label>
                                     <textarea data-length=20 class="form-control char-textarea champ  @error('description') is-invalid @enderror" id="textarea-counter" rows="5" name="description" placeholder="Description">{{ $course->description }}</textarea>
                                     @error('description')
-                                        <small class="text-light-danger">{{ $message }}</small>
+                                        <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </fieldset>
                                 <small class="counter-value float-right mb-10"><span class="char-count">0</span> / 20 </small>
