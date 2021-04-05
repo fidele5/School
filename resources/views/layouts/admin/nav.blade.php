@@ -18,6 +18,23 @@
                     </ul>
                     </div>
                     <ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-language nav-item">
+                            <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @foreach(languages() as $app_lang)
+                                @if(config('app.locale') == $app_lang->iso_code)
+                                    <img height="15" src="{{asset($app_lang->flag)}}"> <span>{{ $app_lang->language }}</span>
+                                @endif
+                            @endforeach
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                                @foreach(languages() as $app_lang)
+                                    <a class="dropdown-item" data-language="{{ $app_lang->iso_code }}" href="{{ url('/local/'.$app_lang->iso_code) }}">
+                                        <img src="{{asset($app_lang->flag)}}" height="15" class="mr-2">
+                                        {{$app_lang->language}}
+                                    </a>
+                                @endforeach
+                            </div>
+                        </li>
                     <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon bx bx-fullscreen"></i></a></li>
                     <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon bx bx-search"></i></a>
                         <div class="search-input">

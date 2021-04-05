@@ -3,11 +3,11 @@
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     <div class="brand-logo">
-                        <img src="/backend/images/logo/logo.png" class="logo" alt="">
+                        <img src="/{{ get_option("app_logo") }}" class="logo" alt="">
                     </div>
-                    <h2 class="brand-text mb-0">ISAMM</h2>
+                    <h2 class="brand-text mb-0">{{ get_option("app_name") }}</h2>
                 </a>
             </li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="bx bx-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="bx-disc"></i></a></li>
@@ -338,6 +338,27 @@
                                 <a href="{{ route('categorie-realisations.create')}}" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">Nouvelle</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="page-account-settings.html" >
+                            <i class="bx bx-wrench"></i>
+                            <span class="menu-title">{{ __("pages.site_settings") }}</span>
+                        </a>
+                        <ul class="menu-content">
+                            <li >
+                                <a href="{{ route("settings.create") }}" >
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                    <span class="menu-item">{{ __("pages.general") }}</span>
+                                </a>
+                            </li>
+
+                            <li >
+                                <a href="{{ route("languages.index") }}" >
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                    <span class="menu-item">{{ __("pages.language") }}</span>
                                 </a>
                             </li>
                         </ul>

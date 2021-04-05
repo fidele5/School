@@ -14,6 +14,7 @@ use App\Models\Realisation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use PDF;
 
 class HomeController extends Controller
 {
@@ -106,8 +107,8 @@ class HomeController extends Controller
             "email"=>$request->email,
             "password"=>$password,
         ]);
-
-        Etudiant::create([
+            
+        $etudiant = Etudiant::create([
             "promotion_id"=>$request->promotion_id,
             "user_id"=>$user->id,
             "matricule"=>$matricule,
@@ -119,6 +120,19 @@ class HomeController extends Controller
             "annee_laureat"=>$request->annee_laureat,
         ]);
 
+        return response()->json([
+            'status'=>'success',
+            'id'=>$etudiant->id,
+        ]);
+
+    }
+
+    public function downloadPdf($id)
+    {
+        $etudiant = Etudiant::find($id);
+        $pdf = PDF::loadView('pages.guest.autres.fiche', compact('etudiant'))->setPaper('a4');
+        $pdf->save(public_path('uploads/fiches/') . $etudiant->matricule . '.pdf');
+        return $pdf->download('fiche.pdf');
     }
 
     public function cours()

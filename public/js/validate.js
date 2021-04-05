@@ -1,225 +1,96 @@
 $(document).ready(function() {
+    $("form").validate();
 
-    var itreator = 0;
-    $("#defaultRegisterFormFirstName").keyup(function(e) {
-        var nom = $("#defaultRegisterFormFirstName").val();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#nom").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#nom").text("Le nom doit avoir plus de 4 caractères");
-            itreator++;
-
-        } else {
-            $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-            $("#nom").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-            $("#nom").text("");
-        }
-    });
-
-    $("#defaultRegisterFormLastName").keyup(function(e) {
-        var nom = $(this).val();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#post").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#post").text("Le nom doit avoir plus de 4 caractères");
-            itreator++;
-        } else {
-            $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-            $("#post").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-            $("#post").text("");
-        }
-    });
-
-    $("#prenom").keyup(function(e) {
-        var nom = $(this).val();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#pre").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#pre").text("Le prenom doit avoir plus de 4 caractères");
-            itreator++;
-        } else {
-            $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-            $("#pre").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-            $("#pre").text("");
-        }
-    });
-
-    $("#Lieu").keyup(function(e) {
-        var nom = $(this).val();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#naiss").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#naiss").text("Le lieu de naissance doit avoir plus de 4 caractères");
-            itreator++;
-        } else {
-            $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-            $("#naiss").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-            $("#naiss").text("");
-        }
-    });
-
-    $("#Date").keyup(function(e) {
-        var nom = $(this).val();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#dat").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#dat").text("date incorrect");
-            itreator++;
-        } else {
-            $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-            $("#dat").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-            $("#dat").text("");
-        }
-    });
-
-    $("#ecole").keyup(function(e) {
-        var nom = $(this).val();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#school").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#school").text("Le nom de l'ecole doit avoir plus de 4 caractères");
-            itreator++;
-        } else {
-            $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-            $("#school").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-            $("#school").text("");
-        }
-    });
-
-    $("#option").keyup(function(e) {
-        var nom = $(this).val();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#opt").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#opt").text("L'option doit avoir plus de 4 caractères");
-            itreator++;
-        } else {
-            $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-            $("#opt").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-            $("#opt").text("");
-        }
-    });
-
-    $("#annee").keyup(function(e) {
-        var nom = $(this).val();
-        var date = new Date();
-        var today = date.getFullYear().toString();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#year").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#year").text("L'année doit avoir 4 chiffres");
-            itreator++;
-        } else {
-            if (parseInt(nom) > parseInt(today)) {
-                $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-                $("#year").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-                $("#year").text("On ne peut pas s'inscrire à l'avance");
-                itreator++;
-            } else {
-                $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-                $("#year").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-                $("#year").text("");
-            }
-
-        }
-    });
-
-    $("#pourcentage").keyup(function(e) {
-        var nom = $(this).val();
-        if (nom.length < 2) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#percentage").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#percentage").text("Le pourcentage doit avoir 2 chiffres");
-            itreator++;
-        } else {
-            if (parseInt(nom) < 50) {
-                $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-                $("#percentage").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-                $("#percentage").text("Desolé mais vous n'etes pas admissible");
-            } else if (parseInt(nom) > 100) {
-                $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-                $("#percentage").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-                $("#percentage").text("On ne peut pas avoir plus que le max");
-            } else {
-                $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-                $("#percentage").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-                $("#percentage").text("");
-            }
-
-        }
-    });
+    $("form").submit(function(e) {
 
 
-    $("#defaultRegisterFormEmail").keyup(function(e) {
-        var nom = $(this).val();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#email").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#email").text("L'adresse email  doit avoir plus de 4 caractères");
-            itreator++;
+        e.preventDefault();
+
+        $('.champ + label +div').text('');
+
+        $('.champ').removeClass('is-invalid');
+
+
+
+
+        var formdata = new FormData(this);
+
+        var fields = [];
+
+        var errors = 0;
+
+        $(".champ").each(function(index, element) {
+
+            if ($(this).val() == "") {
+
+                $(this).addClass("is-invalid");
+
+                $(this).next().append("<div class='invalid-feedback'>Ce champ est requis</div>");
+
+                errors++;
+
+            } else fields.push($(this).val());
+
+        });
+
+        if (errors > 0) {
+
+            toastr.warning("Completer tous les champs", "Mon cher!");
+
+            fields = [];
 
         } else {
-            if ($(this).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-                $("#email").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-                $("#email").text("Adresse email invalide");
-                itreator++;
-            } else {
-                $.get('Controllers/checkemail.php?email=' + nom, function(data) {
-                    if (data != "ok") {
-                        $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-                        $("#email").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-                        $("#email").text("Adresse email deja utilisé");
-                        itreator++;
-                    } else {
-                        $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-                        $("#email").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-                        $("#email").text("");
+
+            $.ajax({
+
+                type: $(this).attr('method'),
+
+                url: $(this).attr('action'),
+
+                data: formdata,
+
+                contentType: false,
+
+                cache: false,
+
+                processData: false,
+
+                beforeSend: function() {
+
+                    $('button[type=submit]').attr('disabled', 'disabled').html("<span class='spinner-grow spinner-grow-sm' role='status' aria-hidden='true'></span>Loading...");
+
+                },
+
+                success: function(response) {
+
+                    if (response.status === "success") {
+                        $(".alert-link").attr("href", "/download/" + response.id);
+                        $(".msg").show();
+                        $(this).get(0).reset();
+                        $(this).resetFrom();
+                        $('button[type=submit]').removeAttr('disabled').html("Envoyer");
                     }
-                });
-            }
+
+                },
+
+                error: function(data) {
+
+                    $.each(data.responseJSON.errors, function(key, value) {
+
+                        var input = 'form .champ[name=' + key + ']';
+
+                        $(input).addClass('is-invalid');
+
+                        $(input + " + label + div").html(value[0]);
+
+                    });
+
+                }
+
+            });
 
         }
-    });
 
-    $("#defaultRegisterPhone").keyup(function(e) {
-        var nom = $("#defaultRegisterPhone").val();
-        if (nom.length < 10) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#tel").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#tel").text("Numero invalide");
-            itreator++;
-        } else {
-            $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-            $("#tel").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-            $("#tel").text("");
-        }
-    });
-    $("#nationalite").keyup(function(e) {
-        var nom = $("#nationalite").val();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#nat").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#nat").text("La nationalite doit avoir plus de 4 caractères");
-            itreator++;
-        } else {
-            $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-            $("#nat").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-            $("#nat").text("");
-        }
-    });
-    $("#adresse").keyup(function(e) {
-        var nom = $("#adresse").val();
-        if (nom.length < 4) {
-            $(this).removeClass('mb-4 is-valid').addClass('is-invalid');
-            $("#addr").removeClass('valid-feedback').addClass('invalid-feedback mb-4');
-            $("#addr").text("L'adresse doit avoir plus de 4 caractères");
-            itreator++;
-        } else {
-            $(this).removeClass('mb-4 is-invalid').addClass('is-valid');
-            $("#addr").removeClass('invalid-feedback').addClass('valid-feedback mb-4');
-            $("#addr").text("");
-        }
     });
 
 });
