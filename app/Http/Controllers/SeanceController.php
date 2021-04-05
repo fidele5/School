@@ -71,22 +71,27 @@ class SeanceController extends Controller
     public function store(Request $request)
     {
         $horaire = Horaire::find($request->horaire_id);
-        $cours_promotion = $horaire->promotion->cours;
+        $cours_promotion = $horaire->promotion->courses;
         $cours = Cours::find($request->cours_id);
+
+        settype($cours_promotion, "array");
+
+        printf("%s %s %s %s\n", $horaire->debut, $horaire->fin, $request->heure_debut, $request->heure_fin);
 
         $date_debut = $horaire->debut;
         $date_fin = $horaire->fin;
 
         $heure_debut = $request->heure_debut;
-        if($heure_debut >= $date_debut AND $heure_debut <= $date_fin)
+        if($heure_debut < $date_debut AND $heure_debut > $date_fin)
             return back()->with("heure_debut", "L'heure de début n'est pas dans le delai de l'horaire");
 
         $heure_fin = $request->heure_fin;
-        if($heure_fin >= $date_debut AND $heure_fin <= $date_fin)
+        if($heure_fin < $date_debut AND $heure_fin > $date_fin)
             return back()->with("heure_fin", "L'heure de fin n'est pas dans le delai de l'horaire");
 
         if(!(in_array($cours, $cours_promotion)))
             return back()->with("cours", "Le cours selectionné n'est pas inscrit dans la promotion");
+
         $seance = Seance::create($request->except("_token", "_method"));
 
         return response()->json([

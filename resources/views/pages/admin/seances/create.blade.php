@@ -30,6 +30,14 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
+                        @if (isset($heure_debut))
+                        <p>{{ $heure_debut }}</p>
+                        @elseif (isset($heure_fin))
+                        <p>{{ $heure_fin}}</p>
+                        @elseif (isset($cours))
+                        <p>{{ $cours }}</p>
+                        @endif
+                        
                         <form class="form" method="POST" action="{{ route("seances.store") }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-body">

@@ -5,8 +5,10 @@ namespace App\Excel\Exporter;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class EtudiantExporter implements FromCollection {
+class EtudiantExporter implements FromCollection, ShouldAutoSize, WithHeadingRow {
 
     use Exportable;
 
@@ -34,6 +36,14 @@ class EtudiantExporter implements FromCollection {
                                     "users.telephone as telephone",
                                     "users.adresse AS 'Adresse physique'"
                                 ])->get();
+    }
+
+    public function headings() : array {
+        return [
+            "Matricule", "Nom", "Postnom", "Prenom", "Genre", "Nationalité", "Lieu de naissance",
+            "Date de naissance", "Ecole de provenance", "option lauréat", "Année lauréat",
+            "Pourcentage", "Filière", "Promotion", "Email", "telephone", "Adresse physique"
+        ];
     }
 }
 

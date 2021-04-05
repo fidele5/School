@@ -3,8 +3,6 @@
 namespace App\Excel\Importer;
 
 use App\Models\Enseignant;
-use App\Models\Filiere;
-use App\Models\Promotion;
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\Importable;

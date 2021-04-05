@@ -16,7 +16,7 @@ class Promotion extends Model
         return $this->belongsTo(Filiere::class);
     }
 
-    public function cours()
+    public function courses()
     {
         return $this->hasMany(Cours::class);
     }
