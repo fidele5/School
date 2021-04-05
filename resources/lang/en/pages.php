@@ -108,4 +108,8 @@
 "all_right_reserved" => "All rights reserved",
 "education_with"=>"Etucation with",
 "the_best_choice"=>"THE RIGHT CHOICE",
+"by"=>"By",
+"about_author"=>"About author",
+"related_post"=>"Related post",
+"share_post"=>"Share this post",
 ];

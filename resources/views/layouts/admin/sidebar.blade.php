@@ -299,7 +299,7 @@
                             <span class="menu-title">Réalisation</span>
                         </a>
                         <ul class="menu-content">
-                            <li @if($selected_sub_item == "all" AND $selected_item == "categories_realisations")class="active" @endif>
+                            <li>
                                 <a href="{{ route('categorie-realisations.index')}}" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">Toutes</span>

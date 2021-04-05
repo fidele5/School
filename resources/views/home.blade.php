@@ -215,11 +215,11 @@
                                                     <article class="blog-post">
                                                         <header class="mb-2">
                                                             <div class="image-frame hover-effect-2">
-                                                                <a href="{{-- route("actualite.show",$actualite) --}}" class="d-block">
-                                                                    <img src="/uploads/{{ $actualite->publication->photo }}.jpg" class="img-fluid mb-3" alt="" />
+                                                                <a href="{{ route("actualite.single", $actualite) }}}" class="d-block">
+                                                                    <img src="/uploads/actualites/{{ $actualite->publication->photo }}" class="img-fluid mb-3" alt="" />
                                                                 </a>
                                                             </div>
-                                                            <h3 class="font-weight-bold text-4 mb-1"><a href="" class="link-color-dark">{{ $actualite->publication->titre }}</a></h3>
+                                                            <h3 class="font-weight-bold text-4 mb-1"><a href="{{ route("actualite.single", $actualite) }}" class="link-color-dark">{{ $actualite->publication->titre }}</a></h3>
                                                             <i class="far fa-clock mt-1 text-color-primary"></i>
                                                             <time class="font-tertiary text-1" datetime="2020-01-17">{{ $actualite->created_at }}</time>
                                                         </header>

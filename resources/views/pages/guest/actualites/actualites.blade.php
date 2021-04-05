@@ -26,15 +26,15 @@
                                     <article class="blog-post">
                                         <span class="top-sub-title text-color-primary">{{ date('d-m-Y', strtotime($actualite->created_at)) }}</span>
                                             <h2 class="font-weight-bold text-4 mb-3">
-                                            <a href="{{-- route("article.show",$actualite) --}}" class="link-color-dark">{{ $actualite->publication->titre }}</a>
+                                            <a href="{{ route("actualite.single",$actualite) }}" class="link-color-dark">{{ $actualite->publication->titre }}</a>
                                         </h2>
                                         <div class="owl-carousel owl-theme dots-style-2 nav-style-2" data-plugin-options="{'items': 1, 'dots': true, 'nav': false, 'animateIn': 'animate__fadeIn', 'animateOut': 'animate__fadeOut'}">
 
                                             <div>
-                                                <a href="{{-- route("actualite.show",$actualite) --}}">
+                                                <a href="{{ route("actualite.single",$actualite) }}">
                                                     <div class="image-frame hover-effect-2">
                                                         <div class="image-frame-wrapper">
-                                                            <img src="/uploads/{{ $actualite->publication->photo }}.jpg" class="img-fluid" alt="" />
+                                                            <img src="/uploads/actualites/{{ $actualite->publication->photo }}" class="img-fluid" alt="" />
                                                         </div>
                                                     </div>
                                                 </a>
@@ -46,7 +46,7 @@
                                         </div>
                                         <hr class="mt-0 mb-3">
                                         <p class="text-color-light-3 text-truncate" style="max-width: 250px">{{ $actualite->publication->texte }}.</p>
-                                        <a href="{{-- route("actualite.show",$actualite) --}}" class="text-color-primary font-weight-bold learn-more">{{ __("pages.read_more") }} <i class="fas fa-angle-right text-3" aria-label="Read more"></i></a>
+                                        <a href="{{ route("actualite.single",$actualite) }}" class="text-color-primary font-weight-bold learn-more">{{ __("pages.read_more") }} <i class="fas fa-angle-right text-3" aria-label="Read more"></i></a>
                                     </article>
                                 </div>
                             </div>

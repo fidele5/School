@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Actualite;
 use App\Models\Caroussel;
+use App\Models\CategorieActualite;
 use App\Models\CategorieRealisation;
 use App\Models\Cycle;
 use App\Models\Etudiant;
@@ -49,6 +50,13 @@ class HomeController extends Controller
         return view('home')->with(compact("actualites", "evenements", "caroussels", "categories", "realisations"));
     }
 
+    public function singleActualite(Actualite $actualite)
+    {
+        $categories = CategorieActualite::all();
+        $relatedactualites = Actualite::where("categorie_actualite_id", $actualite->categorie_actualite_id)->orderBy('id', 'desc')->get();
+        return view("pages.guest.actualites.actualite")->with(compact("actualite", "categories", "relatedactualites"));
+    }
+
     public function index()
     {
         return view("home");
@@ -83,7 +91,7 @@ class HomeController extends Controller
     {
         $cycles = Cycle::all();
         $horaire = Horaire::latest()->get();
-        return view("pages.guest.autres.horaire")->with(compact("horaire","cycles"));
+        return view("pages.guest.autres.horaire")->with(compact("horaire", "cycles"));
     }
 
     public function admission()
@@ -94,35 +102,35 @@ class HomeController extends Controller
 
     public function saveStudent(Request $request)
     {
-        $matricule = strtolower(date('y').$request->nom[0].$request->postnom[0].mt_rand(0,100));
-        $password = Hash::make($request->nom."@".date('Y'));
+        $matricule = strtolower(date('y') . $request->nom[0] . $request->postnom[0] . mt_rand(0, 100));
+        $password = Hash::make($request->nom . "@" . date('Y'));
         $user = User::create([
-            "nom"=>$request->nom,
-            "postnom"=>$request->postnom,
-            "prenom"=>$request->prenom,
-            "adresse"=>$request->adresse,
-            "nationalite"=>$request->nationalite,
-            "genre"=>$request->genre,
-            "telephone"=>$request->telephone,
-            "email"=>$request->email,
-            "password"=>$password,
+            "nom" => $request->nom,
+            "postnom" => $request->postnom,
+            "prenom" => $request->prenom,
+            "adresse" => $request->adresse,
+            "nationalite" => $request->nationalite,
+            "genre" => $request->genre,
+            "telephone" => $request->telephone,
+            "email" => $request->email,
+            "password" => $password,
         ]);
-            
+
         $etudiant = Etudiant::create([
-            "promotion_id"=>$request->promotion_id,
-            "user_id"=>$user->id,
-            "matricule"=>$matricule,
-            "lieu_naissance"=>$request->lieu_naissance,
-            "date_naissance"=>$request->date_naissance,
-            "ecole_provenance"=>$request->ecole_provenance,
-            "pourcentage"=>$request->pourcentage,
-            "option_laureat"=>$request->option_laureat,
-            "annee_laureat"=>$request->annee_laureat,
+            "promotion_id" => $request->promotion_id,
+            "user_id" => $user->id,
+            "matricule" => $matricule,
+            "lieu_naissance" => $request->lieu_naissance,
+            "date_naissance" => $request->date_naissance,
+            "ecole_provenance" => $request->ecole_provenance,
+            "pourcentage" => $request->pourcentage,
+            "option_laureat" => $request->option_laureat,
+            "annee_laureat" => $request->annee_laureat,
         ]);
 
         return response()->json([
-            'status'=>'success',
-            'id'=>$etudiant->id,
+            'status' => 'success',
+            'id' => $etudiant->id,
         ]);
 
     }

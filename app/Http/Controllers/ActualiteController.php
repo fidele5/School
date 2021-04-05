@@ -64,7 +64,7 @@ class ActualiteController extends Controller
         $image = Image::make($photo);
         $image->resize(800, 533);
         $image_name = $timestamp.'.'.$photo->extension();
-        $image->save("/uploads/actualites/$image_name");
+        $image->save(public_path("/uploads/actualites/").$image_name);
         $name_file = $timestamp.'.'.$photo->extension();
 
         $publication = Publication::create(

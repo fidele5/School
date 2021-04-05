@@ -63,7 +63,7 @@ class EvenementController extends Controller
         $image = Image::make($request->file('photo'));
         $image->resize(800, 533);
         $image_name = time().'.'.$image->extension();
-        $image->store("uploads/evenements/", $image_name);
+        $image->store(public_path("uploads/evenements/"), $image_name);
 
         $publication = Publication::create([
             "titre" => $request->titre,

@@ -20,7 +20,6 @@ use App\Http\Controllers\RealisationController;
 use App\Http\Controllers\ResultatController;
 use App\Http\Controllers\SeanceController;
 use App\Http\Controllers\SettingController;
-use App\Models\Etudiant;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -45,10 +44,11 @@ Route::get('/local/{ln}', function ($ln) {
     App::setLocale(session()->get('local'));
     return back();
 });
-Route::middleware("local")->group(function(){
+Route::middleware("local")->group(function () {
     Route::get("/realisation", [HomeController::class, "realisations"])->name('realisation');
     Route::get("/evenement", [HomeController::class, 'evenements'])->name('evenement');
     Route::get('/actualite', [HomeController::class, 'actualites'])->name("actualite");
+    Route::get('/actualite/{actualite}', [HomeController::class, 'singleActualite'])->name("actualite.single");
     Route::get("/horaire", [HomeController::class, "horaires"])->name('horaire');
     Route::get("/cours", [HomeController::class, "cours"])->name('cours');
     Route::get('/admission', [HomeController::class, 'admission'])->name('admission');
@@ -87,9 +87,9 @@ Route::middleware("local")->group(function(){
             Route::resource('cycles', CycleController::class);
             Route::get('translate/{id}', [\App\Http\Controllers\LanguageController::class, 'editContent'])->name('translate');
             Route::post('update-translate', [\App\Http\Controllers\LanguageController::class, 'updateContent'])->name('update-translate');
-                Route::get('', function () {
-                    return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
-                })->name('home-admin');
+            Route::get('', function () {
+                return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
+            })->name('home-admin');
 
         });
     });
