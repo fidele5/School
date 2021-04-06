@@ -344,10 +344,12 @@
                             </li>
                         </ul>
                     </li>
+
+                    <li class="navigation-header"><span>Paramètres</span></li>
                     <li class="nav-item @if($selected_item == "settings") active @endif">
                         <a href="page-account-settings.html" >
                             <i class="bx bx-wrench"></i>
-                            <span class="menu-title">{{ __("pages.site_settings") }}</span>
+                            <span class="menu-title">Paramètres</span>
                         </a>
                         <ul class="menu-content">
                             <li @if($selected_sub_item == "general" AND $selected_item == "settings")class="active" @endif>
