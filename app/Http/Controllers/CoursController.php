@@ -103,6 +103,8 @@ class CoursController extends Controller
      */
     public function edit(Cours $cours)
     {
+        print($cours);
+        print("\n");
         $enseignants = Enseignant::all();
         $promotions = Promotion::all();
         $arguments =[

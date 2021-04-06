@@ -49,11 +49,11 @@
                                             <td>{{ $seance->horaire->promotion->nom }} {{$seance->horaire->promotion->filiere->nom}} : Du {{ $seance->horaire->debut}} au {{$seance->horaire->fin}}</td>
                                             <td >{{ $seance->cours->intitule }}</td>
                                             <td>
-                                                <a class="btn btn-primary" href="{{ route("seances.edit", $seance) }}">
+                                                <a href="{{ route("seances.edit", $seance) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                
-                                                <a class="btn btn-danger delete" href="{{ route("seances.destroy", $seance) }}">
+
+                                                <a class="delete" href="{{ route("seances.destroy", $seance) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

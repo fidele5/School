@@ -51,10 +51,10 @@
                                             <td>{{ $filiere->cycle->designation }}</td>
                                             <td><img height="100px" height="100px" src="/uploads/filieres/{{ $filiere->image }}" /></td>
                                             <td>
-                                                <a class="btn btn-primary" href="{{ route("filieres.edit", $filiere) }}">
+                                                <a href="{{ route("filieres.edit", $filiere) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="btn btn-danger delete" href="{{ route("filieres.destroy", $filiere) }}">
+                                                <a class="delete" href="{{ route("filieres.destroy", $filiere) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

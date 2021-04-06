@@ -51,10 +51,10 @@
                                             <td>{{ $resultat->examen }}</td>
                                             <td>{{ $resultat->moyenne + $resultat->examen }}</td>
                                             <td>
-                                                <a class="btn btn-primary" href="{{ route("resultats.edit", $resultat) }}">
+                                                <a href="{{ route("resultats.edit", $resultat) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="btn btn-danger delete" href="{{ route("resultats.destroy", $resultat) }}">
+                                                <a class="delete" href="{{ route("resultats.destroy", $resultat) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

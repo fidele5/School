@@ -71,10 +71,10 @@
                                             <td>{{ $etudiant->user->email}}</td>
                                             <td>{{ $etudiant->user->telephone }}</td>
                                             <td>
-                                                <a class="btn btn-primary" href="{{ route("etudiants.edit", $etudiant) }}">
+                                                <a href="{{ route("etudiants.edit", $etudiant) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="btn btn-delete" class="delete" href="{{ route("etudiants.destroy", $etudiant) }}">
+                                                <a class="delete" href="{{ route("etudiants.destroy", $etudiant) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

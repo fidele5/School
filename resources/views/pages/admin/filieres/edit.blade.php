@@ -35,27 +35,39 @@
                             @method("patch")
                             <div class="form-body">
                                 <div class="row justify-content-center">
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="first-title-floating">Nom</label>
-                                            <input type="text" value="{{ $filiere->nom }}" id="first-title-floating" class="form-control champ @error('nom') is-invalid @enderror" placeholder="Nom de la filière" name="nom">
-                                            @error('nom')
-                                                <small class="text-danger">{{$message}}</small>
-                                            @enderror
-                                        </div>
+                                    <div class="form-group col-12">
+                                        <label for="first-title-floating">Nom</label>
+                                        <input type="text" value="{{ $filiere->nom }}" id="first-title-floating" class="form-control champ @error('nom') is-invalid @enderror" placeholder="Nom de la filière" name="nom">
+                                        @error('nom')
+                                            <small class="text-danger">{{$message}}</small>
+                                        @enderror
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-12">
                                         <label for="description">Description</label>
-                                        <textarea id="description" class="form-control champ @error('description') is-invalid @enderror" placeholder="Description de la filière" name="description">value="{{ $filiere->description}}"</textarea>
+                                        <textarea id="description" class="form-control champ @error('description') is-invalid @enderror" placeholder="Description de la filière" name="description">{{ $filiere->description}}</textarea>
                                         @error('description')
                                             <small class="text-danger">{{$message}}</small>
                                         @enderror
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-12">
+                                        <label for="cycle_id">Cycle</label>
+                                        <select name="cycle_id" id="cycle_id" class="custom-select @error('cycle_id') is-invalid @enderror">
+                                            @foreach ($cycles as $cycle)
+                                                <option value="{{ $cycle->id }}" @if ($filiere->cycle_id == $cycle->id)
+                                                    selected
+                                                @endif>{{ $cycle->designation }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('cycle_id')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group col-12">
                                         <label for="image">Image</label>
-                                        <textarea id="image" class="form-control champ @error('image') is-invalid @enderror" placeholder="Image de la filière" name="image">value="{{ $filiere->image }}"</textarea>
+                                        <input type="file" id="image" class="form-control champ @error('image') is-invalid @enderror" placeholder="Image de la filière" name="image" value="{{ $filiere->image }}" />
                                         @error('image')
                                             <small class="text-danger">{{$message}}</small>
                                         @enderror

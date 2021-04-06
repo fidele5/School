@@ -113,7 +113,7 @@
                         </li>
                     </ul>
                 </li>
-                
+
                 <li class="nav-item @if($selected_item == "filieres") active @endif">
                     <a href="# " >
                         <i class="bx bxs-collection"></i>
