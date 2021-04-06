@@ -28,7 +28,6 @@
             <div class="col-12">
                 <div class="card mb-4 rounded-0">
                     <!-- Card Header - Dropdown -->
-                    <a href="{{ url("/local/fr") }}">Lang</a>
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">{{__('pages.add_language')}}</h6>
                         <a href="{{route('languages.index')}}" class="btn btn-secondary btn-sm rounded-0"> <i class="fa fa-list mr-1"></i> {{__('pages.all_language')}}</a>

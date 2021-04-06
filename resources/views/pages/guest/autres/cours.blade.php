@@ -52,7 +52,7 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    @foreach ($promotion->cours as $cour)
+                                                                    @foreach ($promotion->courses as $cour)
                                                                         <tr>
                                                                             <th scope="row">{{ $cour->id }}</th>
                                                                             <td>{{ $cour->intitule }}</td>
@@ -60,13 +60,13 @@
                                                                             <td>{{ $cour->ponderation }}</td>
                                                                         </tr>
                                                                     @endforeach
-                                                                    
+
                                                                 </tbody>
                                                             </table>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @endforeach 
+                                            @endforeach
                                         @endforeach
                                     </div>
                                 </div>

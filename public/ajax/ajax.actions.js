@@ -167,8 +167,8 @@ $(document).ready(function() {
         });
 
         swalWithBootstrapButtons({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Etes-vous sûr(e)?',
+            text: "Une fois effectuée, cette action est irreversible!",
             type: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Yes, delete it!',
@@ -199,16 +199,16 @@ $(document).ready(function() {
 
                         if (response.status === "success") {
                             swalWithBootstrapButtons(
-                                'Deleted!',
-                                'Your file has been deleted.',
+                                'Supprimé',
+                                'La suppression a été effectuée avec succès',
                                 'success'
                             );
 
                             location.reload(true);
                         } else {
                             swalWithBootstrapButtons(
-                                'Cancelled',
-                                'Your imaginary file is safe :)',
+                                'Echec',
+                                "L'opération a échoué",
                                 'error'
                             );
                         }
@@ -218,8 +218,8 @@ $(document).ready(function() {
                     error: function(data) {
 
                         swalWithBootstrapButtons(
-                            'Cancelled',
-                            'Your imaginary file is safe :)',
+                            'Echec',
+                            "L'opération a échoué",
                             'error'
                         );
 
@@ -229,8 +229,8 @@ $(document).ready(function() {
 
             } else if (result.dismiss === swal.DismissReason.cancel) {
                 swalWithBootstrapButtons(
-                    'Cancelled',
-                    'Your imaginary file is safe :)',
+                    'Echec',
+                    "L'opération a échoué",
                     'error'
                 );
             }
