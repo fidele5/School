@@ -109,9 +109,8 @@
                 <div class="card-footer">
                     <div class="row">
                          <div class="col-6">
-                            <a href="{{ route('export')}}" class="btn btn-secondary"><i class="fa fa-arrow-down"></i> Télécharger le modèle</a>
+                            <a href="{{ route('etudiants.export')}}" class="btn btn-secondary"><i class="fa fa-arrow-down"></i> Télécharger le modèle</a>
                         </div>
-                        <form class="form col-6" method="POST" action="{{ route('import')}}">
                         <form class="form col-6" method="POST" action="{{ route('etudiants.import')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">

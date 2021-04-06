@@ -5,8 +5,13 @@ namespace App\Excel\Exporter;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\WithStyles;
+use Maatwebsite\Excel\Concerns\WithTitle;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
-class EnseignantExporter implements FromCollection {
+class EnseignantExporter implements FromCollection, WithHeadings, ShouldAutoSize, WithTitle, WithStyles {
 
     use Exportable;
 
@@ -25,6 +30,27 @@ class EnseignantExporter implements FromCollection {
                                     "users.telephone as telephone",
                                     "users.adresse AS 'Adresse physique'"
                                 ])->get();
+    }
+
+    public function headings(): array
+    {
+        return [
+            "Nom", "Postnom", "Prenom", "Genre", "Nationalité", "Grade", "Domaine", "Email",
+            "Telephone", "Adresse physique"
+        ];
+    }
+
+    public function title(): string
+    {
+        return "Enseignants";
+    }
+
+    public function styles(Worksheet $sheet)
+    {
+        return [
+            // Style the first row as bold text.
+            1    => ['font' => ['bold' => true, "size" => 12]],
+        ];
     }
 }
 

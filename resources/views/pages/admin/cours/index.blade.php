@@ -78,6 +78,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <div class="row">
+                         <div class="col-6">
+                            <a href="{{ route('courses.export')}}" class="btn btn-secondary"><i class="fa fa-arrow-down"></i> Télécharger le modèle</a>
+                        </div>
+                        <form class="form col-6" method="POST" action="{{ route('courses.import')}}">
+                            @csrf
+                            <div class="row">
+                                <div class="form-group col-8">
+                                    <input type="file" value="Fichier excel à uploader" id="file" name="file" accept="document/xlsx" class="form-control form-control-file @error('file') is-invalid @enderror" />
+                                </div>
+
+                                <div class="col-4">
+                                    <button class="btn btn-primary mt-10" type="submit">Valider</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

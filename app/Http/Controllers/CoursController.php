@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Excel\Exporter\CoursExporter;
 use App\Models\Cours;
 use App\Models\Enseignant;
 use App\Models\Promotion;
@@ -144,6 +145,21 @@ class CoursController extends Controller
     public function destroy(Cours $cours)
     {
         $cours->delete();
+        return response()->json([
+            "status" => "success",
+            "back" => "courses"
+        ]);
+    }
+
+    public function export() {
+        return (new CoursExporter)->download("cours.xls");
+    }
+
+    public function import(Request $request) {
+        $request->validate([
+            "file" => "required|file|mimes:xls,xlsx,xlsm"
+        ]);
+
         return response()->json([
             "status" => "success",
             "back" => "courses"

@@ -132,8 +132,8 @@ class EtudiantController extends Controller
         $promotions = Promotion::all();
         $arguments = [
             "promotions" => $promotions,
-            "etudiant" => $etudiant, "
-            selected_item" => "etudiants",
+            "etudiant" => $etudiant,
+            "selected_item" => "etudiants",
             "selected_sub_item" => "all"
         ];
                 return view("pages.admin.etudiants.edit")->with($arguments);
@@ -165,6 +165,7 @@ class EtudiantController extends Controller
         $etudiant->option_laureat = $request->option_laureat;
         $etudiant->annee_laureat = $request->annee_laureat;
         $etudiant->pourcentage = $request->pourcentage;
+        $etudiant->promotion_id = $request->promotion;
         $etudiant->save();
 
         return response()->json([
@@ -186,12 +187,6 @@ class EtudiantController extends Controller
         return response()->json([
             "status" => "success",
             "back" => "etudiants"
-        ]);
-    }
-
-    public function upload(Request $request) {
-        $request->validate([
-            "file" => "required|file|mimetypes:document/xlsx"
         ]);
     }
 

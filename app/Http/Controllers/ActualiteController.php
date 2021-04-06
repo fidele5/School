@@ -64,14 +64,13 @@ class ActualiteController extends Controller
         $image = Image::make($photo);
         $image->resize(800, 533);
         $image_name = $timestamp.'.'.$photo->extension();
-        $image->save(public_path("/uploads/actualites/").$image_name);
-        $name_file = $timestamp.'.'.$photo->extension();
+        $image->save(public_path("/uploads/actualites/$image_name"));
 
         $publication = Publication::create(
             [
                 'titre' => $request->titre,
                 'texte' => $request->contenu,
-                'photo' => $name_file,
+                'photo' => $image_name,
                 'user_id' => Auth::user()->id
             ]
         );
@@ -131,11 +130,12 @@ class ActualiteController extends Controller
             'contenu' => 'required'
         ]);
 
-        unlink("uploads/actualites/".$actualite->publication->photo);
+        unlink(public_path("uploads/actualites/".$actualite->publication->photo));
 
         $publication = Publication::find($actualite->publication_id);
         $publication->titre = $request->titre;
         $publication->contenu = $request->contenu;
+        
         $image = Image::make($request->file('photo'));
         $image->resize(800, 533);
         $image_name = time().'.'.$image->extension();

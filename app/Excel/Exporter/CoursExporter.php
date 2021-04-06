@@ -2,27 +2,26 @@
 
 namespace App\Excel\Exporter;
 
-use App\Excel\Exporter\Sheets\EtudiantsPerPromotions;
+use App\Excel\Exporter\Sheets\CoursParPromotion;
 use App\Models\Promotion;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 
-class EtudiantExporter implements WithMultipleSheets {
+class CoursExporter implements WithMultipleSheets {
 
     use Exportable;
 
-
     public function sheets(): array
     {
-        $promotions = Promotion::all();
         $sheets = [];
-
+        $promotions = Promotion::all();
         foreach($promotions as $promotion) {
-            $sheets[] = new EtudiantsPerPromotions($promotion);
+            $sheets[] = new CoursParPromotion($promotion);
         }
 
         return $sheets;
     }
+
 }
 
 ?>
