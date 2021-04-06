@@ -23,7 +23,7 @@
 <!-- // Basic Floating Label Form section start -->
 <section id="floating-label-layouts">
     <div class="row match-height">
-        <div class="col-md-8 col-12">
+        <div class="col-md-9 col-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Nouvelle catégorie de réalisations</h4>

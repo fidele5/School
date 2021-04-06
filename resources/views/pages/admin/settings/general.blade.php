@@ -23,7 +23,7 @@
 <!-- // Basic Floating Label Form section start -->
 <section id="floating-label-layouts">
     <div class="row match-height">
-        <div class="col-md-6 col-12">
+        <div class="col-md-9 col-12">
             <div class="card">
                 <div class="card-header text-center">
                     <h4 class="card-title">{{ __("pages.setting") }}</h4>
@@ -32,7 +32,6 @@
                     <div class="card-body">
                         <form action="{{ route("settings.store") }}" method="post" class="form-horizontal" enctype="multipart/form-data">
                             @csrf
-
                             <div class="row pt-3">
                                 <div class="col-12">
                                     <div class="form-label-group">

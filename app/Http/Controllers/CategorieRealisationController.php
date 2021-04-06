@@ -18,7 +18,6 @@ class CategorieRealisationController extends Controller
         $arguments = [
             "categories" => $categories,
             "selected_item" => "categories_realisations",
-            "selected_sub_item" => "all",
             "selected_sub_item" => "all"
         ];
         return view("pages.admin.categories.realisations.index")->with($arguments);
@@ -32,7 +31,8 @@ class CategorieRealisationController extends Controller
     public function create()
     {
         $arguments = [
-            "selected_item" => "categories_realisations"
+            "selected_item" => "categories_realisations",
+            "selected_sub_item" => "new"
         ];
         return view("pages.admin.categories.realisations.create")->with($arguments);
     }
@@ -79,7 +79,7 @@ class CategorieRealisationController extends Controller
         $arguments = [
             "categorie" => $categorieRealisation,
             "selected_item" => "categories_realisations",
-            "selected_sub_item" => "new"
+            "selected_sub_item" => "all"
         ];
         return view("pages.admin.categories.realisations.edit")->with($arguments);
     }

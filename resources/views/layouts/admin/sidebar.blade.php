@@ -5,7 +5,7 @@
             <li class="nav-item mr-auto">
                 <a class="navbar-brand" href="/">
                     <div class="brand-logo">
-                        <img src="/{{ get_option("app_logo") }}" class="logo" alt="">
+                        <img src="/{{ get_option("app_logo") }}" class="logo" alt="" />
                     </div>
                     <h2 class="brand-text mb-0">{{ get_option("app_name") }}</h2>
                 </a>
@@ -134,6 +134,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="nav-item @if($selected_item == "horaires") active @endif">
                     <a href="# " >
                         <i class="bx bxs-calendar"></i>
@@ -154,6 +155,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="nav-item @if($selected_item == "promotions") active @endif">
                     <a href="# " >
                         <i class="bx bxs-home"></i>
@@ -328,7 +330,7 @@
                             <span class="menu-title">Réalisation</span>
                         </a>
                         <ul class="menu-content">
-                            <li>
+                            <li @if($selected_sub_item == "all" AND $selected_item == "categories_realisations")class="active" @endif>
                                 <a href="{{ route('categorie-realisations.index')}}" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">Toutes</span>
@@ -342,20 +344,20 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item @if($selected_item == "settings") active @endif">
                         <a href="page-account-settings.html" >
                             <i class="bx bx-wrench"></i>
                             <span class="menu-title">{{ __("pages.site_settings") }}</span>
                         </a>
                         <ul class="menu-content">
-                            <li >
+                            <li @if($selected_sub_item == "general" AND $selected_item == "settings")class="active" @endif>
                                 <a href="{{ route("settings.create") }}" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">{{ __("pages.general") }}</span>
                                 </a>
                             </li>
 
-                            <li >
+                            <li @if($selected_sub_item == "languages" AND $selected_item == "settings")class="active" @endif>
                                 <a href="{{ route("languages.index") }}" >
                                     <i class="bx bx-right-arrow-alt"></i>
                                     <span class="menu-item">{{ __("pages.language") }}</span>
