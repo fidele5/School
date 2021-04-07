@@ -49,10 +49,10 @@
                                             <td>{{ $realisation->categorie_realisation->designation }}</td>
                                             <td>{{ $realisation->publication->photo}}</td>
                                             <td>
-                                                <a class="btn btn-primary" href="{{ route("realisations.edit", $realisation) }}">
+                                                <a href="{{ route("realisations.edit", $realisation) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="btn btn-danger delete" href="{{ route("realisations.destroy", $realisation) }}">
+                                                <a class="delete" href="{{ route("realisations.destroy", $realisation) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

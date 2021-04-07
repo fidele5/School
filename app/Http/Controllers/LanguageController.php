@@ -18,8 +18,8 @@ class LanguageController extends Controller
     {
         $languages = Language::all();
         $arguments = [
-            "selected_item" => "cycles",
-            "selected_sub_item" => "all",
+            "selected_item" => "settings",
+            "selected_sub_item" => "general",
             "languages" => $languages,
         ];
 

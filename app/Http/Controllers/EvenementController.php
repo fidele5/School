@@ -131,11 +131,11 @@ class EvenementController extends Controller
             "lieu" => "required"
         ]);
 
-       unlink("uploads/evenements/".$evenement->publication->photo);
+       unlink(public_path("uploads/evenements/".$evenement->publication->photo));
 
        $image = Image::make($request->file('photo'));
        $image_name = time().'.'.$image->extension();
-       $image->store("uploads/evenements/", $image_name);
+       $image->save(public_path("uploads/evenements/$image_name"));
 
         $publication = Publication::find($evenement->publication_id);
         $publication->titre = $request->titre;

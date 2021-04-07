@@ -45,10 +45,10 @@
                                             <td>{{ $key + 1 }}</td>
                                             <td class="text-truncate" style="max-width: 250px">{{ $cycle->designation }}</td>
                                             <td>
-                                                <a class="btn btn-primary" href="{{ route("cycles.edit", $cycle) }}">
+                                                <a href="{{ route("cycles.edit", $cycle) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="btn btn-danger delete" href="{{ route("cycles.destroy", $cycle) }}">
+                                                <a class="delete" href="{{ route("cycles.destroy", $cycle) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

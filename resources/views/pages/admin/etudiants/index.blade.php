@@ -71,10 +71,10 @@
                                             <td>{{ $etudiant->user->email}}</td>
                                             <td>{{ $etudiant->user->telephone }}</td>
                                             <td>
-                                                <a class="btn btn-primary" href="{{ route("etudiants.edit", $etudiant) }}">
+                                                <a href="{{ route("etudiants.edit", $etudiant) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="btn btn-delete" class="delete" href="{{ route("etudiants.destroy", $etudiant) }}">
+                                                <a class="delete" href="{{ route("etudiants.destroy", $etudiant) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
@@ -109,9 +109,8 @@
                 <div class="card-footer">
                     <div class="row">
                          <div class="col-6">
-                            <a href="{{ route('export')}}" class="btn btn-secondary"><i class="fa fa-arrow-down"></i> Télécharger le modèle</a>
+                            <a href="{{ route('etudiants.export')}}" class="btn btn-secondary"><i class="fa fa-arrow-down"></i> Télécharger le modèle</a>
                         </div>
-                        <form class="form col-6" method="POST" action="{{ route('import')}}">
                         <form class="form col-6" method="POST" action="{{ route('etudiants.import')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">

@@ -26,7 +26,7 @@ class HoraireController extends Controller
         $horaires = Horaire::all();
         $arguments = [
             "horaires" => $horaires,
-            "selected_item" => "filieres",
+            "selected_item" => "horaires",
             "selected_sub_item" => "all"
         ];
 

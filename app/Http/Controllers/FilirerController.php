@@ -52,7 +52,6 @@ class FilirerController extends Controller
             "nom" => "required",
             "image" => "required|image",
             "cycle_id" => "required|integer",
-            "image" => "required|image"
         ]);
 
         $path = time().".".$request->file('image')->extension();
@@ -109,9 +108,23 @@ class FilirerController extends Controller
      */
     public function update(Request $request, Filiere $filiere)
     {
-        $request->validate(["nom" => "required"]);
+        $request->validate([
+            "nom" => "required",
+            "image" => "required|image",
+            "cycle_id" => "required|integer"
+        ]);
+
+        unlink(public_path("uploads/filieres/$filiere->image"));
+
+        $path = time().".".$request->file('image')->extension();
+        $image = Image::make($request->file("image"));
+        $image->resize(800, 800);
+        $image->save(public_path("uploads/filieres/$path"));
 
         $filiere->nom = $request->nom;
+        $filiere->image = $path;
+        $filiere->description = $request->description | "";
+        $filiere->cycle_id = $request->cycle_id;
         $filiere->save();
 
         return response()->json([

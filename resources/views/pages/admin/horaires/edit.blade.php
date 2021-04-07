@@ -60,7 +60,7 @@
                                             <label for="promotion">Promotion</label>
                                             <select name="promotion_id" id="promotion" class="custom-select @error('promotion_id') is-invalid @enderror">
                                                 @foreach ($promotions as $promotion)
-                                                    <option value="{{ $promotion->id }}" @if ($course->promotion_id == $promotion->id)
+                                                    <option value="{{ $promotion->id }}" @if ($horaire->promotion_id == $promotion->id)
                                                         selected
                                                     @endif>{{ $promotion->nom }} {{ $promotion->filiere->nom }}</option>
                                                 @endforeach

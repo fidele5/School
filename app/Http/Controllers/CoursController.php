@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Excel\Exporter\CoursExporter;
 use App\Models\Cours;
 use App\Models\Enseignant;
 use App\Models\Promotion;
@@ -102,6 +103,8 @@ class CoursController extends Controller
      */
     public function edit(Cours $cours)
     {
+        print($cours);
+        print("\n");
         $enseignants = Enseignant::all();
         $promotions = Promotion::all();
         $arguments =[
@@ -143,7 +146,25 @@ class CoursController extends Controller
      */
     public function destroy(Cours $cours)
     {
-        $cours->delete();
+        $deleted = $cours->delete();
+        if($deleted) return response()->json([
+            "status" => "success",
+            "back" => "courses"
+        ]);
+        else return response($status=500)->json([
+            "status" => "Failed"
+        ]);
+    }
+
+    public function export() {
+        return (new CoursExporter)->download("cours.xls");
+    }
+
+    public function import(Request $request) {
+        $request->validate([
+            "file" => "required|file|mimes:xls,xlsx,xlsm"
+        ]);
+
         return response()->json([
             "status" => "success",
             "back" => "courses"

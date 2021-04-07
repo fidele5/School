@@ -7,6 +7,7 @@ use App\Models\Publication;
 use App\Models\Realisation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class RealisationController extends Controller
 {
@@ -57,9 +58,10 @@ class RealisationController extends Controller
             "photo" => "required|image"
         ]);
 
-        $image_name = time();
-        settype($image_name, "string");
-        $request->file("photo")->move("uploads/realisations", $image_name);
+        $image = Image::make($request->file("photo"));
+        $image->resize(800, 533);
+        $image_name = time().".".$request->file("photo")->extension();
+        $image->save(public_path("uploads/realisations/$image_name"));
 
         $publication = Publication::create([
             "titre" => $request->titre,
@@ -124,9 +126,14 @@ class RealisationController extends Controller
             "photo" => "required|image"
         ]);
 
-        $image_name = time();
-        settype($image_name, "string");
-        $request->file("photo")->move("uploads/realisations", $image_name);
+        $fichier = $request->file("photo");
+        $image_name = time().".".$fichier->extension();
+
+        unlink(public_path("uploads/realisations/".$realisation->publication->photo));
+
+        $image = Image::make($fichier);
+        $image->resize(800, 533);
+        $image->save(public_path("uploads/realisations/$image_name"));
 
         $realisation->publication->texte = $request->contenu;
         $realisation->publication->titre = $request->titre;

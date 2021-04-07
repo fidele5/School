@@ -120,7 +120,7 @@ class EnseignantController extends Controller
             "selected_item" => "enseignants",
             "selected_sub_item" => "all"
         ];
-        return view("pages.admin.enseignants.index")->with($arguments);
+        return view("pages.admin.enseignants.edit")->with($arguments);
     }
 
     /**
@@ -136,7 +136,7 @@ class EnseignantController extends Controller
         $enseignant->user->postnom = $request->postnom;
         $enseignant->user->prenom = $request->prenom;
         $enseignant->user->genre = $request->genre;
-        $enseignant->user->email = $request->nationalite;
+        $enseignant->user->email = $request->email;
         $enseignant->user->telephone = $request->telephone;
         $enseignant->user->nationalite = $request->nationalite;
         $enseignant->user->adresse = $request->adresse;

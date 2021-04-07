@@ -77,21 +77,23 @@ Route::middleware("local")->group(function () {
             Route::resource('publications', PublicationController::class);
             Route::resource('image-realisation', ImageRealisationController::class);
             Route::resource('settings', SettingController::class);
+            Route::resource('resultats', ResultatController::class);
             Route::resource('languages', LanguageController::class);
             Route::resource('resultats', ResultatController::class);
+            Route::resource('cycles', CycleController::class);
             Route::get('etudiants-export', [EtudiantController::class, 'export'])->name('etudiants.export');
             Route::post('etudiants-import', [EtudiantController::class, 'import'])->name('etudiants.import');
             Route::get('enseignants-export', [EnseignantController::class, 'export'])->name('enseignants.export');
             Route::post('enseignants.import', [EnseignantController::class, 'import'])->name('enseignants.import');
             Route::get('resultats-export', [ResultatController::class, 'export'])->name('resultats.export');
             Route::post('resultats-import', [ResultatController::class, 'import'])->name('resultats.import');
-            Route::resource('cycles', CycleController::class);
+            Route::get('courses-export', [CoursController::class, 'export'])->name("courses.export");
+            Route::post('courses-export', [CoursController::class, 'import'])->name("courses.import");
             Route::get('translate/{id}', [\App\Http\Controllers\LanguageController::class, 'editContent'])->name('translate');
             Route::post('update-translate', [\App\Http\Controllers\LanguageController::class, 'updateContent'])->name('update-translate');
             Route::get('', function () {
                 return view('pages.admin.home')->with(["selected_item" => "home", "selected_sub_item" => ""]);
             })->name('home-admin');
-
         });
     });
 });

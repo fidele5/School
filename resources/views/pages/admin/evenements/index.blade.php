@@ -55,10 +55,10 @@
                                             <td>{{ $evenement->lieu }}</td>
                                             <td>{{ $evenement->photo }}</td>
                                             <td>
-                                                <a class="btn btn-primary" href="{{ route("evenements.edit", $evenement) }}">
+                                                <a href="{{ route("evenements.edit", $evenement) }}">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a class="btn btn-delete delete" href="{{ route("evenements.destroy", $evenement) }}">
+                                                <a class="delete" href="{{ route("evenements.destroy", $evenement) }}">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

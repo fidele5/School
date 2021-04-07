@@ -30,8 +30,8 @@ class SettingController extends Controller
         $languages = Language::all();
         $settings = Setting::all();
         $arguments = [
-            "selected_item" => "cycles",
-            "selected_sub_item" => "all",
+            "selected_item" => "settings",
+            "selected_sub_item" => "general",
             "languages" => $languages,
             "settings"=>$settings,
         ];
