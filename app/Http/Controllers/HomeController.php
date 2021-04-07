@@ -169,4 +169,13 @@ class HomeController extends Controller
     {
         return view("pages.guest.autres.contact");
     }
+
+    public function profile()
+    {
+        $args = [
+            "selected_item" => "publications_evenements",
+            "selected_sub_item" => "all"
+        ];
+        return view("pages.guest.autres.profile")->with($args);
+    }
 }

@@ -35,38 +35,38 @@
                                         @foreach ($cycle->filieres as $filiere)
                                             @foreach ($filiere->promotions as $promotion)
                                                 <div class="card">
-                                                    <div class="card-header accordion-header" role="tab" id="accordionMinimal{{ $filiere->id }}">
+                                                    <div class="card-header accordion-header" role="tab" id="accordionMinimal{{ $promotion->id }}">
                                                         <h5 class="mb-0">
-                                                            <a href="#" data-toggle="collapse" data-target="#accordionMinimalCollapse{{ $filiere->id }}" aria-expanded="false" aria-controls="accordionMinimalCollapse{{ $filiere->id }}">{{ $promotion->nom }} - {{ $filiere->nom }}</a>
+                                                            <a href="#" data-toggle="collapse" data-target="#accordionMinimalCollapse{{ $promotion->id }}" aria-expanded="false" aria-controls="accordionMinimalCollapse{{ $promotion->id }}">{{ $promotion->nom }} - {{ $filiere->nom }}</a>
                                                         </h5>
                                                     </div>
-                                                    <div id="accordionMinimalCollapse{{ $filiere->id }}" class="collapse show" role="tabpanel" aria-labelledby="accordionMinimal{{ $filiere->id }}" data-parent="#accordionMinimal">
+                                                    <div id="accordionMinimalCollapse{{ $promotion->id }}" class="collapse" role="tabpanel" aria-labelledby="accordionMinimal{{ $promotion->id }}" data-parent="#accordionMinimal">
                                                         <div class="card-body">
                                                             <table class="table table-responsive-sm">
                                                                 <thead>
                                                                     <tr>
                                                                         <th>#</th>
                                                                         <th>{{ __("pages.intitule") }}</th>
-                                                                        <th>{{ __("pages.description") }}</th>
+                                                                        <th>{{ __("Description") }}</th>
                                                                         <th>{{ __("pages.ponderation") }}</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    @foreach ($promotion->cours as $cour)
+                                                                    @foreach ($promotion->courses as $cour)
                                                                         <tr>
                                                                             <th scope="row">{{ $cour->id }}</th>
                                                                             <td>{{ $cour->intitule }}</td>
                                                                             <td>{{ $cour->description }}</td>
-                                                                            <td>{{ $cour->ponderation }}</td>
+                                                                            <td>{{ $cour->volume_horaire }}</td>
                                                                         </tr>
                                                                     @endforeach
-                                                                    
+
                                                                 </tbody>
                                                             </table>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @endforeach 
+                                            @endforeach
                                         @endforeach
                                     </div>
                                 </div>

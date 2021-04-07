@@ -37,7 +37,7 @@ class RealisationController extends Controller
         $arguments = [
             "categories" => $categories,
             "selected_item" => "publications_realisations",
-            "selected_sub_item" => "new"
+            "selected_sub_item" => "new",
         ];
         return view("pages.admin.realisations.create")->with($arguments);
     }

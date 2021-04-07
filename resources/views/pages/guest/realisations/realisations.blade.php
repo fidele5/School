@@ -40,7 +40,7 @@
                                             <a href="portfolio-detail-1.html">
                                                 <span class="image-frame image-frame-style-1 image-frame-effect-1">
                                                     <span class="image-frame-wrapper">
-                                                        <img src="/realisations/{{ $realisation->titre }}" class="img-fluid" alt="EZ Watch 2">
+                                                        <img src="/uploads/realisations/{{ $realisation->image_realisations[0] }}" class="img-fluid" alt="EZ Watch 2">
                                                         <span class="image-frame-inner-border"></span>
                                                         <span class="image-frame-action">
                                                             <span class="image-frame-action-icon">

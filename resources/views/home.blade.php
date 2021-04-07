@@ -35,22 +35,9 @@
             <section class="section section-over-slider section-over-slider-style-1">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-md-8 mb-4 mb-md-0">
+                        <div class="col-md-12 mb-4 mb-md-0 text-center">
                             <span class="top-sub-title">GET TO KNOW US</span>
-                            <h2 class="text-color-light font-weight-semibold text-5">Digital Agency Based in New York</h2>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="icon-box icon-box-style-1">
-                                <div class="icon-box-icon">
-                                    <i class="lnr lnr-phone-handset text-color-light"></i>
-                                </div>
-                                <div class="icon-box-info">
-                                    <div class="icon-box-info-title">
-                                        <h3 class="font-weight-semibold text-color-light text-4 mb-0">Phone Number</h3>
-                                    </div>
-                                    <p class="mb-0"><a class="text-decoration-none no-skin" href="tel:+00112304567" target="_blank" title="Call Us Now">(123) 456-7890</a> - <a class="text-decoration-none no-skin" href="tel:+00112304567" target="_blank" title="Call Us Now">(123) 456-7890</a></p>
-                                </div>
-                            </div>
+                            <h4 class="text-color-light font-weight-semibold text-5"> &quot; <em>{{ __("pages.slogan") }}</em> &quot;</h4>
                         </div>
                     </div>
                 </div>
@@ -66,7 +53,6 @@
                                     <img width="42" src="vendor/linear-icons/screen.svg" alt="" data-icon data-plugin-options="{'color': '#2388ED', 'animated': true, 'delay': 600}" />
                                 </div>
                                 <div class="icon-box-info">
-                                    <span class="top-sub-title">GET IMPRESSED</span>
                                     <h2 class="font-weight-extra-bold line-height-1 text-5 mb-3">{{ __("pages.finesse_title") }}</h2>
                                     <p class="text-alternative-style pr-lg-4">
                                         {{ __("pages.finesse_text") }}
@@ -80,7 +66,6 @@
                                     <img width="42" src="vendor/linear-icons/layers.svg" alt="" data-icon data-plugin-options="{'color': '#2388ED', 'animated': true, 'delay': 900}" />
                                 </div>
                                 <div class="icon-box-info">
-                                    <span class="top-sub-title">SUPER POWERFULL</span>
                                     <h2 class="font-weight-extra-bold line-height-1 text-5 mb-3">{{ __("pages.excellence") }}</h2>
                                     <p class="text-alternative-style pr-lg-4">{{ __("pages.excellence_text") }}</p>
                                 </div>
@@ -92,7 +77,6 @@
                                     <img width="42" src="vendor/linear-icons/code.svg" alt="" data-icon data-plugin-options="{'color': '#2388ED', 'animated': true, 'delay': 1200}" />
                                 </div>
                                 <div class="icon-box-info">
-                                    <span class="top-sub-title">EASY TO CUSTOMIZE</span>
                                     <h2 class="font-weight-extra-bold line-height-1 text-5 mb-3">{{ __("pages.discipline") }}</h2>
                                     <p class="text-alternative-style pr-lg-4">{{ __("pages.discipline_text") }}.</p>
                                 </div>
@@ -308,19 +292,6 @@
                                     @endif
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 d-flex justify-content-center mt-4">
-                            <div id="portfolioLoadMoreLoader" class="portfolio-load-more-loader">
-                                <div class="bounce-loader">
-                                    <div class="bounce1"></div>
-                                    <div class="bounce2"></div>
-                                    <div class="bounce3"></div>
-                                </div>
-                            </div>
-                            <button id="portfolioLoadMore" type="button" class="btn btn-primary btn-rounded btn-wide-4 btn-icon-effect-2 outline-none font-weight-bold">
-                                <span>{{ __("pages.load_more") }}</span>
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
