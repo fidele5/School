@@ -59,6 +59,7 @@ Route::middleware("local")->group(function () {
     Route::post("/saveStudent", [HomeController::class, 'saveStudent'])->name('saveStudent');
     Route::get("/calendrier", [HomeController::class, 'calendar'])->name('calendrier');
     Route::get("/download/{id}", [HomeController::class, 'downloadPdf'])->name('download');
+    Route::post("/email", [HomeController::class, "SendEmail"])->name('email');
     Route::middleware("auth", "admin", "active")->group(function () {
         Route::prefix("admin")->group(function () {
             Route::resource("actualites", ActualiteController::class);

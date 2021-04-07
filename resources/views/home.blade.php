@@ -249,7 +249,7 @@
                             <ul id="portfolioLoadMoreFilter" class="nav sort-source justify-content-center justify-content-md-start mb-4 mb-md-0" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
                                 <li class="nav-item" data-option-value="*"><a class="nav-link active" href="#">Show All</a></li>
                                 @foreach ($categories as $categorie)
-                                    <li class="nav-item" data-option-value=".{{ $categorie->designation }}"><a class="nav-link text-capitalize" href="#">brands</a></li>
+                                    <li class="nav-item" data-option-value=".{{ $categorie->designation }}"><a class="nav-link text-capitalize" href="#">{{ $categorie->designation }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -268,7 +268,7 @@
                                                     <a href="portfolio-detail-1.html">
                                                         <span class="image-frame image-frame-style-1 image-frame-effect-1">
                                                             <span class="image-frame-wrapper">
-                                                            <img src="img/projects/generic/project-22-square.jpg" class="img-fluid" alt="">
+                                                            <img src="/uploads/realisations/{{ $realisation->publication->photo }}" class="img-fluid" alt="">
                                                             <span class="image-frame-inner-border"></span>
                                                                 <span class="image-frame-action">
                                                                     <span class="image-frame-action-icon">

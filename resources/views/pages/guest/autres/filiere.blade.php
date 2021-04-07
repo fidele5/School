@@ -32,17 +32,10 @@
                                                 @foreach ($cycle->filieres as $filiere)
                                                     <div>
                                                         <a href="blog-single-post.html">
-                                                            <article class="card card-style-5 bg-light-5 rounded border-0 p-3" data-plugin-image-background data-plugin-options="{'imageUrl': 'img/blog/posts/post-7-square.jpg'}">
+                                                            <article class="card card-style-5 bg-light-5 rounded border-0 p-3" data-plugin-image-background data-plugin-options="{'imageUrl': 'uploads/filieres/{{ $filiere->image }}'}">
                                                                 <div class="card-body p-5">
                                                                     <h3 class="font-weight-bold text-4 mb-1">{{ $filiere->nom }}</h3>
-                                                                    <p>
-                                                                        <i class="far fa-clock mt-1 text-color-primary"></i>
-                                                                        <time class="font-tertiary text-1" datetime="2020-01-10">Jan 10, 2020</time>
-                                                                    </p>
                                                                     <p>{{ $filiere->description }}</p>
-                                                                    <p class="text-color-dark font-weight-semibold mb-0">
-                                                                        <img src="img/authors/author-2.jpg" class="rounded-circle img-thumbnail-small d-inline-block mr-2" width="25" height="25" alt=""> by John Doe
-                                                                    </p>
                                                                 </div>
                                                             </article>
                                                         </a>

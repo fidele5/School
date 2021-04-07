@@ -70,7 +70,8 @@
                             </div>
                         </div>
                         <div class="col-lg-8 appear-animation" data-appear-animation="fadeInRightShorter">
-                            <form class="contact-form form-style-2" action="https://www.okler.net/previews/ezy/2.1.0/php/contact-form.php" method="POST">
+                            <form class="contact-form form-style-2" action="{{ route("email") }}" method="POST">
+                                @csrf
                                 <div class="contact-form-success alert alert-success d-none">
                                     <strong>Success!</strong> Your message has been sent to us.
                                 </div>

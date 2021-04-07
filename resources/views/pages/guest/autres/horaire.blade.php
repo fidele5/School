@@ -36,20 +36,20 @@
                                         @foreach ($cycle->filieres as $filiere)
                                             @foreach ($filiere->promotions as $promotion)
                                                 <div class="card">
-                                                    <div class="card-header accordion-header" role="tab" id="accordionMinimal{{ $filiere->id }}">
+                                                    <div class="card-header accordion-header" role="tab" id="accordionMinimal{{ $promotion->id }}">
                                                         <h5 class="mb-0">
-                                                            <a href="#" data-toggle="collapse" data-target="#accordionMinimalCollapse{{ $filiere->id }}" aria-expanded="false" aria-controls="accordionMinimalCollapse{{ $filiere->id }}">{{ $promotion->nom }} - {{ $filiere->nom }}</a>
+                                                            <a href="#" data-toggle="collapse" data-target="#accordionMinimalCollapse{{ $promotion->id }}" aria-expanded="false" aria-controls="accordionMinimalCollapse{{ $promotion->id }}">{{ $promotion->nom }} - {{ $filiere->nom }}</a>
                                                         </h5>
                                                     </div>
-                                                    <div id="accordionMinimalCollapse{{ $filiere->id }}" class="collapse show" role="tabpanel" aria-labelledby="accordionMinimal{{ $filiere->id }}" data-parent="#accordionMinimal">
+                                                    <div id="accordionMinimalCollapse{{ $promotion->id }}" class="collapse" role="tabpanel" aria-labelledby="accordionMinimal{{ $promotion->id }}" data-parent="#accordionMinimal">
                                                         <div class="card-body">
                                                             <table class="table table-responsive-sm">
-                                                                
+
                                                             </table>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @endforeach 
+                                            @endforeach
                                         @endforeach
                                     </div>
                                 </div>

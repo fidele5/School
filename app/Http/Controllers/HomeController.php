@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Couriel;
 use App\Models\Actualite;
 use App\Models\Caroussel;
 use App\Models\CategorieActualite;
@@ -15,6 +16,7 @@ use App\Models\Realisation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use PDF;
 
 class HomeController extends Controller
@@ -177,5 +179,10 @@ class HomeController extends Controller
             "selected_sub_item" => "all"
         ];
         return view("pages.guest.autres.profile")->with($args);
+    }
+
+    public function SendEmail(Request $request)
+    {
+        Mail::to("fideleplk@gmail.com")->send(new Couriel($request->except("_token")));
     }
 }

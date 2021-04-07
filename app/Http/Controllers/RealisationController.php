@@ -59,7 +59,7 @@ class RealisationController extends Controller
         ]);
 
         $image = Image::make($request->file("photo"));
-        $image->resize(800, 533);
+        $image->resize(1500, 1800);
         $image_name = time().".".$request->file("photo")->extension();
         $image->save(public_path("uploads/realisations/$image_name"));
 
@@ -132,7 +132,7 @@ class RealisationController extends Controller
         unlink(public_path("uploads/realisations/".$realisation->publication->photo));
 
         $image = Image::make($fichier);
-        $image->resize(800, 533);
+        $image->resize(1500, 1800);
         $image->save(public_path("uploads/realisations/$image_name"));
 
         $realisation->publication->texte = $request->contenu;
